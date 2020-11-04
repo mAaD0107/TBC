@@ -1,0 +1,465 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Common.Cache;
+using System.Threading;
+
+namespace Presentacion
+{
+    public partial class FormPrincipal : Form
+    {
+        public FormPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        int LX, LY;
+        int ancho, alto;
+        bool cBtnMax = false;
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (!cBtnMax)
+            {
+                LX = this.Location.X;
+                LY = this.Location.Y;
+                ancho = this.Width;
+                alto = this.Height;
+                panelMenuVertical.AutoSize = false;
+
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+
+                redondeoFormPrincipal.ApplyElipse(0);
+            }
+            else
+            {
+                this.Location = new Point(LX, LY);
+                this.Size = new Size(ancho, alto);
+
+                redondeoFormPrincipal.ApplyElipse(20);
+
+            }
+            cBtnMax = !cBtnMax;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenuVertical_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            mostrarMenu();
+        }
+
+        bool mantenerMenu = false;
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            vCliente = false;
+
+            if (mantenerMenu)
+            {
+                mostrarMenu();
+            }
+            else
+            {
+                ocultarMenu();
+            }
+
+            mantenerMenu = !mantenerMenu;
+
+        }
+
+
+
+        private Form formG = null as Form;
+        public void AbrirFormInPanel(object FormHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+
+
+            if (formG != null)
+            {
+                this.panelContenedor.Controls.Remove(formG);
+                formG.Dispose();
+                formG = null;
+                MemoryManagement.FlushMemory();
+            }
+
+            formG = FormHijo as Form;
+            formG.TopLevel = false;
+            formG.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(formG);
+            this.panelContenedor.Tag = formG;
+            formG.Show();
+            formG.SelectNextControl(ActiveControl, true, true, true, true);
+
+
+
+        }
+
+
+
+
+        // Region de Botones Menu Vertical 
+        #region 
+        bool vCliente = false;
+        bool vProveedor = false;
+        bool vImportaciones = false;
+
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            if(!vCliente)
+            {
+                btnInicio.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnClientes.BackColor = Color.FromArgb(57, 60, 67);
+                btnTramites.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnImportaciones.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnPagos.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnReportes.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnConfigurar.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnLogOut.BackColor = Color.FromArgb(150,33, 31, 41);
+
+                FormOpcionesClientes formOpcionesClientes = new FormOpcionesClientes();
+                formOpcionesClientes.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                AddOwnedForm(formOpcionesClientes);
+                AbrirFormInPanel(formOpcionesClientes);
+               
+                vCliente = true;
+                vProveedor = false;
+                vImportaciones = false;
+
+            }
+            else
+            {
+                if (InterfaceCache.idCliente != 0)
+                {
+                    FormOpcionesClientes formOpcionesClientes = new FormOpcionesClientes();
+                    formOpcionesClientes.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                    AddOwnedForm(formOpcionesClientes);
+                    AbrirFormInPanel(formOpcionesClientes);
+                }
+
+            }
+
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+
+            if (!vProveedor)
+            {
+                btnInicio.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnClientes.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnTramites.BackColor = Color.FromArgb(57, 60, 67);
+                btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+
+                FormOpcionesProveedores formOpcionesProveedores = new FormOpcionesProveedores();
+                formOpcionesProveedores.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                AddOwnedForm(formOpcionesProveedores);
+                AbrirFormInPanel(formOpcionesProveedores);
+
+                vProveedor = true;
+                vCliente = false;
+                vImportaciones = false;
+            }
+            else
+            {
+                if (InterfaceCache.idProveedor != 0)
+                {
+                    FormOpcionesProveedores formOpcionesProveedores = new FormOpcionesProveedores();
+                    formOpcionesProveedores.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                    AddOwnedForm(formOpcionesProveedores);
+                    AbrirFormInPanel(formOpcionesProveedores);
+                }
+
+            }
+            
+
+
+        }
+
+        
+        private void btnImportaciones_Click(object sender, EventArgs e)
+        {
+            if (!vImportaciones)
+            {
+                btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnImportaciones.BackColor = Color.FromArgb(57, 60, 67);
+                btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+
+                FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
+                formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                AddOwnedForm(formOpcionesImportaciones);
+                AbrirFormInPanel(formOpcionesImportaciones);
+
+                vImportaciones = true;
+                vCliente = false;
+                vProveedor = false;
+            }
+            else
+            {
+
+                switch (InterfaceCache.idImportaciones)
+                {
+                    case 1:
+                        FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
+                        formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesImportaciones);
+                        AbrirFormInPanel(formOpcionesImportaciones);
+                        break;
+
+                    case 2:
+                        FormOpcionesTramite formOpcionesTramite = new FormOpcionesTramite();
+                        formOpcionesTramite.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesTramite);
+                        AbrirFormInPanel(formOpcionesTramite);
+                        break;
+
+                    case 3:
+                        FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
+                        formOpcionesFactura.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesFactura);
+                        AbrirFormInPanel(formOpcionesFactura);
+                        break;
+
+                    case 4:
+                        FormOpcionesPagos formOpcionesPagos = new FormOpcionesPagos();
+                        formOpcionesPagos.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesPagos);
+                        AbrirFormInPanel(formOpcionesPagos);
+                        break;
+
+                    default:
+                        break;
+                }
+
+
+
+            }
+
+
+
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnPagos.BackColor = Color.FromArgb(57, 60, 67);
+            btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+            vCliente = false;
+            vProveedor = false;
+            vImportaciones = false;
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnReportes.BackColor = Color.FromArgb(57, 60, 67);
+            btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+            vCliente = false;
+            vProveedor = false;
+            vImportaciones = false;
+        }
+
+
+
+
+        private void btnConfigurar_Click(object sender, EventArgs e)
+        {
+            btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnConfigurar.BackColor = Color.FromArgb(57, 60, 67);
+            btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+            vCliente = false;
+            vProveedor = false;
+            vImportaciones = false;
+        }
+
+
+        #endregion
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+           
+            FormLogin loggin = new FormLogin();
+            loggin.Show();
+            this.Close();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+            LoadUserData();
+            mostrarLogo();
+
+            CultureInfo ci = new CultureInfo("Es-Es");
+            
+            DateTime fecha = DateTime.Today;
+            lblFecha.Text = ci.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek) + ", " +
+                            fecha.Day.ToString()+" de "+
+                            ci.DateTimeFormat.GetMonthName(DateTime.Now.Month) + " de " + 
+                            fecha.Year.ToString();
+
+            if(UserCache.Position == Positions.Contabilidad)
+            {
+                btnTramites.Enabled = false;
+                btnClientes.Enabled = false;
+                btnReportes.Enabled = false;
+
+                btnTramites.ForeColor = Color.White;
+            }
+
+            if(UserCache.Position == Positions.Tramitacion)
+            {
+                btnImportaciones.Enabled = false;
+                btnPagos.Enabled = false; 
+            }
+
+            if(UserCache.Position == Positions.Informacion)
+            {
+                btnClientes.Enabled = false;
+                btnTramites.Enabled = false;
+                btnImportaciones.Enabled = false;
+                btnPagos.Enabled = false;
+
+            }
+        }
+
+
+        private void mostrarLogo()
+        {
+            AbrirFormInPanel(new FormLogo());
+        }
+
+        public void mostrarLogoAlCerrar(object sender, FormClosedEventArgs e)
+        {
+
+            mostrarLogo();
+            btnInicio.BackColor = Color.FromArgb(57, 60, 67);
+            btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+
+
+            vCliente = false;
+            vProveedor = false;
+            vImportaciones = false;
+        }
+
+        private void panelMenuVertical_MouseEnter(object sender, EventArgs e)
+        {
+            //mostrarMenu();
+        }
+
+
+        float anchoPanelIzquierdo = 0;
+        private void mostrarMenu()
+        {
+            panelGlobal.ColumnStyles[0].Width = anchoPanelIzquierdo;
+        }
+
+
+        private void ocultarMenu()
+        {
+            anchoPanelIzquierdo = panelGlobal.ColumnStyles[0].Width;
+            panelGlobal.ColumnStyles[0].Width = panelGlobal.ColumnStyles[0].Width*15/100;
+
+        }
+
+
+
+
+        private void btnRecaudacion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ventanas abiertas", Application.OpenForms.Count.ToString());
+        }
+
+        float menuVertialAncho;
+        private void FormPrincipal_Shown(object sender, EventArgs e)
+        {
+            panelGlobal.Visible = true;
+            panelTitulo.Visible = true;
+
+            menuVertialAncho = panelGlobal.ColumnStyles[0].Width;
+        }
+
+        private void panelTitulo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else this.WindowState = FormWindowState.Normal;
+        }
+
+
+        private void LoadUserData()
+        {
+            lblUsuario.Text = UserCache.FirstName + " " + UserCache.LastName;
+            lblCargo.Text = UserCache.Position;
+            lblEmail.Text = UserCache.Email; 
+        }
+
+
+    }
+}
