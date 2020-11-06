@@ -71,6 +71,12 @@
     <Compile Include="FormBuscarTramite.Designer.cs">
       <DependentUpon>FormBuscarTramite.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCrearComisionNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCrearComisionNV.Designer.cs">
+      <DependentUpon>FormCrearComisionNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCrearFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="FormOpcionesTramite.Designer.cs">
       <DependentUpon>FormOpcionesTramite.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPreCrearComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPreCrearComision.Designer.cs">
+      <DependentUpon>FormPreCrearComision.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarTramite.resx">
       <DependentUpon>FormBuscarTramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCrearComisionNV.resx">
+      <DependentUpon>FormCrearComisionNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCrearFactura.resx">
       <DependentUpon>FormCrearFactura.cs</DependentUpon>
@@ -251,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesTramite.resx">
       <DependentUpon>FormOpcionesTramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPreCrearComision.resx">
+      <DependentUpon>FormPreCrearComision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

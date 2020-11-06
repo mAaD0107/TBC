@@ -32,7 +32,7 @@ namespace Presentacion
         }
 
         int LX, LY;
-        int ancho, alto;
+        float ancho, alto, anchoPanelLateral;
         bool cBtnMax = false;
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
@@ -42,17 +42,21 @@ namespace Presentacion
                 LY = this.Location.Y;
                 ancho = this.Width;
                 alto = this.Height;
+                anchoPanelLateral = panelGlobal.ColumnStyles[0].Width;
                 panelMenuVertical.AutoSize = false;
 
                 this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                 this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                if(panelGlobal.ColumnStyles[0].Width>5)
+                    panelGlobal.ColumnStyles[0].Width = anchoPanelLateral - 5;
 
                 redondeoFormPrincipal.ApplyElipse(0);
             }
             else
             {
                 this.Location = new Point(LX, LY);
-                this.Size = new Size(ancho, alto);
+                this.Size = new Size((int)ancho, (int)alto);
+                panelGlobal.ColumnStyles[0].Width = anchoPanelLateral;
 
                 redondeoFormPrincipal.ApplyElipse(20);
 
@@ -406,10 +410,6 @@ namespace Presentacion
             vImportaciones = false;
         }
 
-        private void panelMenuVertical_MouseEnter(object sender, EventArgs e)
-        {
-            //mostrarMenu();
-        }
 
 
         float anchoPanelIzquierdo = 0;
@@ -422,10 +422,11 @@ namespace Presentacion
         private void ocultarMenu()
         {
             anchoPanelIzquierdo = panelGlobal.ColumnStyles[0].Width;
-            panelGlobal.ColumnStyles[0].Width = panelGlobal.ColumnStyles[0].Width*15/100;
+           // panelGlobal.ColumnStyles[0].Width = panelGlobal.ColumnStyles[0].Width*14/100;
+            panelGlobal.ColumnStyles[0].Width =  14 * anchoPanelIzquierdo / 100 ;
 
         }
-
+        
 
 
 
@@ -441,6 +442,11 @@ namespace Presentacion
             panelTitulo.Visible = true;
 
             menuVertialAncho = panelGlobal.ColumnStyles[0].Width;
+        }
+
+        private void btnMinimizar_MouseEnter(object sender, EventArgs e)
+        {
+            btnMinimizar.BackColor = Color.FromArgb(33, 31, 41);
         }
 
         private void panelTitulo_MouseDoubleClick(object sender, MouseEventArgs e)

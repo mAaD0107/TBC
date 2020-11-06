@@ -195,6 +195,76 @@ namespace DataAccess
             }
         }
 
+        public DataTable readTramitesComision()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readTramitesComision";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
+        public DataTable readTramitesComisionFactura(string[] values)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readTramitesComisionFactura";
+                    command.CommandType = CommandType.StoredProcedure;
+                    
+                    command.Parameters.AddWithValue("@FechaInicio", values[0]);
+                    command.Parameters.AddWithValue("@FechaLimite", values[1]);
+                    command.Parameters.AddWithValue("@CiudadNacionali", values[2]);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
+        public DataTable readTramitesComisionNotaVenta(string[] values)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readTramitesComisionNotaVenta";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@FechaInicio", values[0]);
+                    command.Parameters.AddWithValue("@FechaLimite", values[1]);
+                    command.Parameters.AddWithValue("@CiudadNacionali", values[2]);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
 
         public int readIDTramitesImport()
         {
@@ -1282,8 +1352,62 @@ namespace DataAccess
 
                     return false;
                 }
+            }
+        }
 
 
+        public DataTable searchComisionesCliente(string cliente)
+        {
+            DataTable table = new DataTable();
+
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchComisionTBC";
+                    command.Parameters.AddWithValue("@cliente", cliente);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    return table;
+
+                }
+            }
+        }
+
+        public double searchValorFacturaLDM(int nTramite)
+        {
+            DataTable table = new DataTable();
+
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchValorFacturaLDM";
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        return double.Parse(table.Rows[0]["Subtotal_LDM"].ToString());
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+
+                }
             }
         }
 

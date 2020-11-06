@@ -1676,7 +1676,7 @@ namespace Presentacion
             facturaSelecionada = "ManipContenedor"; 
         }
 
-        private bool cambioFondoPaneles = false;
+
         private double totalFacturas = 0;
         private void checkListFacturas_ItemCheck(object sender, ItemCheckEventArgs e)
         {

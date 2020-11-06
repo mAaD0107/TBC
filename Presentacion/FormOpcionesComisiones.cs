@@ -34,10 +34,10 @@ namespace Presentacion
             FormPrincipal formPrincipal = Owner as FormPrincipal;
             if (formPrincipal != null)
             {
-                FormBuscarTramite formOpcionesFactura = new FormBuscarTramite();
-                formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                formPrincipal.AddOwnedForm(formOpcionesFactura);
-                formPrincipal.AbrirFormInPanel(formOpcionesFactura);
+                FormPreCrearComision formPreCrearComision = new FormPreCrearComision();
+                formPreCrearComision.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formPreCrearComision);
+                formPrincipal.AbrirFormInPanel(formPreCrearComision);
             }
         }
 

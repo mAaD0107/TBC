@@ -33,6 +33,9 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.panelComisiones = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnComision = new System.Windows.Forms.Button();
+            this.lblComisiones = new System.Windows.Forms.Label();
             this.pnlReporte = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnReporte = new System.Windows.Forms.Button();
             this.lblReporte = new System.Windows.Forms.Label();
@@ -49,17 +52,14 @@
             this.redondeoFactura = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPago = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoReporte = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panelComisiones = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnComision = new System.Windows.Forms.Button();
-            this.lblComisiones = new System.Windows.Forms.Label();
             this.redondeoComisiones = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelTitulo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
+            this.panelComisiones.SuspendLayout();
             this.pnlReporte.SuspendLayout();
             this.pnlPago.SuspendLayout();
             this.pnlFactura.SuspendLayout();
             this.panelTramite.SuspendLayout();
-            this.panelComisiones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -78,7 +78,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(273, 48);
+            this.lblTitulo.Location = new System.Drawing.Point(273, 55);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(454, 63);
             this.lblTitulo.TabIndex = 0;
@@ -97,6 +97,65 @@
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(1000, 278);
             this.panelOpciones.TabIndex = 1;
+            // 
+            // panelComisiones
+            // 
+            this.panelComisiones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelComisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelComisiones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelComisiones.BackgroundImage")));
+            this.panelComisiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelComisiones.Controls.Add(this.btnComision);
+            this.panelComisiones.Controls.Add(this.lblComisiones);
+            this.panelComisiones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelComisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelComisiones.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelComisiones.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelComisiones.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelComisiones.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelComisiones.Location = new System.Drawing.Point(606, 59);
+            this.panelComisiones.Name = "panelComisiones";
+            this.panelComisiones.Quality = 10;
+            this.panelComisiones.Size = new System.Drawing.Size(192, 179);
+            this.panelComisiones.TabIndex = 4;
+            this.panelComisiones.TabStop = true;
+            this.panelComisiones.Click += new System.EventHandler(this.panelComisiones_Click);
+            this.panelComisiones.Enter += new System.EventHandler(this.panelComisiones_Enter);
+            this.panelComisiones.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
+            // 
+            // btnComision
+            // 
+            this.btnComision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnComision.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnComision.BackgroundImage")));
+            this.btnComision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnComision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnComision.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnComision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComision.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnComision.Location = new System.Drawing.Point(73, 79);
+            this.btnComision.Margin = new System.Windows.Forms.Padding(0);
+            this.btnComision.Name = "btnComision";
+            this.btnComision.Size = new System.Drawing.Size(50, 50);
+            this.btnComision.TabIndex = 0;
+            this.btnComision.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnComision.UseVisualStyleBackColor = false;
+            this.btnComision.Click += new System.EventHandler(this.panelComisiones_Click);
+            this.btnComision.Enter += new System.EventHandler(this.panelComisiones_Enter);
+            this.btnComision.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
+            // 
+            // lblComisiones
+            // 
+            this.lblComisiones.AutoSize = true;
+            this.lblComisiones.BackColor = System.Drawing.Color.Transparent;
+            this.lblComisiones.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComisiones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.lblComisiones.Location = new System.Drawing.Point(9, 24);
+            this.lblComisiones.Name = "lblComisiones";
+            this.lblComisiones.Size = new System.Drawing.Size(178, 36);
+            this.lblComisiones.TabIndex = 0;
+            this.lblComisiones.Text = "Comisiones";
+            this.lblComisiones.Click += new System.EventHandler(this.panelComisiones_Click);
+            this.lblComisiones.Enter += new System.EventHandler(this.panelComisiones_Enter);
+            this.lblComisiones.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
             // 
             // pnlReporte
             // 
@@ -349,65 +408,6 @@
             this.redondeoReporte.ElipseRadius = 30;
             this.redondeoReporte.TargetControl = this.pnlReporte;
             // 
-            // panelComisiones
-            // 
-            this.panelComisiones.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelComisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelComisiones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelComisiones.BackgroundImage")));
-            this.panelComisiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelComisiones.Controls.Add(this.btnComision);
-            this.panelComisiones.Controls.Add(this.lblComisiones);
-            this.panelComisiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelComisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelComisiones.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelComisiones.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelComisiones.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelComisiones.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelComisiones.Location = new System.Drawing.Point(606, 59);
-            this.panelComisiones.Name = "panelComisiones";
-            this.panelComisiones.Quality = 10;
-            this.panelComisiones.Size = new System.Drawing.Size(192, 179);
-            this.panelComisiones.TabIndex = 4;
-            this.panelComisiones.TabStop = true;
-            this.panelComisiones.Click += new System.EventHandler(this.panelComisiones_Click);
-            this.panelComisiones.Enter += new System.EventHandler(this.panelComisiones_Enter);
-            this.panelComisiones.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
-            // 
-            // btnComision
-            // 
-            this.btnComision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnComision.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnComision.BackgroundImage")));
-            this.btnComision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnComision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnComision.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnComision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComision.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnComision.Location = new System.Drawing.Point(73, 79);
-            this.btnComision.Margin = new System.Windows.Forms.Padding(0);
-            this.btnComision.Name = "btnComision";
-            this.btnComision.Size = new System.Drawing.Size(50, 50);
-            this.btnComision.TabIndex = 0;
-            this.btnComision.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnComision.UseVisualStyleBackColor = false;
-            this.btnComision.Click += new System.EventHandler(this.panelComisiones_Click);
-            this.btnComision.Enter += new System.EventHandler(this.panelComisiones_Enter);
-            this.btnComision.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
-            // 
-            // lblComisiones
-            // 
-            this.lblComisiones.AutoSize = true;
-            this.lblComisiones.BackColor = System.Drawing.Color.Transparent;
-            this.lblComisiones.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComisiones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblComisiones.Location = new System.Drawing.Point(9, 24);
-            this.lblComisiones.Name = "lblComisiones";
-            this.lblComisiones.Size = new System.Drawing.Size(178, 36);
-            this.lblComisiones.TabIndex = 0;
-            this.lblComisiones.Text = "Comisiones";
-            this.lblComisiones.Click += new System.EventHandler(this.panelComisiones_Click);
-            this.lblComisiones.Enter += new System.EventHandler(this.panelComisiones_Enter);
-            this.lblComisiones.MouseEnter += new System.EventHandler(this.panelComisiones_Enter);
-            // 
             // redondeoComisiones
             // 
             this.redondeoComisiones.ElipseRadius = 30;
@@ -431,6 +431,8 @@
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.panelOpciones.ResumeLayout(false);
+            this.panelComisiones.ResumeLayout(false);
+            this.panelComisiones.PerformLayout();
             this.pnlReporte.ResumeLayout(false);
             this.pnlReporte.PerformLayout();
             this.pnlPago.ResumeLayout(false);
@@ -439,8 +441,6 @@
             this.pnlFactura.PerformLayout();
             this.panelTramite.ResumeLayout(false);
             this.panelTramite.PerformLayout();
-            this.panelComisiones.ResumeLayout(false);
-            this.panelComisiones.PerformLayout();
             this.ResumeLayout(false);
 
         }

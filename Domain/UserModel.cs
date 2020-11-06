@@ -116,6 +116,22 @@ namespace Domain
         }
 
 
+        public DataTable readTramitesComision()
+        {
+            return userDao.readTramitesComision();
+        }
+
+        public DataTable readTramitesComisionFactura(string[] values)
+        {
+            return userDao.readTramitesComisionFactura(values);
+        }
+
+        public DataTable readTramitesComisionNotaVenta(string[] values)
+        {
+            return userDao.readTramitesComisionNotaVenta(values);
+        }
+
+
         public bool InsertDataClient(string[] values)
         {
             return userDao.insertDataClient(values);
@@ -166,6 +182,17 @@ namespace Domain
         public bool searchIVA(string IVA)
         {
             return userDao.searchIVA(IVA);
+        }
+
+        public DataTable searchComisionCliente(string cliente)
+        {
+            return userDao.searchComisionesCliente(cliente);
+        }
+
+
+        public double searchValorFacturaLDM(int nTramite)
+        {
+            return userDao.searchValorFacturaLDM(nTramite);
         }
 
 

@@ -226,7 +226,7 @@ namespace Presentacion
 
         }
 
-        string valorFacturaAnterior;
+
         private void listaFacturas_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -675,7 +675,7 @@ namespace Presentacion
             calcularValorACobrar();
         }
 
-        double totNotaCredito, ivaNotCredito, subTotalNotCredito, valorCobrar;
+        double totNotaCredito, ivaNotCredito, subTotalNotCredito;
 
 
         private void dateFactura_onValueChanged(object sender, EventArgs e)

@@ -341,7 +341,7 @@ namespace Presentacion
             }
         }
 
-        private bool mostrarTipoTramite = false;
+
         private void cmbCiudadNacionalizacion_TextChanged(object sender, EventArgs e)
         {
 
@@ -406,7 +406,7 @@ namespace Presentacion
                     break;
             }
 
-            mostrarTipoTramite = true;
+
 /*
             switch (cmbTipoTramite.Text)
             {
