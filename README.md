@@ -1,4 +1,4 @@
 # TBC
 ERP con C# y SQL Server
 
-Sistema para gestion de tramites y facturacion electronica para empresa de Importacion y Exportacion
+Sistema para gestión de trámites y facturación electrónica para empresa de Importaciones y Exportaciones
