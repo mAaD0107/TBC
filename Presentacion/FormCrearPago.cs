@@ -119,6 +119,7 @@ namespace Presentacion
         List<string> TransporteII = new List<string>();
         List<string> TransporteIII = new List<string>();
 
+
         double pAgente, pTBC, pTransporte, pGastosLocales, pVistoTHC, pRetiroBL,
                pLiquidacionAduana, pRetiroGuia, pDemoraje, pActualizacionCarta,
                pAlmacenaje, pDevContenedor, pManipContenedor, pGastosI, pGastosII,
@@ -132,10 +133,11 @@ namespace Presentacion
 
             Pagos = Read.readPagos(PagosCache.numeroTramite);
 
+
             checkListFacturas.DataSource = Pagos;
             checkListFacturas.DisplayMember = "Tipo_Factura";
             checkListFacturas.ValueMember = "Tipo_Factura";
-
+                  
             clearListas();
             listas.Clear();
 
@@ -1166,6 +1168,20 @@ namespace Presentacion
                         break;
                 }
 
+
+                switch (facturaSelecionada)
+                {
+                    case "Agente":
+                        lblDestinopago.Visible = true;
+                        cmbDestinoPago.Visible = true;
+                        break;
+
+                    default:
+                        lblDestinopago.Visible = false;
+                        cmbDestinoPago.Visible = false;
+                        break;
+                }
+
                 totPago =  pAgente + pTBC + pTransporte + pGastosLocales + pVistoTHC + pRetiroBL +
                            pLiquidacionAduana + pRetiroGuia + pDemoraje + pActualizacionCarta +
                            pAlmacenaje + pDevContenedor + pManipContenedor + pGastosI + pGastosII +
@@ -1429,6 +1445,9 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "Agente";
+
+            readTramite();
+
         }
 
 
@@ -1449,6 +1468,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "TBC";
+
+            readTramite();
         }
 
         private void lblTPTransporte_Click_1(object sender, EventArgs e)
@@ -1468,6 +1489,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "Transporte";
+
+            readTramite();
         }
 
         private void panelGastosLocales_Click(object sender, EventArgs e)
@@ -1487,6 +1510,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "GastosLocales";
+
+            readTramite();
         }
 
 
@@ -1508,6 +1533,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "VistoTHC";
+
+            readTramite();
         }
 
         private void panelRetiroBL_Click_1(object sender, EventArgs e)
@@ -1527,6 +1554,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "RetiroBL";
+
+            readTramite();
         }
 
 
@@ -1547,6 +1576,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "LiquidacionAduana";
+
+            readTramite();
         }
 
         private void panelRetiroGuía_Click(object sender, EventArgs e)
@@ -1566,6 +1597,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "RetiroGuia";
+
+            readTramite();
         }
 
         private void panelDemoraje_Click(object sender, EventArgs e)
@@ -1585,6 +1618,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "Demoraje";
+
+            readTramite();
         }
 
         private void panelActualizacionCarta_Click(object sender, EventArgs e)
@@ -1604,6 +1639,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "ActualizacionCarta";
+
+            readTramite();
         }
 
 
@@ -1624,6 +1661,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "Almacenaje";
+
+            readTramite();
         }
 
         bool cargarPanel = false;
@@ -1653,6 +1692,8 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "DevContenedor";
+
+            readTramite();
         }
 
 
@@ -1673,11 +1714,14 @@ namespace Presentacion
             UserModel read = new UserModel();
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
-            facturaSelecionada = "ManipContenedor"; 
+            facturaSelecionada = "ManipContenedor";
+
+            readTramite();
         }
 
 
         private double totalFacturas = 0;
+        private bool agenteSeleccionado = false; 
         private void checkListFacturas_ItemCheck(object sender, ItemCheckEventArgs e)
         {
 
@@ -1688,11 +1732,17 @@ namespace Presentacion
                     {
                         panelAgente.BackColor = Color.FromArgb(75, 205, 92, 92);
                         totalFacturas += pAgente;
+                        lblDestinoPagoPG.Visible = true;
+                        cmbDestinoPagoGL.Visible = true;
+                        agenteSeleccionado = true;
                     }
                     else
                     {
                         panelAgente.BackColor = Color.FromArgb(100, 33, 31, 41);
                         totalFacturas -= pAgente;
+                        agenteSeleccionado = false;
+                        lblDestinoPagoPG.Visible = false;
+                        cmbDestinoPagoGL.Visible = false;
                     }
                     break;
 
@@ -2017,13 +2067,45 @@ namespace Presentacion
 
         private void ajustarAnchoDatagrid()
         {
-            if (dataGridPagos.Columns.Count > 2)
+            int j = 0;
+
+            for (int i = 0; i < dataGridPagos.Rows.Count; i++)
             {
-                dataGridPagos.Columns[0].Width = dataGridPagos.Width * 20 / 100;
-                dataGridPagos.Columns[1].Width = dataGridPagos.Width * 25 / 100;
-                dataGridPagos.Columns[2].Width = dataGridPagos.Width * 55 / 100;
+                if (dataGridPagos.Rows[i].Cells["destinoPago"].Value.ToString() == "")
+                {
+                    j++;
+                }
             }
+
+            if (j==0)
+            {
+                if (dataGridPagos.Columns.Count > 3)
+                {
+                    dataGridPagos.Columns[3].Visible = true;
+                    dataGridPagos.Columns[0].Width = dataGridPagos.Width * 20 / 100;
+                    dataGridPagos.Columns[1].Width = dataGridPagos.Width * 25 / 100;
+                    dataGridPagos.Columns[2].Width = dataGridPagos.Width * 25 / 100;
+                    dataGridPagos.Columns[3].Width = dataGridPagos.Width * 30 / 100;
+                    
+                }
+            }
+            else
+            {
+                if (dataGridPagos.Columns.Count > 2)
+                {
+                    dataGridPagos.Columns[3].Visible = false;
+                    dataGridPagos.Columns[0].Width = dataGridPagos.Width * 20 / 100;
+                    dataGridPagos.Columns[1].Width = dataGridPagos.Width * 25 / 100;
+                    dataGridPagos.Columns[2].Width = dataGridPagos.Width * 55 / 100;
+                    
+                }
+            }
+
+
+
+            
         }
+
 
         private void panelGastosI_Click(object sender, EventArgs e)
         {
@@ -2100,6 +2182,18 @@ namespace Presentacion
             dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
 
             facturaSelecionada = "GastosIV";
+        }
+
+        private void panelPagoGeneral_Click(object sender, EventArgs e)
+        {
+            if (panelPagoGeneral.Height == 71)
+            {
+                panelPagoGeneral.Height = 392;
+            }
+            else
+            {
+                panelPagoGeneral.Height = 71;
+            }
         }
 
         private void panelGastosV_Click(object sender, EventArgs e)
@@ -2270,83 +2364,81 @@ namespace Presentacion
         }
         private void FormCrearPago_Shown(object sender, EventArgs e)
         {
+            UserModel Read = new UserModel();
+            DataTable anticipo = Read.readAnticipo(PagosCache.numeroTramite);
 
             if (cerrarVentana)
             {
-                DialogResult result = MessageBox.Show(
-                "El tramite: " + PagosCache.numeroTramite.ToString("D5") +
-                "\nNo tiene facturas registradas" +
-                "\n\nDesea crear una factura asociada al trámite ?",
-                "Info",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information);
-
-                FormPrincipal formPrincipal = Owner as FormPrincipal;
-
-                if (result == DialogResult.Yes)
+                if (anticipo.Rows.Count <= 3)
                 {
-                    if (formPrincipal != null)
+                    DialogResult result = MessageBox.Show(
+                    "El tramite: " + PagosCache.numeroTramite.ToString("D5") +
+                    "\nNo tiene facturas registrados" +
+                    "\n\nDesea agregar un anticipo al trámite ?",
+                    "Info.",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
+
+
+
+                    if (result == DialogResult.No)
                     {
-                        FormCrearFactura formCrearFactura = new FormCrearFactura();
 
-                        formCrearFactura.txtBuscarTramite.Text = PagosCache.numeroTramite.ToString("D5");
+                        result = MessageBox.Show(
+                        "Desea agregar una factura al trámite?",
+                        "Info",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
 
-                        formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
-                        using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;
-                        formCrearFactura.txtBuscarTramite.ForeColor = Color.White;
-                        formCrearFactura.txtBuscarTramite.Enabled = false;
-
-                        UserModel Read = new UserModel();
-
-                        Read.searchRetenciones(TramiteCache.rucEmpresa);
-
-                        List<string> tipoFactura = new List<string>();
-                        List<string> tipoFacturaOtros = new List<string>();
-
-                        string[] array = Read.readTipoFactura(PagosCache.numeroTramite).ToArray();
-                        int indice = 0;
-
-                        for (int i = 0; i < array.Length; i++)
+                        if (result == DialogResult.Yes)
                         {
-                            if (array[i] == "Otros")
-                            {
-                                indice = i;
-                                break;
-                            }
+                            agregarFactura();
                         }
-
-                        for (int i = 0; i <= indice; i++)
+                        else
                         {
-                            tipoFactura.Add(array[i]);
+                            menuAnterior();
                         }
+                        
+                    }
+                    else
+                    {
 
-                        for (int i = indice + 1; i < array.Length; i++)
-                        {
-                            tipoFacturaOtros.Add(array[i]);
-                        }
+                        panelAnticipo.Visible = true;
+                        panelInfoPago.Visible = false;
+                        panelListaPagos.Visible = false;
 
-                        formCrearFactura.cmbTipoFactura.DataSource = tipoFactura;
-                        formCrearFactura.cmbOtros.DataSource = tipoFacturaOtros;
-
-
-                        formCrearFactura.readRetenciones();
-                        formCrearFactura.buscarEstaAbierta = false;
-
-                        formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                        formPrincipal.AddOwnedForm(formCrearFactura);
-                        formPrincipal.AbrirFormInPanel(formCrearFactura);
+                        dateAnticipo.Value = DateTime.Today;
                     }
                 }
                 else
                 {
-                    if (formPrincipal != null)
+                    double totAnticipo = 0;
+
+                    for (int i = 0; i < anticipo.Rows.Count; i++)
                     {
-                        FormOpcionesPagos formOpcionesPagos = new FormOpcionesPagos();
-                        formOpcionesPagos.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                        formPrincipal.AddOwnedForm(formOpcionesPagos);
-                        formPrincipal.AbrirFormInPanel(formOpcionesPagos);
+                        totAnticipo += double.Parse(anticipo.Rows[i]["Valor"].ToString());
+                    }
+
+                    DialogResult result = MessageBox.Show(
+                                    "El tramite: " + PagosCache.numeroTramite.ToString("D5") +
+                                    "\nRegistra un anticipo de " + 
+                                    totAnticipo.ToString("N2") +
+                                    "\n\nPero no registra facturas, desea ingresar una factura?",
+                                    "Info",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Information);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        agregarFactura();
+                    }
+                    else
+                    {
+                        menuAnterior();
                     }
                 }
+
+                
             }
 
             InterfaceCache.idImportaciones = 4;
@@ -2395,7 +2487,135 @@ namespace Presentacion
         }
 
 
-        
+        private void txtValAnticipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
+        }
+
+        private void btnAnticipo_Click(object sender, EventArgs e)
+        {
+            if (txtValAnticipo.Text != "")
+            {
+                UserModel Write = new UserModel();
+                string[] data = new string[5];
+
+                double anticipo = double.Parse(txtValAnticipo.Text);
+
+                DialogResult result = MessageBox.Show(
+                                      "Seguro desea realizar el anticipo de " +
+                                      double.Parse(txtValAnticipo.Text).ToString("N2") + 
+                                      " al trámite " + 
+                                      PagosCache.numeroTramite.ToString("D4"),
+                                      "Info.",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Exclamation
+                                      );
+                
+                if(result == DialogResult.Yes)
+                {
+                    data[0] = "Insert";
+                    data[1] = PagosCache.numeroTramite.ToString();
+                    data[2] = anticipo.ToString();
+                    data[3] = txtDetalleAnticipo.Text;
+                    data[4] = dateAnticipo.Value.ToString("yyyy-MM-dd");
+
+                    if (Write.InsertDataAnticipo(data))
+                    {
+                        MessageBox.Show("El anticipo fue realizado exitosamente.");
+                        menuAnterior();
+                    }
+                    else
+                    {
+                        MessageBox.Show("En estos momentos no se puede realizar el anticipo");
+                        menuAnterior();
+                    }
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(
+                                "El valor del anticipo no puede estar vacío",
+                                "Info.",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation
+                                );
+            }
+        }
+
+
+        private void menuAnterior()
+        {
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+            if (formPrincipal != null)
+            {
+                FormOpcionesPagos formOpcionesPagos = new FormOpcionesPagos();
+                formOpcionesPagos.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formOpcionesPagos);
+                formPrincipal.AbrirFormInPanel(formOpcionesPagos);
+            }
+        }
+
+        private void agregarFactura()
+        {
+            UserModel Read = new UserModel();
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+            if (formPrincipal != null)
+            {
+                FormCrearFactura formCrearFactura = new FormCrearFactura();
+
+                formCrearFactura.txtBuscarTramite.Text = PagosCache.numeroTramite.ToString("D5");
+
+                formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
+                using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;
+                formCrearFactura.txtBuscarTramite.ForeColor = Color.White;
+                formCrearFactura.txtBuscarTramite.Enabled = false;
+
+
+                Read.searchRetenciones(TramiteCache.rucEmpresa);
+
+                List<string> tipoFactura = new List<string>();
+                List<string> tipoFacturaOtros = new List<string>();
+
+                string[] array = Read.readTipoFactura(PagosCache.numeroTramite).ToArray();
+                int indice = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] == "Otros")
+                    {
+                        indice = i;
+                        break;
+                    }
+                }
+
+                for (int i = 0; i <= indice; i++)
+                {
+                    tipoFactura.Add(array[i]);
+                }
+
+                for (int i = indice + 1; i < array.Length; i++)
+                {
+                    tipoFacturaOtros.Add(array[i]);
+                }
+
+                formCrearFactura.cmbTipoFactura.DataSource = tipoFactura;
+                formCrearFactura.cmbOtros.DataSource = tipoFacturaOtros;
+
+
+                formCrearFactura.readRetenciones();
+                formCrearFactura.buscarEstaAbierta = false;
+
+                formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formCrearFactura);
+                formPrincipal.AbrirFormInPanel(formCrearFactura);
+            }
+        }
+
+
         private void BtnAgregarAbono_Click(object sender, EventArgs e)
         {
             if (txtAbonoFactura.Text != "")
@@ -2404,7 +2624,7 @@ namespace Presentacion
                 {
                     UserModel Write = new UserModel();
 
-                    string[] data = new string[7];
+                    string[] data = new string[8];
                     
                     double abono = double.Parse(txtAbonoFactura.Text);
                     double valorAPagar = double.Parse(txtValorCobrar.Text);
@@ -2427,6 +2647,16 @@ namespace Presentacion
                             data[4] = dateFactura.Value.ToString("yyyy-MM-dd");
                             data[5] = txtDetalleAbono.Text;
                             data[6] = txtnFactura.Text;
+                            
+                            if (facturaSelecionada == "Agente")
+                            {
+                                data[7] = cmbDestinoPago.Text;
+                            }
+                            else
+                            {
+                                data[7] = "";
+                            }
+                            
 
                             if (Write.InsertDataPago(data))
                             {
@@ -2478,9 +2708,10 @@ namespace Presentacion
                 if (txtAbonoPagoGeneral.Text != "")
                 {
                     double pago = 0;
+                    double saldo = 0;
 
                     bool haySaldo = false;
-
+                    bool noEntrar = false;
 
                     if (txtAbonoPagoGeneral.Text != ",")
                     {
@@ -2489,7 +2720,7 @@ namespace Presentacion
 
                     UserModel Write = new UserModel();
 
-                    string[] data = new string[7];
+                    string[] data = new string[8];
 
 
                     if (Math.Round(pago, 2) > Math.Round(totPago, 2))
@@ -2500,125 +2731,157 @@ namespace Presentacion
                         haySaldo = true;
                     }
 
-
-                    for (int i = 0; i < listas.Count; i++)
+                    if (agenteSeleccionado && cmbDestinoPagoGL.Text == "")
                     {
-                        if (pago > 0)
+                        MessageBox.Show("Ha seleccioado un pago a un agente\n" +
+                                        "Por favor, ingrese el destino pago",
+                                        "Ingreso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                        lblDestinoPagoPG.ForeColor = Color.FromArgb(187, 42, 89);
+                        cmbDestinoPagoGL.Focus();
+                    }
+                    else
+                    {
+                        for (int i = 0; i < listas.Count; i++)
                         {
-                            if (checkListFacturas.CheckedItems.Count > 0)
+                            if (pago > 0)
                             {
-                                foreach (var item in checkListFacturas.CheckedItems)
+                                if (checkListFacturas.CheckedItems.Count > 0)
                                 {
-                                    var row = (item as DataRowView).Row;
-                                    string idF = row.Field<string>("Tipo_Factura");
-                                    double valCob = row.Field<double>("ValorACobrarFactura");
-                                    string nFactura = row.Field<string>("Numero_Factura");
-
-                                    if (nFactura == listas[i][1].ToString())
+                                    foreach (var item in checkListFacturas.CheckedItems)
                                     {
-                                        double valorFactura = Math.Round(Double.Parse(listas[i][7].ToString()), 2);
+                                        var row = (item as DataRowView).Row;
+                                        string idF = row.Field<string>("Tipo_Factura");
+                                        double valCob = row.Field<double>("ValorACobrarFactura");
+                                        string nFactura = row.Field<string>("Numero_Factura");
 
-                                        if (valorFactura > 0)
+                                        if (nFactura == listas[i][1].ToString())
                                         {
-                                            if (pago > valorFactura)
+                                            double valorFactura = Math.Round(Double.Parse(listas[i][7].ToString()), 2);
+                                            MessageBox.Show("Pago: " + valorFactura.ToString());
+                                            if (valorFactura > 0)
                                             {
-                                                data[3] = (Math.Round(valorFactura, 2)).ToString();
-                                                pago -= valorFactura;
+                                                if (pago > valorFactura)
+                                                {
+                                                    data[3] = (Math.Round(valorFactura, 2)).ToString();
+                                                    pago -= valorFactura;
+                                                }
+                                                else
+                                                {
+                                                    data[3] = (Math.Round(pago, 2)).ToString();
+                                                    saldo = pago; 
+                                                    pago = 0;
+                                                    
+                                                }
+
+
+                                                data[0] = "Insert";
+                                                data[1] = "0";
+                                                data[2] = "0";
+                                                data[4] = dateFactura.Value.ToString("yyyy-MM-dd");
+                                                data[5] = txtDetallePagoGeneral.Text;
+                                                data[6] = listas[i][1].ToString();
+                                                data[7] = cmbDestinoPagoGL.Text; 
+
+                                                if (Write.InsertDataPago(data))
+                                                {
+                                                    readTramite();
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("FALLÓ el pago");
+                                                    noEntrar = true; 
+                                                }
+                                                
+                                                break;
                                             }
                                             else
                                             {
-                                                data[3] = (Math.Round(pago, 2)).ToString();
-                                                pago = 0;
+                                                MessageBox.Show("La factura ya ha sido pagada");
+                                                noEntrar = true;
                                             }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    double valorFactura = Math.Round(Double.Parse(listas[i][7].ToString()), 2);
 
+                                    if (valorFactura > 0)
+                                    {
+                                        if (pago > valorFactura)
+                                        {
+                                            data[3] = (Math.Round(valorFactura, 2)).ToString();
+                                            pago -= valorFactura;
+                                        }
+                                        else
+                                        {
+                                            data[3] = (Math.Round(pago, 2)).ToString();
+                                            saldo = pago;
+                                            pago = 0;
+                                        }
 
+                                        data[0] = "Insert";
+                                        data[1] = "0";
+                                        data[2] = "0";
+                                        data[4] = dateFactura.Value.ToString("yyyy-MM-dd");
+                                        data[5] = txtDetallePagoGeneral.Text;
+                                        data[6] = listas[i][1].ToString();
+                                        data[7] = cmbDestinoPagoGL.Text;
 
-                                            data[0] = "Insert";
-                                            data[1] = "0";
-                                            data[2] = "0";
-                                            data[4] = dateFactura.Value.ToString("yyyy-MM-dd");
-                                            data[5] = txtDetallePagoGeneral.Text;
-                                            data[6] = listas[i][1].ToString();
-
-                                            if (Write.InsertDataPago(data))
-                                            {
-                                                readTramite();
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("FALLÓ el pago");
-                                            }
-
-                                            break;
+                                        if (Write.InsertDataPago(data))
+                                        {
+                                            readTramite();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("FALLÓ el pago");
                                         }
                                     }
                                 }
                             }
                             else
                             {
-                                double valorFactura = Math.Round(Double.Parse(listas[i][7].ToString()), 2);
-
-                                if (valorFactura > 0)
-                                {
-                                    if (pago > valorFactura)
-                                    {
-                                        data[3] = (Math.Round(valorFactura, 2)).ToString();
-                                        pago -= valorFactura;
-                                    }
-                                    else
-                                    {
-                                        data[3] = (Math.Round(pago, 2)).ToString();
-                                        pago = 0;
-                                    }
-
-
-
-                                    data[0] = "Insert";
-                                    data[1] = "0";
-                                    data[2] = "0";
-                                    data[4] = dateFactura.Value.ToString("yyyy-MM-dd");
-                                    data[5] = txtDetallePagoGeneral.Text;
-                                    data[6] = listas[i][1].ToString();
-
-                                    if (Write.InsertDataPago(data))
-                                    {
-                                        readTramite();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("FALLÓ el pago");
-                                    }
-                                }
+                                haySaldo = false;
+                                MessageBox.Show("Pago: " + saldo.ToString() );
+                                break;
                             }
                         }
-                        else
+                        if ((pago > 0 || saldo > 0) && haySaldo == false && !noEntrar)
                         {
-                            break;
+
+                            string[] dataSaldo = new string[5];
+
+                            dataSaldo[0] = "Insert";
+                            dataSaldo[1] = "0";
+                            if (Math.Round(pago, 2) != 0)
+                            {
+                                dataSaldo[2] = (Math.Round(pago, 2)).ToString();
+                                MessageBox.Show("Entro a pago");
+                            }
+                            else
+                            {
+                                dataSaldo[2] = (Math.Round(saldo, 2)).ToString();
+                                MessageBox.Show("Entro a saldo");
+                            }
+                            dataSaldo[3] = datePagoGeneral.Value.ToString("yyyy-MM-dd");
+                            dataSaldo[4] = PagosCache.numeroTramite.ToString();
+                            Write.InsertDataSaldo(dataSaldo);
+
+                            saldCliente = Write.saldoTramite(PagosCache.numeroTramite);
+                            lblSaldoCliente.Text = "Saldo Cliente: " + saldCliente.ToString("N2");
                         }
+
+                        bool state = false;
+
+                        for (int i = 0; i < checkListFacturas.Items.Count; i++)
+                            checkListFacturas.SetItemCheckState(i, (state ? CheckState.Checked : CheckState.Unchecked));
+
+                        totalFacturas = 0; 
+                        lblTotalFacturas.Text = "Total Facturas:   $" + totalFacturas.ToString("N2");
                     }
-                    if (pago > 0 || haySaldo == false)
-                    {
-
-                        string[] dataSaldo = new string[5];
-
-
-                        dataSaldo[0] = "Insert";
-                        dataSaldo[1] = "0";
-                        dataSaldo[2] = (Math.Round(pago, 2)).ToString();
-                        dataSaldo[3] = datePagoGeneral.Value.ToString("yyyy-MM-dd");
-                        dataSaldo[4] = PagosCache.numeroTramite.ToString();
-                        Write.InsertDataSaldo(dataSaldo);
-
-                        saldCliente = Write.saldoTramite(PagosCache.numeroTramite);
-                        lblSaldoCliente.Text = "Saldo Cliente: " + saldCliente.ToString("N2");
-                    }
-
-                    bool state = false; 
-
-                    for (int i = 0; i < checkListFacturas.Items.Count; i++)
-                        checkListFacturas.SetItemCheckState(i, (state ? CheckState.Checked : CheckState.Unchecked));
-
-
                 }
             }
             else
@@ -2630,9 +2893,7 @@ namespace Presentacion
                                     MessageBoxIcon.Information);
                 lineFacturas.BorderColor = Color.FromArgb(205, 92, 92);
                 lblFacturas.ForeColor = Color.FromArgb(205, 92, 92);
-            }
-            
-            
+            } 
         }  
     }
 }

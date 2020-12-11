@@ -117,13 +117,37 @@ namespace Presentacion
 
             FormPrincipal formPrincipal = Owner as FormPrincipal;
 
-            if (formPrincipal != null)
+            switch (cmbTipoDocumento.Text)
             {
-                FormCrearComisionNV formCrearComisionNV = new FormCrearComisionNV();
-                formCrearComisionNV.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                formPrincipal.AddOwnedForm(formCrearComisionNV);
-                formPrincipal.AbrirFormInPanel(formCrearComisionNV);
+                case "Nota de Venta":
+                    if (formPrincipal != null)
+                    {
+                        FormCrearComisionNV formCrearComisionNV = new FormCrearComisionNV();
+                        formCrearComisionNV.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                        formPrincipal.AddOwnedForm(formCrearComisionNV);
+                        formPrincipal.AbrirFormInPanel(formCrearComisionNV);
+                    }
+                    break;
+
+                case "Factura":
+                    if (formPrincipal != null)
+                    {
+                        FormCrearComisionFactura formCrearComisionFactura = new FormCrearComisionFactura();
+                        formCrearComisionFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                        formPrincipal.AddOwnedForm(formCrearComisionFactura);
+                        formPrincipal.AbrirFormInPanel(formCrearComisionFactura);
+                    }
+                    break;
+
+                default:
+                    break;
             }
+
+        }
+
+        private void FormPreCrearComision_Shown(object sender, EventArgs e)
+        {
+            InterfaceCache.idImportaciones = 5;
         }
 
         private void maximizar_Click(object sender, EventArgs e)

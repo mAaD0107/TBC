@@ -397,19 +397,19 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="lineShape3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 251, 170, 0</value>
+    <value>21, 296, 170, 0</value>
   </metadata>
   <metadata name="lineShape3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 251</value>
+    <value>21, 296</value>
   </metadata>
   <metadata name="lineShape3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>170, 0</value>
   </metadata>
   <metadata name="lineFacturas.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 232, 119, 0</value>
+    <value>215, 277, 119, 0</value>
   </metadata>
   <metadata name="lineFacturas.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 232</value>
+    <value>215, 277</value>
   </metadata>
   <metadata name="lineFacturas.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>119, 0</value>
@@ -423,66 +423,50 @@
   <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>298, 0</value>
   </metadata>
-  <metadata name="lineFacturas.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 232, 119, 0</value>
-  </metadata>
-  <metadata name="lineFacturas.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 232</value>
-  </metadata>
-  <metadata name="lineFacturas.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>119, 0</value>
-  </metadata>
-  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="lineShape6.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>7, 45, 298, 0</value>
   </metadata>
-  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="lineShape6.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>7, 45</value>
   </metadata>
-  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="lineShape6.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 0</value>
+  </metadata>
+  <metadata name="lineShape6.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>7, 45, 298, 0</value>
+  </metadata>
+  <metadata name="lineShape6.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>7, 45</value>
+  </metadata>
+  <metadata name="lineShape6.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>298, 0</value>
   </metadata>
   <data name="porcentajePago.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -573,7 +557,7 @@
     <value>202, 95</value>
   </metadata>
   <metadata name="redondeoAbonoGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>749, 17</value>
+    <value>842, 11</value>
   </metadata>
   <metadata name="redondeoPagoGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>559, 173</value>
@@ -596,16 +580,13 @@
   <metadata name="redondeoPanelTransporteIII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>413, 212</value>
   </metadata>
-  <metadata name="lineShape3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 251, 170, 0</value>
+  <metadata name="redondeoPanelAnticipo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>662, 14</value>
   </metadata>
-  <metadata name="lineShape3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 251</value>
-  </metadata>
-  <metadata name="lineShape3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>170, 0</value>
+  <metadata name="redondeoBtnAnticipo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>740, 212</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>58</value>
+    <value>92</value>
   </metadata>
 </root>

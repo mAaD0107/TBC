@@ -48,7 +48,14 @@ namespace Presentacion
 
         private void callBuscarComisiones()
         {
-
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+            if (formPrincipal != null)
+            {
+                FormElaborarInforme formElaborarInforme = new FormElaborarInforme();
+                formElaborarInforme.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formElaborarInforme);
+                formPrincipal.AbrirFormInPanel(formElaborarInforme);
+            }
         }
 
         private void panelBuscar_Enter(object sender, EventArgs e)
@@ -56,6 +63,11 @@ namespace Presentacion
             lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
             lblBuscar.ForeColor = Color.FromArgb(185, 209, 234);
             lblEditar.ForeColor = Color.FromArgb(185, 209, 234);
+        }
+
+        private void FormOpcionesComisiones_Shown(object sender, EventArgs e)
+        {
+            InterfaceCache.idImportaciones = 1;
         }
     }
 }

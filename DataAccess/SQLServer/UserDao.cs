@@ -216,6 +216,30 @@ namespace DataAccess
             }
         }
 
+
+        public DataTable readAnticipo(int nTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchAnticipo";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
         public DataTable readTramitesComisionFactura(string[] values)
         {
             DataTable table = new DataTable();
@@ -288,8 +312,35 @@ namespace DataAccess
 
                 }
             }
-
         }
+
+
+
+        public int readIDInformes()
+        {
+            DataTable ID = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT IDENT_CURRENT('Informes') as IDInforme";
+                    command.CommandType = CommandType.Text;
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    ID.Load(reader);
+
+                    return Int32.Parse(ID.Rows[0]["IDInforme"].ToString());
+
+                }
+            }
+        }
+
+
+
         public List<string> readTipoFactura(int nTramite)
         {
             DataTable table = new DataTable();
@@ -443,6 +494,69 @@ namespace DataAccess
         }
 
 
+        public DataTable informeTBC()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "informeTBC";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable informeLDM()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "informeLDM";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable comisionLDM()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "comisionLDM";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
         public DataTable readIVA()
         {
             DataTable table = new DataTable();
@@ -568,6 +682,67 @@ namespace DataAccess
             }
         }
 
+        public DataTable getFacturas(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getFacturas";
+                    command.Parameters.AddWithValue("@idTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getInfoTramite(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getInfoTramite";
+                    command.Parameters.AddWithValue("@idTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable seacrhComisiones(int idTramiite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readComision";
+                    command.Parameters.AddWithValue("@idTramite", idTramiite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
         public double saldoTramite(int numeroTramite)
         {
             DataTable table = new DataTable();
@@ -662,7 +837,6 @@ namespace DataAccess
 
         public bool insertDataClient(string [] values)
         {
-            int retorno = 0;
             using (var connection = GetSqlConnection())
             {
                 try
@@ -785,7 +959,7 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@Referencia", values[73]);
 
 
-                        retorno = command.ExecuteNonQuery();
+                        int retorno = command.ExecuteNonQuery();
 
                         if (retorno != 0)
                         {
@@ -810,7 +984,6 @@ namespace DataAccess
 
         public bool insertDataProveedor(string[] values)
         {
-            int retorno = 0;
             using (var connection = GetSqlConnection())
             {
                 try
@@ -930,7 +1103,7 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@REFERENCIA", values[76]);
 
 
-                        retorno = command.ExecuteNonQuery();
+                        int retorno = command.ExecuteNonQuery();
 
                         if (retorno != 0)
                         {
@@ -957,7 +1130,6 @@ namespace DataAccess
 
         public bool insertDataTramite(string[] values)
         {
-            int retorno = 0;
             using (var connection = GetSqlConnection())
             {
                 try
@@ -998,7 +1170,7 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@Forwarder3", values[23]);
                         command.Parameters.AddWithValue("@ComentariosAgregar", values[24]);
 
-                        retorno = command.ExecuteNonQuery();
+                        int retorno = command.ExecuteNonQuery();
 
                         if (retorno != 0)
                         {
@@ -1023,7 +1195,6 @@ namespace DataAccess
 
         public bool insertDataFactura(string[] values)
         {
-            int retorno = 0;
             using (var connection = GetSqlConnection())
             {
                 try
@@ -1066,7 +1237,108 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@Comentarios", values[25]);
 
 
-                        retorno = command.ExecuteNonQuery();
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
+        public bool InsertDataFacturaComision(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyFacturaComision";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@Empresa", values[1]);
+                        command.Parameters.AddWithValue("@Numero_Factura_Comision", values[2]);
+                        command.Parameters.AddWithValue("@Agente", values[3]);
+                        command.Parameters.AddWithValue("@Comision", double.Parse(values[4]));
+                        command.Parameters.AddWithValue("@Total_Factura", double.Parse(values[5]));
+                        command.Parameters.AddWithValue("@Porcentaje_IVA", double.Parse(values[6]));
+                        command.Parameters.AddWithValue("@Valor_IVA", double.Parse(values[7]));
+                        command.Parameters.AddWithValue("@Numero_Retencion", values[8]);
+                        command.Parameters.AddWithValue("@Porcentaje_Ret_Renta", double.Parse(values[9]));
+                        command.Parameters.AddWithValue("@Valor_Ret_Renta", double.Parse(values[10]));
+                        command.Parameters.AddWithValue("@Porcentaje_Ret_IVA", double.Parse(values[11]));
+                        command.Parameters.AddWithValue("@Valor_Ret_IVA", double.Parse(values[12]));
+                        command.Parameters.AddWithValue("@Total_Retencion", double.Parse(values[13]));
+                        command.Parameters.AddWithValue("@Valor_a_Cobrar", double.Parse(values[14]));
+                        command.Parameters.AddWithValue("@idTramite", double.Parse(values[15]));
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
+
+        public bool InsertDataNotaVentaComision(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyNotaVentaComision";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@Nombre", values[1]);
+                        command.Parameters.AddWithValue("@Numero_NV", values[2]);
+                        command.Parameters.AddWithValue("@Comision", double.Parse(values[3]));
+                        command.Parameters.AddWithValue("@Subtotal", double.Parse(values[4]));
+                        command.Parameters.AddWithValue("@idTramite", double.Parse(values[5]));
+
+                        int retorno = command.ExecuteNonQuery();
 
                         if (retorno != 0)
                         {
@@ -1111,6 +1383,7 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@FechaPago", values[4]);
                         command.Parameters.AddWithValue("@DetallePago", values[5]);
                         command.Parameters.AddWithValue("@idFactura", values[6]);
+                        command.Parameters.AddWithValue("@destinoPago", values[7]);
 
 
                         int retorno = command.ExecuteNonQuery();
@@ -1133,6 +1406,52 @@ namespace DataAccess
                 }
             }
         }
+
+
+        public bool insertDataAnticipo(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyAnticipo";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idTramiteAnticipo", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@Valor", double.Parse(values[2]));
+                        command.Parameters.AddWithValue("@Detalle", values[3]);
+                        command.Parameters.AddWithValue("@Fecha", values[4]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
 
 
         public bool insertDataSaldo(string[] values)
@@ -1178,6 +1497,61 @@ namespace DataAccess
                 }
             }
         }
+
+
+
+
+        public bool insertInforme(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyInforme";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idInforme", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@codigoInforme", values[2]);
+                        command.Parameters.AddWithValue("@ClienteTramite", values[3]);
+                        command.Parameters.AddWithValue("@DAI", values[4]);
+                        command.Parameters.AddWithValue("@SecuencialCliente", values[5]);
+                        command.Parameters.AddWithValue("@NFacturaLDM", values[6]);
+                        command.Parameters.AddWithValue("@SubTotalLDM", double.Parse(values[7]));
+                        command.Parameters.AddWithValue("@PersonaComision", values[8]);
+                        command.Parameters.AddWithValue("@ValorComision", double.Parse(values[9]));
+                        command.Parameters.AddWithValue("@PersonasComisionExtra", values[10]);
+                        command.Parameters.AddWithValue("@ValorComisionExtra", double.Parse(values[11]));
+                        command.Parameters.AddWithValue("@idTramite", int.Parse(values[12]));
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
 
 
         public bool searchRUC(string RUC)
@@ -1312,6 +1686,96 @@ namespace DataAccess
 
             }
         }
+
+
+        public bool searchFacturaComision(string nfactura)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select *from ComisionFactura where Numero_Factura_Comision=@nfactura";
+                        command.Parameters.AddWithValue("@nfactura", nfactura);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (SqlException)
+                {
+
+                    DialogResult result = MessageBox.Show(
+                        "Se perdio conexión con el Servidor",
+                        "ALERTA",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                        );
+
+                    return false;
+                }
+            }
+        }
+
+
+        public bool searchNotaVentaComision(string nfactura)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select *from ComisionNotaVenta where Numero_NV=@nfactura";
+                        command.Parameters.AddWithValue("@nfactura", nfactura);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (SqlException)
+                {
+
+                     MessageBox.Show(
+                        "Se perdio conexión con el Servidor  ",
+                        "ALERTA",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                        );
+
+                    return false;
+                }
+
+
+            }
+        }
+
+
+
+
 
 
         public bool searchIVA(string IVA)
@@ -1467,6 +1931,7 @@ namespace DataAccess
             {
 
             }
+
 
         }
     }

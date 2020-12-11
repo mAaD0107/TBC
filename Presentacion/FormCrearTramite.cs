@@ -92,8 +92,8 @@ namespace Presentacion
             clientes = Read.readClients();
 
             cmbEmpresa.DataSource = clientes;
-            cmbEmpresa.DisplayMember = "Nombre_Empresa";
-            cmbEmpresa.ValueMember = "Nombre_Empresa";
+            cmbEmpresa.DisplayMember = "NombreEmpresa";
+            cmbEmpresa.ValueMember = "NombreEmpresa";
 
             cargarRUCCliente();
         }

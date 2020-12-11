@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -42,7 +42,7 @@
             this.btnConfigurar = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
-            this.btnPagos = new System.Windows.Forms.Button();
+            this.btnExportaciones = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnImportaciones = new System.Windows.Forms.Button();
             this.btnTramites = new System.Windows.Forms.Button();
@@ -165,7 +165,7 @@
             this.panelMenuVertical.Controls.Add(this.btnConfigurar);
             this.panelMenuVertical.Controls.Add(this.btnLogOut);
             this.panelMenuVertical.Controls.Add(this.btnInicio);
-            this.panelMenuVertical.Controls.Add(this.btnPagos);
+            this.panelMenuVertical.Controls.Add(this.btnExportaciones);
             this.panelMenuVertical.Controls.Add(this.btnReportes);
             this.panelMenuVertical.Controls.Add(this.btnImportaciones);
             this.panelMenuVertical.Controls.Add(this.btnTramites);
@@ -257,24 +257,24 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
-            // btnPagos
+            // btnExportaciones
             // 
-            this.animacionPanel.SetDecoration(this.btnPagos, BunifuAnimatorNS.DecorationType.None);
-            this.btnPagos.FlatAppearance.BorderSize = 0;
-            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagos.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPagos.Image = ((System.Drawing.Image)(resources.GetObject("btnPagos.Image")));
-            this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagos.Location = new System.Drawing.Point(0, 239);
-            this.btnPagos.Name = "btnPagos";
-            this.btnPagos.Size = new System.Drawing.Size(250, 45);
-            this.btnPagos.TabIndex = 4;
-            this.btnPagos.Text = "   Exportaciones";
-            this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPagos.UseVisualStyleBackColor = true;
-            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
+            this.animacionPanel.SetDecoration(this.btnExportaciones, BunifuAnimatorNS.DecorationType.None);
+            this.btnExportaciones.FlatAppearance.BorderSize = 0;
+            this.btnExportaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnExportaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportaciones.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExportaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnExportaciones.Image")));
+            this.btnExportaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportaciones.Location = new System.Drawing.Point(0, 239);
+            this.btnExportaciones.Name = "btnExportaciones";
+            this.btnExportaciones.Size = new System.Drawing.Size(250, 45);
+            this.btnExportaciones.TabIndex = 4;
+            this.btnExportaciones.Text = "   Exportaciones";
+            this.btnExportaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportaciones.UseVisualStyleBackColor = true;
+            this.btnExportaciones.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnReportes
             // 
@@ -436,22 +436,22 @@
             // 
             this.animacionPanel.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animacionPanel.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 1F;
-            this.animacionPanel.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.animacionPanel.DefaultAnimation = animation1;
             this.animacionPanel.Interval = 2;
             // 
             // panelGlobal
@@ -547,7 +547,7 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnImportaciones;
         private System.Windows.Forms.Button btnTramites;
-        private System.Windows.Forms.Button btnPagos;
+        private System.Windows.Forms.Button btnExportaciones;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnConfigurar;
         private System.Windows.Forms.Button btnLogOut;

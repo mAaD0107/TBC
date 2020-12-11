@@ -62,9 +62,24 @@ namespace Domain
             return userDao.readAbonoFactura(nFactura);
         }
 
+        public DataTable informeTBC()
+        {
+            return userDao.informeTBC();
+        }
+
+        public DataTable informeLDM()
+        {
+            return userDao.informeLDM();
+        }
+
         public int readIDTramiteImport()
         {
             return userDao.readIDTramitesImport();
+        }
+
+        public int readIDInformes()
+        {
+            return userDao.readIDInformes();
         }
 
         public DataTable readIVA()
@@ -97,6 +112,12 @@ namespace Domain
             return userDao.searchTramiteImport(data);
         }
 
+        public DataTable seacrhComisiones(int idTramite)
+        {
+            return userDao.seacrhComisiones(idTramite);
+        }
+
+
         public double saldoTramite(int nTramite)
         {
             return userDao.saldoTramite(nTramite);
@@ -119,6 +140,11 @@ namespace Domain
         public DataTable readTramitesComision()
         {
             return userDao.readTramitesComision();
+        }
+
+        public DataTable readAnticipo(int nTramite)
+        {
+            return userDao.readAnticipo(nTramite);
         }
 
         public DataTable readTramitesComisionFactura(string[] values)
@@ -152,9 +178,24 @@ namespace Domain
             return userDao.insertDataFactura(values);
         }
 
+        public bool InsertDataFacturaComision(string[] values)
+        {
+            return userDao.InsertDataFacturaComision(values);
+        }
+
+        public bool InsertDataNotaVentaComision(string[] values)
+        {
+            return userDao.InsertDataNotaVentaComision(values);
+        }
+
         public bool InsertDataPago(string[] values)
         {
             return userDao.insertDataPago(values);
+        }
+
+        public bool InsertDataAnticipo(string[] values)
+        {
+            return userDao.insertDataAnticipo(values);
         }
 
         public bool InsertDataSaldo(string[] values)
@@ -162,7 +203,10 @@ namespace Domain
             return userDao.insertDataSaldo(values);
         }
 
-
+        public bool InsertInforme(string[] values)
+        {
+            return userDao.insertInforme(values);
+        }
 
         public bool searchRUC(string RUC)
         {
@@ -177,6 +221,16 @@ namespace Domain
         public bool searchNFactura(string nfactura)
         {
             return userDao.searchNFactura(nfactura);
+        }
+
+        public bool searchFacturaComision(string nfactura)
+        {
+            return userDao.searchFacturaComision(nfactura);
+        }
+
+        public bool searchNotaVentaComision(string nfactura)
+        {
+            return userDao.searchNotaVentaComision(nfactura);
         }
 
         public bool searchIVA(string IVA)

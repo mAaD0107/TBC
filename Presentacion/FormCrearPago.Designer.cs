@@ -30,15 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearPago));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelPropiedades = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.Label();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.panelInfoPago = new System.Windows.Forms.Panel();
             this.PanelAbonoAgente = new System.Windows.Forms.Panel();
+            this.cmbDestinoPago = new System.Windows.Forms.ComboBox();
+            this.lblDestinopago = new System.Windows.Forms.Label();
             this.dateFactura = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDetalleAbono = new System.Windows.Forms.TextBox();
@@ -68,8 +70,8 @@
             this.PanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.panelPagoCompleto = new System.Windows.Forms.Panel();
             this.panelListaPagos = new System.Windows.Forms.Panel();
-            this.dataGridPagos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label18 = new System.Windows.Forms.Label();
+            this.dataGridPagos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panelContenedorPagos = new System.Windows.Forms.Panel();
             this.panelPagos = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSeparador = new System.Windows.Forms.Panel();
@@ -223,6 +225,10 @@
             this.lblnFacturaTransporteIII = new System.Windows.Forms.Label();
             this.lblEmpresaTransporteIII = new System.Windows.Forms.Label();
             this.panelPagoGeneral = new System.Windows.Forms.Panel();
+            this.cmbDestinoPagoGL = new System.Windows.Forms.ComboBox();
+            this.lblDestinoPagoPG = new System.Windows.Forms.Label();
+            this.checkListFacturas = new System.Windows.Forms.CheckedListBox();
+            this.lblTotalFacturas = new System.Windows.Forms.Label();
             this.lblFacturas = new System.Windows.Forms.Label();
             this.datePagoGeneral = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -233,8 +239,20 @@
             this.txtAbonoPagoGeneral = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineFacturas = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelAnticipo = new System.Windows.Forms.Panel();
+            this.dateAnticipo = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btnAnticipo = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtDetalleAnticipo = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtValAnticipo = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelTituloForm = new System.Windows.Forms.Panel();
             this.lblTituloP = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
@@ -275,9 +293,8 @@
             this.redondeoPanelTransporteI = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelTransporteII = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelTransporteIII = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lblTotalFacturas = new System.Windows.Forms.Label();
-            this.checkListFacturas = new System.Windows.Forms.CheckedListBox();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.redondeoPanelAnticipo = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoBtnAnticipo = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelInfoPago.SuspendLayout();
@@ -338,6 +355,7 @@
             this.panelTransporteIII.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panelPagoGeneral.SuspendLayout();
+            this.panelAnticipo.SuspendLayout();
             this.panelTituloForm.SuspendLayout();
             this.panelTotal.SuspendLayout();
             this.SuspendLayout();
@@ -407,7 +425,7 @@
             this.panelInfoPago.Controls.Add(this.txtnRetencion);
             this.panelInfoPago.Location = new System.Drawing.Point(15, 1);
             this.panelInfoPago.Name = "panelInfoPago";
-            this.panelInfoPago.Size = new System.Drawing.Size(451, 552);
+            this.panelInfoPago.Size = new System.Drawing.Size(451, 601);
             this.panelInfoPago.TabIndex = 38;
             this.panelInfoPago.Resize += new System.EventHandler(this.panelInfoPago_Resize);
             // 
@@ -416,23 +434,59 @@
             this.PanelAbonoAgente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelAbonoAgente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
+            this.PanelAbonoAgente.Controls.Add(this.cmbDestinoPago);
+            this.PanelAbonoAgente.Controls.Add(this.lblDestinopago);
             this.PanelAbonoAgente.Controls.Add(this.dateFactura);
             this.PanelAbonoAgente.Controls.Add(this.label3);
             this.PanelAbonoAgente.Controls.Add(this.txtDetalleAbono);
             this.PanelAbonoAgente.Controls.Add(this.label2);
             this.PanelAbonoAgente.Controls.Add(this.txtAbonoFactura);
             this.PanelAbonoAgente.Controls.Add(this.label1);
-            this.PanelAbonoAgente.Location = new System.Drawing.Point(0, 343);
+            this.PanelAbonoAgente.Location = new System.Drawing.Point(0, 340);
             this.PanelAbonoAgente.Name = "PanelAbonoAgente";
-            this.PanelAbonoAgente.Size = new System.Drawing.Size(435, 141);
+            this.PanelAbonoAgente.Size = new System.Drawing.Size(448, 188);
             this.PanelAbonoAgente.TabIndex = 37;
+            // 
+            // cmbDestinoPago
+            // 
+            this.cmbDestinoPago.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDestinoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.cmbDestinoPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbDestinoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDestinoPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbDestinoPago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDestinoPago.ForeColor = System.Drawing.Color.Transparent;
+            this.cmbDestinoPago.FormattingEnabled = true;
+            this.cmbDestinoPago.Items.AddRange(new object[] {
+            "TBC",
+            "LDM"});
+            this.cmbDestinoPago.Location = new System.Drawing.Point(135, 145);
+            this.cmbDestinoPago.Margin = new System.Windows.Forms.Padding(1);
+            this.cmbDestinoPago.Name = "cmbDestinoPago";
+            this.cmbDestinoPago.Size = new System.Drawing.Size(297, 25);
+            this.cmbDestinoPago.TabIndex = 74;
+            this.cmbDestinoPago.Visible = false;
+            // 
+            // lblDestinopago
+            // 
+            this.lblDestinopago.AutoSize = true;
+            this.lblDestinopago.BackColor = System.Drawing.Color.Transparent;
+            this.lblDestinopago.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestinopago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblDestinopago.Location = new System.Drawing.Point(17, 145);
+            this.lblDestinopago.Name = "lblDestinopago";
+            this.lblDestinopago.Size = new System.Drawing.Size(102, 18);
+            this.lblDestinopago.TabIndex = 73;
+            this.lblDestinopago.Text = "Destino Pago:";
+            this.lblDestinopago.Visible = false;
             // 
             // dateFactura
             // 
             this.dateFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.dateFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dateFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.dateFactura.BorderRadius = 0;
             this.dateFactura.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFactura.ForeColor = System.Drawing.Color.LightGray;
@@ -441,7 +495,7 @@
             this.dateFactura.Location = new System.Drawing.Point(132, 98);
             this.dateFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateFactura.Name = "dateFactura";
-            this.dateFactura.Size = new System.Drawing.Size(287, 33);
+            this.dateFactura.Size = new System.Drawing.Size(300, 33);
             this.dateFactura.TabIndex = 72;
             this.dateFactura.Value = new System.DateTime(2020, 9, 15, 10, 48, 13, 902);
             // 
@@ -468,7 +522,7 @@
             this.txtDetalleAbono.Location = new System.Drawing.Point(132, 44);
             this.txtDetalleAbono.Multiline = true;
             this.txtDetalleAbono.Name = "txtDetalleAbono";
-            this.txtDetalleAbono.Size = new System.Drawing.Size(287, 47);
+            this.txtDetalleAbono.Size = new System.Drawing.Size(300, 47);
             this.txtDetalleAbono.TabIndex = 70;
             // 
             // label2
@@ -493,7 +547,7 @@
             this.txtAbonoFactura.ForeColor = System.Drawing.Color.LightGray;
             this.txtAbonoFactura.Location = new System.Drawing.Point(132, 13);
             this.txtAbonoFactura.Name = "txtAbonoFactura";
-            this.txtAbonoFactura.Size = new System.Drawing.Size(287, 19);
+            this.txtAbonoFactura.Size = new System.Drawing.Size(300, 19);
             this.txtAbonoFactura.TabIndex = 68;
             this.txtAbonoFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbonoFactura_KeyPress);
             // 
@@ -519,7 +573,7 @@
             this.BtnAgregarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarAbono.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarAbono.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnAgregarAbono.Location = new System.Drawing.Point(147, 492);
+            this.BtnAgregarAbono.Location = new System.Drawing.Point(147, 540);
             this.BtnAgregarAbono.Name = "BtnAgregarAbono";
             this.BtnAgregarAbono.Size = new System.Drawing.Size(188, 47);
             this.BtnAgregarAbono.TabIndex = 66;
@@ -799,70 +853,10 @@
             this.panelListaPagos.Controls.Add(this.label18);
             this.panelListaPagos.Controls.Add(this.dataGridPagos);
             this.panelListaPagos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelListaPagos.Location = new System.Drawing.Point(0, 567);
+            this.panelListaPagos.Location = new System.Drawing.Point(0, 608);
             this.panelListaPagos.Name = "panelListaPagos";
-            this.panelListaPagos.Size = new System.Drawing.Size(485, 172);
+            this.panelListaPagos.Size = new System.Drawing.Size(485, 131);
             this.panelListaPagos.TabIndex = 39;
-            // 
-            // dataGridPagos
-            // 
-            this.dataGridPagos.AllowUserToAddRows = false;
-            this.dataGridPagos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataGridPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridPagos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataGridPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridPagos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.NullValue = "--------------";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPagos.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridPagos.DoubleBuffered = true;
-            this.dataGridPagos.EnableHeadersVisualStyles = false;
-            this.dataGridPagos.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridPagos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.dataGridPagos.HeaderForeColor = System.Drawing.Color.LightGray;
-            this.dataGridPagos.Location = new System.Drawing.Point(15, 32);
-            this.dataGridPagos.Name = "dataGridPagos";
-            this.dataGridPagos.ReadOnly = true;
-            this.dataGridPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPagos.Size = new System.Drawing.Size(451, 129);
-            this.dataGridPagos.StandardTab = true;
-            this.dataGridPagos.TabIndex = 3;
-            this.dataGridPagos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridPagos_RowsAdded);
-            this.dataGridPagos.Resize += new System.EventHandler(this.dataGridPagos_Resize);
             // 
             // label18
             // 
@@ -875,6 +869,69 @@
             this.label18.Size = new System.Drawing.Size(98, 18);
             this.label18.TabIndex = 68;
             this.label18.Text = "Lista Abonos:";
+            // 
+            // dataGridPagos
+            // 
+            this.dataGridPagos.AllowUserToAddRows = false;
+            this.dataGridPagos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            this.dataGridPagos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridPagos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle31.NullValue = "--------------";
+            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPagos.DefaultCellStyle = dataGridViewCellStyle31;
+            this.dataGridPagos.DoubleBuffered = true;
+            this.dataGridPagos.EnableHeadersVisualStyles = false;
+            this.dataGridPagos.GridColor = System.Drawing.Color.DimGray;
+            this.dataGridPagos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.dataGridPagos.HeaderForeColor = System.Drawing.Color.LightGray;
+            this.dataGridPagos.Location = new System.Drawing.Point(15, 32);
+            this.dataGridPagos.Name = "dataGridPagos";
+            this.dataGridPagos.ReadOnly = true;
+            this.dataGridPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPagos.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            this.dataGridPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridPagos.Size = new System.Drawing.Size(451, 83);
+            this.dataGridPagos.StandardTab = true;
+            this.dataGridPagos.TabIndex = 3;
+            this.dataGridPagos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridPagos_RowsAdded);
+            this.dataGridPagos.Resize += new System.EventHandler(this.dataGridPagos_Resize);
             // 
             // panelContenedorPagos
             // 
@@ -919,11 +976,12 @@
             this.panelPagos.Controls.Add(this.panelTransporteII);
             this.panelPagos.Controls.Add(this.panelTransporteIII);
             this.panelPagos.Controls.Add(this.panelPagoGeneral);
+            this.panelPagos.Controls.Add(this.panelAnticipo);
             this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPagos.Location = new System.Drawing.Point(0, 49);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(703, 613);
+            this.panelPagos.Size = new System.Drawing.Size(703, 599);
             this.panelPagos.TabIndex = 41;
             this.panelPagos.Resize += new System.EventHandler(this.panelPagos_Resize);
             // 
@@ -3017,6 +3075,8 @@
             // panelPagoGeneral
             // 
             this.panelPagoGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelPagoGeneral.Controls.Add(this.cmbDestinoPagoGL);
+            this.panelPagoGeneral.Controls.Add(this.lblDestinoPagoPG);
             this.panelPagoGeneral.Controls.Add(this.checkListFacturas);
             this.panelPagoGeneral.Controls.Add(this.lblTotalFacturas);
             this.panelPagoGeneral.Controls.Add(this.lblFacturas);
@@ -3029,11 +3089,76 @@
             this.panelPagoGeneral.Controls.Add(this.txtAbonoPagoGeneral);
             this.panelPagoGeneral.Controls.Add(this.label7);
             this.panelPagoGeneral.Controls.Add(this.shapeContainer2);
+            this.panelPagoGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelPagoGeneral.Location = new System.Drawing.Point(3, 1976);
             this.panelPagoGeneral.Name = "panelPagoGeneral";
-            this.panelPagoGeneral.Size = new System.Drawing.Size(510, 329);
+            this.panelPagoGeneral.Size = new System.Drawing.Size(510, 385);
             this.panelPagoGeneral.TabIndex = 64;
             this.panelPagoGeneral.Visible = false;
+            this.panelPagoGeneral.Click += new System.EventHandler(this.panelPagoGeneral_Click);
+            // 
+            // cmbDestinoPagoGL
+            // 
+            this.cmbDestinoPagoGL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDestinoPagoGL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.cmbDestinoPagoGL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbDestinoPagoGL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDestinoPagoGL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbDestinoPagoGL.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDestinoPagoGL.ForeColor = System.Drawing.Color.Transparent;
+            this.cmbDestinoPagoGL.FormattingEnabled = true;
+            this.cmbDestinoPagoGL.Items.AddRange(new object[] {
+            "TBC",
+            "LDM"});
+            this.cmbDestinoPagoGL.Location = new System.Drawing.Point(136, 218);
+            this.cmbDestinoPagoGL.Margin = new System.Windows.Forms.Padding(1);
+            this.cmbDestinoPagoGL.Name = "cmbDestinoPagoGL";
+            this.cmbDestinoPagoGL.Size = new System.Drawing.Size(357, 25);
+            this.cmbDestinoPagoGL.TabIndex = 81;
+            this.cmbDestinoPagoGL.Visible = false;
+            // 
+            // lblDestinoPagoPG
+            // 
+            this.lblDestinoPagoPG.AutoSize = true;
+            this.lblDestinoPagoPG.BackColor = System.Drawing.Color.Transparent;
+            this.lblDestinoPagoPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestinoPagoPG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblDestinoPagoPG.Location = new System.Drawing.Point(18, 218);
+            this.lblDestinoPagoPG.Name = "lblDestinoPagoPG";
+            this.lblDestinoPagoPG.Size = new System.Drawing.Size(102, 18);
+            this.lblDestinoPagoPG.TabIndex = 80;
+            this.lblDestinoPagoPG.Text = "Destino Pago:";
+            this.lblDestinoPagoPG.Visible = false;
+            // 
+            // checkListFacturas
+            // 
+            this.checkListFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkListFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.checkListFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkListFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkListFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.checkListFacturas.FormattingEnabled = true;
+            this.checkListFacturas.Location = new System.Drawing.Point(218, 282);
+            this.checkListFacturas.MultiColumn = true;
+            this.checkListFacturas.Name = "checkListFacturas";
+            this.checkListFacturas.Size = new System.Drawing.Size(275, 80);
+            this.checkListFacturas.TabIndex = 79;
+            this.checkListFacturas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkListFacturas_ItemCheck);
+            this.checkListFacturas.Leave += new System.EventHandler(this.checkListFacturas_Leave);
+            // 
+            // lblTotalFacturas
+            // 
+            this.lblTotalFacturas.AutoSize = true;
+            this.lblTotalFacturas.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblTotalFacturas.Location = new System.Drawing.Point(16, 275);
+            this.lblTotalFacturas.Name = "lblTotalFacturas";
+            this.lblTotalFacturas.Size = new System.Drawing.Size(107, 18);
+            this.lblTotalFacturas.TabIndex = 78;
+            this.lblTotalFacturas.Text = "Total Facturas:";
             // 
             // lblFacturas
             // 
@@ -3041,7 +3166,7 @@
             this.lblFacturas.BackColor = System.Drawing.Color.Transparent;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblFacturas.Location = new System.Drawing.Point(217, 212);
+            this.lblFacturas.Location = new System.Drawing.Point(215, 257);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(70, 18);
             this.lblFacturas.TabIndex = 77;
@@ -3079,6 +3204,7 @@
             this.label9.TabIndex = 73;
             this.label9.Text = "PAGO GENERAL";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.panelPagoGeneral_Click);
             // 
             // btnAbonoGeneral
             // 
@@ -3090,7 +3216,7 @@
             this.btnAbonoGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonoGeneral.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonoGeneral.ForeColor = System.Drawing.Color.DimGray;
-            this.btnAbonoGeneral.Location = new System.Drawing.Point(13, 266);
+            this.btnAbonoGeneral.Location = new System.Drawing.Point(11, 311);
             this.btnAbonoGeneral.Name = "btnAbonoGeneral";
             this.btnAbonoGeneral.Size = new System.Drawing.Size(188, 47);
             this.btnAbonoGeneral.TabIndex = 67;
@@ -3171,19 +3297,29 @@
             this.lineShape3,
             this.lineFacturas,
             this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(510, 329);
+            this.shapeContainer2.Size = new System.Drawing.Size(510, 385);
             this.shapeContainer2.TabIndex = 74;
             this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 21;
+            this.lineShape3.X2 = 191;
+            this.lineShape3.Y1 = 296;
+            this.lineShape3.Y2 = 296;
             // 
             // lineFacturas
             // 
             this.lineFacturas.BorderColor = System.Drawing.Color.DimGray;
             this.lineFacturas.Enabled = false;
             this.lineFacturas.Name = "lineFacturas";
-            this.lineFacturas.X1 = 218;
-            this.lineFacturas.X2 = 337;
-            this.lineFacturas.Y1 = 232;
-            this.lineFacturas.Y2 = 232;
+            this.lineFacturas.X1 = 215;
+            this.lineFacturas.X2 = 334;
+            this.lineFacturas.Y1 = 277;
+            this.lineFacturas.Y2 = 277;
             // 
             // lineShape2
             // 
@@ -3194,6 +3330,160 @@
             this.lineShape2.X2 = 305;
             this.lineShape2.Y1 = 45;
             this.lineShape2.Y2 = 45;
+            // 
+            // panelAnticipo
+            // 
+            this.panelAnticipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelAnticipo.Controls.Add(this.dateAnticipo);
+            this.panelAnticipo.Controls.Add(this.label26);
+            this.panelAnticipo.Controls.Add(this.btnAnticipo);
+            this.panelAnticipo.Controls.Add(this.label29);
+            this.panelAnticipo.Controls.Add(this.txtDetalleAnticipo);
+            this.panelAnticipo.Controls.Add(this.label30);
+            this.panelAnticipo.Controls.Add(this.txtValAnticipo);
+            this.panelAnticipo.Controls.Add(this.label33);
+            this.panelAnticipo.Controls.Add(this.shapeContainer3);
+            this.panelAnticipo.Location = new System.Drawing.Point(3, 2367);
+            this.panelAnticipo.Name = "panelAnticipo";
+            this.panelAnticipo.Size = new System.Drawing.Size(510, 305);
+            this.panelAnticipo.TabIndex = 71;
+            this.panelAnticipo.Visible = false;
+            // 
+            // dateAnticipo
+            // 
+            this.dateAnticipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateAnticipo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dateAnticipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dateAnticipo.BorderRadius = 0;
+            this.dateAnticipo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateAnticipo.ForeColor = System.Drawing.Color.LightGray;
+            this.dateAnticipo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateAnticipo.FormatCustom = "";
+            this.dateAnticipo.Location = new System.Drawing.Point(85, 166);
+            this.dateAnticipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateAnticipo.Name = "dateAnticipo";
+            this.dateAnticipo.Size = new System.Drawing.Size(410, 33);
+            this.dateAnticipo.TabIndex = 75;
+            this.dateAnticipo.Value = new System.DateTime(2020, 9, 15, 10, 48, 13, 902);
+            // 
+            // label26
+            // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.LightGray;
+            this.label26.Location = new System.Drawing.Point(14, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 22);
+            this.label26.TabIndex = 73;
+            this.label26.Text = "ANTICIPO";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAnticipo
+            // 
+            this.btnAnticipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnAnticipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnticipo.FlatAppearance.BorderSize = 0;
+            this.btnAnticipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnAnticipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnAnticipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnticipo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnticipo.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAnticipo.Location = new System.Drawing.Point(21, 230);
+            this.btnAnticipo.Name = "btnAnticipo";
+            this.btnAnticipo.Size = new System.Drawing.Size(473, 47);
+            this.btnAnticipo.TabIndex = 67;
+            this.btnAnticipo.Text = "Generar Anticipo";
+            this.btnAnticipo.UseVisualStyleBackColor = false;
+            this.btnAnticipo.Click += new System.EventHandler(this.btnAnticipo_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label29.Location = new System.Drawing.Point(18, 167);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 18);
+            this.label29.TabIndex = 71;
+            this.label29.Text = "Fecha:";
+            // 
+            // txtDetalleAnticipo
+            // 
+            this.txtDetalleAnticipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDetalleAnticipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtDetalleAnticipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetalleAnticipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleAnticipo.ForeColor = System.Drawing.Color.LightGray;
+            this.txtDetalleAnticipo.Location = new System.Drawing.Point(85, 106);
+            this.txtDetalleAnticipo.Multiline = true;
+            this.txtDetalleAnticipo.Name = "txtDetalleAnticipo";
+            this.txtDetalleAnticipo.Size = new System.Drawing.Size(410, 47);
+            this.txtDetalleAnticipo.TabIndex = 70;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label30.Location = new System.Drawing.Point(18, 108);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(57, 18);
+            this.label30.TabIndex = 69;
+            this.label30.Text = "Detalle:";
+            // 
+            // txtValAnticipo
+            // 
+            this.txtValAnticipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtValAnticipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtValAnticipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValAnticipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValAnticipo.ForeColor = System.Drawing.Color.LightGray;
+            this.txtValAnticipo.Location = new System.Drawing.Point(85, 75);
+            this.txtValAnticipo.Name = "txtValAnticipo";
+            this.txtValAnticipo.Size = new System.Drawing.Size(410, 20);
+            this.txtValAnticipo.TabIndex = 68;
+            this.txtValAnticipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValAnticipo_KeyPress);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label33.Location = new System.Drawing.Point(18, 77);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(46, 18);
+            this.label33.TabIndex = 67;
+            this.label33.Text = "Valor:";
+            // 
+            // shapeContainer3
+            // 
+            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer3.Name = "shapeContainer3";
+            this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape6});
+            this.shapeContainer3.Size = new System.Drawing.Size(510, 305);
+            this.shapeContainer3.TabIndex = 74;
+            this.shapeContainer3.TabStop = false;
+            // 
+            // lineShape6
+            // 
+            this.lineShape6.BorderColor = System.Drawing.Color.LightGray;
+            this.lineShape6.Enabled = false;
+            this.lineShape6.Name = "lineShape2";
+            this.lineShape6.X1 = 7;
+            this.lineShape6.X2 = 305;
+            this.lineShape6.Y1 = 45;
+            this.lineShape6.Y2 = 45;
             // 
             // panelTituloForm
             // 
@@ -3227,9 +3517,9 @@
             this.panelTotal.Controls.Add(this.lblTotalCobrado);
             this.panelTotal.Controls.Add(this.shapeContainer1);
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTotal.Location = new System.Drawing.Point(0, 662);
+            this.panelTotal.Location = new System.Drawing.Point(0, 648);
             this.panelTotal.Name = "panelTotal";
-            this.panelTotal.Size = new System.Drawing.Size(703, 77);
+            this.panelTotal.Size = new System.Drawing.Size(703, 91);
             this.panelTotal.TabIndex = 43;
             // 
             // lblSaldoCliente
@@ -3253,20 +3543,20 @@
             this.porcentajePago.AutoSize = true;
             this.porcentajePago.BackColor = System.Drawing.Color.Transparent;
             this.porcentajePago.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("porcentajePago.BackgroundImage")));
-            this.porcentajePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.porcentajePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.porcentajePago.ForeColor = System.Drawing.Color.LightGray;
             this.porcentajePago.LabelVisible = true;
             this.porcentajePago.LineProgressThickness = 8;
             this.porcentajePago.LineThickness = 2;
-            this.porcentajePago.Location = new System.Drawing.Point(9, -3);
+            this.porcentajePago.Location = new System.Drawing.Point(10, 3);
             this.porcentajePago.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.porcentajePago.MaxValue = 100;
             this.porcentajePago.Name = "porcentajePago";
             this.porcentajePago.ProgressBackColor = System.Drawing.Color.IndianRed;
             this.porcentajePago.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.porcentajePago.Size = new System.Drawing.Size(80, 80);
+            this.porcentajePago.Size = new System.Drawing.Size(83, 83);
             this.porcentajePago.TabIndex = 40;
-            this.porcentajePago.Value = 100;
+            this.porcentajePago.Value = 0;
             // 
             // lblTotalaPagar
             // 
@@ -3305,7 +3595,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(703, 77);
+            this.shapeContainer1.Size = new System.Drawing.Size(703, 91);
             this.shapeContainer1.TabIndex = 41;
             this.shapeContainer1.TabStop = false;
             // 
@@ -3474,44 +3764,15 @@
             this.redondeoPanelTransporteIII.ElipseRadius = 20;
             this.redondeoPanelTransporteIII.TargetControl = this.panelTransporteIII;
             // 
-            // lblTotalFacturas
+            // redondeoPanelAnticipo
             // 
-            this.lblTotalFacturas.AutoSize = true;
-            this.lblTotalFacturas.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblTotalFacturas.Location = new System.Drawing.Point(18, 230);
-            this.lblTotalFacturas.Name = "lblTotalFacturas";
-            this.lblTotalFacturas.Size = new System.Drawing.Size(107, 18);
-            this.lblTotalFacturas.TabIndex = 78;
-            this.lblTotalFacturas.Text = "Total Facturas:";
+            this.redondeoPanelAnticipo.ElipseRadius = 20;
+            this.redondeoPanelAnticipo.TargetControl = this.panelAnticipo;
             // 
-            // checkListFacturas
+            // redondeoBtnAnticipo
             // 
-            this.checkListFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkListFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.checkListFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkListFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkListFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.checkListFacturas.FormattingEnabled = true;
-            this.checkListFacturas.Location = new System.Drawing.Point(220, 237);
-            this.checkListFacturas.MultiColumn = true;
-            this.checkListFacturas.Name = "checkListFacturas";
-            this.checkListFacturas.Size = new System.Drawing.Size(275, 80);
-            this.checkListFacturas.TabIndex = 79;
-            this.checkListFacturas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkListFacturas_ItemCheck);
-            this.checkListFacturas.Leave += new System.EventHandler(this.checkListFacturas_Leave);
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape3.Enabled = false;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 24;
-            this.lineShape3.X2 = 194;
-            this.lineShape3.Y1 = 251;
-            this.lineShape3.Y2 = 251;
+            this.redondeoBtnAnticipo.ElipseRadius = 20;
+            this.redondeoBtnAnticipo.TargetControl = this.btnAnticipo;
             // 
             // FormCrearPago
             // 
@@ -3644,6 +3905,8 @@
             this.panel30.PerformLayout();
             this.panelPagoGeneral.ResumeLayout(false);
             this.panelPagoGeneral.PerformLayout();
+            this.panelAnticipo.ResumeLayout(false);
+            this.panelAnticipo.PerformLayout();
             this.panelTituloForm.ResumeLayout(false);
             this.panelTituloForm.PerformLayout();
             this.panelTotal.ResumeLayout(false);
@@ -3899,5 +4162,22 @@
         private System.Windows.Forms.Label lblTotalFacturas;
         private System.Windows.Forms.CheckedListBox checkListFacturas;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private System.Windows.Forms.Label lblDestinopago;
+        public System.Windows.Forms.ComboBox cmbDestinoPago;
+        public System.Windows.Forms.ComboBox cmbDestinoPagoGL;
+        private System.Windows.Forms.Label lblDestinoPagoPG;
+        private System.Windows.Forms.Panel panelAnticipo;
+        private Bunifu.Framework.UI.BunifuDatepicker dateAnticipo;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Button btnAnticipo;
+        private System.Windows.Forms.Label label29;
+        public System.Windows.Forms.TextBox txtDetalleAnticipo;
+        private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.TextBox txtValAnticipo;
+        private System.Windows.Forms.Label label33;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
+        private Bunifu.Framework.UI.BunifuElipse redondeoPanelAnticipo;
+        private Bunifu.Framework.UI.BunifuElipse redondeoBtnAnticipo;
     }
 }

@@ -150,7 +150,7 @@ namespace Presentacion
                 btnClientes.BackColor = Color.FromArgb(57, 60, 67);
                 btnTramites.BackColor = Color.FromArgb(150,33, 31, 41);
                 btnImportaciones.BackColor = Color.FromArgb(150,33, 31, 41);
-                btnPagos.BackColor = Color.FromArgb(150,33, 31, 41);
+                btnExportaciones.BackColor = Color.FromArgb(150,33, 31, 41);
                 btnReportes.BackColor = Color.FromArgb(150,33, 31, 41);
                 btnConfigurar.BackColor = Color.FromArgb(150,33, 31, 41);
                 btnLogOut.BackColor = Color.FromArgb(150,33, 31, 41);
@@ -188,7 +188,7 @@ namespace Presentacion
                 btnClientes.BackColor = Color.FromArgb(150,33, 31, 41);
                 btnTramites.BackColor = Color.FromArgb(57, 60, 67);
                 btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
-                btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnExportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -227,7 +227,7 @@ namespace Presentacion
                 btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnImportaciones.BackColor = Color.FromArgb(57, 60, 67);
-                btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnExportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
                 btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -274,6 +274,21 @@ namespace Presentacion
                         AbrirFormInPanel(formOpcionesPagos);
                         break;
 
+                    case 5:
+                        FormOpcionesComisiones formOpcionesComisiones = new FormOpcionesComisiones();
+                        formOpcionesComisiones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesComisiones);
+                        AbrirFormInPanel(formOpcionesComisiones);
+                        break;
+
+                    case 6:
+                        preCrearComision();
+                        break;
+
+                    case 7:
+                        preCrearComision();
+                        break;
+
                     default:
                         break;
                 }
@@ -286,13 +301,21 @@ namespace Presentacion
 
         }
 
+        private void preCrearComision()
+        {
+            FormPreCrearComision formPreCrearComision = new FormPreCrearComision();
+            formPreCrearComision.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+            AddOwnedForm(formPreCrearComision);
+            AbrirFormInPanel(formPreCrearComision);
+        }
+
         private void btnPagos_Click(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
-            btnPagos.BackColor = Color.FromArgb(57, 60, 67);
+            btnExportaciones.BackColor = Color.FromArgb(57, 60, 67);
             btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -307,7 +330,7 @@ namespace Presentacion
             btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
-            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnExportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnReportes.BackColor = Color.FromArgb(57, 60, 67);
             btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -325,7 +348,7 @@ namespace Presentacion
             btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
-            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnExportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnConfigurar.BackColor = Color.FromArgb(57, 60, 67);
             btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -372,7 +395,7 @@ namespace Presentacion
             if(UserCache.Position == Positions.Tramitacion)
             {
                 btnImportaciones.Enabled = false;
-                btnPagos.Enabled = false; 
+                btnExportaciones.Enabled = false; 
             }
 
             if(UserCache.Position == Positions.Informacion)
@@ -380,7 +403,7 @@ namespace Presentacion
                 btnClientes.Enabled = false;
                 btnTramites.Enabled = false;
                 btnImportaciones.Enabled = false;
-                btnPagos.Enabled = false;
+                btnExportaciones.Enabled = false;
 
             }
         }
@@ -399,7 +422,7 @@ namespace Presentacion
             btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
-            btnPagos.BackColor = Color.FromArgb(150, 33, 31, 41);
+            btnExportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
@@ -442,6 +465,16 @@ namespace Presentacion
             panelTitulo.Visible = true;
 
             menuVertialAncho = panelGlobal.ColumnStyles[0].Width;
+
+            
+            if (UserCache.Position == Positions.Clientes)
+            {
+                btnTramites.Visible = false;
+                btnImportaciones.Visible = false;
+                btnExportaciones.Visible = false;
+                btnRecaudacion.Visible = false;
+                btnReportes.Visible = false;
+            }
         }
 
         private void btnMinimizar_MouseEnter(object sender, EventArgs e)

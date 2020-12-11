@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearComisionNV));
             this.panelPropiedades = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.Label();
@@ -36,9 +37,10 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
+            this.lblNotaVentaNoValida = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.txtComisionTBC = new System.Windows.Forms.TextBox();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.txtNumeroNotaVenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbNombres = new System.Windows.Forms.ComboBox();
@@ -56,12 +58,16 @@
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape38 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelInferior = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelGeneral.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.panelFiltros.SuspendLayout();
             this.panelSubtotalLDM.SuspendLayout();
+            this.panelInferior.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPropiedades
@@ -106,6 +112,7 @@
             this.panelGeneral.Controls.Add(this.panelTitulo);
             this.panelGeneral.Controls.Add(this.panelFiltros);
             this.panelGeneral.Controls.Add(this.panelSubtotalLDM);
+            this.panelGeneral.Controls.Add(this.panelInferior);
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 37);
             this.panelGeneral.Name = "panelGeneral";
@@ -141,9 +148,10 @@
             // panelFiltros
             // 
             this.panelFiltros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFiltros.Controls.Add(this.lblNotaVentaNoValida);
             this.panelFiltros.Controls.Add(this.label45);
             this.panelFiltros.Controls.Add(this.txtComisionTBC);
-            this.panelFiltros.Controls.Add(this.txtEmpresa);
+            this.panelFiltros.Controls.Add(this.txtNumeroNotaVenta);
             this.panelFiltros.Controls.Add(this.label1);
             this.panelFiltros.Controls.Add(this.label3);
             this.panelFiltros.Controls.Add(this.cmbNombres);
@@ -153,6 +161,18 @@
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(1008, 217);
             this.panelFiltros.TabIndex = 38;
+            // 
+            // lblNotaVentaNoValida
+            // 
+            this.lblNotaVentaNoValida.AutoSize = true;
+            this.lblNotaVentaNoValida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotaVentaNoValida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lblNotaVentaNoValida.Location = new System.Drawing.Point(419, 113);
+            this.lblNotaVentaNoValida.Name = "lblNotaVentaNoValida";
+            this.lblNotaVentaNoValida.Size = new System.Drawing.Size(161, 18);
+            this.lblNotaVentaNoValida.TabIndex = 70;
+            this.lblNotaVentaNoValida.Text = "Nota de venta no valida";
+            this.lblNotaVentaNoValida.Visible = false;
             // 
             // label45
             // 
@@ -177,17 +197,18 @@
             this.txtComisionTBC.TabIndex = 61;
             this.txtComisionTBC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtEmpresa
+            // txtNumeroNotaVenta
             // 
-            this.txtEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmpresa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.ForeColor = System.Drawing.Color.White;
-            this.txtEmpresa.Location = new System.Drawing.Point(182, 114);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(224, 20);
-            this.txtEmpresa.TabIndex = 60;
-            this.txtEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumeroNotaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtNumeroNotaVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumeroNotaVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroNotaVenta.ForeColor = System.Drawing.Color.White;
+            this.txtNumeroNotaVenta.Location = new System.Drawing.Point(182, 114);
+            this.txtNumeroNotaVenta.Name = "txtNumeroNotaVenta";
+            this.txtNumeroNotaVenta.Size = new System.Drawing.Size(224, 20);
+            this.txtNumeroNotaVenta.TabIndex = 60;
+            this.txtNumeroNotaVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumeroNotaVenta.Leave += new System.EventHandler(this.txtNumeroNotaVenta_Leave);
             // 
             // label1
             // 
@@ -381,6 +402,38 @@
             this.lineShape4.Y1 = 65;
             this.lineShape4.Y2 = 65;
             // 
+            // panelInferior
+            // 
+            this.panelInferior.Controls.Add(this.btnGuardar);
+            this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferior.Location = new System.Drawing.Point(3, 420);
+            this.panelInferior.Name = "panelInferior";
+            this.panelInferior.Size = new System.Drawing.Size(1008, 61);
+            this.panelInferior.TabIndex = 48;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.btnGuardar.Location = new System.Drawing.Point(314, 9);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(387, 44);
+            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // redondeoBtnGuardar
+            // 
+            this.redondeoBtnGuardar.ElipseRadius = 20;
+            this.redondeoBtnGuardar.TargetControl = this.btnGuardar;
+            // 
             // FormCrearComisionNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +447,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCrearComisionNV";
             this.Load += new System.EventHandler(this.FormCrearComisionNV_Load);
+            this.Shown += new System.EventHandler(this.FormCrearComisionNV_Shown);
             this.panelPropiedades.ResumeLayout(false);
             this.panelPropiedades.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
@@ -404,6 +458,7 @@
             this.panelFiltros.PerformLayout();
             this.panelSubtotalLDM.ResumeLayout(false);
             this.panelSubtotalLDM.PerformLayout();
+            this.panelInferior.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -423,7 +478,7 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
-        public System.Windows.Forms.TextBox txtEmpresa;
+        public System.Windows.Forms.TextBox txtNumeroNotaVenta;
         private System.Windows.Forms.Label label1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
@@ -437,5 +492,9 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape38;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.Panel panelInferior;
+        private System.Windows.Forms.Button btnGuardar;
+        private Bunifu.Framework.UI.BunifuElipse redondeoBtnGuardar;
+        private System.Windows.Forms.Label lblNotaVentaNoValida;
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpcionesComisiones));
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panelSubmenu = new System.Windows.Forms.Panel();
             this.panelCrear = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.redondeoCrear = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoBuscar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
             this.panelCrear.SuspendLayout();
@@ -57,6 +57,19 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(809, 172);
             this.panelTitulo.TabIndex = 1;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
+            this.lblTitulo.Location = new System.Drawing.Point(225, 55);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(358, 63);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "COMISIONES";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSubmenu
             // 
@@ -158,11 +171,11 @@
             this.lblEditar.BackColor = System.Drawing.Color.Transparent;
             this.lblEditar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblEditar.Location = new System.Drawing.Point(62, 56);
+            this.lblEditar.Location = new System.Drawing.Point(50, 56);
             this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(115, 42);
+            this.lblEditar.Size = new System.Drawing.Size(147, 42);
             this.lblEditar.TabIndex = 3;
-            this.lblEditar.Text = "Editar";
+            this.lblEditar.Text = "Informe";
             this.lblEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEditar.Click += new System.EventHandler(this.panelBuscar_Click);
             this.lblEditar.Enter += new System.EventHandler(this.panelBuscar_Enter);
@@ -177,7 +190,7 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnBuscar.Location = new System.Drawing.Point(84, 110);
+            this.btnBuscar.Location = new System.Drawing.Point(90, 110);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(70, 70);
@@ -196,11 +209,11 @@
             this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
             this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblBuscar.Location = new System.Drawing.Point(54, 12);
+            this.lblBuscar.Location = new System.Drawing.Point(40, 12);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(131, 42);
+            this.lblBuscar.Size = new System.Drawing.Size(170, 42);
             this.lblBuscar.TabIndex = 0;
-            this.lblBuscar.Text = "Buscar";
+            this.lblBuscar.Text = "Elaborar ";
             this.lblBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblBuscar.Click += new System.EventHandler(this.panelBuscar_Click);
             this.lblBuscar.Enter += new System.EventHandler(this.panelBuscar_Enter);
@@ -216,19 +229,6 @@
             this.redondeoBuscar.ElipseRadius = 30;
             this.redondeoBuscar.TargetControl = this.panelBuscar;
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(225, 55);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(358, 63);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "COMISIONES";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormOpcionesComisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +241,7 @@
             this.Name = "FormOpcionesComisiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormOpcionesComisiones";
+            this.Shown += new System.EventHandler(this.FormOpcionesComisiones_Shown);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.panelSubmenu.ResumeLayout(false);
