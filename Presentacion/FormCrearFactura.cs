@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -327,6 +328,9 @@ namespace Presentacion
 
         private void comprobarNumero(object sender, KeyPressEventArgs e)
         {
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {
@@ -495,8 +499,8 @@ namespace Presentacion
 
                     txtDiasCredito.Text = TramiteCache.diasCreditoFacturaAgente.ToString();
 
-                    cmbPorcentajeRetIVA.Enabled = false;
-                    cmbPorcentajeRetRenta.Enabled = false;
+                    //cmbPorcentajeRetIVA.Enabled = true;
+                    //cmbPorcentajeRetRenta.Enabled = false;
                     break;
 
                 case "TBC":
@@ -505,8 +509,8 @@ namespace Presentacion
 
                     txtDiasCredito.Text = TramiteCache.diasCreditoFacturaTBC.ToString();
 
-                    cmbPorcentajeRetIVA.Enabled = false;
-                    cmbPorcentajeRetRenta.Enabled = false;
+                    //cmbPorcentajeRetIVA.Enabled = false;
+                    //cmbPorcentajeRetRenta.Enabled = false;
                     break;
 
                 case "Transporte":

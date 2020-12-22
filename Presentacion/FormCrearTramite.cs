@@ -30,6 +30,9 @@ namespace Presentacion
                 cargarFechas();
             }
 
+
+
+
             readClientes();
             txtNTramite.Text = IDTramite.ToString("D5");
 
@@ -98,6 +101,7 @@ namespace Presentacion
             cargarRUCCliente();
         }
 
+        public string RUCEmpresa; 
         private void cargarRUCCliente()
         {
             if (cmbEmpresa.SelectedIndex == -1)
@@ -108,6 +112,18 @@ namespace Presentacion
             {
                 RUCCliente = clientes.Rows[cmbEmpresa.SelectedIndex]["RUC"].ToString();
             }
+
+            if (editar || desplegar || agregarInfo)
+            {
+                UserModel Read = new UserModel();
+                //Consultar el nombre de la empresa al que pertenece ese ruc
+                string nombreEmpresa = Read.readNombreEmpresa(RUCEmpresa);
+                //Poner esa empresa en el comboBox 
+                cmbEmpresa.SelectedValue = nombreEmpresa;
+                RUCCliente = RUCEmpresa;
+            }
+
+
         }
 
 
@@ -362,16 +378,33 @@ namespace Presentacion
                     break;
 
                 case "Guayaquil":
-                    if (txtDAI.Text.Length > 4)
+                    if (cmbTipoTramite.Text != "Aéreo")
                     {
-                        DAI = txtDAI.Text.Remove(0, 6);
-                        txtDAI.Text = "028 - " + DAI;
+                        if (txtDAI.Text.Length > 4)
+                        {
+                            DAI = txtDAI.Text.Remove(0, 6);
+                            txtDAI.Text = "028 - " + DAI;
+                        }
+                        else
+                        {
+                            txtDAI.Text = "028 - ";
+                            txtDAI.Enabled = true;
+                        }
                     }
                     else
                     {
-                        txtDAI.Text = "028 - ";
-                        txtDAI.Enabled = true;
+                        if (txtDAI.Text.Length > 4)
+                        {
+                            DAI = txtDAI.Text.Remove(0, 6);
+                            txtDAI.Text = "019 - " + DAI;
+                        }
+                        else
+                        {
+                            txtDAI.Text = "019 - ";
+                            txtDAI.Enabled = true;
+                        }
                     }
+
                     break;
 
                 case "Tulcán":
@@ -475,7 +508,7 @@ namespace Presentacion
                     string DAI = texto.Substring(0,3);
 
 
-                    if (DAI == "055" || DAI == "028" || DAI == "073" || DAI == "082")
+                    if (DAI == "055" || DAI == "028" || DAI == "073" || DAI == "082" || DAI == "019")
                     {
                         txtDAI.ForeColor = Color.White;
                         lblErrorDAI.Visible = false;

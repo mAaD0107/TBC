@@ -142,7 +142,7 @@ namespace Presentacion
                 }
 
                 formCrearTramite.txtNTramite.Text = values[0];
-                formCrearTramite.cmbEmpresa.Text = values[1];
+                formCrearTramite.RUCEmpresa = values[1];
                 formCrearTramite.cmbTipoTramite.Text = values[2];
                 formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
                 formCrearTramite.txtSecuencialCliente.Text = values[4];
@@ -178,6 +178,9 @@ namespace Presentacion
                 formCrearTramite.txtNTramite.Enabled = false;
                 formCrearTramite.editar = true;
 
+
+
+                
 
                 if (formPrincipal != null)
                 {
@@ -318,7 +321,7 @@ namespace Presentacion
             }
 
             formCrearTramite.txtNTramite.Text = values[0];
-            formCrearTramite.cmbEmpresa.Text = values[1];
+            formCrearTramite.RUCEmpresa = values[1];
             formCrearTramite.cmbTipoTramite.Text = values[2];
             formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
             formCrearTramite.txtSecuencialCliente.Text = values[4];
@@ -494,7 +497,7 @@ namespace Presentacion
                 }
 
                 formCrearTramite.txtNTramite.Text = values[0];
-                formCrearTramite.cmbEmpresa.Text = values[1];
+                formCrearTramite.RUCEmpresa = values[1];
                 formCrearTramite.cmbTipoTramite.Text = values[2];
                 formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
                 formCrearTramite.txtSecuencialCliente.Text = values[4];

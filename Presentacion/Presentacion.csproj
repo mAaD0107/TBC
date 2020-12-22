@@ -185,6 +185,18 @@
     <Compile Include="FormOpcionesComisiones.Designer.cs">
       <DependentUpon>FormOpcionesComisiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOpcionesCuentasCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesCuentasCobrar.Designer.cs">
+      <DependentUpon>FormOpcionesCuentasCobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOpcionesDetallado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesDetallado.Designer.cs">
+      <DependentUpon>FormOpcionesDetallado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOpcionesFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +253,12 @@
     </Compile>
     <Compile Include="InterfaceCache.cs" />
     <Compile Include="MemoryManagement.cs" />
+    <Compile Include="FormOpcionesReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesReportes.Designer.cs">
+      <DependentUpon>FormOpcionesReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -298,6 +316,12 @@
     <EmbeddedResource Include="FormOpcionesComisiones.resx">
       <DependentUpon>FormOpcionesComisiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesCuentasCobrar.resx">
+      <DependentUpon>FormOpcionesCuentasCobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesDetallado.resx">
+      <DependentUpon>FormOpcionesDetallado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesFactura.resx">
       <DependentUpon>FormOpcionesFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\InformeFactuas.rdlc" />
     <EmbeddedResource Include="Informes\InformeLDM-TBC.rdlc" />
+    <EmbeddedResource Include="FormOpcionesReportes.resx">
+      <DependentUpon>FormOpcionesReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

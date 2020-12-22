@@ -177,6 +177,7 @@
             this.pnlReporte.Size = new System.Drawing.Size(192, 179);
             this.pnlReporte.TabIndex = 3;
             this.pnlReporte.TabStop = true;
+            this.pnlReporte.Click += new System.EventHandler(this.pnlReporte_Click);
             this.pnlReporte.Enter += new System.EventHandler(this.pnlReporte_Enter);
             this.pnlReporte.MouseEnter += new System.EventHandler(this.pnlReporte_Enter);
             // 
@@ -195,6 +196,7 @@
             this.btnReporte.TabIndex = 3;
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.pnlReporte_Click);
             this.btnReporte.Enter += new System.EventHandler(this.pnlReporte_Enter);
             this.btnReporte.MouseEnter += new System.EventHandler(this.pnlReporte_Enter);
             // 
@@ -209,6 +211,7 @@
             this.lblReporte.Size = new System.Drawing.Size(140, 36);
             this.lblReporte.TabIndex = 0;
             this.lblReporte.Text = "Reportes";
+            this.lblReporte.Click += new System.EventHandler(this.pnlReporte_Click);
             this.lblReporte.Enter += new System.EventHandler(this.pnlReporte_Enter);
             this.lblReporte.MouseEnter += new System.EventHandler(this.pnlReporte_Enter);
             // 

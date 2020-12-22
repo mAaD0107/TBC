@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Threading;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -270,6 +272,8 @@ namespace Presentacion
 
         private void comprobarNumero(object sender, KeyPressEventArgs e)
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {

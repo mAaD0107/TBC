@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using Common.Cache;
+using System.Threading;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -126,6 +128,10 @@ namespace Presentacion
 
         private void comprobarDecimal(object sender, KeyPressEventArgs e)
         {
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {

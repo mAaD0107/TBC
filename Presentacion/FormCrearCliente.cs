@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -302,11 +303,17 @@ namespace Presentacion
                                     }
                                     else
                                     {
+
+
+                                        agregarCampos();
+                                        
+                                        /*
                                         FormPrincipal formPrincipal = Owner as FormPrincipal;
                                         formPrincipal.panelMenuVertical.Visible = true;
                                         formPrincipal.panelGlobal.ColumnStyles[0].Width = 19;
 
                                         this.Close();
+                                        */
                                     }
                                 }
 
@@ -381,8 +388,134 @@ namespace Presentacion
          
         }
 
+        private void agregarCampos()
+        {
+            FormCrearCliente formClientes = new FormCrearCliente();
 
-        string[] values = new string[74]; 
+            formClientes.txtRUC.Text = txtRUC.Text;
+            formClientes.txtEmpresa.Text = txtEmpresa.Text;
+            formClientes.txtPC.Text = txtPC.Text;
+            formClientes.txtPCTelf.Text = txtPCTelf.Text;
+            formClientes.txtPCCell.Text = txtPCCell.Text;
+            formClientes.txtPCEmail.Text = txtPCEmail.Text;
+            formClientes.txtTPC.Text = txtTPC.Text;
+            formClientes.txtPCCargo.Text = txtPCCargo.Text;
+            formClientes.txtPC2.Text = txtPC2.Text;
+            formClientes.txtPCTelf2.Text = txtPCTelf2.Text;
+            formClientes.txtPCCell2.Text = txtPCCell2.Text;
+            formClientes.txtPCEmail2.Text = txtPCEmail2.Text;
+            formClientes.txtTPC2.Text = txtTPC2.Text;
+            formClientes.txtPCCargo2.Text = txtPCCargo2.Text;
+            formClientes.txtPC3.Text = txtPC3.Text;
+            formClientes.txtPCTelf3.Text = txtPCTelf3.Text;
+            formClientes.txtPCCell3.Text = txtPCCell3.Text;
+            formClientes.txtPCEmail3.Text = txtPCEmail3.Text;
+            formClientes.txtTPC3.Text = txtTPC3.Text;
+            formClientes.txtPCCargo3.Text = txtPCCargo3.Text;
+            formClientes.txtPC4.Text = txtPC4.Text;
+            formClientes.txtPCTelf4.Text = txtPCTelf4.Text;
+            formClientes.txtPCCell4.Text = txtPCCell4.Text;
+            formClientes.txtPCEmail4.Text = txtPCEmail4.Text;
+            formClientes.txtTPC4.Text = txtTPC4.Text;
+            formClientes.txtPCCargo4.Text = txtPCCargo4.Text;
+            formClientes.txtPC5.Text = txtPC5.Text;
+            formClientes.txtPCTelf5.Text = txtPCTelf5.Text;
+            formClientes.txtPCCell5.Text = txtPCCell5.Text;
+            formClientes.txtPCEmail5.Text = txtPCEmail5.Text;
+            formClientes.txtTPC5.Text = txtTPC5.Text;
+            formClientes.txtPCCargo5.Text = txtPCCargo5.Text;
+            formClientes.txtPCob.Text = txtPCob.Text;
+            formClientes.txtPCobEmail.Text = txtPCobEmail.Text;
+            formClientes.txtPCobTel.Text = txtPCobTel.Text;
+            formClientes.txtPCobCell.Text = txtPCobCell.Text;
+            formClientes.txtPCob2.Text = txtPCob2.Text;
+            formClientes.txtPCobEmail2.Text = txtPCobEmail2.Text;
+            formClientes.txtPCobTel2.Text = txtPCobTel2.Text;
+            formClientes.txtPCobCell2.Text = txtPCobCell2.Text;
+            formClientes.txtPCob3.Text = txtPCob3.Text;
+            formClientes.txtPCobEmail3.Text = txtPCobEmail3.Text;
+            formClientes.txtPCobTel3.Text = txtPCobTel3.Text;
+            formClientes.txtPCobCell3.Text = txtPCobCell3.Text;
+            formClientes.txtSubtotalFAM.Text = txtSubtotalFAM.Text;
+            formClientes.txtSubtotalFAA.Text = txtSubtotalFAA.Text;
+            formClientes.txtRetRentaFA.Text = txtRetRentaFA.Text;
+            formClientes.txtRetIVAFA.Text = txtRetIVAFA.Text;
+            formClientes.txtDiasCreditoFA.Text = txtDiasCreditoFA.Text;
+            formClientes.txtComisionFAM.Text = txtComisionFAM.Text;
+            formClientes.txtComisionFAA.Text = txtComisionFAA.Text;
+            formClientes.txtSubtotalFTBC.Text = txtSubtotalFTBC.Text;
+            formClientes.txtRetRentaFTBC.Text = txtRetRentaFTBC.Text;
+            formClientes.txtIVAFTBC.Text = txtIVAFTBC.Text;
+            formClientes.txtDiasCreditoFTBC.Text = txtDiasCreditoFTBC.Text;
+            formClientes.cmbComisionesBancarias.Text = cmbComisionesBancarias.Text;
+            formClientes.txtPersonasComisionesExtra.Text = txtPersonasComisionesExtra.Text;
+            formClientes.txtValorComisionesExtra.Text = txtValorComisionesExtra.Text;
+            formClientes.txtDiasCreditoTransporte.Text = txtDiasCreditoTransporte.Text;
+            formClientes.txtDiasCreditoGastos.Text = txtDiasCreditoGastos.Text;
+            formClientes.txtBeneficiario.Text = txtBeneficiario.Text;
+            formClientes.cmbNomBanco.Text = cmbNomBanco.Text;
+            formClientes.cmbTipoCuenta.Text = cmbTipoCuenta.Text;
+            formClientes.txtNumeroCuenta.Text = txtNumeroCuenta.Text;
+            formClientes.txtBeneficiario2.Text = txtBeneficiario2.Text;
+            formClientes.cmbNomBanco2.Text = cmbNomBanco2.Text;
+            formClientes.cmbTipoCuenta2.Text = cmbTipoCuenta2.Text;
+            formClientes.txtNumeroCuenta2.Text = txtNumeroCuenta2.Text;
+            formClientes.txtCallePrincipal.Text = txtCallePrincipal.Text;
+            formClientes.txtNumeracion.Text = txtNumeracion.Text;
+            formClientes.txtCalleSecundaria.Text = txtCalleSecundaria.Text;
+            formClientes.txtNombreEdificio.Text = txtNombreEdificio.Text;
+            formClientes.txtReferencia.Text = txtReferencia.Text;
+
+            //Nuevos valores
+            formClientes.txtSubtotalFAT.Text = txtSubtotalFAT.Text;
+            formClientes.txtComisionFT.Text = txtComisionFT.Text;
+            formClientes.txtSubtotalTBCFA.Text = txtSubtotalTBCFA.Text;
+            formClientes.txtSubtotalTBCFT.Text = txtSubtotalTBCFT.Text;
+            formClientes.PC1Ext.Text = PC1Ext.Text;
+            formClientes.PC2Ext.Text = PC2Ext.Text;
+            formClientes.PC3Ext.Text = PC3Ext.Text;
+            formClientes.PC4Ext.Text = PC4Ext.Text;
+            formClientes.PC5Ext.Text = PC5Ext.Text;
+            formClientes.txtCiudad.Text = txtCiudad.Text;
+            formClientes.txtCodPostal.Text = txtCodPostal.Text;
+            formClientes.txtCallePrincipal2.Text = txtCallePrincipal2.Text;
+            formClientes.txtNumeracion2.Text = txtNumeracion2.Text;
+            formClientes.txtCiudad2.Text = txtCiudad2.Text;
+            formClientes.txtCalleSecundaria2.Text = txtCalleSecundaria2.Text;
+            formClientes.txtEdificio2.Text = txtEdificio2.Text;
+            formClientes.txtCodPostal2.Text = txtCodPostal2.Text;
+            formClientes.txtReferencia2.Text = txtReferencia2.Text;
+
+            if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
+            if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
+            if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
+            if (formClientes.txtPC5.Text != "" || formClientes.txtPCTelf5.Text != "") { formClientes.panelPC5.Visible = true; formClientes.contPC = 4; }
+
+            if (formClientes.txtPCob2.Text != "" || formClientes.txtPCobTel2.Text != "") { formClientes.panelPCob2.Visible = true; formClientes.contPCob = 1; }
+            if (formClientes.txtPCob3.Text != "" || formClientes.txtPCobTel3.Text != "") { formClientes.panelPCob3.Visible = true; formClientes.contPCob = 2; }
+
+            formClientes.panelBtn.Visible = false;
+            formClientes.panelBtnPCob.Visible = false;
+            formClientes.panelBtnNPC.Visible = false;
+
+            formClientes.cmbComisionesBancarias.Enabled = false;
+            formClientes.cmbNomBanco.Enabled = false;
+            formClientes.cmbTipoCuenta.Enabled = false;
+            formClientes.cmbNomBanco2.Enabled = false;
+            formClientes.cmbTipoCuenta2.Enabled = false;
+
+            formClientes.minimizar.Visible = true;
+            formClientes.desplegar = true;
+
+            formClientes.lblTitulo.Text = txtEmpresa.Text;
+            formClientes.Text = txtEmpresa.Text;
+            formClientes.Opacity = 0.9;
+            formClientes.Height = Screen.PrimaryScreen.WorkingArea.Size.Height;
+            formClientes.Show();
+        }
+
+
+        string[] values = new string[92]; 
         public string[] insertDataClient()
         {
             values[0] = "Insert";
@@ -477,6 +610,7 @@ namespace Presentacion
             values[50] = txtComisionFAM.Text;
             values[51] = txtComisionFAA.Text;
 
+
             for (int i = 45; i < 52; i++)
             {
                 if (values[i] == "")
@@ -485,18 +619,6 @@ namespace Presentacion
                 }
             }
 
-            /*
-             --Factura TBC
-                Subtotal_Factura_TBC float,
-                Retencion_Renta_Factura_TBC float,
-                Retencion_IVA_Factura_TBC float,
-                Dias_Credito_Factura_TBC int,
-                Comisiones_Bancarias varchar(50),
-                Personas_Comisiones_Extra varchar(200),
-                Valor_Comisiones_Extra float,
-                Dias_Credito_Transporte int,
-                Dias_Credito_Gastos int,
-             */
 
             values[52] = txtSubtotalFTBC.Text;
             values[53] = txtRetRentaFTBC.Text;
@@ -507,8 +629,10 @@ namespace Presentacion
             values[58] = txtValorComisionesExtra.Text;
             values[59] = txtDiasCreditoTransporte.Text;
             values[60] = txtDiasCreditoGastos.Text;
+            
+           
 
-            for (int i = 52; i < 61; i++)
+            for (int i = 52; i < 62; i++)
             {
                 if (values[i] == "")
                 {
@@ -558,6 +682,38 @@ namespace Presentacion
             values[72] = txtNombreEdificio.Text;
             values[73] = txtReferencia.Text;
 
+
+            //Nuevos valores
+            values[74] = txtSubtotalFAT.Text;
+            values[75] = txtComisionFT.Text;
+            values[76] = txtSubtotalTBCFA.Text;
+            values[77] = txtSubtotalTBCFT.Text;
+
+            for (int i = 74; i < 78; i++)
+            {
+                if (values[i] == "")
+                {
+                    values[i] = "0";
+                }
+            }
+
+
+            values[78] = PC1Ext.Text;
+            values[79] = PC2Ext.Text;
+            values[80] = PC3Ext.Text;
+            values[81] = PC4Ext.Text;
+            values[82] = PC5Ext.Text;
+            values[83] = txtCiudad.Text;
+            values[84] = txtCodPostal.Text;
+            values[85] = txtCallePrincipal2.Text;
+            values[86] = txtNumeracion2.Text;
+            values[87] = txtCiudad2.Text;
+            values[88] = txtCalleSecundaria2.Text;
+            values[89] = txtEdificio2.Text;
+            values[90] = txtCodPostal2.Text;
+            values[91] = txtReferencia2.Text;
+
+          
 
             if (!editar)
             {
@@ -685,8 +841,13 @@ namespace Presentacion
             }
         }
 
+        
+
         private void comprobarDecimal(object sender, KeyPressEventArgs e)
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {
@@ -791,6 +952,26 @@ namespace Presentacion
         private void txtEmpresa_KeyPress(object sender, KeyPressEventArgs e)
         {
             cambiarFoco(sender, e);
+        }
+
+        private void txtSubtotalFAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
+        }
+
+        private void txtComisionFT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
+        }
+
+        private void txtSubtotalTBCFA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
+        }
+
+        private void txtSubtotalTBCFT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
         }
 
         private void cambiarFoco(object sender, KeyPressEventArgs e)
@@ -1154,6 +1335,48 @@ namespace Presentacion
         private void FormCrearCliente_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idCliente = 1; 
+        }
+
+        private void txtSubtotalFAT_Leave(object sender, EventArgs e)
+        {
+            if (txtSubtotalFAT.Text == "")
+            {
+                txtSubtotalFAT.Text = "0,00";
+            }
+            double n = double.Parse(txtSubtotalFAT.Text);
+            txtSubtotalFAT.Text = n.ToString("N2");
+        }
+
+        private void txtComisionFT_Leave(object sender, EventArgs e)
+        {
+            if (txtComisionFT.Text == "")
+            {
+                txtComisionFT.Text = "0,00";
+            }
+            double n = double.Parse(txtComisionFT.Text);
+            txtComisionFT.Text = n.ToString("N2");
+        }
+
+        private void txtSubtotalTBCFA_Leave(object sender, EventArgs e)
+        {
+            if (txtSubtotalTBCFA.Text == "")
+            {
+                txtSubtotalTBCFA.Text = "0,00";
+            }
+            double n = double.Parse(txtSubtotalTBCFA.Text);
+            txtSubtotalTBCFA.Text = n.ToString("N2");
+
+        }
+
+        private void txtSubtotalTBCFT_Leave(object sender, EventArgs e)
+        {
+            if (txtSubtotalTBCFT.Text == "")
+            {
+                txtSubtotalTBCFT.Text = "0,00";
+            }
+            double n = double.Parse(txtSubtotalTBCFT.Text);
+            txtSubtotalTBCFT.Text = n.ToString("N2");
+
         }
 
         private void personaCobranzas(int pCobranzas)

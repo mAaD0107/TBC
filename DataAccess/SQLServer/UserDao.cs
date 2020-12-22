@@ -142,7 +142,6 @@ namespace DataAccess
 
                     table.Load(reader);
                     return table;
-
                 }
             }
         }
@@ -288,6 +287,36 @@ namespace DataAccess
                 }
             }
         }
+
+        public string readEmpresaTramite(string RUC)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select NombreEmpresa from Cliente where RUC = @RUC";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@RUC", RUC);
+                    SqlDataReader reader = command.ExecuteReader();
+                    
+                    if (reader.Read() == true)
+                    {
+                        return reader.GetString(0);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+        }
+
+
+
+
 
 
         public int readIDTramitesImport()
@@ -957,6 +986,28 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@Calle_Secundaria", values[71]);
                         command.Parameters.AddWithValue("@Nombre_Edificio", values[72]);
                         command.Parameters.AddWithValue("@Referencia", values[73]);
+
+
+                        //Nuevos Datos
+                        command.Parameters.AddWithValue("@SubtotFAT", double.Parse(values[74]));
+                        command.Parameters.AddWithValue("@ComisionFAT", double.Parse(values[75]));
+                        command.Parameters.AddWithValue("@SubtotFTBCA", double.Parse(values[76]));
+                        command.Parameters.AddWithValue("@SubtotFTBCT", double.Parse(values[77]));
+
+                        command.Parameters.AddWithValue("@PC1_Ext", values[78]);
+                        command.Parameters.AddWithValue("@PC2_Ext", values[79]);
+                        command.Parameters.AddWithValue("@PC3_Ext", values[80]);
+                        command.Parameters.AddWithValue("@PC4_Ext", values[81]);
+                        command.Parameters.AddWithValue("@PC5_Ext", values[82]);
+                        command.Parameters.AddWithValue("@Dir1_Ciudad", values[83]);
+                        command.Parameters.AddWithValue("@Dir1_Codigo_Postal", values[84]);
+                        command.Parameters.AddWithValue("@Dir2_Calle_Principal", values[85]);
+                        command.Parameters.AddWithValue("@Dir2_Numeracion", values[86]);
+                        command.Parameters.AddWithValue("@Dir2_Ciudad", values[87]);
+                        command.Parameters.AddWithValue("@Dir2_Calle_Secundaria", values[88]);
+                        command.Parameters.AddWithValue("@Dir2_Nombre_Edificio", values[89]);
+                        command.Parameters.AddWithValue("@Dir2_Codigo_Postal", values[90]);
+                        command.Parameters.AddWithValue("@Dir2_Referencia", values[91]);
 
 
                         int retorno = command.ExecuteNonQuery();

@@ -67,7 +67,7 @@ namespace Presentacion
 
             int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-            for (int i = 0; i < 74 - 1; i++)
+            for (int i = 0; i < 92 - 1; i++)
             {
                 values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
             }
@@ -145,6 +145,26 @@ namespace Presentacion
             formClientes.txtCalleSecundaria.Text = values[70];
             formClientes.txtNombreEdificio.Text = values[71];
             formClientes.txtReferencia.Text = values[72];
+
+            //Nuevos valores
+            formClientes.txtSubtotalFAT.Text = values[73];
+            formClientes.txtComisionFT.Text = values[74];
+            formClientes.txtSubtotalTBCFA.Text = values[75];
+            formClientes.txtSubtotalTBCFT.Text = values[76];
+            formClientes.PC1Ext.Text = values[77];
+            formClientes.PC2Ext.Text = values[78];
+            formClientes.PC3Ext.Text = values[79];
+            formClientes.PC4Ext.Text = values[80];
+            formClientes.PC5Ext.Text = values[81];
+            formClientes.txtCiudad.Text = values[82];
+            formClientes.txtCodPostal.Text = values[83];
+            formClientes.txtCallePrincipal2.Text = values[84];
+            formClientes.txtNumeracion2.Text = values[85];
+            formClientes.txtCiudad2.Text = values[86];
+            formClientes.txtCalleSecundaria2.Text = values[87];
+            formClientes.txtEdificio2.Text = values[88];
+            formClientes.txtCodPostal2.Text = values[89];
+            formClientes.txtReferencia2.Text = values[90];
 
             if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
             if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
@@ -246,7 +266,7 @@ namespace Presentacion
             acoplarPaneles();
         }
 
-        string[] values = new string[74];
+        string[] values = new string[92];
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cargarDatos();
@@ -263,7 +283,7 @@ namespace Presentacion
 
                 int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-                for (int i = 0; i < 74 - 1; i++)
+                for (int i = 0; i < 92 - 1; i++)
                 {
                     values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
                 }
@@ -342,6 +362,26 @@ namespace Presentacion
                 formClientes.txtNombreEdificio.Text = values[71];
                 formClientes.txtReferencia.Text = values[72];
 
+                //Nuevos valores
+                formClientes.txtSubtotalFAT.Text = values[73];
+                formClientes.txtComisionFT.Text = values[74];
+                formClientes.txtSubtotalTBCFA.Text = values[75];
+                formClientes.txtSubtotalTBCFT.Text = values[76];
+                formClientes.PC1Ext.Text = values[77];
+                formClientes.PC2Ext.Text = values[78];
+                formClientes.PC3Ext.Text = values[79];
+                formClientes.PC4Ext.Text = values[80];
+                formClientes.PC5Ext.Text = values[81];
+                formClientes.txtCiudad.Text = values[82];
+                formClientes.txtCodPostal.Text = values[83];
+                formClientes.txtCallePrincipal2.Text = values[84];
+                formClientes.txtNumeracion2.Text = values[85];
+                formClientes.txtCiudad2.Text = values[86];
+                formClientes.txtCalleSecundaria2.Text = values[87];
+                formClientes.txtEdificio2.Text = values[88];
+                formClientes.txtCodPostal2.Text = values[89];
+                formClientes.txtReferencia2.Text = values[90];
+
                 if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
                 if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
                 if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
@@ -403,7 +443,7 @@ namespace Presentacion
             values[1] = dataGridClientes.Rows[e].Cells[0].Value.ToString();
             nombre = dataGridClientes.Rows[e].Cells[1].Value.ToString();
 
-            for (int i = 2; i < 74; i++)
+            for (int i = 2; i < 92; i++)
             {
                 values[i] = "0";
             }

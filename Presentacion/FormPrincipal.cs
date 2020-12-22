@@ -247,10 +247,7 @@ namespace Presentacion
                 switch (InterfaceCache.idImportaciones)
                 {
                     case 1:
-                        FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
-                        formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
-                        AddOwnedForm(formOpcionesImportaciones);
-                        AbrirFormInPanel(formOpcionesImportaciones);
+                        opcionesImportaciones();
                         break;
 
                     case 2:
@@ -288,12 +285,27 @@ namespace Presentacion
                     case 7:
                         preCrearComision();
                         break;
+                    case 8:
+                        opcionesImportaciones();
+                        break;
+                    case 9:
+                        FormOpcionesReportes formOpcionesReportes = new FormOpcionesReportes();
+                        formOpcionesReportes.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesReportes);
+                        AbrirFormInPanel(formOpcionesReportes);
+                        break;
+                    case 10:
+                        FormOpcionesCuentasCobrar formOpcionesCuentasCobrar = new FormOpcionesCuentasCobrar();
+                        formOpcionesCuentasCobrar.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                        AddOwnedForm(formOpcionesCuentasCobrar);
+                        AbrirFormInPanel(formOpcionesCuentasCobrar);
+                        break;
+
+
 
                     default:
                         break;
                 }
-
-
 
             }
 
@@ -307,6 +319,14 @@ namespace Presentacion
             formPreCrearComision.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
             AddOwnedForm(formPreCrearComision);
             AbrirFormInPanel(formPreCrearComision);
+        }
+
+        private void opcionesImportaciones()
+        {
+            FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
+            formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+            AddOwnedForm(formOpcionesImportaciones);
+            AbrirFormInPanel(formOpcionesImportaciones);
         }
 
         private void btnPagos_Click(object sender, EventArgs e)

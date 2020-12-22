@@ -157,6 +157,11 @@ namespace Domain
             return userDao.readTramitesComisionNotaVenta(values);
         }
 
+        public string readNombreEmpresa(string RUC)
+        {
+            return userDao.readEmpresaTramite(RUC);
+        }
+
 
         public bool InsertDataClient(string[] values)
         {

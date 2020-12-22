@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -2464,6 +2466,8 @@ namespace Presentacion
 
         private void comprobarDecimal(object sender, KeyPressEventArgs e)
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {
@@ -2688,6 +2692,7 @@ namespace Presentacion
         List<string[]> listas = new List<string[]>();
 
         double saldCliente = 0;
+        bool saltarPago = false;
         private void btnAbonoGeneral_Click(object sender, EventArgs e)
         {
             DialogResult result = new DialogResult(); 
@@ -2707,28 +2712,43 @@ namespace Presentacion
             {
                 if (txtAbonoPagoGeneral.Text != "")
                 {
+
                     double pago = 0;
                     double saldo = 0;
 
                     bool haySaldo = false;
                     bool noEntrar = false;
 
+
                     if (txtAbonoPagoGeneral.Text != ",")
                     {
                         pago = Double.Parse(txtAbonoPagoGeneral.Text);
+                        pago = Math.Round(pago, 2);
+                        totPago = Math.Round(totPago, 2);
                     }
 
                     UserModel Write = new UserModel();
 
                     string[] data = new string[8];
 
+                    
 
-                    if (Math.Round(pago, 2) > Math.Round(totPago, 2))
+                    if (pago > totPago)
                     {
-                        saldCliente += pago - Math.Round(totPago, 2);
+                        if (totPago != 0)
+                        {
+                            saldCliente = pago - totPago;
+                            haySaldo = true;
+                        }
+                        else
+                        {
+                            saldCliente = pago;
+                            saltarPago = true; 
+                        }
+                        
                         pago = Math.Round(totPago, 2);
                         lblSaldoCliente.Text = "Saldo Cliente: " + saldCliente.ToString("N2");
-                        haySaldo = true;
+                        
                     }
 
                     if (agenteSeleccionado && cmbDestinoPagoGL.Text == "")
@@ -2746,7 +2766,7 @@ namespace Presentacion
                     {
                         for (int i = 0; i < listas.Count; i++)
                         {
-                            if (pago > 0)
+                            if (pago > 0 && !saltarPago)
                             {
                                 if (checkListFacturas.CheckedItems.Count > 0)
                                 {
@@ -2766,14 +2786,13 @@ namespace Presentacion
                                                 if (pago > valorFactura)
                                                 {
                                                     data[3] = (Math.Round(valorFactura, 2)).ToString();
-                                                    pago -= valorFactura;
+                                                    pago -= valorFactura;   
                                                 }
                                                 else
                                                 {
                                                     data[3] = (Math.Round(pago, 2)).ToString();
-                                                    saldo = pago; 
+                                                    saldCliente = pago; 
                                                     pago = 0;
-                                                    
                                                 }
 
 
@@ -2819,7 +2838,7 @@ namespace Presentacion
                                         else
                                         {
                                             data[3] = (Math.Round(pago, 2)).ToString();
-                                            saldo = pago;
+                                            saldCliente = pago;
                                             pago = 0;
                                         }
 
@@ -2844,12 +2863,11 @@ namespace Presentacion
                             }
                             else
                             {
-                                haySaldo = false;
-                                MessageBox.Show("Pago: " + saldo.ToString() );
+                                MessageBox.Show("Pago: " + saldCliente.ToString() );
                                 break;
                             }
                         }
-                        if ((pago > 0 || saldo > 0) && haySaldo == false && !noEntrar)
+                        if (haySaldo || saltarPago)
                         {
 
                             string[] dataSaldo = new string[5];
@@ -2863,7 +2881,7 @@ namespace Presentacion
                             }
                             else
                             {
-                                dataSaldo[2] = (Math.Round(saldo, 2)).ToString();
+                                dataSaldo[2] = (Math.Round(saldCliente, 2)).ToString();
                                 MessageBox.Show("Entro a saldo");
                             }
                             dataSaldo[3] = datePagoGeneral.Value.ToString("yyyy-MM-dd");

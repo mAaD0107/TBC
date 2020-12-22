@@ -175,5 +175,23 @@ namespace Presentacion
                 formPrincipal.AbrirFormInPanel(FormOpcionesComisiones);
             }
         }
+
+        private void pnlReporte_Click(object sender, EventArgs e)
+        {
+            callOpcionesReportes();
+        }
+
+        private void callOpcionesReportes()
+        {
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+            if (formPrincipal != null)
+            {
+                FormOpcionesReportes formOpcionesReportes = new FormOpcionesReportes();
+                formOpcionesReportes.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formOpcionesReportes);
+                formPrincipal.AbrirFormInPanel(formOpcionesReportes);
+            }
+        }
     }
 }
