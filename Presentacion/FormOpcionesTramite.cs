@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -44,6 +45,15 @@ namespace Presentacion
         private void FormOpcionesTramite_Load(object sender, EventArgs e)
         {
 
+            if (UserCache.Position == Positions.Tramitacion)
+            {
+                panelCrear.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Export)
+            {
+                panelAgregarInfo.Visible = false;
+            }
         }
 
 

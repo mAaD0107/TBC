@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -59,6 +60,19 @@ namespace Presentacion
         private void FormOpcionesPagos_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idImportaciones = 1;
+        }
+
+        private void FormOpcionesPagos_Load(object sender, EventArgs e)
+        {
+            if (UserCache.Position == Positions.Tramitacion)
+            {
+                panelCrear.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Export)
+            {
+                panelCrear.Visible = false;
+            }
         }
     }
 }

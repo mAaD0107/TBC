@@ -34,13 +34,13 @@ namespace Presentacion
 
         private void txtIVA_Enter(object sender, EventArgs e)
         {
-            if (txtIVA.Text == "0.00")
+            if (txtIVA.Text == "0,00")
             {
                 txtIVA.Text = "";
                 txtIVA.ForeColor = Color.White;
             }
 
-            lblError.Visible = false; 
+            lblError.Visible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -48,21 +48,6 @@ namespace Presentacion
             ingresarIVA();
         }
 
-        private bool validarIVA()
-        {
-            string IVA = txtIVA.Text;
-            Regex regex = new Regex(@"^[0-9]*(?:\.[0-9]*)?$");
-
-            if (regex.IsMatch(IVA))
-            {
-                return true; 
-            }
-            else
-            {
-                return false;
-                
-            } 
-        }
 
 
         private bool searchIVA()
@@ -86,44 +71,99 @@ namespace Presentacion
         {
             comprobarDecimal(sender, e);
 
-            if ((int)e.KeyChar == (int) Keys.Enter)
+            if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 ingresarIVA();
             }
         }
 
+
+        public int tipoIVA;
         private void ingresarIVA()
         {
-            if (validarIVA())
-            {
-                if (!searchIVA())
-                {
-                    UserModel userModel = new UserModel();
+            
+            UserModel userModel = new UserModel();
 
-                    if (!userModel.insertIVA(txtIVA.Text))
+            switch (tipoIVA)
+            {
+                case 1:
+                    
+                    if (!searchIVA())
                     {
-                        FormCrearFactura formCrearFactura = Owner as FormCrearFactura;
-                        formCrearFactura.btnIVA.Enabled = true;
-                        EmpresaCache.ivaFactura = txtIVA.Text; 
-                        this.Close();
+                        if (!userModel.insertIVA(txtIVA.Text))
+                        {
+                            FormCrearFactura formCrearFactura = Owner as FormCrearFactura;
+                            formCrearFactura.btnIVA.Enabled = true;
+                            EmpresaCache.ivaFactura = txtIVA.Text;
+                            this.Close();
+                        }
+                        else
+                        {
+                            lblError.Visible = true;
+                            lblError.Text = "No se ha podido guardar el valor";
+                        }
                     }
                     else
                     {
                         lblError.Visible = true;
-                        lblError.Text = "No se ha podido guardar el valor";
+                        lblError.Text = "El valor ingresado ya se encuentra registrado";
                     }
-                }
-                else
-                {
-                    lblError.Visible = true;
-                    lblError.Text = "El valor ingresado ya se encuentra registrado";
-                }
+                    break;
+
+                case 2:
+
+                    if (!userModel.searchIVARetRenta(txtIVA.Text))
+                    {
+                        if (!userModel.insertIVARetRenta(txtIVA.Text))
+                        {
+                            FormCrearFactura formCrearFactura = Owner as FormCrearFactura;
+                            formCrearFactura.btnAgregarIVARetRenta.Enabled = true;
+                            EmpresaCache.ivaRetRenta = txtIVA.Text;
+                            this.Close();
+                        }
+                        else
+                        {
+                            lblError.Visible = true;
+                            lblError.Text = "No se ha podido guardar el valor";
+                        }
+                    }
+                    else
+                    {
+                        lblError.Visible = true;
+                        lblError.Text = "El valor ingresado ya se encuentra registrado";
+                    }
+                    break;
+
+                case 3:
+
+                    if (!userModel.searchIVARetIVA(txtIVA.Text))
+                    {
+                        if (!userModel.insertIVARetIVA(txtIVA.Text))
+                        {
+                            FormCrearFactura formCrearFactura = Owner as FormCrearFactura;
+                            formCrearFactura.btnAgregarIVARetIVA.Enabled = true;
+                            EmpresaCache.ivaRetIVA = txtIVA.Text;
+                            this.Close();
+                        }
+                        else
+                        {
+                            lblError.Visible = true;
+                            lblError.Text = "No se ha podido guardar el valor";
+                        }
+                    }
+                    else
+                    {
+                        lblError.Visible = true;
+                        lblError.Text = "El valor ingresado ya se encuentra registrado";
+                    }
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "El valor ingresado es incorrecto";
-            }
+
+
+            
+
         }
 
         private void comprobarDecimal(object sender, KeyPressEventArgs e)
@@ -131,22 +171,24 @@ namespace Presentacion
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
 
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != ',') && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
 
-            if (e.KeyChar == ',')
+            if (e.KeyChar == '.')
             {
-                e.KeyChar = '.';
+                e.KeyChar = ',';
             }
 
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
         }
+    
+
+
     }
 }

@@ -17,7 +17,8 @@ namespace DataAccess
             // Conexion local
             // connectionString = "Server = localhost\\SQLEXPRESS; DataBase = TBC; integrated security = true";    // Se conecta con sql server, como es locall host se puede poner . o (local)
             // Conexion Remota                                                                                                    //Coneccion Remota
-            connectionString = "Data Source = 201.183.99.88,1433; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2020";
+            //connectionString = "Data Source = 201.183.99.88,1433; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2020";
+               connectionString = "Data Source = 201.218.26.35,1433; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2021";
         }
         protected SqlConnection GetSqlConnection()
         {

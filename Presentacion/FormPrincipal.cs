@@ -45,6 +45,7 @@ namespace Presentacion
                 anchoPanelLateral = panelGlobal.ColumnStyles[0].Width;
                 panelMenuVertical.AutoSize = false;
 
+                
                 this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                 this.Location = Screen.PrimaryScreen.WorkingArea.Location;
                 if(panelGlobal.ColumnStyles[0].Width>5)
@@ -73,11 +74,6 @@ namespace Presentacion
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void panelMenuVertical_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -389,45 +385,6 @@ namespace Presentacion
             this.Close();
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-            LoadUserData();
-            mostrarLogo();
-
-            CultureInfo ci = new CultureInfo("Es-Es");
-            
-            DateTime fecha = DateTime.Today;
-            lblFecha.Text = ci.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek) + ", " +
-                            fecha.Day.ToString()+" de "+
-                            ci.DateTimeFormat.GetMonthName(DateTime.Now.Month) + " de " + 
-                            fecha.Year.ToString();
-
-            if(UserCache.Position == Positions.Contabilidad)
-            {
-                btnTramites.Enabled = false;
-                btnClientes.Enabled = false;
-                btnReportes.Enabled = false;
-
-                btnTramites.ForeColor = Color.White;
-            }
-
-            if(UserCache.Position == Positions.Tramitacion)
-            {
-                btnImportaciones.Enabled = false;
-                btnExportaciones.Enabled = false; 
-            }
-
-            if(UserCache.Position == Positions.Informacion)
-            {
-                btnClientes.Enabled = false;
-                btnTramites.Enabled = false;
-                btnImportaciones.Enabled = false;
-                btnExportaciones.Enabled = false;
-
-            }
-        }
-
 
         private void mostrarLogo()
         {
@@ -487,6 +444,59 @@ namespace Presentacion
             menuVertialAncho = panelGlobal.ColumnStyles[0].Width;
 
             
+
+        }
+
+        private void btnOtrosServicios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+            mostrarLogo();
+
+            CultureInfo ci = new CultureInfo("Es-Es");
+
+            DateTime fecha = DateTime.Today;
+            lblFecha.Text = ci.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek) + ", " +
+                            fecha.Day.ToString() + " de " +
+                            ci.DateTimeFormat.GetMonthName(DateTime.Now.Month) + " de " +
+                            fecha.Year.ToString();
+
+            if (UserCache.Position == Positions.Contabilidad)
+            {
+                btnTramites.Enabled = false;
+                btnClientes.Enabled = false;
+                btnReportes.Enabled = false;
+
+                btnTramites.ForeColor = Color.White;
+            }
+
+            if (UserCache.Position == Positions.Tramitacion)
+            {
+                btnExportaciones.Visible = false;
+                btnOtrosServicios.Visible = false;
+                btnRecaudacion.Visible = false;
+                btnReportes.Visible = false;
+                btnTramites.Visible = false;
+            }
+            /*
+            if (UserCache.Position == Positions.Informacion)
+            {
+                btnClientes.Enabled = false;
+                btnTramites.Enabled = false;
+                btnImportaciones.Enabled = false;
+               // btnPagos.Enabled = false;
+
+            }
+            */
             if (UserCache.Position == Positions.Clientes)
             {
                 btnTramites.Visible = false;
@@ -494,6 +504,16 @@ namespace Presentacion
                 btnExportaciones.Visible = false;
                 btnRecaudacion.Visible = false;
                 btnReportes.Visible = false;
+                btnOtrosServicios.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Export)
+            {
+                btnExportaciones.Visible = false;
+                btnOtrosServicios.Visible = false;
+                btnRecaudacion.Visible = false;
+                btnReportes.Visible = false;
+                btnTramites.Visible = false;
             }
         }
 

@@ -67,7 +67,7 @@ namespace Presentacion
 
             int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-            for (int i = 0; i < 92 - 1; i++)
+            for (int i = 0; i < 123 - 1; i++)
             {
                 values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
             }
@@ -166,6 +166,45 @@ namespace Presentacion
             formClientes.txtCodPostal2.Text = values[89];
             formClientes.txtReferencia2.Text = values[90];
 
+            //Valores agregados 22/12/2020 para Exportaciones
+            formClientes.txtRetRentFAA.Text = values[91];
+            formClientes.txtRetIVAFAA.Text = values[92];
+            formClientes.txtSubTFAM.Text = values[93];
+            formClientes.txtSubTFAA.Text = values[94];
+            formClientes.txtSubTFAT.Text = values[95];
+            formClientes.txtRetRentaFALDM.Text = values[96];
+            formClientes.txtRetIVAFALDM.Text = values[97];
+            formClientes.txtRetRentaFAA.Text = values[98];
+            formClientes.txtRetIVAFAAA.Text = values[99];
+            formClientes.txtDiasCredFA.Text = values[100];
+            formClientes.txtComiFAM.Text = values[101];
+            formClientes.txtComiFAA.Text = values[102];
+            formClientes.txtComiFAT.Text = values[103];
+            formClientes.txtSubTFTBCM.Text = values[104];
+            formClientes.txtSubTFTBCA.Text = values[105];
+            formClientes.txtSubTFTBCT.Text = values[106];
+            formClientes.txtRetRentaFTBCExp.Text = values[107];
+            formClientes.txtRetIVAFTBCExp.Text = values[108];
+            formClientes.txtDiasCredFTBCExp.Text = values[109];
+            formClientes.cmbCOmisionesBancariasExp.Text = values[110];
+            formClientes.txtPCExtraExp.Text = values[111];
+            formClientes.txtValComExtraExp.Text = values[112];
+            formClientes.txtDiasCreditoTExp.Text = values[113];
+            formClientes.txtDiasCredGExp.Text = values[114];
+
+            formClientes.txtRazonSocial.Text = values[115];
+
+            //Agregar Cargo y extencion 
+            formClientes.txtCargoPC.Text = values[116];
+            formClientes.txtCargoPC2.Text = values[117];
+            formClientes.txtCargoPC3.Text = values[118];
+            formClientes.txtExtPC.Text = values[119];
+            formClientes.txtExtPC2.Text = values[120];
+            formClientes.txtExtPC3.Text = values[121];
+
+
+
+
             if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
             if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
             if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
@@ -174,9 +213,13 @@ namespace Presentacion
             if (formClientes.txtPCob2.Text != "" || formClientes.txtPCobTel2.Text != "") { formClientes.panelPCob2.Visible = true; formClientes.contPCob = 1; }
             if (formClientes.txtPCob3.Text != "" || formClientes.txtPCobTel3.Text != "") { formClientes.panelPCob3.Visible = true; formClientes.contPCob = 2; }
 
+            if(formClientes.txtCallePrincipal2.Text != "" || formClientes.txtNumeracion2.Text != "" || formClientes.txtReferencia2.Text != "") 
+            { formClientes.panelDireccion2.Visible = true; formClientes.contDir = 1; }
+
             formClientes.panelBtn.Visible = false;
             formClientes.panelBtnPCob.Visible = false;
             formClientes.panelBtnNPC.Visible = false;
+            formClientes.pnlBotonesDireccion.Visible = false; 
 
             formClientes.cmbComisionesBancarias.Enabled = false;
             formClientes.cmbNomBanco.Enabled = false;
@@ -266,7 +309,7 @@ namespace Presentacion
             acoplarPaneles();
         }
 
-        string[] values = new string[92];
+        string[] values = new string[123];
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cargarDatos();
@@ -283,7 +326,7 @@ namespace Presentacion
 
                 int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-                for (int i = 0; i < 92 - 1; i++)
+                for (int i = 0; i < 117 - 1; i++)
                 {
                     values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
                 }
@@ -382,6 +425,42 @@ namespace Presentacion
                 formClientes.txtCodPostal2.Text = values[89];
                 formClientes.txtReferencia2.Text = values[90];
 
+                //Valores agregados 22/12/2020 para Exportaciones
+                formClientes.txtRetRentFAA.Text = values[91];
+                formClientes.txtRetIVAFAA.Text = values[92];
+                formClientes.txtSubTFAM.Text = values[93];
+                formClientes.txtSubTFAA.Text = values[94];
+                formClientes.txtSubTFAT.Text = values[95];
+                formClientes.txtRetRentaFALDM.Text = values[96];
+                formClientes.txtRetIVAFALDM.Text = values[97];
+                formClientes.txtRetRentaFAA.Text = values[98];
+                formClientes.txtRetIVAFAAA.Text = values[99];
+                formClientes.txtDiasCredFA.Text = values[100];
+                formClientes.txtComiFAM.Text = values[101];
+                formClientes.txtComiFAA.Text = values[102];
+                formClientes.txtComiFAT.Text = values[103];
+                formClientes.txtSubTFTBCM.Text = values[104];
+                formClientes.txtSubTFTBCA.Text = values[105];
+                formClientes.txtSubTFTBCT.Text = values[106];
+                formClientes.txtRetRentaFTBCExp.Text = values[107];
+                formClientes.txtRetIVAFTBCExp.Text = values[108];
+                formClientes.txtDiasCredFTBCExp.Text = values[109];
+                formClientes.cmbCOmisionesBancariasExp.Text = values[110];
+                formClientes.txtPCExtraExp.Text = values[111];
+                formClientes.txtValComExtraExp.Text = values[112];
+                formClientes.txtDiasCreditoTExp.Text = values[113];
+                formClientes.txtDiasCredGExp.Text = values[114];
+
+                formClientes.txtRazonSocial.Text = values[115];
+
+                //Agregar Cargo y extencion 
+                formClientes.txtCargoPC.Text = values[116];
+                formClientes.txtCargoPC2.Text = values[117];
+                formClientes.txtCargoPC3.Text = values[118];
+                formClientes.txtExtPC.Text = values[119];
+                formClientes.txtExtPC2.Text = values[120];
+                formClientes.txtExtPC3.Text = values[121];
+
                 if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
                 if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
                 if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
@@ -390,6 +469,9 @@ namespace Presentacion
                 if (formClientes.txtPCob2.Text != "" || formClientes.txtPCobTel2.Text != "") { formClientes.panelPCob2.Visible = true; formClientes.contPCob = 1; }
                 if (formClientes.txtPCob3.Text != "" || formClientes.txtPCobTel3.Text != "") { formClientes.panelPCob3.Visible = true; formClientes.contPCob = 2; }
 
+
+                if (formClientes.txtCallePrincipal2.Text != "" || formClientes.txtNumeracion2.Text != "" || formClientes.txtReferencia2.Text != "")
+                { formClientes.panelDireccion2.Visible = true; formClientes.contDir = 1; }
 
                 formClientes.lblTitulo.Text = "EDITAR";
                 formClientes.txtRUC.Enabled = false;
@@ -443,7 +525,7 @@ namespace Presentacion
             values[1] = dataGridClientes.Rows[e].Cells[0].Value.ToString();
             nombre = dataGridClientes.Rows[e].Cells[1].Value.ToString();
 
-            for (int i = 2; i < 92; i++)
+            for (int i = 2; i < 123; i++)
             {
                 values[i] = "0";
             }

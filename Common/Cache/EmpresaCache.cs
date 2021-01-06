@@ -17,6 +17,8 @@ namespace Common.Cache
         public static string subTotal { get; set; }
         public static string totalFactura { get; set; }
         public static string ivaFactura { get; set; }
+        public static string ivaRetRenta { get; set; }
+        public static string ivaRetIVA { get; set; }
 
     }
 }

@@ -13,5 +13,6 @@ namespace Common.Cache
         public const string Tramitacion = "Tramitacion";
         public const string Informacion = "Informacion";
         public const string Clientes = "Clientes";
+        public const string Export = "Export";
     }
 }

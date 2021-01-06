@@ -44,6 +44,8 @@
             this.lineShape46 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.redondeoForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -130,7 +132,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -154,7 +156,7 @@
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(168, 19);
             this.txtIVA.TabIndex = 2;
-            this.txtIVA.Text = "0.00";
+            this.txtIVA.Text = "0,00";
             this.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIVA.Enter += new System.EventHandler(this.txtIVA_Enter);
             this.txtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVA_KeyPress);
@@ -210,8 +212,8 @@
             this.lineShape42.Name = "lineShape42";
             this.lineShape42.X1 = 84;
             this.lineShape42.X2 = 84;
-            this.lineShape42.Y1 = 59;
-            this.lineShape42.Y2 = 36;
+            this.lineShape42.Y1 = 61;
+            this.lineShape42.Y2 = 38;
             // 
             // bunifuDragControl1
             // 
@@ -219,6 +221,16 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panelSuperior;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // redondeoForm
+            // 
+            this.redondeoForm.ElipseRadius = 20;
+            this.redondeoForm.TargetControl = this;
+            // 
+            // redondeoBtnGuardar
+            // 
+            this.redondeoBtnGuardar.ElipseRadius = 5;
+            this.redondeoBtnGuardar.TargetControl = this.btnGuardar;
             // 
             // FormNuevoIVA
             // 
@@ -258,5 +270,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnGuardar;
+        private Bunifu.Framework.UI.BunifuElipse redondeoForm;
+        private Bunifu.Framework.UI.BunifuElipse redondeoBtnGuardar;
     }
 }

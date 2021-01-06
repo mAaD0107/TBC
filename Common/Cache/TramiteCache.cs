@@ -40,5 +40,8 @@ namespace Common.Cache
         public static Int32 diasCreditoFacturaTBC { get; set; }
         public static Int32 diasCreditoGastos { get; set; }
         public static Int32 diasCreditoTransporte { get; set; }
+
+        public static int nTramite { get; set; }
+        public static string idTramite { get; set; }
     }
 }

@@ -225,12 +225,25 @@ namespace Presentacion
             panelBtnNPC.Width = this.Width - 30;
             panelBtnPCob.Width = this.Width - 30;
 
+            panelImportaciones.Width = this.Width - 30;
+            panelIngoAdicionalImporta.Width = this.Width - 30;
+            panelExportaciones.Width = this.Width - 30;
+
             panelFacturaTBC.Width = (this.Width - 36) / 2;
             panelFacturaAgente.Width = (this.Width - 36) / 2;
+
+            panelFAExportaciones.Width = (this.Width - 36) / 2;
+            panelFacturaTBCExport.Width = (this.Width - 36) / 2;
+
+            panelInfoAdicionalExport.Width = this.Width - 30; 
+
             panelDatosBancarios.Width = this.Width - 30;
             panelDatosBancarios2.Width = this.Width - 30;
             panelDireccion.Width = this.Width - 30;
             panelBtn.Width = this.Width - 30;
+
+            panelDireccion2.Width = this.Width - 30;
+            panelBtnDireccion2.Width = this.Width - 30;
 
         }
 
@@ -304,16 +317,8 @@ namespace Presentacion
                                     else
                                     {
 
-
                                         agregarCampos();
                                         
-                                        /*
-                                        FormPrincipal formPrincipal = Owner as FormPrincipal;
-                                        formPrincipal.panelMenuVertical.Visible = true;
-                                        formPrincipal.panelGlobal.ColumnStyles[0].Width = 19;
-
-                                        this.Close();
-                                        */
                                     }
                                 }
 
@@ -486,6 +491,41 @@ namespace Presentacion
             formClientes.txtCodPostal2.Text = txtCodPostal2.Text;
             formClientes.txtReferencia2.Text = txtReferencia2.Text;
 
+            //Valores agregados 22/12/2020 para Exportaciones
+            formClientes.txtRetRentFAA.Text = txtRetRentFAA.Text;
+            formClientes.txtRetIVAFAA.Text = txtRetIVAFAA.Text;
+            formClientes.txtSubTFAM.Text = txtSubTFAM.Text;
+            formClientes.txtSubTFAA.Text = txtSubTFAA.Text;
+            formClientes.txtSubTFAT.Text = txtSubTFAT.Text;
+            formClientes.txtRetRentaFALDM.Text = txtRetRentaFALDM.Text;
+            formClientes.txtRetIVAFALDM.Text = txtRetIVAFALDM.Text;
+            formClientes.txtRetRentaFAA.Text = txtRetRentaFAA.Text;
+            formClientes.txtRetIVAFAAA.Text = txtRetIVAFAAA.Text;
+            formClientes.txtDiasCredFA.Text = txtDiasCredFA.Text;
+            formClientes.txtComiFAM.Text = txtComiFAM.Text;
+            formClientes.txtComiFAA.Text = txtComiFAA.Text;
+            formClientes.txtComiFAT.Text = txtComiFAT.Text;
+            formClientes.txtSubTFTBCM.Text = txtSubTFTBCM.Text;
+            formClientes.txtSubTFTBCA.Text = txtSubTFTBCA.Text;
+            formClientes.txtSubTFTBCT.Text = txtSubTFTBCT.Text;
+            formClientes.txtRetRentaFTBCExp.Text = txtRetRentaFTBCExp.Text;
+            formClientes.txtRetIVAFTBCExp.Text = txtRetIVAFTBCExp.Text;
+            formClientes.txtDiasCredFTBCExp.Text = txtDiasCredFTBCExp.Text;
+            formClientes.cmbCOmisionesBancariasExp.Text = cmbCOmisionesBancariasExp.Text;
+            formClientes.txtPCExtraExp.Text = txtPCExtraExp.Text;
+            formClientes.txtValComExtraExp.Text = txtValComExtraExp.Text;
+            formClientes.txtDiasCreditoTExp.Text = txtDiasCreditoTExp.Text;
+            formClientes.txtDiasCredGExp.Text = txtDiasCredGExp.Text;
+            formClientes.txtRazonSocial.Text = txtRazonSocial.Text;
+
+            //Agregar Cargo y extencion 
+            formClientes.txtCargoPC.Text = txtCargoPC.Text;
+            formClientes.txtCargoPC2.Text = txtCargoPC2.Text;
+            formClientes.txtCargoPC3.Text = txtCargoPC3.Text;
+            formClientes.txtExtPC.Text = txtExtPC.Text;
+            formClientes.txtExtPC2.Text = txtExtPC2.Text;
+            formClientes.txtExtPC3.Text = txtExtPC3.Text;
+
             if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
             if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
             if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
@@ -515,7 +555,7 @@ namespace Presentacion
         }
 
 
-        string[] values = new string[92]; 
+        string[] values = new string[123]; 
         public string[] insertDataClient()
         {
             values[0] = "Insert";
@@ -713,7 +753,54 @@ namespace Presentacion
             values[90] = txtCodPostal2.Text;
             values[91] = txtReferencia2.Text;
 
-          
+
+            //Valores agregados 22/12/2020 para Exportaciones
+            values[92] = txtRetRentFAA.Text;
+            values[93] = txtRetIVAFAA.Text;
+            values[94] = txtSubTFAM.Text;
+            values[95] = txtSubTFAA.Text;
+            values[96] = txtSubTFAT.Text;
+            values[97] = txtRetRentaFALDM.Text;
+            values[98] = txtRetIVAFALDM.Text;
+            values[99] = txtRetRentaFAA.Text;
+            values[100] = txtRetIVAFAAA.Text;
+            values[101] = txtDiasCredFA.Text;
+            values[102] = txtComiFAM.Text;
+            values[103] = txtComiFAA.Text;
+            values[104] = txtComiFAT.Text;
+            values[105] = txtSubTFTBCM.Text;
+            values[106] = txtSubTFTBCA.Text;
+            values[107] = txtSubTFTBCT.Text;
+            values[108] = txtRetRentaFTBCExp.Text;
+            values[109] = txtRetIVAFTBCExp.Text;
+            values[110] = txtDiasCredFTBCExp.Text;
+            values[111] = cmbCOmisionesBancariasExp.Text;
+            values[112] = txtPCExtraExp.Text;
+            values[113] = txtValComExtraExp.Text;
+            values[114] = txtDiasCreditoTExp.Text;
+            values[115] = txtDiasCredGExp.Text;
+            
+            //Agregar Razon Social
+            values[116] = txtRazonSocial.Text;
+
+            //Agregar Cargo y extencion 
+            values[117] = txtCargoPC.Text;
+            values[118] = txtCargoPC2.Text;
+            values[119] = txtCargoPC3.Text;
+            values[120] = txtExtPC.Text;
+            values[121] = txtExtPC2.Text;
+            values[122] = txtExtPC3.Text;
+
+
+            for (int i = 92; i < 116; i++)
+            {
+                if (values[i] == "")
+                {
+                    values[i] = "0";
+                }
+            }
+
+
 
             if (!editar)
             {
@@ -973,6 +1060,18 @@ namespace Presentacion
         {
             comprobarDecimal(sender, e);
         }
+
+        private void txtRetRentFAA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarDecimal(sender, e);
+        }
+
+
+        private void txtDiasCredFA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            comprobarEntero(sender, e);
+        }
+
 
         private void cambiarFoco(object sender, KeyPressEventArgs e)
         {
@@ -1376,6 +1475,222 @@ namespace Presentacion
             }
             double n = double.Parse(txtSubtotalTBCFT.Text);
             txtSubtotalTBCFT.Text = n.ToString("N2");
+
+        }
+
+        private void txtRetRentFAA_Leave(object sender, EventArgs e)
+        {
+            if (txtRetRentFAA.Text == "")
+            {
+                txtRetRentFAA.Text = "0,00";
+            }
+            double n = double.Parse(txtRetRentFAA.Text);
+            txtRetRentFAA.Text = n.ToString("N2");
+        }
+
+        private void txtRetIVAFAA_Leave(object sender, EventArgs e)
+        {
+            if (txtRetIVAFAA.Text == "")
+            {
+                txtRetIVAFAA.Text = "0,00";
+            }
+            double n = double.Parse(txtRetIVAFAA.Text);
+            txtRetIVAFAA.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFAM_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFAM.Text == "")
+            {
+                txtSubTFAM.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFAM.Text);
+            txtSubTFAM.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFAA_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFAA.Text == "")
+            {
+                txtSubTFAA.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFAA.Text);
+            txtSubTFAA.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFAT_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFAT.Text == "")
+            {
+                txtSubTFAT.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFAT.Text);
+            txtSubTFAT.Text = n.ToString("N2");
+        }
+
+        private void txtRetRentaFALDM_Leave(object sender, EventArgs e)
+        {
+            if (txtRetRentaFALDM.Text == "")
+            {
+                txtRetRentaFALDM.Text = "0,00";
+            }
+            double n = double.Parse(txtRetRentaFALDM.Text);
+            txtRetRentaFALDM.Text = n.ToString("N2");
+        }
+
+        private void txtRetIVAFALDM_Leave(object sender, EventArgs e)
+        {
+            if (txtRetIVAFALDM.Text == "")
+            {
+                txtRetIVAFALDM.Text = "0,00";
+            }
+            double n = double.Parse(txtRetIVAFALDM.Text);
+            txtRetIVAFALDM.Text = n.ToString("N2");
+        }
+
+        private void txtRetRentaFAA_Leave(object sender, EventArgs e)
+        {
+            if (txtRetRentaFAA.Text == "")
+            {
+                txtRetRentaFAA.Text = "0,00";
+            }
+            double n = double.Parse(txtRetRentaFAA.Text);
+            txtRetRentaFAA.Text = n.ToString("N2");
+        }
+
+        private void txtRetIVAFAAA_Leave(object sender, EventArgs e)
+        {
+            if (txtRetIVAFAAA.Text == "")
+            {
+                txtRetIVAFAAA.Text = "0,00";
+            }
+            double n = double.Parse(txtRetIVAFAAA.Text);
+            txtRetIVAFAAA.Text = n.ToString("N2");
+        }
+
+        private void txtComiFAM_Leave(object sender, EventArgs e)
+        {
+            if (txtComiFAM.Text == "")
+            {
+                txtComiFAM.Text = "0,00";
+            }
+            double n = double.Parse(txtComiFAM.Text);
+            txtComiFAM.Text = n.ToString("N2");
+        }
+
+        private void txtComiFAA_Leave(object sender, EventArgs e)
+        {
+            if (txtComiFAA.Text == "")
+            {
+                txtComiFAA.Text = "0,00";
+            }
+            double n = double.Parse(txtComiFAA.Text);
+            txtComiFAA.Text = n.ToString("N2");
+        }
+
+        private void txtComiFAT_Leave(object sender, EventArgs e)
+        {
+            if (txtComiFAT.Text == "")
+            {
+                txtComiFAT.Text = "0,00";
+            }
+            double n = double.Parse(txtComiFAT.Text);
+            txtComiFAT.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFTBCM_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFTBCM.Text == "")
+            {
+                txtSubTFTBCM.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFTBCM.Text);
+            txtSubTFTBCM.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFTBCA_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFTBCA.Text == "")
+            {
+                txtSubTFTBCA.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFTBCA.Text);
+            txtSubTFTBCA.Text = n.ToString("N2");
+        }
+
+        private void txtSubTFTBCT_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTFTBCT.Text == "")
+            {
+                txtSubTFTBCT.Text = "0,00";
+            }
+            double n = double.Parse(txtSubTFTBCT.Text);
+            txtSubTFTBCT.Text = n.ToString("N2");
+        }
+
+        private void txtRetRentaFTBCExp_Leave(object sender, EventArgs e)
+        {
+            if (txtRetRentaFTBCExp.Text == "")
+            {
+                txtRetRentaFTBCExp.Text = "0,00";
+            }
+            double n = double.Parse(txtRetRentaFTBCExp.Text);
+            txtRetRentaFTBCExp.Text = n.ToString("N2");
+        }
+
+        private void txtRetIVAFTBCExp_Leave(object sender, EventArgs e)
+        {
+            if (txtRetIVAFTBCExp.Text == "")
+            {
+                txtRetIVAFTBCExp.Text = "0,00";
+            }
+            double n = double.Parse(txtRetIVAFTBCExp.Text);
+            txtRetIVAFTBCExp.Text = n.ToString("N2");
+        }
+
+        private void txtValComExtraExp_Leave(object sender, EventArgs e)
+        {
+            if (txtValComExtraExp.Text == "")
+            {
+                txtValComExtraExp.Text = "0,00";
+            }
+            double n = double.Parse(txtValComExtraExp.Text);
+            txtValComExtraExp.Text = n.ToString("N2");
+        }
+
+
+        public int contDir = 0;
+        private void btnAgregarDir_Click(object sender, EventArgs e)
+        {
+            contDir++;
+            if (contDir >= 2) contDir = 1;
+
+            mostrarDireccion();
+        }
+
+        private void btnQuitarDir_Click(object sender, EventArgs e)
+        {
+            contDir--;
+            if (contDir < 0) contDir = 0;
+
+            mostrarDireccion();
+        }
+
+        private void mostrarDireccion()
+        {
+            switch (contDir)
+            {
+                case 0:
+                    panelDireccion2.Visible = false; 
+                    break;
+
+                case 1:
+                    panelDireccion2.Visible = true;
+                    break;
+              
+                default:
+                    break;
+            }
 
         }
 

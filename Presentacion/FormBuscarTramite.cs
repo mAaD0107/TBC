@@ -64,7 +64,6 @@ namespace Presentacion
                 formCrearFactura.buscarEstaAbierta = false;
                 this.Close();
             }
-
         }
 
         public bool buscarTramite = false;
@@ -83,7 +82,7 @@ namespace Presentacion
 
         }
 
-        private void showTramites()
+        public void showTramites()
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.readTramitesImport();
@@ -125,7 +124,7 @@ namespace Presentacion
         }
 
 
-        string[] values = new string[25];
+        string[] values = new string[34];
         private void btnEditar_Click(object sender, EventArgs e)
         {
             FormPrincipal formPrincipal = Owner as FormPrincipal;
@@ -136,40 +135,47 @@ namespace Presentacion
 
                 int iTabla = dataGridTramites.CurrentCell.RowIndex;
 
-                for (int i = 0; i < 25 - 1; i++)
+                for (int i = 0; i < 34 - 1; i++)
                 {
                     values[i] = dataGridTramites.Rows[iTabla].Cells[i].Value.ToString();
                 }
 
-                formCrearTramite.txtNTramite.Text = values[0];
-                formCrearTramite.RUCEmpresa = values[1];
-                formCrearTramite.cmbTipoTramite.Text = values[2];
-                formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
-                formCrearTramite.txtSecuencialCliente.Text = values[4];
-                formCrearTramite.txtProveedor.Text = values[5];
-                formCrearTramite.txtNFacturaProveedor.Text = values[6];
-                formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[7]);
-                formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[8]);
-                formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[9]);
-                formCrearTramite.txtComentariosCrear.Text = values[10];
+                formCrearTramite.txtNTramite.Text = values[1];
+                formCrearTramite.RUCEmpresa = values[2];
+                formCrearTramite.cmbTipoTramite.Text = values[3];
+                formCrearTramite.cmbCiudadNacionalizacion.Text = values[4];
+                formCrearTramite.txtSecuencialCliente.Text = values[5];
+                formCrearTramite.txtProveedor.Text = values[6];
+                formCrearTramite.txtNFacturaProveedor.Text = values[7];
+                formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[8]);
+                formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[9]);
+                formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[10]);
+                formCrearTramite.txtComentariosCrear.Text = values[11];
 
 
-                formCrearTramite.txtDAI.Text = values[11];
-                formCrearTramite.txtNLiquidacion.Text = values[12];
-                formCrearTramite.txtOrdenLDM.Text = values[13];
+                formCrearTramite.txtDAI.Text = values[12];
+                formCrearTramite.txtNLiquidacion.Text = values[13];
+                formCrearTramite.txtOrdenLDM.Text = values[14];
 
-                formCrearTramite.txtNContenedor.Text = values[14];
-                formCrearTramite.txtNaviera.Text = values[15];
-                formCrearTramite.txtForwarderMaritima.Text = values[16];
+                formCrearTramite.txtNContenedor.Text = values[15];
+                formCrearTramite.txtNaviera.Text = values[16];
+                formCrearTramite.txtForwarderMaritima.Text = values[17];
 
-                formCrearTramite.txtNGuia.Text = values[17];
-                formCrearTramite.txtAerolinea.Text = values[18];
-                formCrearTramite.txtForwarderAerea.Text = values[19];
+                formCrearTramite.txtNGuia.Text = values[18];
+                formCrearTramite.txtAerolinea.Text = values[19];
+                formCrearTramite.txtForwarderAerea.Text = values[20];
 
-                formCrearTramite.txtPasePuerta.Text = values[20];
-                formCrearTramite.txtTransportista.Text = values[21];
-                formCrearTramite.txtForwarderTerrestre.Text = values[22];
-                formCrearTramite.txtComentariosAgregar.Text = values[23];
+                formCrearTramite.txtPasePuerta.Text = values[21];
+                formCrearTramite.txtTransportista.Text = values[22];
+                formCrearTramite.txtForwarderTerrestre.Text = values[23];
+                formCrearTramite.txtComentariosAgregar.Text = values[24];
+
+                formCrearTramite.txtConcepto.Text = values[28];
+                formCrearTramite.txtNBL.Text = values[29];
+
+                formCrearTramite.txtNGuiaCourier.Text = values[30];
+                formCrearTramite.txtAerolineaCourier.Text = values[31];
+                formCrearTramite.txtForwarderCourier.Text = values[32];
 
                 formCrearTramite.IDTramite = int.Parse(values[0]);
 
@@ -212,22 +218,21 @@ namespace Presentacion
                         if (formCrearFactura != null)
                         {
                             int n = int.Parse(dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                            TramiteCache.rucEmpresa = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                            TramiteCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[11].Value.ToString();
-                            TramiteCache.secuencialCliente = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[4].Value.ToString();
+                            TramiteCache.nTramite = n;
+                            TramiteCache.rucEmpresa = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[2].Value.ToString();
+                            TramiteCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[12].Value.ToString();
+                            TramiteCache.secuencialCliente = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[5].Value.ToString();
+                            TramiteCache.idTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
 
-                            formCrearFactura.txtBuscarTramite.Text = n.ToString("D5");
+                            formCrearFactura.txtBuscarTramite.Text = TramiteCache.idTramite;
                             formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
                             using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;
                             formCrearFactura.txtBuscarTramite.ForeColor = Color.White;
                             formCrearFactura.txtBuscarTramite.Enabled = false;
 
-                            formCrearFactura.lblDAI.Text = "DAI: " +TramiteCache.DAI;
-                            formCrearFactura.lblSecuencialCliente.Text = "Secuencial Cliente: " + TramiteCache.secuencialCliente;
-
-                            formCrearFactura.lblDAI.Visible = true;
-                            formCrearFactura.lblSecuencialCliente.Visible = true;
-                            formCrearFactura.liniaDAIS.Visible = true;
+                            formCrearFactura.txtDAI.Text = TramiteCache.DAI;
+                            formCrearFactura.txtSecuencialCliente.Text = TramiteCache.secuencialCliente;
+                            formCrearFactura.txtCliente.Text = TramiteCache.rucEmpresa;
 
 
                             UserModel Read = new UserModel();
@@ -302,53 +307,68 @@ namespace Presentacion
                 }
 
             }
-            
-            
         }
 
-        private void desplegarV()
+
+        public void desplegarV()
         {
             string numeroT;
-            int numero = 0;
+            int numero;
+            int iTabla;
 
             FormCrearTramite formCrearTramite = new FormCrearTramite();
 
-            int iTabla = dataGridTramites.CurrentCell.RowIndex;
 
-            for (int i = 0; i < 25 - 1; i++)
+            formCrearTramite.cmbEmpresa.FlatStyle = FlatStyle.Standard;
+            formCrearTramite.cmbTipoTramite.FlatStyle = FlatStyle.Standard;
+            formCrearTramite.cmbCiudadNacionalizacion.FlatStyle = FlatStyle.Standard;
+
+            iTabla = dataGridTramites.CurrentCell.RowIndex;
+            
+
+
+            for (int i = 0; i < 34 - 1; i++)
             {
                 values[i] = dataGridTramites.Rows[iTabla].Cells[i].Value.ToString();
             }
 
-            formCrearTramite.txtNTramite.Text = values[0];
-            formCrearTramite.RUCEmpresa = values[1];
-            formCrearTramite.cmbTipoTramite.Text = values[2];
-            formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
-            formCrearTramite.txtSecuencialCliente.Text = values[4];
-            formCrearTramite.txtProveedor.Text = values[5];
-            formCrearTramite.txtNFacturaProveedor.Text = values[6];
-            formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[7]);
-            formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[8]);
-            formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[9]);
-            formCrearTramite.txtComentariosCrear.Text = values[10];
+            formCrearTramite.txtNTramite.Text = values[1];
+            formCrearTramite.RUCEmpresa = values[2];
+            formCrearTramite.cmbTipoTramite.Text = values[3];
+            formCrearTramite.cmbCiudadNacionalizacion.Text = values[4];
+            formCrearTramite.txtSecuencialCliente.Text = values[5];
+            formCrearTramite.txtProveedor.Text = values[6];
+            formCrearTramite.txtNFacturaProveedor.Text = values[7];
+            formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[8]);
+            formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[9]);
+            formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[10]);
+            formCrearTramite.txtComentariosCrear.Text = values[11];
 
 
-            formCrearTramite.txtDAI.Text = values[11];
-            formCrearTramite.txtNLiquidacion.Text = values[12];
-            formCrearTramite.txtOrdenLDM.Text = values[13];
+            formCrearTramite.txtDAI.Text = values[12];
+            formCrearTramite.txtNLiquidacion.Text = values[13];
+            formCrearTramite.txtOrdenLDM.Text = values[14];
 
-            formCrearTramite.txtNContenedor.Text = values[14];
-            formCrearTramite.txtNaviera.Text = values[15];
-            formCrearTramite.txtForwarderMaritima.Text = values[16];
+            formCrearTramite.txtNContenedor.Text = values[15];
+            formCrearTramite.txtNaviera.Text = values[16];
+            formCrearTramite.txtForwarderMaritima.Text = values[17];
 
-            formCrearTramite.txtNGuia.Text = values[17];
-            formCrearTramite.txtAerolinea.Text = values[18];
-            formCrearTramite.txtForwarderAerea.Text = values[19];
+            formCrearTramite.txtNGuia.Text = values[18];
+            formCrearTramite.txtAerolinea.Text = values[19];
+            formCrearTramite.txtForwarderAerea.Text = values[20];
 
-            formCrearTramite.txtPasePuerta.Text = values[20];
-            formCrearTramite.txtTransportista.Text = values[21];
-            formCrearTramite.txtForwarderTerrestre.Text = values[22];
-            formCrearTramite.txtComentariosAgregar.Text = values[23];
+            formCrearTramite.txtPasePuerta.Text = values[21];
+            formCrearTramite.txtTransportista.Text = values[22];
+            formCrearTramite.txtForwarderTerrestre.Text = values[23];
+            formCrearTramite.txtComentariosAgregar.Text = values[24];
+
+            formCrearTramite.txtConcepto.Text = values[28];
+            formCrearTramite.txtNBL.Text = values[29];
+
+            formCrearTramite.txtNGuiaCourier.Text = values[30];
+            formCrearTramite.txtAerolineaCourier.Text = values[31];
+            formCrearTramite.txtForwarderCourier.Text = values[32];
+
 
             formCrearTramite.IDTramite = int.Parse(values[0]);
 
@@ -357,7 +377,25 @@ namespace Presentacion
             formCrearTramite.txtNTramite.Enabled = false;
             formCrearTramite.panelInferior.Visible = false;
             formCrearTramite.desplegar = true;
-            formCrearTramite.minimizar.Visible = true; 
+            //formCrearTramite.detectSecuencial();
+            formCrearTramite.minimizar.Visible = true;
+            formCrearTramite.editar = true;
+            formCrearTramite.agregarInfo = true;
+
+
+            formCrearTramite.panelDatos.Visible = true;
+            formCrearTramite.cmbEmpresa.Enabled = false;
+            formCrearTramite.cmbTipoTramite.Enabled = false;
+            formCrearTramite.cmbCiudadNacionalizacion.Enabled = false;
+            formCrearTramite.txtConcepto.Enabled = false;
+            formCrearTramite.txtSecuencialCliente.Enabled = false;
+            formCrearTramite.txtProveedor.Enabled = false;
+            formCrearTramite.txtNFacturaProveedor.Enabled = false;
+            formCrearTramite.dateInicio.Enabled = false;
+            formCrearTramite.dateLimite.Enabled = false;
+            formCrearTramite.dateFinalizacion.Enabled = false;
+            formCrearTramite.txtComentariosCrear.Enabled = false;
+            formCrearTramite.btnNuevaEmpresa.Visible = false;
 
             formCrearTramite.Opacity = 0.9;
             formCrearTramite.Height = Screen.PrimaryScreen.WorkingArea.Size.Height - 30;
@@ -420,7 +458,7 @@ namespace Presentacion
             values[1] = dataGridTramites.Rows[e].Cells[0].Value.ToString();
             nombre = dataGridTramites.Rows[e].Cells[1].Value.ToString();
 
-            for (int i = 2; i < 25; i++)
+            for (int i = 2; i < 26; i++)
             {
                 values[i] = "0";
             }
@@ -475,6 +513,7 @@ namespace Presentacion
                 formCrearTramite.cmbEmpresa.Enabled = false;
                 formCrearTramite.cmbTipoTramite.Enabled = false;
                 formCrearTramite.cmbCiudadNacionalizacion.Enabled = false;
+                formCrearTramite.txtConcepto.Enabled = false;
                 formCrearTramite.txtSecuencialCliente.Enabled = false;
                 formCrearTramite.txtProveedor.Enabled = false;
                 formCrearTramite.txtNFacturaProveedor.Enabled = false;
@@ -491,40 +530,47 @@ namespace Presentacion
 
                 int iTabla = dataGridTramites.CurrentCell.RowIndex;
 
-                for (int i = 0; i < 25 - 1; i++)
+                for (int i = 0; i < 34 - 1; i++)
                 {
                     values[i] = dataGridTramites.Rows[iTabla].Cells[i].Value.ToString();
                 }
 
-                formCrearTramite.txtNTramite.Text = values[0];
-                formCrearTramite.RUCEmpresa = values[1];
-                formCrearTramite.cmbTipoTramite.Text = values[2];
-                formCrearTramite.cmbCiudadNacionalizacion.Text = values[3];
-                formCrearTramite.txtSecuencialCliente.Text = values[4];
-                formCrearTramite.txtProveedor.Text = values[5];
-                formCrearTramite.txtNFacturaProveedor.Text = values[6];
-                formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[7]);
-                formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[8]);
-                formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[9]);
-                formCrearTramite.txtComentariosCrear.Text = values[10];
+                formCrearTramite.txtNTramite.Text = values[1];
+                formCrearTramite.RUCEmpresa = values[2];
+                formCrearTramite.cmbTipoTramite.Text = values[3];
+                formCrearTramite.cmbCiudadNacionalizacion.Text = values[4];
+                formCrearTramite.txtSecuencialCliente.Text = values[5];
+                formCrearTramite.txtProveedor.Text = values[6];
+                formCrearTramite.txtNFacturaProveedor.Text = values[7];
+                formCrearTramite.dateInicio.Value = Convert.ToDateTime(values[8]);
+                formCrearTramite.dateLimite.Value = Convert.ToDateTime(values[9]);
+                formCrearTramite.dateFinalizacion.Value = Convert.ToDateTime(values[10]);
+                formCrearTramite.txtComentariosCrear.Text = values[11];
 
 
-                formCrearTramite.txtDAI.Text = values[11];
-                formCrearTramite.txtNLiquidacion.Text = values[12];
-                formCrearTramite.txtOrdenLDM.Text = values[13];
+                formCrearTramite.txtDAI.Text = values[12];
+                formCrearTramite.txtNLiquidacion.Text = values[13];
+                formCrearTramite.txtOrdenLDM.Text = values[14];
 
-                formCrearTramite.txtNContenedor.Text = values[14];
-                formCrearTramite.txtNaviera.Text = values[15];
-                formCrearTramite.txtForwarderMaritima.Text = values[16];
+                formCrearTramite.txtNContenedor.Text = values[15];
+                formCrearTramite.txtNaviera.Text = values[16];
+                formCrearTramite.txtForwarderMaritima.Text = values[17];
 
-                formCrearTramite.txtNGuia.Text = values[17];
-                formCrearTramite.txtAerolinea.Text = values[18];
-                formCrearTramite.txtForwarderAerea.Text = values[19];
+                formCrearTramite.txtNGuia.Text = values[18];
+                formCrearTramite.txtAerolinea.Text = values[19];
+                formCrearTramite.txtForwarderAerea.Text = values[20];
 
-                formCrearTramite.txtPasePuerta.Text = values[20];
-                formCrearTramite.txtTransportista.Text = values[21];
-                formCrearTramite.txtForwarderTerrestre.Text = values[22];
-                formCrearTramite.txtComentariosAgregar.Text = values[23];
+                formCrearTramite.txtPasePuerta.Text = values[21];
+                formCrearTramite.txtTransportista.Text = values[22];
+                formCrearTramite.txtForwarderTerrestre.Text = values[23];
+                formCrearTramite.txtComentariosAgregar.Text = values[24];
+
+                formCrearTramite.txtConcepto.Text = values[28];
+                formCrearTramite.txtNBL.Text = values[29];
+
+                formCrearTramite.txtNGuiaCourier.Text = values[30];
+                formCrearTramite.txtAerolineaCourier.Text = values[31];
+                formCrearTramite.txtForwarderCourier.Text = values[32];
 
                 formCrearTramite.IDTramite = int.Parse(values[0]);
 

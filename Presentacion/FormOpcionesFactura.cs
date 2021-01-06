@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -33,34 +34,24 @@ namespace Presentacion
         private void panelCrearTramite_MouseEnter(object sender, EventArgs e)
         {
             lblCrear.ForeColor = Color.FromArgb(185, 209, 234);
+            lblBuscar.ForeColor = Color.FromArgb(57, 60, 67);
+            lblEditar.ForeColor = Color.FromArgb(57, 60, 67);
+
+            btnCrear.Focus();
         }
 
-        private void panelCrearTramite_MouseLeave(object sender, EventArgs e)
-        {
-            lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
-        }
 
         private void pnlBuscar_MouseEnter(object sender, EventArgs e)
         {
+            lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
             lblBuscar.ForeColor = Color.FromArgb(185, 209, 234);
-            lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
-        }
-
-        private void pnlBuscar_MouseLeave(object sender, EventArgs e)
-        {
-            lblBuscar.ForeColor = Color.FromArgb(57, 60, 67);
-        }
-
-        private void pnlEditarTramite_MouseEnter(object sender, EventArgs e)
-        {
             lblEditar.ForeColor = Color.FromArgb(185, 209, 234);
-            lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
+
+            btnBuscar.Focus();
         }
 
-        private void pnlEditarTramite_MouseLeave(object sender, EventArgs e)
-        {
-            lblEditar.ForeColor = Color.FromArgb(57, 60, 67);
-        }
+
+
 
         private void panelCrearTramite_Click(object sender, EventArgs e)
         {
@@ -71,11 +62,23 @@ namespace Presentacion
                 FormCrearFactura formCrearFactura = new FormCrearFactura();
                 formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formCrearFactura.panelPrincipal.Visible = false;
-                //formCrearFactura.listaTramites.Visible = false;
                 formPrincipal.AddOwnedForm(formCrearFactura);
                 formPrincipal.AbrirFormInPanel(formCrearFactura);
             }
+        }
 
+
+        private void panelBuscarFactura_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+            if (formPrincipal != null)
+            {
+                FormBuscarFactura formBuscarFactura = new FormBuscarFactura();
+                formBuscarFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formBuscarFactura);
+                formPrincipal.AbrirFormInPanel(formBuscarFactura);
+            }
         }
 
         private void FormOpcionesFactura_KeyDown(object sender, KeyEventArgs e)
@@ -103,6 +106,14 @@ namespace Presentacion
         private void FormOpcionesFactura_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idImportaciones = 1;
+        }
+
+        private void FormOpcionesFactura_Load(object sender, EventArgs e)
+        {
+            if (UserCache.Position == Positions.Export)
+            {
+                panelCrearFactura.Visible = false; 
+            }
         }
     }
 }

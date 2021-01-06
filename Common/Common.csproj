@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cache\ComisionesCache.cs" />
     <Compile Include="Cache\EmpresaCache.cs" />
+    <Compile Include="Cache\FacturaCache.cs" />
     <Compile Include="Cache\PagosCache.cs" />
     <Compile Include="Cache\Positions.cs" />
     <Compile Include="Cache\TramiteCache.cs" />

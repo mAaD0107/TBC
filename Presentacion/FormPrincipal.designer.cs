@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -38,6 +38,7 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
+            this.btnOtrosServicios = new System.Windows.Forms.Button();
             this.btnRecaudacion = new System.Windows.Forms.Button();
             this.btnConfigurar = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -161,6 +162,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelMenuVertical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMenuVertical.Controls.Add(this.btnOtrosServicios);
             this.panelMenuVertical.Controls.Add(this.btnRecaudacion);
             this.panelMenuVertical.Controls.Add(this.btnConfigurar);
             this.panelMenuVertical.Controls.Add(this.btnLogOut);
@@ -177,6 +179,25 @@
             this.panelMenuVertical.Size = new System.Drawing.Size(250, 614);
             this.panelMenuVertical.TabIndex = 0;
             // 
+            // btnOtrosServicios
+            // 
+            this.animacionPanel.SetDecoration(this.btnOtrosServicios, BunifuAnimatorNS.DecorationType.None);
+            this.btnOtrosServicios.FlatAppearance.BorderSize = 0;
+            this.btnOtrosServicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnOtrosServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtrosServicios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtrosServicios.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOtrosServicios.Image = ((System.Drawing.Image)(resources.GetObject("btnOtrosServicios.Image")));
+            this.btnOtrosServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOtrosServicios.Location = new System.Drawing.Point(0, 290);
+            this.btnOtrosServicios.Name = "btnOtrosServicios";
+            this.btnOtrosServicios.Size = new System.Drawing.Size(250, 45);
+            this.btnOtrosServicios.TabIndex = 9;
+            this.btnOtrosServicios.Text = "   Otros Servicios";
+            this.btnOtrosServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOtrosServicios.UseVisualStyleBackColor = true;
+            this.btnOtrosServicios.Click += new System.EventHandler(this.btnOtrosServicios_Click);
+            // 
             // btnRecaudacion
             // 
             this.animacionPanel.SetDecoration(this.btnRecaudacion, BunifuAnimatorNS.DecorationType.None);
@@ -187,7 +208,7 @@
             this.btnRecaudacion.ForeColor = System.Drawing.Color.Transparent;
             this.btnRecaudacion.Image = ((System.Drawing.Image)(resources.GetObject("btnRecaudacion.Image")));
             this.btnRecaudacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecaudacion.Location = new System.Drawing.Point(0, 288);
+            this.btnRecaudacion.Location = new System.Drawing.Point(0, 341);
             this.btnRecaudacion.Name = "btnRecaudacion";
             this.btnRecaudacion.Size = new System.Drawing.Size(250, 45);
             this.btnRecaudacion.TabIndex = 6;
@@ -286,7 +307,7 @@
             this.btnReportes.ForeColor = System.Drawing.Color.Transparent;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(-3, 337);
+            this.btnReportes.Location = new System.Drawing.Point(0, 390);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(250, 45);
             this.btnReportes.TabIndex = 5;
@@ -436,22 +457,22 @@
             // 
             this.animacionPanel.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animacionPanel.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.animacionPanel.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.animacionPanel.DefaultAnimation = animation2;
             this.animacionPanel.Interval = 2;
             // 
             // panelGlobal
@@ -496,6 +517,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1032, 508);
             this.panelContenedor.TabIndex = 0;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // redondeoPanelInferior
             // 
@@ -568,6 +590,7 @@
         public System.Windows.Forms.PictureBox imgLogo;
         public System.Windows.Forms.Panel panelTitulo;
         private Bunifu.Framework.UI.BunifuElipse redondeoFormPrincipal;
+        private System.Windows.Forms.Button btnOtrosServicios;
     }
 }
 

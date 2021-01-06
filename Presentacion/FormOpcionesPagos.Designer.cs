@@ -42,16 +42,17 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.redondeoBtnCrear = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoBtnBuscar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSubmenu.SuspendLayout();
             this.panelCrear.SuspendLayout();
             this.panelBuscar.SuspendLayout();
             this.panelTitulo.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSubmenu
             // 
-            this.panelSubmenu.Controls.Add(this.panelCrear);
-            this.panelSubmenu.Controls.Add(this.panelBuscar);
+            this.panelSubmenu.Controls.Add(this.flowLayoutPanel1);
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSubmenu.Location = new System.Drawing.Point(0, 191);
             this.panelSubmenu.Name = "panelSubmenu";
@@ -60,7 +61,7 @@
             // 
             // panelCrear
             // 
-            this.panelCrear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelCrear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCrear.BackgroundImage")));
             this.panelCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -72,7 +73,7 @@
             this.panelCrear.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelCrear.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelCrear.Location = new System.Drawing.Point(157, 32);
+            this.panelCrear.Location = new System.Drawing.Point(3, 3);
             this.panelCrear.Name = "panelCrear";
             this.panelCrear.Quality = 10;
             this.panelCrear.Size = new System.Drawing.Size(236, 207);
@@ -118,7 +119,7 @@
             // 
             // panelBuscar
             // 
-            this.panelBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBuscar.BackgroundImage")));
             this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -131,7 +132,7 @@
             this.panelBuscar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelBuscar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelBuscar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.Location = new System.Drawing.Point(428, 32);
+            this.panelBuscar.Location = new System.Drawing.Point(245, 3);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Quality = 10;
             this.panelBuscar.Size = new System.Drawing.Size(236, 207);
@@ -224,6 +225,18 @@
             this.redondeoBtnBuscar.ElipseRadius = 30;
             this.redondeoBtnBuscar.TargetControl = this.panelBuscar;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.panelCrear);
+            this.flowLayoutPanel1.Controls.Add(this.panelBuscar);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(158, 18);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(489, 223);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
             // FormOpcionesPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +249,7 @@
             this.Name = "FormOpcionesPagos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormOpcionesPagos";
+            this.Load += new System.EventHandler(this.FormOpcionesPagos_Load);
             this.Shown += new System.EventHandler(this.FormOpcionesPagos_Shown);
             this.panelSubmenu.ResumeLayout(false);
             this.panelCrear.ResumeLayout(false);
@@ -244,6 +258,7 @@
             this.panelBuscar.PerformLayout();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -262,5 +277,6 @@
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnCrear;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnBuscar;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

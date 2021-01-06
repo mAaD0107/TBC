@@ -87,14 +87,44 @@ namespace Domain
             return userDao.readIVA();
         }
 
+        public DataTable readRetencionRenta()
+        {
+            return userDao.readRetencionRenta();
+        }
+
+        public DataTable readRetencionIVA()
+        {
+            return userDao.readRetencionIVA();
+        }
+
         public bool deleteIVA(double iva)
         {
             return userDao.deleteIVA(iva);
         }
 
+        public bool deleteRetRenta(double iva)
+        {
+            return userDao.deleteRetRenta(iva);
+        }
+
+        public bool deleteRetIVA(double iva)
+        {
+            return userDao.deleteRetIVA(iva);
+        }
+
         public bool insertIVA(string IVA)
         {
             return userDao.insertIVA(IVA);
+        }
+
+        public bool insertIVARetRenta(string IVA)
+        {
+            return userDao.insertIVARetRenta(IVA);
+        }
+
+        public bool insertIVARetIVA(string IVA)
+        {
+            return userDao.insertIVARetIVA(IVA);
         }
 
         public DataTable searchClients(string data)
@@ -142,6 +172,59 @@ namespace Domain
             return userDao.readTramitesComision();
         }
 
+        public DataTable readFacturasporClientes(string dateDesde, string dateHasta)
+        {
+            return userDao.readFacturasporClientes(dateDesde, dateHasta);
+        }
+
+
+        public DataTable readFacturasporClientesNombre(string dateDesde, string dateHasta, string texto)
+        {
+            return userDao.readFacturasporClientesNombre(dateDesde, dateHasta, texto);
+        }
+
+        public DataTable readFacturasTramite(string RUC, string dateDesde, string dateHasta)
+        {
+            return userDao.readFacturasTramite(RUC, dateDesde, dateHasta);
+        }
+
+
+        public DataTable readFacturasTramiteT(string dateDesde, string dateHasta)
+        {
+            return userDao.readFacturasTramiteT(dateDesde, dateHasta);
+        }
+
+
+        public DataTable readFacturasTramiteTB(string dateDesde, string dateHasta, string texto)
+        {
+            return userDao.readFacturasTramiteTB(dateDesde, dateHasta, texto);
+        }
+
+        public DataTable readFacturasTramiteB(string RUC, string dateDesde, string dateHasta, string Texto)
+        {
+            return userDao.readFacturasTramiteB(RUC, dateDesde, dateHasta, Texto);
+        }
+
+        public DataTable readInfoFacturas(string ID_Tramite)
+        {
+            return userDao.readInfoFacturas(ID_Tramite);
+        }
+
+        public DataTable readInfoFacturasT()
+        {
+            return userDao.readInfoFacturasT();
+        }
+
+        public DataTable readInfoFacturasTB(string texto)
+        {
+            return userDao.readInfoFacturasTB(texto);
+        }
+
+        public DataTable readFacturas(string nFactura)
+        {
+            return userDao.readFacturas(nFactura);
+        }
+
         public DataTable readAnticipo(int nTramite)
         {
             return userDao.readAnticipo(nTramite);
@@ -160,6 +243,11 @@ namespace Domain
         public string readNombreEmpresa(string RUC)
         {
             return userDao.readEmpresaTramite(RUC);
+        }
+
+        public string readRUCEmpresaTramite(string RUC)
+        {
+            return userDao.readRUCEmpresaTramite(RUC);
         }
 
 
@@ -218,6 +306,11 @@ namespace Domain
             return userDao.searchRUC(RUC);
         }
 
+        public bool searchSecuencial(string secuencial)
+        {
+            return userDao.searchSecuencial(secuencial);
+        }
+
         public bool searchRUCProveedor(string RUC)
         {
             return userDao.searchRUCProveedor(RUC);
@@ -241,6 +334,17 @@ namespace Domain
         public bool searchIVA(string IVA)
         {
             return userDao.searchIVA(IVA);
+        }
+
+        public bool searchIVARetRenta(string IVA)
+        {
+            return userDao.searchIVARetRenta(IVA);
+        }
+
+
+        public bool searchIVARetIVA(string IVA)
+        {
+            return userDao.searchIVARetIVA(IVA);
         }
 
         public DataTable searchComisionCliente(string cliente)
