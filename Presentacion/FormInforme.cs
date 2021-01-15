@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain.Facturacion;
+using Domain.Carta;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -21,17 +23,21 @@ namespace Presentacion
         private void FormInforme_Load(object sender, EventArgs e)
         {
             getListaFacturas();
-
-            this.reportViewer1.RefreshReport();
         }
 
         private void getListaFacturas()
         {
             InformeFacturas informeFacturas = new InformeFacturas();
+            InformeCarta informeCarta = new InformeCarta();
+           
             informeFacturas.crearInformeFacturas(6);
+            informeCarta.CrearInformeCarta(FacturaCache.ID_Tramite);
 
+            InformeCartaBindingSource.DataSource = informeCarta;
             InformeFacturasBindingSource.DataSource = informeFacturas;
             ListadoFacturasBindingSource.DataSource = informeFacturas.listadoFacturas;
+            
+            
 
             this.reportViewer1.RefreshReport();
         }

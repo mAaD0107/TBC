@@ -470,14 +470,7 @@ namespace Presentacion
                             ci.DateTimeFormat.GetMonthName(DateTime.Now.Month) + " de " +
                             fecha.Year.ToString();
 
-            if (UserCache.Position == Positions.Contabilidad)
-            {
-                btnTramites.Enabled = false;
-                btnClientes.Enabled = false;
-                btnReportes.Enabled = false;
 
-                btnTramites.ForeColor = Color.White;
-            }
 
             if (UserCache.Position == Positions.Tramitacion)
             {
@@ -508,6 +501,15 @@ namespace Presentacion
             }
 
             if (UserCache.Position == Positions.Export)
+            {
+                btnExportaciones.Visible = false;
+                btnOtrosServicios.Visible = false;
+                btnRecaudacion.Visible = false;
+                btnReportes.Visible = false;
+                btnTramites.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Contabilidad)
             {
                 btnExportaciones.Visible = false;
                 btnOtrosServicios.Visible = false;

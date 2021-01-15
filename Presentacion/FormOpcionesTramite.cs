@@ -54,6 +54,13 @@ namespace Presentacion
             {
                 panelAgregarInfo.Visible = false;
             }
+
+            if (UserCache.Position == Positions.Contabilidad)
+            {
+                panelCrear.Visible = false;
+                panelAgregarInfo.Visible = false;
+                panelDocumentos.Visible = false;
+            }
         }
 
 

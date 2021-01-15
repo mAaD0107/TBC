@@ -38,14 +38,12 @@ namespace Presentacion
             {
                 readClientes();
             }
-            /*
+            
             if (desplegar)
             {
-                cmbEmpresa.Enabled = false;
-                cmbTipoTramite.Enabled = false;
-                cmbCiudadNacionalizacion.Enabled = false; 
+                panelInferior.Visible = false; 
             }
-            */
+            
             txtNTramite.Text = "TBC" + Year + "-" + IDTramite.ToString("D5");
 
             if (agregarInfo)
@@ -88,7 +86,11 @@ namespace Presentacion
 
 
                 panelComentarios.Visible = true;
-                panelInferior.Visible = true;
+                if (!desplegar)
+                {
+                    panelInferior.Visible = true;
+                }
+                
                 
 
                 
@@ -862,10 +864,6 @@ namespace Presentacion
                                 formCrearTramite.Text = "Trámite: " + numeroT;
                                 formCrearTramite.StartPosition = FormStartPosition.CenterScreen;
                                 formCrearTramite.Show();
-
-
-
-
                             }
                         }
                         else

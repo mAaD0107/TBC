@@ -540,7 +540,7 @@
             this.animacionPanel.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrincipal";
-            this.Opacity = 0.98D;
+            this.Opacity = 0.96D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Best Cargo";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);

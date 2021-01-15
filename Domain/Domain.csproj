@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carta\AbonosFacturas.cs" />
+    <Compile Include="Carta\InformeCarta.cs" />
+    <Compile Include="Carta\ListadoFacturas.cs" />
     <Compile Include="Facturacion\InformacionTramite.cs" />
     <Compile Include="Facturacion\InformeFacturas.cs" />
     <Compile Include="Facturacion\ListadoFacturas.cs" />
@@ -58,6 +61,5 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

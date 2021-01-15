@@ -79,6 +79,7 @@ namespace Presentacion
         {
             readTramite();
             readSaldo();
+            cargarDatosTramite();
             dateFactura.Value = DateTime.Today;
             datePagoGeneral.Value = DateTime.Today;
         }
@@ -91,12 +92,23 @@ namespace Presentacion
             lblSaldoCliente.Text = "Saldo Cliente: " + saldCliente.ToString("N2");
         }
 
-        
-        
+
+        private void cargarDatosTramite()
+        {
+            txtDAI.Text = PagosCache.DAI;
+            txtSecuencialCliente.Text = PagosCache.secuencialCliente;
+            txtCliente.Text = PagosCache.Empresa;
+            txtIDTramite.Text = PagosCache.idTramite;
+        }
+
+
+
+
         private bool cerrarVentana = false;
         DataTable Pagos = new DataTable();
 
         List<string> Agente = new List<string>();
+        List<string> AgenteLDM = new List<string>();
         List<string> TBC = new List<string>();
         List<string> Transporte = new List<string>();
         List<string> GastosLocales = new List<string>();
@@ -122,7 +134,7 @@ namespace Presentacion
         List<string> TransporteIII = new List<string>();
 
 
-        double pAgente, pTBC, pTransporte, pGastosLocales, pVistoTHC, pRetiroBL,
+        double pAgente, pAgenteLDM, pTBC, pTransporte, pGastosLocales, pVistoTHC, pRetiroBL,
                pLiquidacionAduana, pRetiroGuia, pDemoraje, pActualizacionCarta,
                pAlmacenaje, pDevContenedor, pManipContenedor, pGastosI, pGastosII,
                pGastosIII, pGastosIV, pGastosV, pHonorariosI, pHonorariosII, pHonorariosIII,
@@ -189,6 +201,44 @@ namespace Presentacion
 
 
                             panelAgente.Visible = true;
+                            break;
+
+                        case "Agente_LDM":
+                            lblEmpresaLDM.Text = "Empresa: " + pago["Empresa_Factura"].ToString();
+                            lblNFacturaLDM.Text = "Número de Factura: " + pago["Numero_Factura"].ToString();
+                            lblValCobAgenteLDM.Text = "Valor a Cobrar: " + double.Parse(pago["ValorACobrarFactura"].ToString()).ToString("N2");
+
+                            AgenteLDM.Add(pago["Empresa_Factura"].ToString());
+                            AgenteLDM.Add(pago["Numero_Factura"].ToString());
+                            AgenteLDM.Add(double.Parse(pago["TotalFactura"].ToString()).ToString("N2"));
+                            AgenteLDM.Add(pago["Numero_Retencion"].ToString());
+                            AgenteLDM.Add(double.Parse(pago["Total_Retencion"].ToString()).ToString("N2"));
+                            AgenteLDM.Add(pago["Numero_Nota_Credito"].ToString());
+                            AgenteLDM.Add(double.Parse(pago["Total_Nota_Credito"].ToString()).ToString("N2"));
+                            AgenteLDM.Add(double.Parse(pago["ValorACobrarFactura"].ToString()).ToString("N2"));
+
+                            pAgenteLDM = double.Parse(pago["ValorACobrarFactura"].ToString());
+                            totalPagos += pAgenteLDM;
+
+                            Abonos = Read.readAbonos(AgenteLDM[1]);
+
+                            if (Abonos.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < Abonos.Rows.Count; i++)
+                                {
+                                    pAgenteLDM -= double.Parse(Abonos.Rows[i]["AbonoFactura"].ToString());
+                                    pAgenteLDM -= double.Parse(Abonos.Rows[i]["PagoGeneral"].ToString());
+                                }
+
+                                AgenteLDM[7] = pAgenteLDM.ToString("N2");
+                                lblValCobAgenteLDM.Text = "Valor a Cobrar: " + AgenteLDM[7];
+                            }
+
+
+                            listas.Add(AgenteLDM.ToArray());
+
+
+                            panelAgenteLDM.Visible = true;
                             break;
 
                         case "TBC":
@@ -1071,6 +1121,9 @@ namespace Presentacion
                     case "Agente":
                         txtValorCobrar.Text = Agente[7];
                         break;
+                    case "AgenteLDM":
+                        txtValorCobrar.Text = AgenteLDM[7];
+                        break;
 
                     case "TBC":
                         txtValorCobrar.Text = TBC[7];
@@ -1184,7 +1237,7 @@ namespace Presentacion
                         break;
                 }
 
-                totPago =  pAgente + pTBC + pTransporte + pGastosLocales + pVistoTHC + pRetiroBL +
+                totPago =  pAgente + pAgenteLDM+ pTBC + pTransporte + pGastosLocales + pVistoTHC + pRetiroBL +
                            pLiquidacionAduana + pRetiroGuia + pDemoraje + pActualizacionCarta +
                            pAlmacenaje + pDevContenedor + pManipContenedor + pGastosI + pGastosII +
                            pGastosIII + pGastosIV + pGastosV + pHonorariosI + pHonorariosII + pHonorariosIII+
@@ -1203,7 +1256,7 @@ namespace Presentacion
                     porcentajePago.Value = 0; 
                 }
 
-                panelPagoGeneral.Visible = true; 
+                panelPagoGeneral.Visible = false; 
 
             }
             else
@@ -1216,6 +1269,7 @@ namespace Presentacion
         private void clearListas()
         {
             Agente.Clear();
+            AgenteLDM.Clear();
             TBC.Clear();
             Transporte.Clear();
             GastosLocales.Clear();
@@ -1423,10 +1477,23 @@ namespace Presentacion
             colorPanel(sender);
         }
 
+        private void panelAgenteLDM_MouseEnter(object sender, EventArgs e)
+        {
+            colorPanel(sender);
+        }
+
 
         #endregion
 
         #region CargarDatosInformacion
+
+        private void clearFactura()
+        {
+            txtDetalleAbono.Text = "";
+            txtAbonoFactura.Text = "";
+            dateFactura.Value = DateTime.Now;
+            BtnAgregarAbono.Visible = true;
+        }
 
         string facturaSelecionada;
         private void panelAgente_Click(object sender, EventArgs e)
@@ -1449,7 +1516,30 @@ namespace Presentacion
             facturaSelecionada = "Agente";
 
             readTramite();
+            clearFactura();
 
+        }
+
+        private void panelAgenteLDM_Click(object sender, EventArgs e)
+        {
+            lblTituloInfoPagos.Text = "Agente LDM";
+
+            txtEmpresa.Text = AgenteLDM[0].ToString();
+            txtnFactura.Text = AgenteLDM[1].ToString();
+            txtTotalFactura.Text = AgenteLDM[2].ToString();
+            txtnRetencion.Text = AgenteLDM[3].ToString();
+            txtTotalRetencion.Text = AgenteLDM[4].ToString();
+            txtnNotaCredito.Text = AgenteLDM[5].ToString();
+            txtTotalNotaCredita.Text = AgenteLDM[6].ToString();
+            txtValorCobrar.Text = AgenteLDM[7].ToString();
+
+            UserModel read = new UserModel();
+            dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);
+
+            facturaSelecionada = "AgenteLDM";
+
+            readTramite();
+            clearFactura();
         }
 
 
@@ -1472,6 +1562,7 @@ namespace Presentacion
             facturaSelecionada = "TBC";
 
             readTramite();
+            clearFactura();
         }
 
         private void lblTPTransporte_Click_1(object sender, EventArgs e)
@@ -1493,6 +1584,7 @@ namespace Presentacion
             facturaSelecionada = "Transporte";
 
             readTramite();
+            clearFactura();
         }
 
         private void panelGastosLocales_Click(object sender, EventArgs e)
@@ -1514,6 +1606,7 @@ namespace Presentacion
             facturaSelecionada = "GastosLocales";
 
             readTramite();
+            clearFactura();
         }
 
 
@@ -1537,6 +1630,7 @@ namespace Presentacion
             facturaSelecionada = "VistoTHC";
 
             readTramite();
+            clearFactura();
         }
 
         private void panelRetiroBL_Click_1(object sender, EventArgs e)
@@ -1558,6 +1652,7 @@ namespace Presentacion
             facturaSelecionada = "RetiroBL";
 
             readTramite();
+            clearFactura();
         }
 
 
@@ -1580,6 +1675,7 @@ namespace Presentacion
             facturaSelecionada = "LiquidacionAduana";
 
             readTramite();
+            clearFactura();
         }
 
         private void panelRetiroGuía_Click(object sender, EventArgs e)
@@ -1601,6 +1697,7 @@ namespace Presentacion
             facturaSelecionada = "RetiroGuia";
 
             readTramite();
+            clearFactura();
         }
 
         private void panelDemoraje_Click(object sender, EventArgs e)
@@ -1622,6 +1719,7 @@ namespace Presentacion
             facturaSelecionada = "Demoraje";
 
             readTramite();
+            clearFactura();
         }
 
         private void panelActualizacionCarta_Click(object sender, EventArgs e)
@@ -1643,6 +1741,7 @@ namespace Presentacion
             facturaSelecionada = "ActualizacionCarta";
 
             readTramite();
+            clearFactura();
         }
 
 
@@ -1665,6 +1764,7 @@ namespace Presentacion
             facturaSelecionada = "Almacenaje";
 
             readTramite();
+            clearFactura();
         }
 
         bool cargarPanel = false;
@@ -1696,6 +1796,7 @@ namespace Presentacion
             facturaSelecionada = "DevContenedor";
 
             readTramite();
+            clearFactura();
         }
 
 
@@ -1719,6 +1820,7 @@ namespace Presentacion
             facturaSelecionada = "ManipContenedor";
 
             readTramite();
+            clearFactura();
         }
 
 
@@ -1745,6 +1847,19 @@ namespace Presentacion
                         agenteSeleccionado = false;
                         lblDestinoPagoPG.Visible = false;
                         cmbDestinoPagoGL.Visible = false;
+                    }
+                    break;
+
+                case "Agente_LDM":
+                    if (!checkListFacturas.GetItemChecked(e.Index))
+                    {
+                        panelAgenteLDM.BackColor = Color.FromArgb(75, 205, 92, 92);
+                        totalFacturas += pAgenteLDM;
+                    }
+                    else
+                    {
+                        panelAgenteLDM.BackColor = Color.FromArgb(100, 33, 31, 41);
+                        totalFacturas += pAgenteLDM;
                     }
                     break;
 
@@ -2196,6 +2311,24 @@ namespace Presentacion
             {
                 panelPagoGeneral.Height = 71;
             }
+        }
+
+        private void dataGridPagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            double abono = double.Parse(dataGridPagos.Rows[dataGridPagos.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            DateTime fechaAbono = Convert.ToDateTime(dataGridPagos.Rows[dataGridPagos.CurrentCell.RowIndex].Cells[1].Value.ToString());
+            string detalleAbono = dataGridPagos.Rows[dataGridPagos.CurrentCell.RowIndex].Cells[2].Value.ToString();
+
+            txtAbonoFactura.Text = abono.ToString("N2");
+            txtDetalleAbono.Text = detalleAbono;
+            dateFactura.Value = fechaAbono;
+
+            BtnAgregarAbono.Visible = false;
+        }
+
+        private void txtAbonoFactura_Enter(object sender, EventArgs e)
+        {
+            BtnAgregarAbono.Visible = true;
         }
 
         private void panelGastosV_Click(object sender, EventArgs e)
@@ -2666,6 +2799,10 @@ namespace Presentacion
                             {
                                 MessageBox.Show("El abono fue realizado exitosamente.");
                                 readTramite();
+
+                                txtAbonoFactura.Text = "";
+                                txtDetalleAbono.Text = "";
+
 
                                 UserModel read = new UserModel();
                                 dataGridPagos.DataSource = read.readAbonoFactura(txtnFactura.Text);

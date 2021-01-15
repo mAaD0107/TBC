@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearPago));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelPropiedades = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.Label();
             this.maximizar = new System.Windows.Forms.PictureBox();
@@ -75,6 +75,18 @@
             this.panelContenedorPagos = new System.Windows.Forms.Panel();
             this.panelPagos = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSeparador = new System.Windows.Forms.Panel();
+            this.panelInfoTramite = new System.Windows.Forms.Panel();
+            this.txtSecuencialCliente = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtDAI = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtIDTramite = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelAgente = new System.Windows.Forms.Panel();
             this.lblValCobAgente = new System.Windows.Forms.Label();
             this.panelTituloAgente = new System.Windows.Forms.Panel();
@@ -253,6 +265,12 @@
             this.label33 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelAgenteLDM = new System.Windows.Forms.Panel();
+            this.lblValCobAgenteLDM = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblNFacturaLDM = new System.Windows.Forms.Label();
+            this.lblEmpresaLDM = new System.Windows.Forms.Label();
             this.panelTituloForm = new System.Windows.Forms.Panel();
             this.lblTituloP = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
@@ -267,7 +285,7 @@
             this.redondeoPanelPAgente = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelTBC = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelTransporte = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.redondeoPanelGastosL = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.r = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelVistoTHC = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelRetiroBL = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelLiquidAduana = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -295,6 +313,8 @@
             this.redondeoPanelTransporteIII = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPanelAnticipo = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoBtnAnticipo = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoAgenteLDM = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoInfoTramite = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelInfoPago.SuspendLayout();
@@ -306,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).BeginInit();
             this.panelContenedorPagos.SuspendLayout();
             this.panelPagos.SuspendLayout();
+            this.panelInfoTramite.SuspendLayout();
             this.panelAgente.SuspendLayout();
             this.panelTituloAgente.SuspendLayout();
             this.panelTBC.SuspendLayout();
@@ -356,6 +377,8 @@
             this.panel30.SuspendLayout();
             this.panelPagoGeneral.SuspendLayout();
             this.panelAnticipo.SuspendLayout();
+            this.panelAgenteLDM.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panelTituloForm.SuspendLayout();
             this.panelTotal.SuspendLayout();
             this.SuspendLayout();
@@ -425,7 +448,7 @@
             this.panelInfoPago.Controls.Add(this.txtnRetencion);
             this.panelInfoPago.Location = new System.Drawing.Point(15, 1);
             this.panelInfoPago.Name = "panelInfoPago";
-            this.panelInfoPago.Size = new System.Drawing.Size(451, 601);
+            this.panelInfoPago.Size = new System.Drawing.Size(392, 601);
             this.panelInfoPago.TabIndex = 38;
             this.panelInfoPago.Resize += new System.EventHandler(this.panelInfoPago_Resize);
             // 
@@ -444,7 +467,7 @@
             this.PanelAbonoAgente.Controls.Add(this.label1);
             this.PanelAbonoAgente.Location = new System.Drawing.Point(0, 340);
             this.PanelAbonoAgente.Name = "PanelAbonoAgente";
-            this.PanelAbonoAgente.Size = new System.Drawing.Size(448, 188);
+            this.PanelAbonoAgente.Size = new System.Drawing.Size(389, 188);
             this.PanelAbonoAgente.TabIndex = 37;
             // 
             // cmbDestinoPago
@@ -464,9 +487,10 @@
             this.cmbDestinoPago.Location = new System.Drawing.Point(135, 145);
             this.cmbDestinoPago.Margin = new System.Windows.Forms.Padding(1);
             this.cmbDestinoPago.Name = "cmbDestinoPago";
-            this.cmbDestinoPago.Size = new System.Drawing.Size(297, 25);
+            this.cmbDestinoPago.Size = new System.Drawing.Size(238, 25);
             this.cmbDestinoPago.TabIndex = 74;
             this.cmbDestinoPago.Visible = false;
+            this.cmbDestinoPago.Enter += new System.EventHandler(this.txtAbonoFactura_Enter);
             // 
             // lblDestinopago
             // 
@@ -495,9 +519,10 @@
             this.dateFactura.Location = new System.Drawing.Point(132, 98);
             this.dateFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateFactura.Name = "dateFactura";
-            this.dateFactura.Size = new System.Drawing.Size(300, 33);
+            this.dateFactura.Size = new System.Drawing.Size(241, 33);
             this.dateFactura.TabIndex = 72;
             this.dateFactura.Value = new System.DateTime(2020, 9, 15, 10, 48, 13, 902);
+            this.dateFactura.Enter += new System.EventHandler(this.txtAbonoFactura_Enter);
             // 
             // label3
             // 
@@ -522,8 +547,9 @@
             this.txtDetalleAbono.Location = new System.Drawing.Point(132, 44);
             this.txtDetalleAbono.Multiline = true;
             this.txtDetalleAbono.Name = "txtDetalleAbono";
-            this.txtDetalleAbono.Size = new System.Drawing.Size(300, 47);
+            this.txtDetalleAbono.Size = new System.Drawing.Size(241, 47);
             this.txtDetalleAbono.TabIndex = 70;
+            this.txtDetalleAbono.Enter += new System.EventHandler(this.txtAbonoFactura_Enter);
             // 
             // label2
             // 
@@ -547,8 +573,9 @@
             this.txtAbonoFactura.ForeColor = System.Drawing.Color.LightGray;
             this.txtAbonoFactura.Location = new System.Drawing.Point(132, 13);
             this.txtAbonoFactura.Name = "txtAbonoFactura";
-            this.txtAbonoFactura.Size = new System.Drawing.Size(300, 19);
+            this.txtAbonoFactura.Size = new System.Drawing.Size(241, 19);
             this.txtAbonoFactura.TabIndex = 68;
+            this.txtAbonoFactura.Enter += new System.EventHandler(this.txtAbonoFactura_Enter);
             this.txtAbonoFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbonoFactura_KeyPress);
             // 
             // label1
@@ -592,7 +619,7 @@
             this.txtValorCobrar.ForeColor = System.Drawing.Color.White;
             this.txtValorCobrar.Location = new System.Drawing.Point(142, 292);
             this.txtValorCobrar.Name = "txtValorCobrar";
-            this.txtValorCobrar.Size = new System.Drawing.Size(293, 40);
+            this.txtValorCobrar.Size = new System.Drawing.Size(234, 40);
             this.txtValorCobrar.TabIndex = 68;
             this.txtValorCobrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -603,7 +630,7 @@
             this.panelTituloInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTituloInfo.Location = new System.Drawing.Point(0, 0);
             this.panelTituloInfo.Name = "panelTituloInfo";
-            this.panelTituloInfo.Size = new System.Drawing.Size(451, 42);
+            this.panelTituloInfo.Size = new System.Drawing.Size(392, 42);
             this.panelTituloInfo.TabIndex = 1;
             // 
             // lblTituloInfoPagos
@@ -615,7 +642,7 @@
             this.lblTituloInfoPagos.ForeColor = System.Drawing.Color.LightGray;
             this.lblTituloInfoPagos.Location = new System.Drawing.Point(20, 3);
             this.lblTituloInfoPagos.Name = "lblTituloInfoPagos";
-            this.lblTituloInfoPagos.Size = new System.Drawing.Size(415, 36);
+            this.lblTituloInfoPagos.Size = new System.Drawing.Size(356, 36);
             this.lblTituloInfoPagos.TabIndex = 7;
             this.lblTituloInfoPagos.Text = "SELECCIONAR";
             this.lblTituloInfoPagos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -656,7 +683,7 @@
             this.txtTotalNotaCredita.ForeColor = System.Drawing.Color.White;
             this.txtTotalNotaCredita.Location = new System.Drawing.Point(172, 255);
             this.txtTotalNotaCredita.Name = "txtTotalNotaCredita";
-            this.txtTotalNotaCredita.Size = new System.Drawing.Size(245, 17);
+            this.txtTotalNotaCredita.Size = new System.Drawing.Size(186, 17);
             this.txtTotalNotaCredita.TabIndex = 66;
             // 
             // txtEmpresa
@@ -670,7 +697,7 @@
             this.txtEmpresa.ForeColor = System.Drawing.Color.White;
             this.txtEmpresa.Location = new System.Drawing.Point(108, 57);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(327, 17);
+            this.txtEmpresa.Size = new System.Drawing.Size(268, 17);
             this.txtEmpresa.TabIndex = 53;
             // 
             // label11
@@ -708,7 +735,7 @@
             this.txtnNotaCredito.ForeColor = System.Drawing.Color.White;
             this.txtnNotaCredito.Location = new System.Drawing.Point(190, 222);
             this.txtnNotaCredito.Name = "txtnNotaCredito";
-            this.txtnNotaCredito.Size = new System.Drawing.Size(245, 17);
+            this.txtnNotaCredito.Size = new System.Drawing.Size(186, 17);
             this.txtnNotaCredito.TabIndex = 64;
             // 
             // txtnFactura
@@ -722,7 +749,7 @@
             this.txtnFactura.ForeColor = System.Drawing.Color.White;
             this.txtnFactura.Location = new System.Drawing.Point(176, 90);
             this.txtnFactura.Name = "txtnFactura";
-            this.txtnFactura.Size = new System.Drawing.Size(259, 17);
+            this.txtnFactura.Size = new System.Drawing.Size(200, 17);
             this.txtnFactura.TabIndex = 56;
             // 
             // label12
@@ -760,7 +787,7 @@
             this.txtTotalRetencion.ForeColor = System.Drawing.Color.White;
             this.txtTotalRetencion.Location = new System.Drawing.Point(152, 189);
             this.txtTotalRetencion.Name = "txtTotalRetencion";
-            this.txtTotalRetencion.Size = new System.Drawing.Size(259, 17);
+            this.txtTotalRetencion.Size = new System.Drawing.Size(200, 17);
             this.txtTotalRetencion.TabIndex = 62;
             // 
             // txtTotalFactura
@@ -774,7 +801,7 @@
             this.txtTotalFactura.ForeColor = System.Drawing.Color.White;
             this.txtTotalFactura.Location = new System.Drawing.Point(135, 123);
             this.txtTotalFactura.Name = "txtTotalFactura";
-            this.txtTotalFactura.Size = new System.Drawing.Size(259, 17);
+            this.txtTotalFactura.Size = new System.Drawing.Size(200, 17);
             this.txtTotalFactura.TabIndex = 58;
             // 
             // label13
@@ -812,7 +839,7 @@
             this.txtnRetencion.ForeColor = System.Drawing.Color.White;
             this.txtnRetencion.Location = new System.Drawing.Point(192, 156);
             this.txtnRetencion.Name = "txtnRetencion";
-            this.txtnRetencion.Size = new System.Drawing.Size(243, 17);
+            this.txtnRetencion.Size = new System.Drawing.Size(184, 17);
             this.txtnRetencion.TabIndex = 60;
             // 
             // redondeoPanelAgente
@@ -824,8 +851,8 @@
             // 
             this.PanelGeneral.AutoSize = true;
             this.PanelGeneral.ColumnCount = 2;
-            this.PanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.1F));
-            this.PanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.9F));
+            this.PanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
+            this.PanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.PanelGeneral.Controls.Add(this.panelPagoCompleto, 1, 0);
             this.PanelGeneral.Controls.Add(this.panelContenedorPagos, 0, 0);
             this.PanelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -843,9 +870,9 @@
             this.panelPagoCompleto.Controls.Add(this.panelListaPagos);
             this.panelPagoCompleto.Controls.Add(this.panelInfoPago);
             this.panelPagoCompleto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPagoCompleto.Location = new System.Drawing.Point(712, 3);
+            this.panelPagoCompleto.Location = new System.Drawing.Point(771, 3);
             this.panelPagoCompleto.Name = "panelPagoCompleto";
-            this.panelPagoCompleto.Size = new System.Drawing.Size(485, 739);
+            this.panelPagoCompleto.Size = new System.Drawing.Size(426, 739);
             this.panelPagoCompleto.TabIndex = 39;
             // 
             // panelListaPagos
@@ -855,7 +882,7 @@
             this.panelListaPagos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelListaPagos.Location = new System.Drawing.Point(0, 608);
             this.panelListaPagos.Name = "panelListaPagos";
-            this.panelListaPagos.Size = new System.Drawing.Size(485, 131);
+            this.panelListaPagos.Size = new System.Drawing.Size(426, 131);
             this.panelListaPagos.TabIndex = 39;
             // 
             // label18
@@ -874,13 +901,13 @@
             // 
             this.dataGridPagos.AllowUserToAddRows = false;
             this.dataGridPagos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataGridPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridPagos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -889,26 +916,26 @@
             this.dataGridPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridPagos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle31.NullValue = "--------------";
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPagos.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.NullValue = "--------------";
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPagos.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridPagos.DoubleBuffered = true;
             this.dataGridPagos.EnableHeadersVisualStyles = false;
             this.dataGridPagos.GridColor = System.Drawing.Color.DimGray;
@@ -918,18 +945,19 @@
             this.dataGridPagos.Name = "dataGridPagos";
             this.dataGridPagos.ReadOnly = true;
             this.dataGridPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPagos.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPagos.Size = new System.Drawing.Size(451, 83);
+            this.dataGridPagos.Size = new System.Drawing.Size(392, 83);
             this.dataGridPagos.StandardTab = true;
             this.dataGridPagos.TabIndex = 3;
+            this.dataGridPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPagos_CellContentClick);
             this.dataGridPagos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridPagos_RowsAdded);
             this.dataGridPagos.Resize += new System.EventHandler(this.dataGridPagos_Resize);
             // 
@@ -942,7 +970,7 @@
             this.panelContenedorPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedorPagos.Location = new System.Drawing.Point(3, 3);
             this.panelContenedorPagos.Name = "panelContenedorPagos";
-            this.panelContenedorPagos.Size = new System.Drawing.Size(703, 739);
+            this.panelContenedorPagos.Size = new System.Drawing.Size(762, 739);
             this.panelContenedorPagos.TabIndex = 40;
             // 
             // panelPagos
@@ -951,6 +979,7 @@
             this.panelPagos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelPagos.Controls.Add(this.panelSeparador);
+            this.panelPagos.Controls.Add(this.panelInfoTramite);
             this.panelPagos.Controls.Add(this.panelAgente);
             this.panelPagos.Controls.Add(this.panelTBC);
             this.panelPagos.Controls.Add(this.panelTransporte);
@@ -975,13 +1004,14 @@
             this.panelPagos.Controls.Add(this.panelTransporteI);
             this.panelPagos.Controls.Add(this.panelTransporteII);
             this.panelPagos.Controls.Add(this.panelTransporteIII);
-            this.panelPagos.Controls.Add(this.panelPagoGeneral);
             this.panelPagos.Controls.Add(this.panelAnticipo);
+            this.panelPagos.Controls.Add(this.panelAgenteLDM);
+            this.panelPagos.Controls.Add(this.panelPagoGeneral);
             this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPagos.Location = new System.Drawing.Point(0, 49);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(703, 599);
+            this.panelPagos.Size = new System.Drawing.Size(762, 599);
             this.panelPagos.TabIndex = 41;
             this.panelPagos.Resize += new System.EventHandler(this.panelPagos_Resize);
             // 
@@ -990,15 +1020,177 @@
             this.panelSeparador.BackColor = System.Drawing.Color.Transparent;
             this.panelSeparador.Location = new System.Drawing.Point(3, 3);
             this.panelSeparador.Name = "panelSeparador";
-            this.panelSeparador.Size = new System.Drawing.Size(368, 23);
+            this.panelSeparador.Size = new System.Drawing.Size(563, 23);
             this.panelSeparador.TabIndex = 62;
+            // 
+            // panelInfoTramite
+            // 
+            this.panelInfoTramite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelInfoTramite.Controls.Add(this.txtSecuencialCliente);
+            this.panelInfoTramite.Controls.Add(this.label40);
+            this.panelInfoTramite.Controls.Add(this.txtDAI);
+            this.panelInfoTramite.Controls.Add(this.label36);
+            this.panelInfoTramite.Controls.Add(this.txtCliente);
+            this.panelInfoTramite.Controls.Add(this.label23);
+            this.panelInfoTramite.Controls.Add(this.label20);
+            this.panelInfoTramite.Controls.Add(this.txtIDTramite);
+            this.panelInfoTramite.Controls.Add(this.label37);
+            this.panelInfoTramite.Controls.Add(this.shapeContainer4);
+            this.panelInfoTramite.Location = new System.Drawing.Point(3, 32);
+            this.panelInfoTramite.Name = "panelInfoTramite";
+            this.panelInfoTramite.Size = new System.Drawing.Size(510, 237);
+            this.panelInfoTramite.TabIndex = 73;
+            // 
+            // txtSecuencialCliente
+            // 
+            this.txtSecuencialCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSecuencialCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtSecuencialCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSecuencialCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecuencialCliente.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSecuencialCliente.Location = new System.Drawing.Point(162, 113);
+            this.txtSecuencialCliente.Name = "txtSecuencialCliente";
+            this.txtSecuencialCliente.ReadOnly = true;
+            this.txtSecuencialCliente.Size = new System.Drawing.Size(318, 24);
+            this.txtSecuencialCliente.TabIndex = 80;
+            this.txtSecuencialCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label40.Location = new System.Drawing.Point(18, 116);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(133, 18);
+            this.label40.TabIndex = 79;
+            this.label40.Text = "Secuencial Cliente:";
+            // 
+            // txtDAI
+            // 
+            this.txtDAI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDAI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtDAI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDAI.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDAI.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDAI.Location = new System.Drawing.Point(61, 182);
+            this.txtDAI.Name = "txtDAI";
+            this.txtDAI.ReadOnly = true;
+            this.txtDAI.Size = new System.Drawing.Size(419, 24);
+            this.txtDAI.TabIndex = 78;
+            this.txtDAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label36.Location = new System.Drawing.Point(18, 185);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(35, 18);
+            this.label36.TabIndex = 77;
+            this.label36.Text = "DAI:";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCliente.Location = new System.Drawing.Point(85, 148);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(394, 24);
+            this.txtCliente.TabIndex = 76;
+            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label23.Location = new System.Drawing.Point(18, 151);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(57, 18);
+            this.label23.TabIndex = 75;
+            this.label23.Text = "Cliente:";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.LightGray;
+            this.label20.Location = new System.Drawing.Point(14, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(230, 22);
+            this.label20.TabIndex = 73;
+            this.label20.Text = "INFORMACIÓN TRÁMITE";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtIDTramite
+            // 
+            this.txtIDTramite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIDTramite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtIDTramite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIDTramite.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDTramite.ForeColor = System.Drawing.Color.DimGray;
+            this.txtIDTramite.Location = new System.Drawing.Point(85, 69);
+            this.txtIDTramite.Name = "txtIDTramite";
+            this.txtIDTramite.ReadOnly = true;
+            this.txtIDTramite.Size = new System.Drawing.Size(395, 34);
+            this.txtIDTramite.TabIndex = 68;
+            this.txtIDTramite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label37.Location = new System.Drawing.Point(18, 77);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 18);
+            this.label37.TabIndex = 67;
+            this.label37.Text = "Trámite:";
+            // 
+            // shapeContainer4
+            // 
+            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer4.Name = "shapeContainer4";
+            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape4});
+            this.shapeContainer4.Size = new System.Drawing.Size(510, 237);
+            this.shapeContainer4.TabIndex = 74;
+            this.shapeContainer4.TabStop = false;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.Color.LightGray;
+            this.lineShape4.Enabled = false;
+            this.lineShape4.Name = "lineShape2";
+            this.lineShape4.X1 = 7;
+            this.lineShape4.X2 = 305;
+            this.lineShape4.Y1 = 45;
+            this.lineShape4.Y2 = 45;
             // 
             // panelAgente
             // 
             this.panelAgente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelAgente.Controls.Add(this.lblValCobAgente);
             this.panelAgente.Controls.Add(this.panelTituloAgente);
-            this.panelAgente.Location = new System.Drawing.Point(3, 32);
+            this.panelAgente.Location = new System.Drawing.Point(3, 275);
             this.panelAgente.Name = "panelAgente";
             this.panelAgente.Size = new System.Drawing.Size(368, 75);
             this.panelAgente.TabIndex = 42;
@@ -1080,7 +1272,7 @@
             this.panelTBC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelTBC.Controls.Add(this.lblValCobTBC);
             this.panelTBC.Controls.Add(this.panel4);
-            this.panelTBC.Location = new System.Drawing.Point(3, 113);
+            this.panelTBC.Location = new System.Drawing.Point(3, 356);
             this.panelTBC.Name = "panelTBC";
             this.panelTBC.Size = new System.Drawing.Size(368, 75);
             this.panelTBC.TabIndex = 45;
@@ -1162,7 +1354,7 @@
             this.panelTransporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelTransporte.Controls.Add(this.lblValCobTransporte);
             this.panelTransporte.Controls.Add(this.panel5);
-            this.panelTransporte.Location = new System.Drawing.Point(3, 194);
+            this.panelTransporte.Location = new System.Drawing.Point(3, 437);
             this.panelTransporte.Name = "panelTransporte";
             this.panelTransporte.Size = new System.Drawing.Size(368, 75);
             this.panelTransporte.TabIndex = 46;
@@ -1244,7 +1436,7 @@
             this.panelGastosLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosLocales.Controls.Add(this.lblValCobGastos);
             this.panelGastosLocales.Controls.Add(this.panel7);
-            this.panelGastosLocales.Location = new System.Drawing.Point(3, 275);
+            this.panelGastosLocales.Location = new System.Drawing.Point(3, 518);
             this.panelGastosLocales.Name = "panelGastosLocales";
             this.panelGastosLocales.Size = new System.Drawing.Size(368, 75);
             this.panelGastosLocales.TabIndex = 47;
@@ -1343,7 +1535,7 @@
             this.panelVistoTHC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelVistoTHC.Controls.Add(this.lblValCobVistoTHC);
             this.panelVistoTHC.Controls.Add(this.panel9);
-            this.panelVistoTHC.Location = new System.Drawing.Point(3, 356);
+            this.panelVistoTHC.Location = new System.Drawing.Point(3, 599);
             this.panelVistoTHC.Name = "panelVistoTHC";
             this.panelVistoTHC.Size = new System.Drawing.Size(368, 75);
             this.panelVistoTHC.TabIndex = 48;
@@ -1425,7 +1617,7 @@
             this.panelRetiroBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelRetiroBL.Controls.Add(this.lblValCobRetiroBL);
             this.panelRetiroBL.Controls.Add(this.panel11);
-            this.panelRetiroBL.Location = new System.Drawing.Point(3, 437);
+            this.panelRetiroBL.Location = new System.Drawing.Point(3, 680);
             this.panelRetiroBL.Name = "panelRetiroBL";
             this.panelRetiroBL.Size = new System.Drawing.Size(368, 75);
             this.panelRetiroBL.TabIndex = 49;
@@ -1507,7 +1699,7 @@
             this.panelLiquidacionAduana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelLiquidacionAduana.Controls.Add(this.lblValCobLiq);
             this.panelLiquidacionAduana.Controls.Add(this.panel13);
-            this.panelLiquidacionAduana.Location = new System.Drawing.Point(3, 518);
+            this.panelLiquidacionAduana.Location = new System.Drawing.Point(3, 761);
             this.panelLiquidacionAduana.Name = "panelLiquidacionAduana";
             this.panelLiquidacionAduana.Size = new System.Drawing.Size(368, 75);
             this.panelLiquidacionAduana.TabIndex = 50;
@@ -1606,7 +1798,7 @@
             this.panelRetiroGuía.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelRetiroGuía.Controls.Add(this.lblValCobRetiroGuia);
             this.panelRetiroGuía.Controls.Add(this.panel15);
-            this.panelRetiroGuía.Location = new System.Drawing.Point(3, 599);
+            this.panelRetiroGuía.Location = new System.Drawing.Point(3, 842);
             this.panelRetiroGuía.Name = "panelRetiroGuía";
             this.panelRetiroGuía.Size = new System.Drawing.Size(368, 75);
             this.panelRetiroGuía.TabIndex = 51;
@@ -1688,7 +1880,7 @@
             this.panelDemoraje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelDemoraje.Controls.Add(this.lblValCobDemoraje);
             this.panelDemoraje.Controls.Add(this.panel17);
-            this.panelDemoraje.Location = new System.Drawing.Point(3, 680);
+            this.panelDemoraje.Location = new System.Drawing.Point(3, 923);
             this.panelDemoraje.Name = "panelDemoraje";
             this.panelDemoraje.Size = new System.Drawing.Size(368, 75);
             this.panelDemoraje.TabIndex = 52;
@@ -1770,7 +1962,7 @@
             this.panelActualizacionCarta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelActualizacionCarta.Controls.Add(this.lblValCobActCarta);
             this.panelActualizacionCarta.Controls.Add(this.panel19);
-            this.panelActualizacionCarta.Location = new System.Drawing.Point(3, 761);
+            this.panelActualizacionCarta.Location = new System.Drawing.Point(3, 1004);
             this.panelActualizacionCarta.Name = "panelActualizacionCarta";
             this.panelActualizacionCarta.Size = new System.Drawing.Size(368, 75);
             this.panelActualizacionCarta.TabIndex = 53;
@@ -1869,7 +2061,7 @@
             this.panelAlmacenaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelAlmacenaje.Controls.Add(this.lblValCobAlmacenaje);
             this.panelAlmacenaje.Controls.Add(this.panel21);
-            this.panelAlmacenaje.Location = new System.Drawing.Point(3, 842);
+            this.panelAlmacenaje.Location = new System.Drawing.Point(3, 1085);
             this.panelAlmacenaje.Name = "panelAlmacenaje";
             this.panelAlmacenaje.Size = new System.Drawing.Size(368, 75);
             this.panelAlmacenaje.TabIndex = 54;
@@ -1951,7 +2143,7 @@
             this.panelDevolucionContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelDevolucionContenedor.Controls.Add(this.lblValCobDevCont);
             this.panelDevolucionContenedor.Controls.Add(this.panel23);
-            this.panelDevolucionContenedor.Location = new System.Drawing.Point(3, 923);
+            this.panelDevolucionContenedor.Location = new System.Drawing.Point(3, 1166);
             this.panelDevolucionContenedor.Name = "panelDevolucionContenedor";
             this.panelDevolucionContenedor.Size = new System.Drawing.Size(368, 75);
             this.panelDevolucionContenedor.TabIndex = 55;
@@ -2050,7 +2242,7 @@
             this.panelManipulacionContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelManipulacionContenedor.Controls.Add(this.lblValCobManCont);
             this.panelManipulacionContenedor.Controls.Add(this.panel25);
-            this.panelManipulacionContenedor.Location = new System.Drawing.Point(3, 1004);
+            this.panelManipulacionContenedor.Location = new System.Drawing.Point(3, 1247);
             this.panelManipulacionContenedor.Name = "panelManipulacionContenedor";
             this.panelManipulacionContenedor.Size = new System.Drawing.Size(368, 75);
             this.panelManipulacionContenedor.TabIndex = 56;
@@ -2149,7 +2341,7 @@
             this.panelGastosI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosI.Controls.Add(this.lblValCobGastosI);
             this.panelGastosI.Controls.Add(this.panel2);
-            this.panelGastosI.Location = new System.Drawing.Point(3, 1085);
+            this.panelGastosI.Location = new System.Drawing.Point(3, 1328);
             this.panelGastosI.Name = "panelGastosI";
             this.panelGastosI.Size = new System.Drawing.Size(368, 75);
             this.panelGastosI.TabIndex = 57;
@@ -2231,7 +2423,7 @@
             this.panelGastosII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosII.Controls.Add(this.lblValCobGastosII);
             this.panelGastosII.Controls.Add(this.panel3);
-            this.panelGastosII.Location = new System.Drawing.Point(3, 1166);
+            this.panelGastosII.Location = new System.Drawing.Point(3, 1409);
             this.panelGastosII.Name = "panelGastosII";
             this.panelGastosII.Size = new System.Drawing.Size(368, 75);
             this.panelGastosII.TabIndex = 58;
@@ -2313,7 +2505,7 @@
             this.panelGastosIII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosIII.Controls.Add(this.panel8);
             this.panelGastosIII.Controls.Add(this.lblValCobGastosIII);
-            this.panelGastosIII.Location = new System.Drawing.Point(3, 1247);
+            this.panelGastosIII.Location = new System.Drawing.Point(3, 1490);
             this.panelGastosIII.Name = "panelGastosIII";
             this.panelGastosIII.Size = new System.Drawing.Size(368, 75);
             this.panelGastosIII.TabIndex = 59;
@@ -2397,7 +2589,7 @@
             this.panelGastosIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosIV.Controls.Add(this.lblValCobGastosIV);
             this.panelGastosIV.Controls.Add(this.panel12);
-            this.panelGastosIV.Location = new System.Drawing.Point(3, 1328);
+            this.panelGastosIV.Location = new System.Drawing.Point(3, 1571);
             this.panelGastosIV.Name = "panelGastosIV";
             this.panelGastosIV.Size = new System.Drawing.Size(368, 75);
             this.panelGastosIV.TabIndex = 60;
@@ -2479,7 +2671,7 @@
             this.panelGastosV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelGastosV.Controls.Add(this.lblValCobGastosV);
             this.panelGastosV.Controls.Add(this.panel16);
-            this.panelGastosV.Location = new System.Drawing.Point(3, 1409);
+            this.panelGastosV.Location = new System.Drawing.Point(3, 1652);
             this.panelGastosV.Name = "panelGastosV";
             this.panelGastosV.Size = new System.Drawing.Size(368, 75);
             this.panelGastosV.TabIndex = 61;
@@ -2561,7 +2753,7 @@
             this.panelHonorariosI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelHonorariosI.Controls.Add(this.lblValCobHonorariosI);
             this.panelHonorariosI.Controls.Add(this.panel10);
-            this.panelHonorariosI.Location = new System.Drawing.Point(3, 1490);
+            this.panelHonorariosI.Location = new System.Drawing.Point(3, 1733);
             this.panelHonorariosI.Name = "panelHonorariosI";
             this.panelHonorariosI.Size = new System.Drawing.Size(368, 75);
             this.panelHonorariosI.TabIndex = 65;
@@ -2647,7 +2839,7 @@
             this.panelHonorariosII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelHonorariosII.Controls.Add(this.lblValCobHonorariosII);
             this.panelHonorariosII.Controls.Add(this.panel18);
-            this.panelHonorariosII.Location = new System.Drawing.Point(3, 1571);
+            this.panelHonorariosII.Location = new System.Drawing.Point(3, 1814);
             this.panelHonorariosII.Name = "panelHonorariosII";
             this.panelHonorariosII.Size = new System.Drawing.Size(368, 75);
             this.panelHonorariosII.TabIndex = 66;
@@ -2733,7 +2925,7 @@
             this.panelHonorariosIII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelHonorariosIII.Controls.Add(this.lblValCobHonorariosIII);
             this.panelHonorariosIII.Controls.Add(this.panel22);
-            this.panelHonorariosIII.Location = new System.Drawing.Point(3, 1652);
+            this.panelHonorariosIII.Location = new System.Drawing.Point(3, 1895);
             this.panelHonorariosIII.Name = "panelHonorariosIII";
             this.panelHonorariosIII.Size = new System.Drawing.Size(368, 75);
             this.panelHonorariosIII.TabIndex = 67;
@@ -2819,7 +3011,7 @@
             this.panelTransporteI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelTransporteI.Controls.Add(this.lblValCobTransporteI);
             this.panelTransporteI.Controls.Add(this.panel26);
-            this.panelTransporteI.Location = new System.Drawing.Point(3, 1733);
+            this.panelTransporteI.Location = new System.Drawing.Point(3, 1976);
             this.panelTransporteI.Name = "panelTransporteI";
             this.panelTransporteI.Size = new System.Drawing.Size(368, 75);
             this.panelTransporteI.TabIndex = 68;
@@ -2905,7 +3097,7 @@
             this.panelTransporteII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelTransporteII.Controls.Add(this.lblValCobTransporteII);
             this.panelTransporteII.Controls.Add(this.panel28);
-            this.panelTransporteII.Location = new System.Drawing.Point(3, 1814);
+            this.panelTransporteII.Location = new System.Drawing.Point(3, 2057);
             this.panelTransporteII.Name = "panelTransporteII";
             this.panelTransporteII.Size = new System.Drawing.Size(368, 75);
             this.panelTransporteII.TabIndex = 69;
@@ -2991,7 +3183,7 @@
             this.panelTransporteIII.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelTransporteIII.Controls.Add(this.lblValCobTransporteIII);
             this.panelTransporteIII.Controls.Add(this.panel30);
-            this.panelTransporteIII.Location = new System.Drawing.Point(3, 1895);
+            this.panelTransporteIII.Location = new System.Drawing.Point(3, 2138);
             this.panelTransporteIII.Name = "panelTransporteIII";
             this.panelTransporteIII.Size = new System.Drawing.Size(368, 75);
             this.panelTransporteIII.TabIndex = 70;
@@ -3090,9 +3282,9 @@
             this.panelPagoGeneral.Controls.Add(this.label7);
             this.panelPagoGeneral.Controls.Add(this.shapeContainer2);
             this.panelPagoGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelPagoGeneral.Location = new System.Drawing.Point(3, 1976);
+            this.panelPagoGeneral.Location = new System.Drawing.Point(3, 2611);
             this.panelPagoGeneral.Name = "panelPagoGeneral";
-            this.panelPagoGeneral.Size = new System.Drawing.Size(510, 385);
+            this.panelPagoGeneral.Size = new System.Drawing.Size(510, 64);
             this.panelPagoGeneral.TabIndex = 64;
             this.panelPagoGeneral.Visible = false;
             this.panelPagoGeneral.Click += new System.EventHandler(this.panelPagoGeneral_Click);
@@ -3297,7 +3489,7 @@
             this.lineShape3,
             this.lineFacturas,
             this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(510, 385);
+            this.shapeContainer2.Size = new System.Drawing.Size(510, 64);
             this.shapeContainer2.TabIndex = 74;
             this.shapeContainer2.TabStop = false;
             // 
@@ -3343,7 +3535,7 @@
             this.panelAnticipo.Controls.Add(this.txtValAnticipo);
             this.panelAnticipo.Controls.Add(this.label33);
             this.panelAnticipo.Controls.Add(this.shapeContainer3);
-            this.panelAnticipo.Location = new System.Drawing.Point(3, 2367);
+            this.panelAnticipo.Location = new System.Drawing.Point(3, 2219);
             this.panelAnticipo.Name = "panelAnticipo";
             this.panelAnticipo.Size = new System.Drawing.Size(510, 305);
             this.panelAnticipo.TabIndex = 71;
@@ -3485,6 +3677,88 @@
             this.lineShape6.Y1 = 45;
             this.lineShape6.Y2 = 45;
             // 
+            // panelAgenteLDM
+            // 
+            this.panelAgenteLDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelAgenteLDM.Controls.Add(this.lblValCobAgenteLDM);
+            this.panelAgenteLDM.Controls.Add(this.panel6);
+            this.panelAgenteLDM.Location = new System.Drawing.Point(3, 2530);
+            this.panelAgenteLDM.Name = "panelAgenteLDM";
+            this.panelAgenteLDM.Size = new System.Drawing.Size(368, 75);
+            this.panelAgenteLDM.TabIndex = 72;
+            this.panelAgenteLDM.Visible = false;
+            this.panelAgenteLDM.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            this.panelAgenteLDM.MouseEnter += new System.EventHandler(this.panelAgenteLDM_MouseEnter);
+            // 
+            // lblValCobAgenteLDM
+            // 
+            this.lblValCobAgenteLDM.AutoSize = true;
+            this.lblValCobAgenteLDM.BackColor = System.Drawing.Color.Transparent;
+            this.lblValCobAgenteLDM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValCobAgenteLDM.ForeColor = System.Drawing.Color.Turquoise;
+            this.lblValCobAgenteLDM.Location = new System.Drawing.Point(153, 49);
+            this.lblValCobAgenteLDM.Name = "lblValCobAgenteLDM";
+            this.lblValCobAgenteLDM.Size = new System.Drawing.Size(168, 20);
+            this.lblValCobAgenteLDM.TabIndex = 68;
+            this.lblValCobAgenteLDM.Text = "Valor a Cobrar: 00,00";
+            this.lblValCobAgenteLDM.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.lblNFacturaLDM);
+            this.panel6.Controls.Add(this.lblEmpresaLDM);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(368, 46);
+            this.panel6.TabIndex = 3;
+            this.panel6.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            this.panel6.MouseEnter += new System.EventHandler(this.panelAgenteLDM_MouseEnter);
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.LightGray;
+            this.label22.Location = new System.Drawing.Point(5, 13);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(129, 22);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "AGENTE LDM";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            // 
+            // lblNFacturaLDM
+            // 
+            this.lblNFacturaLDM.AutoSize = true;
+            this.lblNFacturaLDM.BackColor = System.Drawing.Color.Transparent;
+            this.lblNFacturaLDM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNFacturaLDM.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNFacturaLDM.Location = new System.Drawing.Point(153, 23);
+            this.lblNFacturaLDM.Name = "lblNFacturaLDM";
+            this.lblNFacturaLDM.Size = new System.Drawing.Size(140, 18);
+            this.lblNFacturaLDM.TabIndex = 57;
+            this.lblNFacturaLDM.Text = "Número de Factura:";
+            this.lblNFacturaLDM.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            // 
+            // lblEmpresaLDM
+            // 
+            this.lblEmpresaLDM.AutoSize = true;
+            this.lblEmpresaLDM.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpresaLDM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresaLDM.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEmpresaLDM.Location = new System.Drawing.Point(153, 3);
+            this.lblEmpresaLDM.Name = "lblEmpresaLDM";
+            this.lblEmpresaLDM.Size = new System.Drawing.Size(72, 18);
+            this.lblEmpresaLDM.TabIndex = 54;
+            this.lblEmpresaLDM.Text = "Empresa:";
+            this.lblEmpresaLDM.Click += new System.EventHandler(this.panelAgenteLDM_Click);
+            // 
             // panelTituloForm
             // 
             this.panelTituloForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
@@ -3492,7 +3766,7 @@
             this.panelTituloForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTituloForm.Location = new System.Drawing.Point(0, 0);
             this.panelTituloForm.Name = "panelTituloForm";
-            this.panelTituloForm.Size = new System.Drawing.Size(703, 49);
+            this.panelTituloForm.Size = new System.Drawing.Size(762, 49);
             this.panelTituloForm.TabIndex = 0;
             this.panelTituloForm.Resize += new System.EventHandler(this.panelTituloForm_Resize);
             // 
@@ -3519,7 +3793,7 @@
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelTotal.Location = new System.Drawing.Point(0, 648);
             this.panelTotal.Name = "panelTotal";
-            this.panelTotal.Size = new System.Drawing.Size(703, 91);
+            this.panelTotal.Size = new System.Drawing.Size(762, 91);
             this.panelTotal.TabIndex = 43;
             // 
             // lblSaldoCliente
@@ -3528,7 +3802,7 @@
             this.lblSaldoCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldoCliente.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldoCliente.ForeColor = System.Drawing.Color.LightGray;
-            this.lblSaldoCliente.Location = new System.Drawing.Point(445, 47);
+            this.lblSaldoCliente.Location = new System.Drawing.Point(504, 47);
             this.lblSaldoCliente.Name = "lblSaldoCliente";
             this.lblSaldoCliente.Size = new System.Drawing.Size(240, 24);
             this.lblSaldoCliente.TabIndex = 42;
@@ -3595,7 +3869,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(703, 91);
+            this.shapeContainer1.Size = new System.Drawing.Size(762, 91);
             this.shapeContainer1.TabIndex = 41;
             this.shapeContainer1.TabStop = false;
             // 
@@ -3634,10 +3908,10 @@
             this.redondeoPanelTransporte.ElipseRadius = 20;
             this.redondeoPanelTransporte.TargetControl = this.panelTransporte;
             // 
-            // redondeoPanelGastosL
+            // r
             // 
-            this.redondeoPanelGastosL.ElipseRadius = 20;
-            this.redondeoPanelGastosL.TargetControl = this.panelGastosLocales;
+            this.r.ElipseRadius = 20;
+            this.r.TargetControl = this.panelGastosLocales;
             // 
             // redondeoPanelVistoTHC
             // 
@@ -3774,6 +4048,16 @@
             this.redondeoBtnAnticipo.ElipseRadius = 20;
             this.redondeoBtnAnticipo.TargetControl = this.btnAnticipo;
             // 
+            // redondeoAgenteLDM
+            // 
+            this.redondeoAgenteLDM.ElipseRadius = 20;
+            this.redondeoAgenteLDM.TargetControl = this.panelAgenteLDM;
+            // 
+            // redondeoInfoTramite
+            // 
+            this.redondeoInfoTramite.ElipseRadius = 20;
+            this.redondeoInfoTramite.TargetControl = this.panelInfoTramite;
+            // 
             // FormCrearPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3807,6 +4091,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).EndInit();
             this.panelContenedorPagos.ResumeLayout(false);
             this.panelPagos.ResumeLayout(false);
+            this.panelInfoTramite.ResumeLayout(false);
+            this.panelInfoTramite.PerformLayout();
             this.panelAgente.ResumeLayout(false);
             this.panelAgente.PerformLayout();
             this.panelTituloAgente.ResumeLayout(false);
@@ -3907,6 +4193,10 @@
             this.panelPagoGeneral.PerformLayout();
             this.panelAnticipo.ResumeLayout(false);
             this.panelAnticipo.PerformLayout();
+            this.panelAgenteLDM.ResumeLayout(false);
+            this.panelAgenteLDM.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panelTituloForm.ResumeLayout(false);
             this.panelTituloForm.PerformLayout();
             this.panelTotal.ResumeLayout(false);
@@ -3959,7 +4249,7 @@
         private System.Windows.Forms.Panel panelTituloForm;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelTBC;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelTransporte;
-        private Bunifu.Framework.UI.BunifuElipse redondeoPanelGastosL;
+        private Bunifu.Framework.UI.BunifuElipse r;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelVistoTHC;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelRetiroBL;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelLiquidAduana;
@@ -4179,5 +4469,25 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
         private Bunifu.Framework.UI.BunifuElipse redondeoPanelAnticipo;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnAnticipo;
+        private System.Windows.Forms.Panel panelAgenteLDM;
+        private System.Windows.Forms.Label lblValCobAgenteLDM;
+        private System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblNFacturaLDM;
+        private System.Windows.Forms.Label lblEmpresaLDM;
+        private Bunifu.Framework.UI.BunifuElipse redondeoAgenteLDM;
+        private System.Windows.Forms.Panel panelInfoTramite;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox txtIDTramite;
+        private System.Windows.Forms.Label label37;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        public System.Windows.Forms.TextBox txtDAI;
+        private System.Windows.Forms.Label label36;
+        public System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.TextBox txtSecuencialCliente;
+        private System.Windows.Forms.Label label40;
+        private Bunifu.Framework.UI.BunifuElipse redondeoInfoTramite;
     }
 }

@@ -114,6 +114,12 @@ namespace Presentacion
             {
                 panelCrearFactura.Visible = false; 
             }
+
+            if (UserCache.Position == Positions.Contabilidad)
+            {
+                panelCrearFactura.Visible = false;
+
+            }
         }
     }
 }

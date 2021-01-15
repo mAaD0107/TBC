@@ -8,6 +8,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -69,7 +71,11 @@ namespace Presentacion
 
         private void FormOpcionesImportaciones_Load(object sender, EventArgs e)
         {
+            if (UserCache.Position == Positions.Contabilidad)
+            {
+                panelComisiones.Visible = false;
 
+            }
         }
 
 

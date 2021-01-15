@@ -1,6 +1,7 @@
-﻿namespace Presentacion
+﻿
+namespace Presentacion
 {
-    partial class FormOpcionesPagos
+    partial class FormOpcionesCarta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,74 +30,57 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpcionesPagos));
-            this.panelSubmenu = new System.Windows.Forms.Panel();
-            this.panelBuscar = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.lblEditar = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpcionesCarta));
+            this.panelOpciones = new System.Windows.Forms.Panel();
+            this.panelBuscarEditar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblBuscar = new System.Windows.Forms.Label();
+            this.lblBuscarEditar = new System.Windows.Forms.Label();
             this.panelCrear = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnCrear = new System.Windows.Forms.Button();
             this.lblCrear = new System.Windows.Forms.Label();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.redondeoBtnCrear = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.redondeoBtnBuscar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panelSubmenu.SuspendLayout();
-            this.panelBuscar.SuspendLayout();
+            this.redondeoBuscarEditar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoCrear = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panelOpciones.SuspendLayout();
+            this.panelBuscarEditar.SuspendLayout();
             this.panelCrear.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelSubmenu
+            // panelOpciones
             // 
-            this.panelSubmenu.Controls.Add(this.panelBuscar);
-            this.panelSubmenu.Controls.Add(this.panelCrear);
-            this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubmenu.Location = new System.Drawing.Point(0, 191);
-            this.panelSubmenu.Name = "panelSubmenu";
-            this.panelSubmenu.Size = new System.Drawing.Size(809, 271);
-            this.panelSubmenu.TabIndex = 9;
+            this.panelOpciones.Controls.Add(this.panelBuscarEditar);
+            this.panelOpciones.Controls.Add(this.panelCrear);
+            this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOpciones.Location = new System.Drawing.Point(0, 172);
+            this.panelOpciones.Name = "panelOpciones";
+            this.panelOpciones.Size = new System.Drawing.Size(800, 278);
+            this.panelOpciones.TabIndex = 5;
             // 
-            // panelBuscar
+            // panelBuscarEditar
             // 
-            this.panelBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBuscar.BackgroundImage")));
-            this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBuscar.Controls.Add(this.lblEditar);
-            this.panelBuscar.Controls.Add(this.btnBuscar);
-            this.panelBuscar.Controls.Add(this.lblBuscar);
-            this.panelBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBuscar.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelBuscar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelBuscar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.Location = new System.Drawing.Point(406, 23);
-            this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Quality = 10;
-            this.panelBuscar.Size = new System.Drawing.Size(206, 179);
-            this.panelBuscar.TabIndex = 2;
-            this.panelBuscar.Enter += new System.EventHandler(this.panelBuscar_Enter);
-            this.panelBuscar.MouseEnter += new System.EventHandler(this.panelBuscar_Enter);
-            // 
-            // lblEditar
-            // 
-            this.lblEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEditar.AutoSize = true;
-            this.lblEditar.BackColor = System.Drawing.Color.Transparent;
-            this.lblEditar.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblEditar.Location = new System.Drawing.Point(62, 52);
-            this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(90, 33);
-            this.lblEditar.TabIndex = 3;
-            this.lblEditar.Text = "Editar";
-            this.lblEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEditar.Enter += new System.EventHandler(this.panelBuscar_Enter);
-            this.lblEditar.MouseEnter += new System.EventHandler(this.panelBuscar_Enter);
+            this.panelBuscarEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelBuscarEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelBuscarEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBuscarEditar.BackgroundImage")));
+            this.panelBuscarEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBuscarEditar.Controls.Add(this.btnBuscar);
+            this.panelBuscarEditar.Controls.Add(this.lblBuscarEditar);
+            this.panelBuscarEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelBuscarEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBuscarEditar.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelBuscarEditar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelBuscarEditar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelBuscarEditar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelBuscarEditar.Location = new System.Drawing.Point(416, 55);
+            this.panelBuscarEditar.Name = "panelBuscarEditar";
+            this.panelBuscarEditar.Quality = 10;
+            this.panelBuscarEditar.Size = new System.Drawing.Size(206, 179);
+            this.panelBuscarEditar.TabIndex = 3;
+            this.panelBuscarEditar.TabStop = true;
+            this.panelBuscarEditar.Click += new System.EventHandler(this.panelBuscarEditar_Click);
+            this.panelBuscarEditar.Enter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
+            this.panelBuscarEditar.MouseEnter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
             // 
             // btnBuscar
             // 
@@ -107,36 +91,35 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnBuscar.Location = new System.Drawing.Point(82, 99);
+            this.btnBuscar.Location = new System.Drawing.Point(81, 92);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(50, 50);
-            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Enter += new System.EventHandler(this.panelBuscar_Enter);
-            this.btnBuscar.MouseEnter += new System.EventHandler(this.panelBuscar_Enter);
+            this.btnBuscar.Click += new System.EventHandler(this.panelBuscarEditar_Click);
+            this.btnBuscar.Enter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
+            this.btnBuscar.MouseEnter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
             // 
-            // lblBuscar
+            // lblBuscarEditar
             // 
-            this.lblBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblBuscar.Location = new System.Drawing.Point(57, 17);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(100, 33);
-            this.lblBuscar.TabIndex = 0;
-            this.lblBuscar.Text = "Buscar";
-            this.lblBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblBuscar.Enter += new System.EventHandler(this.panelBuscar_Enter);
-            this.lblBuscar.MouseEnter += new System.EventHandler(this.panelBuscar_Enter);
+            this.lblBuscarEditar.AutoSize = true;
+            this.lblBuscarEditar.BackColor = System.Drawing.Color.Transparent;
+            this.lblBuscarEditar.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.lblBuscarEditar.Location = new System.Drawing.Point(7, 33);
+            this.lblBuscarEditar.Name = "lblBuscarEditar";
+            this.lblBuscarEditar.Size = new System.Drawing.Size(198, 33);
+            this.lblBuscarEditar.TabIndex = 2;
+            this.lblBuscarEditar.Text = "Buscar - Editar";
+            this.lblBuscarEditar.Click += new System.EventHandler(this.panelBuscarEditar_Click);
+            this.lblBuscarEditar.Enter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
+            this.lblBuscarEditar.MouseEnter += new System.EventHandler(this.panelBuscarEditar_MouseEnter);
             // 
             // panelCrear
             // 
-            this.panelCrear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCrear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCrear.BackgroundImage")));
             this.panelCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -148,14 +131,15 @@
             this.panelCrear.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelCrear.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelCrear.Location = new System.Drawing.Point(194, 23);
+            this.panelCrear.Location = new System.Drawing.Point(204, 55);
             this.panelCrear.Name = "panelCrear";
             this.panelCrear.Quality = 10;
             this.panelCrear.Size = new System.Drawing.Size(206, 179);
-            this.panelCrear.TabIndex = 1;
+            this.panelCrear.TabIndex = 2;
+            this.panelCrear.TabStop = true;
             this.panelCrear.Click += new System.EventHandler(this.panelCrear_Click);
-            this.panelCrear.Enter += new System.EventHandler(this.panelCrear_Enter);
-            this.panelCrear.MouseEnter += new System.EventHandler(this.panelCrear_Enter);
+            this.panelCrear.Enter += new System.EventHandler(this.panelCrear_MouseEnter);
+            this.panelCrear.MouseEnter += new System.EventHandler(this.panelCrear_MouseEnter);
             // 
             // btnCrear
             // 
@@ -166,16 +150,16 @@
             this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnCrear.Location = new System.Drawing.Point(81, 99);
+            this.btnCrear.Location = new System.Drawing.Point(83, 92);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(0);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(50, 50);
-            this.btnCrear.TabIndex = 1;
+            this.btnCrear.TabIndex = 3;
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.panelCrear_Click);
-            this.btnCrear.Enter += new System.EventHandler(this.panelCrear_Enter);
-            this.btnCrear.MouseEnter += new System.EventHandler(this.panelCrear_Enter);
+            this.btnCrear.Enter += new System.EventHandler(this.panelCrear_MouseEnter);
+            this.btnCrear.MouseEnter += new System.EventHandler(this.panelCrear_MouseEnter);
             // 
             // lblCrear
             // 
@@ -183,14 +167,14 @@
             this.lblCrear.BackColor = System.Drawing.Color.Transparent;
             this.lblCrear.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblCrear.Location = new System.Drawing.Point(62, 36);
+            this.lblCrear.Location = new System.Drawing.Point(64, 33);
             this.lblCrear.Name = "lblCrear";
             this.lblCrear.Size = new System.Drawing.Size(89, 33);
             this.lblCrear.TabIndex = 0;
             this.lblCrear.Text = "Crear";
             this.lblCrear.Click += new System.EventHandler(this.panelCrear_Click);
-            this.lblCrear.Enter += new System.EventHandler(this.panelCrear_Enter);
-            this.lblCrear.MouseEnter += new System.EventHandler(this.panelCrear_Enter);
+            this.lblCrear.Enter += new System.EventHandler(this.panelCrear_MouseEnter);
+            this.lblCrear.MouseEnter += new System.EventHandler(this.panelCrear_MouseEnter);
             // 
             // panelTitulo
             // 
@@ -198,8 +182,8 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(809, 191);
-            this.panelTitulo.TabIndex = 8;
+            this.panelTitulo.Size = new System.Drawing.Size(800, 172);
+            this.panelTitulo.TabIndex = 4;
             // 
             // lblTitulo
             // 
@@ -207,40 +191,39 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(274, 56);
+            this.lblTitulo.Location = new System.Drawing.Point(280, 47);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(260, 78);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "PAGOS";
+            this.lblTitulo.Size = new System.Drawing.Size(240, 78);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "CARTA";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // redondeoBtnCrear
+            // redondeoBuscarEditar
             // 
-            this.redondeoBtnCrear.ElipseRadius = 30;
-            this.redondeoBtnCrear.TargetControl = this.panelCrear;
+            this.redondeoBuscarEditar.ElipseRadius = 20;
+            this.redondeoBuscarEditar.TargetControl = this.panelBuscarEditar;
             // 
-            // redondeoBtnBuscar
+            // redondeoCrear
             // 
-            this.redondeoBtnBuscar.ElipseRadius = 30;
-            this.redondeoBtnBuscar.TargetControl = this.panelBuscar;
+            this.redondeoCrear.ElipseRadius = 20;
+            this.redondeoCrear.TargetControl = this.panelCrear;
             // 
-            // FormOpcionesPagos
+            // FormOpcionesCarta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(809, 462);
-            this.Controls.Add(this.panelSubmenu);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormOpcionesPagos";
+            this.Name = "FormOpcionesCarta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormOpcionesPagos";
-            this.Load += new System.EventHandler(this.FormOpcionesPagos_Load);
-            this.Shown += new System.EventHandler(this.FormOpcionesPagos_Shown);
-            this.panelSubmenu.ResumeLayout(false);
-            this.panelBuscar.ResumeLayout(false);
-            this.panelBuscar.PerformLayout();
+            this.Text = "FormOpcionesCarta";
+            this.Load += new System.EventHandler(this.FormOpcionesCarta_Load);
+            this.panelOpciones.ResumeLayout(false);
+            this.panelBuscarEditar.ResumeLayout(false);
+            this.panelBuscarEditar.PerformLayout();
             this.panelCrear.ResumeLayout(false);
             this.panelCrear.PerformLayout();
             this.panelTitulo.ResumeLayout(false);
@@ -251,17 +234,16 @@
 
         #endregion
 
-        public System.Windows.Forms.Panel panelSubmenu;
+        private System.Windows.Forms.Panel panelOpciones;
+        private Bunifu.Framework.UI.BunifuGradientPanel panelBuscarEditar;
+        private System.Windows.Forms.Label lblBuscarEditar;
         private Bunifu.Framework.UI.BunifuGradientPanel panelCrear;
-        private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Label lblCrear;
-        private Bunifu.Framework.UI.BunifuGradientPanel panelBuscar;
-        private System.Windows.Forms.Label lblEditar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label lblBuscar;
-        public System.Windows.Forms.Panel panelTitulo;
-        private Bunifu.Framework.UI.BunifuElipse redondeoBtnCrear;
-        private Bunifu.Framework.UI.BunifuElipse redondeoBtnBuscar;
+        private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnCrear;
+        private Bunifu.Framework.UI.BunifuElipse redondeoBuscarEditar;
+        private Bunifu.Framework.UI.BunifuElipse redondeoCrear;
     }
 }

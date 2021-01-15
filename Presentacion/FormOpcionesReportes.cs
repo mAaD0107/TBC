@@ -26,6 +26,7 @@ namespace Presentacion
         {
             lblCuentaCobrar1.ForeColor = Color.FromArgb(185, 209, 234);
             lblCuentaCobrar2.ForeColor = Color.FromArgb(185, 209, 234);
+            lblCarta.ForeColor = Color.FromArgb(57, 60, 67);
 
             btnCuentasCobrar.Focus();
         }
@@ -51,6 +52,33 @@ namespace Presentacion
         private void FormOpcionesReportes_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idImportaciones = 8;
+        }
+
+        private void panelCarta_MouseEnter(object sender, EventArgs e)
+        {
+            lblCarta.ForeColor = Color.FromArgb(185, 209, 234);
+            lblCuentaCobrar1.ForeColor = Color.FromArgb(57, 60, 67);
+            lblCuentaCobrar2.ForeColor = Color.FromArgb(57, 60, 67);
+
+            btnCarta.Focus();
+        }
+
+        private void panelCarta_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+            if (formPrincipal != null)
+            {
+                FormOpcionesCarta formOpcionesCarta = new FormOpcionesCarta();
+                formOpcionesCarta.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formPrincipal.AddOwnedForm(formOpcionesCarta);
+                formPrincipal.AbrirFormInPanel(formOpcionesCarta);
+            }
+        }
+
+        private void FormOpcionesReportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

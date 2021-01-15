@@ -194,6 +194,8 @@ namespace DataAccess
             }
         }
 
+
+
         public DataTable readTramitesComision()
         {
             DataTable table = new DataTable();
@@ -229,6 +231,79 @@ namespace DataAccess
                     command.CommandText = "searchFacturasporCliente";
                     command.Parameters.AddWithValue("@dateDesde", dateDesde);
                     command.Parameters.AddWithValue("@dateHasta", dateHasta);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
+
+        public DataTable readCartaCliente(string dateDesde, string dateHasta)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchCartaCliente";
+                    command.Parameters.AddWithValue("@dateDesde", dateDesde);
+                    command.Parameters.AddWithValue("@dateHasta", dateHasta);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
+
+        public DataTable readCartaClienteB(string dateDesde, string dateHasta, string Texto)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchCartaClienteB";
+                    command.Parameters.AddWithValue("@dateDesde", dateDesde);
+                    command.Parameters.AddWithValue("@dateHasta", dateHasta);
+                    command.Parameters.AddWithValue("@Texto", Texto);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
+
+
+        public DataTable readDatosCarta(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchDatosCarta";
+                    command.Parameters.AddWithValue("@ID_Tramite", ID_Tramite);
+
                     command.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -453,6 +528,36 @@ namespace DataAccess
 
                     table.Load(reader);
                     return table;
+                }
+            }
+        }
+
+
+        public void searchIDTramite(string nFactura)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchIDTramite";
+                    command.Parameters.AddWithValue("@NFactua", nFactura);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            FacturaCache.ID_Tramite = reader.GetString(0);
+                            FacturaCache.Cliente = reader.GetString(1);
+                            FacturaCache.DAI = reader.GetString(2);
+                            FacturaCache.SecuencialCliente = reader.GetString(3);
+
+                        }
+                    }
 
                 }
             }
@@ -1067,9 +1172,7 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = "searchTramiteImport";
-                    command.Parameters.AddWithValue("@NombreEmpresa", data);
-                    command.Parameters.AddWithValue("@SecuencialCliente", data);
-                    command.Parameters.AddWithValue("@DAI", data);
+                    command.Parameters.AddWithValue("@Texto", data);
                     command.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -1098,6 +1201,142 @@ namespace DataAccess
                 }
             }
         }
+
+
+        public DataTable getFacturasImpagas(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getFacturasImpagas";
+                    command.Parameters.AddWithValue("@idTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable getAbonosCarta(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getAbonosCarta";
+                    command.Parameters.AddWithValue("@nTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getSaldoCliente(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchSaldoCliente";
+                    command.Parameters.AddWithValue("@idTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+
+        public DataTable getFacturasPagos(int idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getFacturasPagos";
+                    command.Parameters.AddWithValue("@idTramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable getInfoCarta(string idTaramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchDatosCarta";
+                    command.Parameters.AddWithValue("@ID_Tramite", idTaramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public double getValorPendientePago(string NFactura)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getValorPendientePago";
+                    command.Parameters.AddWithValue("@NFactura", NFactura);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        return double.Parse(table.Rows[0]["ValorPendientePago"].ToString());
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+
 
         public DataTable getInfoTramite(int idTaramite)
         {

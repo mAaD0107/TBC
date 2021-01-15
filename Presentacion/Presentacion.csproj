@@ -77,6 +77,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBuscarCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarCarta.Designer.cs">
+      <DependentUpon>FormBuscarCarta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,12 @@
     <Compile Include="FormElaborarInforme.Designer.cs">
       <DependentUpon>FormElaborarInforme.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoFacturasCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoFacturasCarta.Designer.cs">
+      <DependentUpon>FormInfoFacturasCarta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInfoFacturasTramite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,12 @@
     </Compile>
     <Compile Include="FormInforme.Designer.cs">
       <DependentUpon>FormInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInformeCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeCarta.Designer.cs">
+      <DependentUpon>FormInformeCarta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -214,6 +232,12 @@
     </Compile>
     <Compile Include="FormNuevoIVA.Designer.cs">
       <DependentUpon>FormNuevoIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOpcionesCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesCarta.Designer.cs">
+      <DependentUpon>FormOpcionesCarta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOpcionesComisiones.cs">
       <SubType>Form</SubType>
@@ -298,6 +322,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormBuscarCarta.resx">
+      <DependentUpon>FormBuscarCarta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarFactura.resx">
       <DependentUpon>FormBuscarFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,11 +379,17 @@
     <EmbeddedResource Include="FormElaborarInforme.resx">
       <DependentUpon>FormElaborarInforme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoFacturasCarta.resx">
+      <DependentUpon>FormInfoFacturasCarta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInfoFacturasTramite.resx">
       <DependentUpon>FormInfoFacturasTramite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInforme.resx">
       <DependentUpon>FormInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInformeCarta.resx">
+      <DependentUpon>FormInformeCarta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -366,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoIVA.resx">
       <DependentUpon>FormNuevoIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesCarta.resx">
+      <DependentUpon>FormOpcionesCarta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesComisiones.resx">
       <DependentUpon>FormOpcionesComisiones.cs</DependentUpon>
@@ -403,6 +439,7 @@
     <EmbeddedResource Include="FormOpcionesClientes.resx">
       <DependentUpon>FormOpcionesClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\InformeCarta.rdlc" />
     <EmbeddedResource Include="Informes\InformeFactuas.rdlc" />
     <EmbeddedResource Include="Informes\InformeLDM-TBC.rdlc" />
     <EmbeddedResource Include="FormOpcionesReportes.resx">
@@ -421,6 +458,7 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Domain.Carta.InformeCarta.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.InformacionTramite.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.InformeFacturas.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.ListadoFacturas.datasource" />

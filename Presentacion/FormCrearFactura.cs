@@ -217,8 +217,11 @@ namespace Presentacion
                 
 
                 valorIVA = subTotal * ivaFactura / 100;
+                valorIVA = Math.Round(valorIVA, 2, MidpointRounding.AwayFromZero);
                 valorIVA2 = subTotal2 * porcentajeIVA2 / 100;
+                valorIVA2 = Math.Round(valorIVA2, 2, MidpointRounding.AwayFromZero);
                 valorIVA3 = subTotal3 * porcentajeIVA3 / 100;
+                valorIVA3 = Math.Round(valorIVA3, 2, MidpointRounding.AwayFromZero);
 
                 totalFactura = subTotal + valorIVA + subTotal2 + valorIVA2 + subTotal3 + valorIVA3;
 
@@ -249,17 +252,19 @@ namespace Presentacion
                 double valPRetRenta = double.Parse(pRetRenta);
 
                 double valRetRenta = subTotal * valPRetRenta / 100;
-
+                valRetRenta = Math.Round(valRetRenta, 2, MidpointRounding.AwayFromZero);
 
                 string pRetIVA = cmbPorcentajeRetIVA.SelectedItem == null ? cmbPorcentajeRetIVA.Text : cmbPorcentajeRetIVA.GetItemText(cmbPorcentajeRetIVA.SelectedItem);
                 //pRetIVA = pRetIVA.Replace(".", ",");
                 double valPRetIVA = double.Parse(pRetIVA);
 
                 double valRetIVA = subTotal * ivaFactura / 100 * valPRetIVA / 100;
+                valRetIVA = Math.Round(valRetIVA, 2, MidpointRounding.AwayFromZero);
 
                 totalRetencion = valRetRenta + valRetIVA;
 
                 valorACobrar = totalFactura - totalRetencion;
+                valorACobrar = Math.Round(valorACobrar,2);
 
                 txtValorRetencioRenta.Text = valRetRenta.ToString("N2");
                 txtValorRetencionIVA.Text = valRetIVA.ToString("N2");
@@ -1818,9 +1823,11 @@ namespace Presentacion
 
 
             totNotaCredito = subTotalNotCredito  + subTotalNotCredito * ivaNotCredito / 100;
+            totNotaCredito = Math.Round(totNotaCredito, 2);
             txtTotalNotCredito.Text = totNotaCredito.ToString("N2");
 
             totNotaCreditoII = subTotalNotCreditoII + subTotalNotCreditoII * ivaNotCreditoII / 100;
+            totNotaCreditoII = Math.Round(totNotaCreditoII, 2);
             txtTotalNotCreditoII.Text = totNotaCreditoII.ToString("N2");
 
             valorACobrar = totalFactura - totalRetencion - totNotaCredito - totNotaCreditoII; 

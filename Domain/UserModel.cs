@@ -167,6 +167,7 @@ namespace Domain
         }
 
 
+
         public DataTable readTramitesComision()
         {
             return userDao.readTramitesComision();
@@ -176,6 +177,23 @@ namespace Domain
         {
             return userDao.readFacturasporClientes(dateDesde, dateHasta);
         }
+
+        public DataTable readCartaCliente(string dateDesde, string dateHasta)
+        {
+            return userDao.readCartaCliente(dateDesde, dateHasta);
+        }
+
+        public DataTable readCartaClienteB(string dateDesde, string dateHasta, string Texto)
+        {
+            return userDao.readCartaClienteB(dateDesde, dateHasta, Texto);
+        }
+
+
+        public DataTable readDatosCarta(string ID_Tramite)
+        {
+            return userDao.readDatosCarta(ID_Tramite);
+        }
+
 
 
         public DataTable readFacturasporClientesNombre(string dateDesde, string dateHasta, string texto)
@@ -223,6 +241,11 @@ namespace Domain
         public DataTable readFacturas(string nFactura)
         {
             return userDao.readFacturas(nFactura);
+        }
+
+        public void searchIDTramite(string nFactura)
+        {
+           userDao.searchIDTramite(nFactura);
         }
 
         public DataTable readAnticipo(int nTramite)

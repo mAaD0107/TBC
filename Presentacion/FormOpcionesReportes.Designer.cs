@@ -34,13 +34,18 @@ namespace Presentacion
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.panelCarta = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblCarta = new System.Windows.Forms.Label();
+            this.btnCarta = new System.Windows.Forms.Button();
             this.panelCuentasCobrar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lblCuentaCobrar2 = new System.Windows.Forms.Label();
             this.btnCuentasCobrar = new System.Windows.Forms.Button();
             this.lblCuentaCobrar1 = new System.Windows.Forms.Label();
             this.redondeoCuentasCobrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoCarta = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelTitulo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
+            this.panelCarta.SuspendLayout();
             this.panelCuentasCobrar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +64,7 @@ namespace Presentacion
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(335, 38);
+            this.lblTitulo.Location = new System.Drawing.Point(335, 47);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(331, 78);
             this.lblTitulo.TabIndex = 0;
@@ -68,12 +73,72 @@ namespace Presentacion
             // 
             // panelOpciones
             // 
+            this.panelOpciones.Controls.Add(this.panelCarta);
             this.panelOpciones.Controls.Add(this.panelCuentasCobrar);
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelOpciones.Location = new System.Drawing.Point(0, 172);
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(1000, 278);
             this.panelOpciones.TabIndex = 3;
+            // 
+            // panelCarta
+            // 
+            this.panelCarta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelCarta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelCarta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCarta.BackgroundImage")));
+            this.panelCarta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCarta.Controls.Add(this.lblCarta);
+            this.panelCarta.Controls.Add(this.btnCarta);
+            this.panelCarta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelCarta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCarta.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelCarta.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelCarta.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelCarta.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelCarta.Location = new System.Drawing.Point(516, 55);
+            this.panelCarta.Name = "panelCarta";
+            this.panelCarta.Quality = 10;
+            this.panelCarta.Size = new System.Drawing.Size(206, 179);
+            this.panelCarta.TabIndex = 3;
+            this.panelCarta.TabStop = true;
+            this.panelCarta.Click += new System.EventHandler(this.panelCarta_Click);
+            this.panelCarta.Enter += new System.EventHandler(this.panelCarta_MouseEnter);
+            this.panelCarta.MouseEnter += new System.EventHandler(this.panelCarta_MouseEnter);
+            // 
+            // lblCarta
+            // 
+            this.lblCarta.AutoSize = true;
+            this.lblCarta.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.lblCarta.Location = new System.Drawing.Point(59, 33);
+            this.lblCarta.Name = "lblCarta";
+            this.lblCarta.Size = new System.Drawing.Size(91, 33);
+            this.lblCarta.TabIndex = 2;
+            this.lblCarta.Text = "Carta";
+            this.lblCarta.Click += new System.EventHandler(this.panelCarta_Click);
+            this.lblCarta.Enter += new System.EventHandler(this.panelCarta_MouseEnter);
+            this.lblCarta.MouseEnter += new System.EventHandler(this.panelCarta_MouseEnter);
+            // 
+            // btnCarta
+            // 
+            this.btnCarta.BackColor = System.Drawing.Color.Transparent;
+            this.btnCarta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCarta.BackgroundImage")));
+            this.btnCarta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCarta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnCarta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnCarta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnCarta.Location = new System.Drawing.Point(79, 107);
+            this.btnCarta.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCarta.Name = "btnCarta";
+            this.btnCarta.Size = new System.Drawing.Size(50, 50);
+            this.btnCarta.TabIndex = 0;
+            this.btnCarta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCarta.UseVisualStyleBackColor = false;
+            this.btnCarta.Click += new System.EventHandler(this.panelCarta_Click);
+            this.btnCarta.Enter += new System.EventHandler(this.panelCarta_MouseEnter);
+            this.btnCarta.MouseEnter += new System.EventHandler(this.panelCarta_MouseEnter);
             // 
             // panelCuentasCobrar
             // 
@@ -90,7 +155,7 @@ namespace Presentacion
             this.panelCuentasCobrar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelCuentasCobrar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCuentasCobrar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelCuentasCobrar.Location = new System.Drawing.Point(397, 55);
+            this.panelCuentasCobrar.Location = new System.Drawing.Point(304, 55);
             this.panelCuentasCobrar.Name = "panelCuentasCobrar";
             this.panelCuentasCobrar.Quality = 10;
             this.panelCuentasCobrar.Size = new System.Drawing.Size(206, 179);
@@ -115,7 +180,7 @@ namespace Presentacion
             // 
             // btnCuentasCobrar
             // 
-            this.btnCuentasCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnCuentasCobrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCuentasCobrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCuentasCobrar.BackgroundImage")));
             this.btnCuentasCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCuentasCobrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
@@ -151,6 +216,11 @@ namespace Presentacion
             this.redondeoCuentasCobrar.ElipseRadius = 20;
             this.redondeoCuentasCobrar.TargetControl = this.panelCuentasCobrar;
             // 
+            // redondeoCarta
+            // 
+            this.redondeoCarta.ElipseRadius = 20;
+            this.redondeoCarta.TargetControl = this.panelCarta;
+            // 
             // FormOpcionesReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,11 +233,14 @@ namespace Presentacion
             this.Name = "FormOpcionesReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpcionesTramite";
+            this.Load += new System.EventHandler(this.FormOpcionesReportes_Load);
             this.Shown += new System.EventHandler(this.FormOpcionesReportes_Shown);
             this.Resize += new System.EventHandler(this.FormOpcionesReportes_Resize);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.panelOpciones.ResumeLayout(false);
+            this.panelCarta.ResumeLayout(false);
+            this.panelCarta.PerformLayout();
             this.panelCuentasCobrar.ResumeLayout(false);
             this.panelCuentasCobrar.PerformLayout();
             this.ResumeLayout(false);
@@ -184,5 +257,9 @@ namespace Presentacion
         private System.Windows.Forms.Label lblCuentaCobrar1;
         private System.Windows.Forms.Label lblCuentaCobrar2;
         private Bunifu.Framework.UI.BunifuElipse redondeoCuentasCobrar;
+        private Bunifu.Framework.UI.BunifuGradientPanel panelCarta;
+        private System.Windows.Forms.Label lblCarta;
+        private System.Windows.Forms.Button btnCarta;
+        private Bunifu.Framework.UI.BunifuElipse redondeoCarta;
     }
 }

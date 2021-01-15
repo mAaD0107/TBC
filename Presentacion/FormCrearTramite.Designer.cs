@@ -102,6 +102,9 @@
             this.lineShape27 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelNContenedor = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtNBL = new System.Windows.Forms.TextBox();
+            this.lblBL = new System.Windows.Forms.Label();
             this.txtForwarderMaritima = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtNaviera = new System.Windows.Forms.TextBox();
@@ -109,6 +112,8 @@
             this.txtNContenedor = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.shapeContainer11 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape41 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape31 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape39 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape38 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape16 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -116,6 +121,7 @@
             this.lineShape28 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelNGuia = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
             this.txtForwarderAerea = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txtAerolinea = new System.Windows.Forms.TextBox();
@@ -130,6 +136,7 @@
             this.lineShape32 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelNPasePuerta = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
             this.txtTransportista = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtForwarderTerrestre = new System.Windows.Forms.TextBox();
@@ -143,23 +150,6 @@
             this.lineShape33 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape29 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape13 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panelComentarios = new System.Windows.Forms.Panel();
-            this.txtComentariosAgregar = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape24 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panelInferior = new System.Windows.Forms.Panel();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.DragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.txtNBL = new System.Windows.Forms.TextBox();
-            this.lblBL = new System.Windows.Forms.Label();
-            this.lineShape31 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape41 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.panelTransporteCourier = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.txtForwarderCourier = new System.Windows.Forms.TextBox();
@@ -175,6 +165,17 @@
             this.lineShape45 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape46 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape47 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelComentarios = new System.Windows.Forms.Panel();
+            this.txtComentariosAgregar = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape24 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelInferior = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.DragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.redondeoFormulario = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -187,9 +188,9 @@
             this.panelNContenedor.SuspendLayout();
             this.panelNGuia.SuspendLayout();
             this.panelNPasePuerta.SuspendLayout();
+            this.panelTransporteCourier.SuspendLayout();
             this.panelComentarios.SuspendLayout();
             this.panelInferior.SuspendLayout();
-            this.panelTransporteCourier.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpciones
@@ -1126,6 +1127,40 @@
             this.panelNContenedor.TabIndex = 5;
             this.panelNContenedor.Visible = false;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label27.Location = new System.Drawing.Point(10, 29);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(264, 20);
+            this.label27.TabIndex = 66;
+            this.label27.Text = "DATOS TRANSPORTE MARÍTIMO:";
+            // 
+            // txtNBL
+            // 
+            this.txtNBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtNBL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNBL.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNBL.ForeColor = System.Drawing.Color.White;
+            this.txtNBL.Location = new System.Drawing.Point(138, 135);
+            this.txtNBL.Name = "txtNBL";
+            this.txtNBL.Size = new System.Drawing.Size(212, 19);
+            this.txtNBL.TabIndex = 64;
+            this.txtNBL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblBL
+            // 
+            this.lblBL.AutoSize = true;
+            this.lblBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblBL.Location = new System.Drawing.Point(29, 135);
+            this.lblBL.Name = "lblBL";
+            this.lblBL.Size = new System.Drawing.Size(108, 18);
+            this.lblBL.TabIndex = 65;
+            this.lblBL.Text = "Número de BL:";
+            // 
             // txtForwarderMaritima
             // 
             this.txtForwarderMaritima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
@@ -1213,6 +1248,26 @@
             this.shapeContainer11.TabIndex = 55;
             this.shapeContainer11.TabStop = false;
             // 
+            // lineShape41
+            // 
+            this.lineShape41.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape41.Enabled = false;
+            this.lineShape41.Name = "lineShape41";
+            this.lineShape41.X1 = 136;
+            this.lineShape41.X2 = 352;
+            this.lineShape41.Y1 = 154;
+            this.lineShape41.Y2 = 154;
+            // 
+            // lineShape31
+            // 
+            this.lineShape31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.lineShape31.Enabled = false;
+            this.lineShape31.Name = "lineShape31";
+            this.lineShape31.X1 = 27;
+            this.lineShape31.X2 = 27;
+            this.lineShape31.Y1 = 155;
+            this.lineShape31.Y2 = 132;
+            // 
             // lineShape39
             // 
             this.lineShape39.BorderColor = System.Drawing.Color.DimGray;
@@ -1289,6 +1344,17 @@
             this.panelNGuia.Size = new System.Drawing.Size(993, 249);
             this.panelNGuia.TabIndex = 6;
             this.panelNGuia.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label28.Location = new System.Drawing.Point(12, 27);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(241, 20);
+            this.label28.TabIndex = 67;
+            this.label28.Text = "DATOS TRANSPORTE AÉREO:";
             // 
             // txtForwarderAerea
             // 
@@ -1452,6 +1518,17 @@
             this.panelNPasePuerta.TabIndex = 7;
             this.panelNPasePuerta.Visible = false;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label29.Location = new System.Drawing.Point(12, 25);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(282, 20);
+            this.label29.TabIndex = 68;
+            this.label29.Text = "DATOS TRANSPORTE TERRESTRE:";
+            // 
             // txtTransportista
             // 
             this.txtTransportista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
@@ -1604,189 +1681,6 @@
             this.lineShape13.X2 = 347;
             this.lineShape13.Y1 = 104;
             this.lineShape13.Y2 = 104;
-            // 
-            // panelComentarios
-            // 
-            this.panelComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelComentarios.Controls.Add(this.txtComentariosAgregar);
-            this.panelComentarios.Controls.Add(this.label16);
-            this.panelComentarios.Controls.Add(this.shapeContainer4);
-            this.panelComentarios.Location = new System.Drawing.Point(3, 2534);
-            this.panelComentarios.Name = "panelComentarios";
-            this.panelComentarios.Size = new System.Drawing.Size(992, 132);
-            this.panelComentarios.TabIndex = 1;
-            this.panelComentarios.Visible = false;
-            // 
-            // txtComentariosAgregar
-            // 
-            this.txtComentariosAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComentariosAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtComentariosAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentariosAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentariosAgregar.ForeColor = System.Drawing.Color.White;
-            this.txtComentariosAgregar.Location = new System.Drawing.Point(142, 9);
-            this.txtComentariosAgregar.Multiline = true;
-            this.txtComentariosAgregar.Name = "txtComentariosAgregar";
-            this.txtComentariosAgregar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtComentariosAgregar.Size = new System.Drawing.Size(822, 105);
-            this.txtComentariosAgregar.TabIndex = 17;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label16.Location = new System.Drawing.Point(31, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(98, 18);
-            this.label16.TabIndex = 54;
-            this.label16.Text = "Comentarios:";
-            // 
-            // shapeContainer4
-            // 
-            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer4.Name = "shapeContainer4";
-            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape24});
-            this.shapeContainer4.Size = new System.Drawing.Size(990, 130);
-            this.shapeContainer4.TabIndex = 55;
-            this.shapeContainer4.TabStop = false;
-            // 
-            // lineShape24
-            // 
-            this.lineShape24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.lineShape24.Enabled = false;
-            this.lineShape24.Name = "lineShape24";
-            this.lineShape24.X1 = 28;
-            this.lineShape24.X2 = 28;
-            this.lineShape24.Y1 = 31;
-            this.lineShape24.Y2 = 8;
-            // 
-            // panelInferior
-            // 
-            this.panelInferior.Controls.Add(this.btnGuardar);
-            this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInferior.Location = new System.Drawing.Point(3, 2672);
-            this.panelInferior.Name = "panelInferior";
-            this.panelInferior.Size = new System.Drawing.Size(944, 68);
-            this.panelInferior.TabIndex = 10;
-            this.panelInferior.Visible = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.btnGuardar.Location = new System.Drawing.Point(282, 13);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(387, 44);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // redondeoBtnGuardar
-            // 
-            this.redondeoBtnGuardar.ElipseRadius = 20;
-            this.redondeoBtnGuardar.TargetControl = this.btnGuardar;
-            // 
-            // DragControl
-            // 
-            this.DragControl.Fixed = true;
-            this.DragControl.Horizontal = true;
-            this.DragControl.TargetControl = this.panelTitulo;
-            this.DragControl.Vertical = true;
-            // 
-            // DragControl2
-            // 
-            this.DragControl2.Fixed = true;
-            this.DragControl2.Horizontal = true;
-            this.DragControl2.TargetControl = this.panelOpciones;
-            this.DragControl2.Vertical = true;
-            // 
-            // txtNBL
-            // 
-            this.txtNBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtNBL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNBL.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNBL.ForeColor = System.Drawing.Color.White;
-            this.txtNBL.Location = new System.Drawing.Point(138, 135);
-            this.txtNBL.Name = "txtNBL";
-            this.txtNBL.Size = new System.Drawing.Size(212, 19);
-            this.txtNBL.TabIndex = 64;
-            this.txtNBL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblBL
-            // 
-            this.lblBL.AutoSize = true;
-            this.lblBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblBL.Location = new System.Drawing.Point(29, 135);
-            this.lblBL.Name = "lblBL";
-            this.lblBL.Size = new System.Drawing.Size(108, 18);
-            this.lblBL.TabIndex = 65;
-            this.lblBL.Text = "Número de BL:";
-            // 
-            // lineShape31
-            // 
-            this.lineShape31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.lineShape31.Enabled = false;
-            this.lineShape31.Name = "lineShape31";
-            this.lineShape31.X1 = 27;
-            this.lineShape31.X2 = 27;
-            this.lineShape31.Y1 = 155;
-            this.lineShape31.Y2 = 132;
-            // 
-            // lineShape41
-            // 
-            this.lineShape41.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape41.Enabled = false;
-            this.lineShape41.Name = "lineShape41";
-            this.lineShape41.X1 = 136;
-            this.lineShape41.X2 = 352;
-            this.lineShape41.Y1 = 154;
-            this.lineShape41.Y2 = 154;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label27.Location = new System.Drawing.Point(10, 29);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(264, 20);
-            this.label27.TabIndex = 66;
-            this.label27.Text = "DATOS TRANSPORTE MARÍTIMO:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label28.Location = new System.Drawing.Point(12, 27);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(241, 20);
-            this.label28.TabIndex = 67;
-            this.label28.Text = "DATOS TRANSPORTE AÉREO:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label29.Location = new System.Drawing.Point(12, 25);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(282, 20);
-            this.label29.TabIndex = 68;
-            this.label29.Text = "DATOS TRANSPORTE TERRESTRE:";
             // 
             // panelTransporteCourier
             // 
@@ -1961,6 +1855,118 @@
             this.lineShape47.Y1 = 103;
             this.lineShape47.Y2 = 103;
             // 
+            // panelComentarios
+            // 
+            this.panelComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelComentarios.Controls.Add(this.txtComentariosAgregar);
+            this.panelComentarios.Controls.Add(this.label16);
+            this.panelComentarios.Controls.Add(this.shapeContainer4);
+            this.panelComentarios.Location = new System.Drawing.Point(3, 2534);
+            this.panelComentarios.Name = "panelComentarios";
+            this.panelComentarios.Size = new System.Drawing.Size(992, 132);
+            this.panelComentarios.TabIndex = 1;
+            this.panelComentarios.Visible = false;
+            // 
+            // txtComentariosAgregar
+            // 
+            this.txtComentariosAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComentariosAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtComentariosAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComentariosAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentariosAgregar.ForeColor = System.Drawing.Color.White;
+            this.txtComentariosAgregar.Location = new System.Drawing.Point(142, 9);
+            this.txtComentariosAgregar.Multiline = true;
+            this.txtComentariosAgregar.Name = "txtComentariosAgregar";
+            this.txtComentariosAgregar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtComentariosAgregar.Size = new System.Drawing.Size(822, 105);
+            this.txtComentariosAgregar.TabIndex = 17;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label16.Location = new System.Drawing.Point(31, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 18);
+            this.label16.TabIndex = 54;
+            this.label16.Text = "Comentarios:";
+            // 
+            // shapeContainer4
+            // 
+            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer4.Name = "shapeContainer4";
+            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape24});
+            this.shapeContainer4.Size = new System.Drawing.Size(990, 130);
+            this.shapeContainer4.TabIndex = 55;
+            this.shapeContainer4.TabStop = false;
+            // 
+            // lineShape24
+            // 
+            this.lineShape24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.lineShape24.Enabled = false;
+            this.lineShape24.Name = "lineShape24";
+            this.lineShape24.X1 = 28;
+            this.lineShape24.X2 = 28;
+            this.lineShape24.Y1 = 31;
+            this.lineShape24.Y2 = 8;
+            // 
+            // panelInferior
+            // 
+            this.panelInferior.Controls.Add(this.btnGuardar);
+            this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferior.Location = new System.Drawing.Point(3, 2672);
+            this.panelInferior.Name = "panelInferior";
+            this.panelInferior.Size = new System.Drawing.Size(944, 68);
+            this.panelInferior.TabIndex = 10;
+            this.panelInferior.Visible = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.btnGuardar.Location = new System.Drawing.Point(282, 13);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(387, 44);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // redondeoBtnGuardar
+            // 
+            this.redondeoBtnGuardar.ElipseRadius = 20;
+            this.redondeoBtnGuardar.TargetControl = this.btnGuardar;
+            // 
+            // DragControl
+            // 
+            this.DragControl.Fixed = true;
+            this.DragControl.Horizontal = true;
+            this.DragControl.TargetControl = this.panelTitulo;
+            this.DragControl.Vertical = true;
+            // 
+            // DragControl2
+            // 
+            this.DragControl2.Fixed = true;
+            this.DragControl2.Horizontal = true;
+            this.DragControl2.TargetControl = this.panelOpciones;
+            this.DragControl2.Vertical = true;
+            // 
+            // redondeoFormulario
+            // 
+            this.redondeoFormulario.ElipseRadius = 20;
+            this.redondeoFormulario.TargetControl = this;
+            // 
             // FormCrearTramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2000,11 +2006,11 @@
             this.panelNGuia.PerformLayout();
             this.panelNPasePuerta.ResumeLayout(false);
             this.panelNPasePuerta.PerformLayout();
+            this.panelTransporteCourier.ResumeLayout(false);
+            this.panelTransporteCourier.PerformLayout();
             this.panelComentarios.ResumeLayout(false);
             this.panelComentarios.PerformLayout();
             this.panelInferior.ResumeLayout(false);
-            this.panelTransporteCourier.ResumeLayout(false);
-            this.panelTransporteCourier.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2156,5 +2162,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape45;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape46;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape47;
+        private Bunifu.Framework.UI.BunifuElipse redondeoFormulario;
     }
 }

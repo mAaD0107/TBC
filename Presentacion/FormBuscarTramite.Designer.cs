@@ -136,7 +136,7 @@
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // lblBuscar
             // 
@@ -240,7 +240,7 @@
             this.panelTabla.ColumnCount = 3;
             this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.012048F));
             this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.98795F));
-            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.panelTabla.Controls.Add(this.dataGridTramites, 1, 0);
             this.panelTabla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTabla.Location = new System.Drawing.Point(3, 102);
@@ -304,7 +304,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridTramites.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridTramites.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridTramites.Size = new System.Drawing.Size(764, 320);
+            this.dataGridTramites.Size = new System.Drawing.Size(763, 320);
             this.dataGridTramites.StandardTab = true;
             this.dataGridTramites.TabIndex = 2;
             this.dataGridTramites.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTramites_CellDoubleClick);

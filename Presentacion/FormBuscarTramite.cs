@@ -77,6 +77,12 @@ namespace Presentacion
             {
                 searchData(txtBuscar.Text);
             }
+
+            if (UserCache.Position == Positions.Tramitacion)
+            {
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false; 
+            }
             
 
 
@@ -87,6 +93,8 @@ namespace Presentacion
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.readTramitesImport();
         }
+
+
 
 
         private void FormBuscarTramite_Resize(object sender, EventArgs e)
@@ -101,13 +109,7 @@ namespace Presentacion
             panelBtnIzq.Width = (this.Width - 50) / 2;
         }
 
-        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                searchData(txtBuscar.Text);
-            }
-        }
+
 
         public void searchData(string data)
         {
@@ -298,6 +300,11 @@ namespace Presentacion
                     formCrearPago.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                     PagosCache.numeroTramite = n;
 
+                    PagosCache.Empresa = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[2].Value.ToString();
+                    PagosCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[12].Value.ToString();
+                    PagosCache.secuencialCliente = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[5].Value.ToString();
+                    PagosCache.idTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
+
 
                     formPrincipal.panelInferior.Visible = false;
                     formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
@@ -396,6 +403,7 @@ namespace Presentacion
             formCrearTramite.dateFinalizacion.Enabled = false;
             formCrearTramite.txtComentariosCrear.Enabled = false;
             formCrearTramite.btnNuevaEmpresa.Visible = false;
+            formCrearTramite.panelInferior.Visible = false; 
 
             formCrearTramite.Opacity = 0.9;
             formCrearTramite.Height = Screen.PrimaryScreen.WorkingArea.Size.Height - 30;
@@ -458,7 +466,7 @@ namespace Presentacion
             values[1] = dataGridTramites.Rows[e].Cells[0].Value.ToString();
             nombre = dataGridTramites.Rows[e].Cells[1].Value.ToString();
 
-            for (int i = 2; i < 26; i++)
+            for (int i = 2; i < 31; i++)
             {
                 values[i] = "0";
             }
@@ -593,6 +601,21 @@ namespace Presentacion
         private void FormBuscarTramite_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idImportaciones = 2;
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtBuscar.Text == "")
+                {
+                    showTramites();
+                }
+                else
+                {
+                    searchData(txtBuscar.Text);
+                }
+            }
         }
     }
 }

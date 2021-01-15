@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!dateInforme.Value, "DatosGenerales")</Value>
+                <Value>=First(Fields!dateInforme.Value, "InformacionCarta")</Value>
                 <Style>
                   <Format>d 'de' MMMM 'de' yyyy</Format>
                 </Style>
@@ -101,7 +101,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!empresa.Value, "Facturas")</Value>
+                <Value>=First(Fields!Cliente.Value, "InformacionCarta")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -112,7 +112,7 @@
         <Top>5.7893cm</Top>
         <Left>1.26683cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>10.99614cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -161,7 +161,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Alberto Jumbo</Value>
+                <Value>=First(Fields!PersonaContacto.Value, "InformacionCarta")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -172,7 +172,7 @@
         <Top>7.4391cm</Top>
         <Left>1.26683cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>10.99614cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -237,7 +237,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Por medio de la presente reciba un cordial saludo a la vez que realizo la entrega de documentos, facturas, retenciones y pagos correspondientes a</Value>
+                <Value>Por medio de la presente reciba un cordial saludo a la vez que realizo la entrega de documentos, facturas, retenciones y pagos correspondientes a la siguiente importación:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontWeight>Normal</FontWeight>
@@ -427,7 +427,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>SECUENCIAL CLIENTE:</Value>
+                <Value>Secuencial Cliente:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -437,8 +437,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.90688cm</Top>
-        <Left>11.68417cm</Left>
+        <Top>12.94216cm</Top>
+        <Left>10.80002cm</Left>
         <Height>0.6cm</Height>
         <Width>4.405cm</Width>
         <ZIndex>12</ZIndex>
@@ -469,8 +469,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>13.68326cm</Top>
-        <Left>11.68417cm</Left>
+        <Top>13.71854cm</Top>
+        <Left>10.80002cm</Left>
         <Height>0.6cm</Height>
         <Width>4.405cm</Width>
         <ZIndex>13</ZIndex>
@@ -501,8 +501,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>14.45965cm</Top>
-        <Left>11.68417cm</Left>
+        <Top>14.49493cm</Top>
+        <Left>10.80002cm</Left>
         <Height>0.6cm</Height>
         <Width>4.405cm</Width>
         <ZIndex>14</ZIndex>
@@ -523,7 +523,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>NO. FC PROVEEDOR</Value>
+                <Value>NO. FC Proveedor</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -533,8 +533,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>15.23604cm</Top>
-        <Left>11.68417cm</Left>
+        <Top>15.27132cm</Top>
+        <Left>10.80002cm</Left>
         <Height>0.6cm</Height>
         <Width>4.405cm</Width>
         <ZIndex>15</ZIndex>
@@ -581,7 +581,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.52604cm</Height>
+              <Height>1.56573cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -940,7 +940,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.63969cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1281,7 +1281,7 @@
         <DataSetName>Facturas</DataSetName>
         <Top>17.8562cm</Top>
         <Left>1.26683cm</Left>
-        <Height>2.12604cm</Height>
+        <Height>2.20542cm</Height>
         <Width>18.79833cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
@@ -1290,6 +1290,246 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!AduanaNacionalizacion.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>12.94215cm</Top>
+        <Left>5.7071cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98709cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!NumeroLiquidacion.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>13.71854cm</Top>
+        <Left>5.7071cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98709cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!NContGuia.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>14.42437cm</Top>
+        <Left>5.74238cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.95181cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DAI.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>15.23604cm</Top>
+        <Left>5.7071cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98709cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SecuencialCliente.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>12.94215cm</Top>
+        <Left>15.2403cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.82486cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!OrdenLDM.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>13.71854cm</Top>
+        <Left>15.2403cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.82485cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Proveedor.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>14.45965cm</Top>
+        <Left>15.2403cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.82486cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!NFacturaProveedor.Value, "InformacionCarta")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>15.23604cm</Top>
+        <Left>15.2403cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.82486cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>29.7cm</Height>
     <Style>
@@ -1328,6 +1568,13 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>86ae8909-457a-47a5-a2c3-f753c58cbfae</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="DomainCarta">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>2714fe72-25e5-4e16-889f-075de961458b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1423,6 +1670,63 @@
         <rd:DataSetName>Domain.Facturacion</rd:DataSetName>
         <rd:TableName>ListadoFacturas</rd:TableName>
         <rd:ObjectDataSourceType>Domain.Facturacion.ListadoFacturas, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="InformacionCarta">
+      <Query>
+        <DataSourceName>DomainCarta</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AduanaNacionalizacion">
+          <DataField>AduanaNacionalizacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cliente">
+          <DataField>Cliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DAI">
+          <DataField>DAI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateInforme">
+          <DataField>dateInforme</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NContGuia">
+          <DataField>NContGuia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NFacturaProveedor">
+          <DataField>NFacturaProveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumeroLiquidacion">
+          <DataField>NumeroLiquidacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrdenLDM">
+          <DataField>OrdenLDM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PersonaContacto">
+          <DataField>PersonaContacto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Proveedor">
+          <DataField>Proveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SecuencialCliente">
+          <DataField>SecuencialCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Domain.Carta</rd:DataSetName>
+        <rd:TableName>InformeCarta</rd:TableName>
+        <rd:ObjectDataSourceType>Domain.Carta.InformeCarta, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
