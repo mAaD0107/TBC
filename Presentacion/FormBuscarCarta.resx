@@ -125,6 +125,15 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>20, 40, 536, 0</value>
+  </metadata>
+  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>20, 40</value>
+  </metadata>
+  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>536, 0</value>
+  </metadata>
   <metadata name="lineShape42.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>24, 76, 0, 23</value>
   </metadata>
@@ -153,13 +162,40 @@
     <value>379, 0</value>
   </metadata>
   <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 39, 353, 0</value>
+    <value>20, 40, 536, 0</value>
   </metadata>
   <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 39</value>
+    <value>20, 40</value>
   </metadata>
   <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>353, 0</value>
+    <value>536, 0</value>
+  </metadata>
+  <metadata name="lineShape42.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>24, 76, 0, 23</value>
+  </metadata>
+  <metadata name="lineShape42.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>24, 76</value>
+  </metadata>
+  <metadata name="lineShape42.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 23</value>
+  </metadata>
+  <metadata name="lineShape5.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>146, 108, 379, 0</value>
+  </metadata>
+  <metadata name="lineShape5.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>146, 108</value>
+  </metadata>
+  <metadata name="lineShape5.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>379, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>580, 108, 379, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>580, 108</value>
+  </metadata>
+  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>379, 0</value>
   </metadata>
   <data name="bunifuGradientPanel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -441,6 +477,25 @@
         /03/vF8H2G9MF0rb9O9DOiYG/2L0ze5oAdAJs9GE9uTY3sV1aCYobq0GyY2VIL5N//4Zt1btuQI/VdLW
         NMl7otrM/Y6Ogb/WP99ZDpJ/Vwl3B5Vo94Xanwc/sf1Ntdm9uIGB/x9V2Vnc1UEBeQAAAABJRU5ErkJg
         gg==
+</value>
+  </data>
+  <data name="hScrollBar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAA7oAAAARCAYAAADzN9DdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVHhe7dfBCYAwAATBNGTAPDXViO8UkcolYBM55jFw
+        V8KWet7P0a4JAAAAu1uNW/7zAgAAQIApdAEAAEgidAEAAIgidAEAAIgidAEAAIgidAEAAIgidAEAAIgi
+        dAEAAIgidAEAAIgidAEAAIgidAEAAIgidAEAAIgidAEAAIgidAEAAIgidAEAAIgyS219rAEAAAC7q62P
+        DzzkgmCL53NQAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="vScrollBar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABEAAAFmCAYAAACLPXE3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADFSURBVHhe7cyxCcNAEEVBNaQDX2irGqNYRahyI3A2mZyZ
+        FwzsBv8t4/F6r/N53nXtl++z/+AsgiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIq
+        oiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIq
+        oiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiIqoiL6u8iY23Edd425HR9vddcUSB43/QAAAABJRU5E
+        rkJggg==
 </value>
   </data>
 </root>

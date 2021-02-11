@@ -83,18 +83,14 @@ namespace Presentacion
                 btnEditar.Visible = false;
                 btnEliminar.Visible = false; 
             }
-            
-
-
         }
 
         public void showTramites()
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.readTramitesImport();
+            acoplarScrolls();
         }
-
-
 
 
         private void FormBuscarTramite_Resize(object sender, EventArgs e)
@@ -115,6 +111,33 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.searchTramiteImport(data);
+            acoplarScrolls();
+        }
+
+
+        private void acoplarScrolls()
+        {
+
+            if (dataGridTramites.RowCount > 0)
+            {
+                if (dataGridTramites.RowCount == 1)
+                {
+                    vScrollBar.Maximum = dataGridTramites.RowCount;
+                }
+                else
+                {
+                    vScrollBar.Maximum = dataGridTramites.RowCount - 1;
+                }
+                
+            }
+            else
+            {
+
+                vScrollBar.Minimum = 0;
+                vScrollBar.Maximum = 1;
+            }
+
+            hScrollBar.Maximum = dataGridTramites.ColumnCount - 1;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -208,7 +231,6 @@ namespace Presentacion
         public bool realizarPago = false; 
         private void dataGridTramites_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (!realizarPago)
             {
                 if (btnActualizar.Text == "Actualizar")
@@ -296,7 +318,7 @@ namespace Presentacion
                 FormPrincipal formPrincipal = Owner as FormPrincipal;
                 if (formPrincipal != null)
                 {
-                    FormCrearPago formCrearPago = new FormCrearPago();
+                    FormTipoPago formCrearPago = new FormTipoPago();
                     formCrearPago.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                     PagosCache.numeroTramite = n;
 
@@ -616,6 +638,21 @@ namespace Presentacion
                     searchData(txtBuscar.Text);
                 }
             }
+        }
+
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            dataGridTramites.FirstDisplayedScrollingRowIndex = e.Value;
+        }
+
+        private void dataGridTramites_Scroll(object sender, ScrollEventArgs e)
+        {
+            vScrollBar.Value = e.NewValue;
+        }
+
+        private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
+        {
+            dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;
         }
     }
 }

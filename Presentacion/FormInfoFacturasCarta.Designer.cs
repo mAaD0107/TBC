@@ -31,10 +31,10 @@ namespace Presentacion
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoFacturasCarta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
@@ -64,21 +64,44 @@ namespace Presentacion
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.hScrollBar = new Bunifu.UI.WinForms.BunifuHScrollBar();
             this.dataFacturas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblDolar = new System.Windows.Forms.Label();
+            this.txtDiferencia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMayorContable = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTotalGastos = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTotalTramite = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape14 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape13 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelFacturas = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkListFacturas = new System.Windows.Forms.CheckedListBox();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelComentarios = new System.Windows.Forms.Panel();
+            this.txtComentarios = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.cmbTipoCarta = new System.Windows.Forms.ComboBox();
@@ -86,28 +109,8 @@ namespace Presentacion
             this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.redondeoBtnGenerar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtComentarios = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtTotalTramite = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtTotalGastos = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtMayorContable = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtDiferencia = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lineShape13 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape14 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lblDolar = new System.Windows.Forms.Label();
+            this.panelVScroll = new System.Windows.Forms.Panel();
+            this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -116,10 +119,11 @@ namespace Presentacion
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFacturas)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelFacturas.SuspendLayout();
+            this.panelComentarios.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panelVScroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpciones
@@ -182,14 +186,14 @@ namespace Presentacion
             this.panelContenedor.Controls.Add(this.panel5);
             this.panelContenedor.Controls.Add(this.panel1);
             this.panelContenedor.Controls.Add(this.panel3);
-            this.panelContenedor.Controls.Add(this.panel2);
-            this.panelContenedor.Controls.Add(this.panel6);
+            this.panelContenedor.Controls.Add(this.panelFacturas);
+            this.panelContenedor.Controls.Add(this.panelComentarios);
             this.panelContenedor.Controls.Add(this.panel4);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 36);
+            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1022, 714);
+            this.panelContenedor.Size = new System.Drawing.Size(999, 714);
             this.panelContenedor.TabIndex = 3;
+            this.panelContenedor.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelContenedor_Scroll);
             // 
             // panelTitulo
             // 
@@ -457,6 +461,7 @@ namespace Presentacion
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.hScrollBar);
             this.panel1.Controls.Add(this.dataFacturas);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.shapeContainer1);
@@ -465,40 +470,80 @@ namespace Presentacion
             this.panel1.Size = new System.Drawing.Size(996, 358);
             this.panel1.TabIndex = 4;
             // 
+            // hScrollBar
+            // 
+            this.hScrollBar.AllowCursorChanges = true;
+            this.hScrollBar.AllowHomeEndKeysDetection = false;
+            this.hScrollBar.AllowIncrementalClickMoves = true;
+            this.hScrollBar.AllowMouseDownEffects = true;
+            this.hScrollBar.AllowMouseHoverEffects = true;
+            this.hScrollBar.AllowScrollingAnimations = true;
+            this.hScrollBar.AllowScrollKeysDetection = true;
+            this.hScrollBar.AllowScrollOptionsMenu = true;
+            this.hScrollBar.AllowShrinkingOnFocusLost = false;
+            this.hScrollBar.BackgoundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hScrollBar.BackgroundImage")));
+            this.hScrollBar.BindingContainer = null;
+            this.hScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.BorderRadius = 0;
+            this.hScrollBar.BorderThickness = 1;
+            this.hScrollBar.DurationBeforeShrink = 2000;
+            this.hScrollBar.LargeChange = 10;
+            this.hScrollBar.Location = new System.Drawing.Point(26, 321);
+            this.hScrollBar.Maximum = 100;
+            this.hScrollBar.Minimum = 0;
+            this.hScrollBar.MinimumThumbLength = 18;
+            this.hScrollBar.Name = "hScrollBar";
+            this.hScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
+            this.hScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.hScrollBar.OnDisable.ThumbColor = System.Drawing.Color.Silver;
+            this.hScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.ShrinkSizeLimit = 3;
+            this.hScrollBar.Size = new System.Drawing.Size(945, 17);
+            this.hScrollBar.SmallChange = 1;
+            this.hScrollBar.TabIndex = 60;
+            this.hScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.hScrollBar.ThumbLength = 93;
+            this.hScrollBar.ThumbMargin = 1;
+            this.hScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuHScrollBar.ThumbStyles.Inset;
+            this.hScrollBar.Value = 0;
+            this.hScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs>(this.hScrollBar_Scroll);
+            // 
             // dataFacturas
             // 
             this.dataFacturas.AllowUserToAddRows = false;
             this.dataFacturas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataFacturas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.dataFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.NullValue = "--------------";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataFacturas.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = "--------------";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataFacturas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataFacturas.DoubleBuffered = true;
             this.dataFacturas.EnableHeadersVisualStyles = false;
             this.dataFacturas.GridColor = System.Drawing.Color.DimGray;
@@ -508,14 +553,14 @@ namespace Presentacion
             this.dataFacturas.Name = "dataFacturas";
             this.dataFacturas.ReadOnly = true;
             this.dataFacturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataFacturas.Size = new System.Drawing.Size(944, 264);
             this.dataFacturas.StandardTab = true;
@@ -556,18 +601,271 @@ namespace Presentacion
             this.lineShape1.Y1 = 56;
             this.lineShape1.Y2 = 56;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnEliminar);
-            this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.checkListFacturas);
-            this.panel2.Controls.Add(this.shapeContainer3);
-            this.panel2.Location = new System.Drawing.Point(3, 1005);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(995, 240);
-            this.panel2.TabIndex = 5;
+            this.panel3.AutoScroll = true;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblDolar);
+            this.panel3.Controls.Add(this.txtDiferencia);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.txtMayorContable);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.txtTotalGastos);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.txtTotalTramite);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.shapeContainer4);
+            this.panel3.Location = new System.Drawing.Point(3, 759);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(995, 240);
+            this.panel3.TabIndex = 6;
+            // 
+            // lblDolar
+            // 
+            this.lblDolar.AutoSize = true;
+            this.lblDolar.Font = new System.Drawing.Font("Century Gothic", 20.25F);
+            this.lblDolar.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDolar.Location = new System.Drawing.Point(705, 101);
+            this.lblDolar.Name = "lblDolar";
+            this.lblDolar.Size = new System.Drawing.Size(30, 33);
+            this.lblDolar.TabIndex = 91;
+            this.lblDolar.Text = "$";
+            this.lblDolar.Visible = false;
+            // 
+            // txtDiferencia
+            // 
+            this.txtDiferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtDiferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiferencia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiferencia.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDiferencia.Location = new System.Drawing.Point(614, 159);
+            this.txtDiferencia.Name = "txtDiferencia";
+            this.txtDiferencia.ReadOnly = true;
+            this.txtDiferencia.Size = new System.Drawing.Size(236, 34);
+            this.txtDiferencia.TabIndex = 89;
+            this.txtDiferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label10.Location = new System.Drawing.Point(516, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 18);
+            this.label10.TabIndex = 90;
+            this.label10.Text = "Diferencia:";
+            // 
+            // txtMayorContable
+            // 
+            this.txtMayorContable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtMayorContable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMayorContable.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMayorContable.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMayorContable.Location = new System.Drawing.Point(734, 101);
+            this.txtMayorContable.Name = "txtMayorContable";
+            this.txtMayorContable.Size = new System.Drawing.Size(168, 34);
+            this.txtMayorContable.TabIndex = 87;
+            this.txtMayorContable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMayorContable.TextChanged += new System.EventHandler(this.txtMayorContable_TextChanged);
+            this.txtMayorContable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMayorContable_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label9.Location = new System.Drawing.Point(516, 109);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 18);
+            this.label9.TabIndex = 88;
+            this.label9.Text = "Valor mayor contable:";
+            // 
+            // txtTotalGastos
+            // 
+            this.txtTotalGastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtTotalGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalGastos.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalGastos.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTotalGastos.Location = new System.Drawing.Point(143, 159);
+            this.txtTotalGastos.Name = "txtTotalGastos";
+            this.txtTotalGastos.ReadOnly = true;
+            this.txtTotalGastos.Size = new System.Drawing.Size(247, 34);
+            this.txtTotalGastos.TabIndex = 85;
+            this.txtTotalGastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label8.Location = new System.Drawing.Point(40, 167);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 18);
+            this.label8.TabIndex = 86;
+            this.label8.Text = "Total gastos:";
+            // 
+            // txtTotalTramite
+            // 
+            this.txtTotalTramite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtTotalTramite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalTramite.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTramite.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTotalTramite.Location = new System.Drawing.Point(143, 101);
+            this.txtTotalTramite.Name = "txtTotalTramite";
+            this.txtTotalTramite.ReadOnly = true;
+            this.txtTotalTramite.Size = new System.Drawing.Size(247, 34);
+            this.txtTotalTramite.TabIndex = 83;
+            this.txtTotalTramite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label7.Location = new System.Drawing.Point(40, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 18);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "Total trámite:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label4.Location = new System.Drawing.Point(20, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(239, 33);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Resumen Trámite";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // shapeContainer4
+            // 
+            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer4.Name = "shapeContainer4";
+            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape14,
+            this.lineShape13,
+            this.lineShape12,
+            this.lineShape11,
+            this.lineShape10,
+            this.lineShape9,
+            this.lineShape8,
+            this.lineShape7,
+            this.lineShape3});
+            this.shapeContainer4.Size = new System.Drawing.Size(993, 238);
+            this.shapeContainer4.TabIndex = 82;
+            this.shapeContainer4.TabStop = false;
+            // 
+            // lineShape14
+            // 
+            this.lineShape14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lineShape14.Enabled = false;
+            this.lineShape14.Name = "lineShape14";
+            this.lineShape14.X1 = 512;
+            this.lineShape14.X2 = 512;
+            this.lineShape14.Y1 = 188;
+            this.lineShape14.Y2 = 165;
+            // 
+            // lineShape13
+            // 
+            this.lineShape13.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape13.Enabled = false;
+            this.lineShape13.Name = "lineShape13";
+            this.lineShape13.X1 = 607;
+            this.lineShape13.X2 = 853;
+            this.lineShape13.Y1 = 193;
+            this.lineShape13.Y2 = 193;
+            // 
+            // lineShape12
+            // 
+            this.lineShape12.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape12.Enabled = false;
+            this.lineShape12.Name = "lineShape12";
+            this.lineShape12.X1 = 669;
+            this.lineShape12.X2 = 915;
+            this.lineShape12.Y1 = 135;
+            this.lineShape12.Y2 = 135;
+            // 
+            // lineShape11
+            // 
+            this.lineShape11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lineShape11.Enabled = false;
+            this.lineShape11.Name = "lineShape11";
+            this.lineShape11.X1 = 512;
+            this.lineShape11.X2 = 512;
+            this.lineShape11.Y1 = 130;
+            this.lineShape11.Y2 = 107;
+            // 
+            // lineShape10
+            // 
+            this.lineShape10.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape10.Enabled = false;
+            this.lineShape10.Name = "lineShape10";
+            this.lineShape10.X1 = 138;
+            this.lineShape10.X2 = 395;
+            this.lineShape10.Y1 = 193;
+            this.lineShape10.Y2 = 193;
+            // 
+            // lineShape9
+            // 
+            this.lineShape9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lineShape9.Enabled = false;
+            this.lineShape9.Name = "lineShape9";
+            this.lineShape9.X1 = 36;
+            this.lineShape9.X2 = 36;
+            this.lineShape9.Y1 = 188;
+            this.lineShape9.Y2 = 165;
+            // 
+            // lineShape8
+            // 
+            this.lineShape8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lineShape8.Enabled = false;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 36;
+            this.lineShape8.X2 = 36;
+            this.lineShape8.Y1 = 130;
+            this.lineShape8.Y2 = 107;
+            // 
+            // lineShape7
+            // 
+            this.lineShape7.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape7.Enabled = false;
+            this.lineShape7.Name = "lineShape7";
+            this.lineShape7.X1 = 137;
+            this.lineShape7.X2 = 394;
+            this.lineShape7.Y1 = 135;
+            this.lineShape7.Y2 = 135;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
+            this.lineShape3.Name = "lineShape2";
+            this.lineShape3.X1 = 26;
+            this.lineShape3.X2 = 283;
+            this.lineShape3.Y1 = 65;
+            this.lineShape3.Y2 = 65;
+            // 
+            // panelFacturas
+            // 
+            this.panelFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFacturas.Controls.Add(this.btnEliminar);
+            this.panelFacturas.Controls.Add(this.btnEditar);
+            this.panelFacturas.Controls.Add(this.label3);
+            this.panelFacturas.Controls.Add(this.checkListFacturas);
+            this.panelFacturas.Controls.Add(this.shapeContainer3);
+            this.panelFacturas.Location = new System.Drawing.Point(3, 1005);
+            this.panelFacturas.Name = "panelFacturas";
+            this.panelFacturas.Size = new System.Drawing.Size(995, 240);
+            this.panelFacturas.TabIndex = 5;
+            this.panelFacturas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelFacturas_MouseClick);
             // 
             // btnEliminar
             // 
@@ -627,7 +925,9 @@ namespace Presentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkListFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.checkListFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkListFacturas.CheckOnClick = true;
             this.checkListFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkListFacturas.Enabled = false;
             this.checkListFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkListFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.checkListFacturas.FormattingEnabled = true;
@@ -658,68 +958,66 @@ namespace Presentacion
             this.lineShape2.Y1 = 65;
             this.lineShape2.Y2 = 65;
             // 
-            // panel3
+            // panelComentarios
             // 
-            this.panel3.AutoScroll = true;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblDolar);
-            this.panel3.Controls.Add(this.txtDiferencia);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.txtMayorContable);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.txtTotalGastos);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.txtTotalTramite);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.shapeContainer4);
-            this.panel3.Location = new System.Drawing.Point(3, 759);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(995, 240);
-            this.panel3.TabIndex = 6;
+            this.panelComentarios.AutoScroll = true;
+            this.panelComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelComentarios.Controls.Add(this.txtComentarios);
+            this.panelComentarios.Controls.Add(this.label6);
+            this.panelComentarios.Controls.Add(this.shapeContainer6);
+            this.panelComentarios.Location = new System.Drawing.Point(3, 1251);
+            this.panelComentarios.Name = "panelComentarios";
+            this.panelComentarios.Size = new System.Drawing.Size(995, 240);
+            this.panelComentarios.TabIndex = 8;
+            this.panelComentarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelComentarios_MouseClick);
             // 
-            // label4
+            // txtComentarios
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtComentarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComentarios.Enabled = false;
+            this.txtComentarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentarios.ForeColor = System.Drawing.Color.White;
+            this.txtComentarios.Location = new System.Drawing.Point(35, 91);
+            this.txtComentarios.Multiline = true;
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Size = new System.Drawing.Size(935, 127);
+            this.txtComentarios.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label4.Location = new System.Drawing.Point(20, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 33);
-            this.label4.TabIndex = 81;
-            this.label4.Text = "Resumen Trámite";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label6.Location = new System.Drawing.Point(20, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 33);
+            this.label6.TabIndex = 81;
+            this.label6.Text = "Observaciones";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // shapeContainer4
+            // shapeContainer6
             // 
-            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer4.Name = "shapeContainer4";
-            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape14,
-            this.lineShape13,
-            this.lineShape12,
-            this.lineShape11,
-            this.lineShape10,
-            this.lineShape9,
-            this.lineShape8,
-            this.lineShape7,
-            this.lineShape3});
-            this.shapeContainer4.Size = new System.Drawing.Size(993, 238);
-            this.shapeContainer4.TabIndex = 82;
-            this.shapeContainer4.TabStop = false;
+            this.shapeContainer6.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer6.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer6.Name = "shapeContainer6";
+            this.shapeContainer6.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape6});
+            this.shapeContainer6.Size = new System.Drawing.Size(993, 238);
+            this.shapeContainer6.TabIndex = 82;
+            this.shapeContainer6.TabStop = false;
             // 
-            // lineShape3
+            // lineShape6
             // 
-            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape3.Enabled = false;
-            this.lineShape3.Name = "lineShape2";
-            this.lineShape3.X1 = 26;
-            this.lineShape3.X2 = 283;
-            this.lineShape3.Y1 = 65;
-            this.lineShape3.Y2 = 65;
+            this.lineShape6.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape6.Enabled = false;
+            this.lineShape6.Name = "lineShape2";
+            this.lineShape6.X1 = 26;
+            this.lineShape6.X2 = 245;
+            this.lineShape6.Y1 = 65;
+            this.lineShape6.Y2 = 65;
             // 
             // panel4
             // 
@@ -809,253 +1107,57 @@ namespace Presentacion
             this.redondeoBtnGenerar.ElipseRadius = 20;
             this.redondeoBtnGenerar.TargetControl = this.btnGenerar;
             // 
-            // panel6
+            // panelVScroll
             // 
-            this.panel6.AutoScroll = true;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.txtComentarios);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.shapeContainer6);
-            this.panel6.Location = new System.Drawing.Point(3, 1251);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(995, 240);
-            this.panel6.TabIndex = 8;
+            this.panelVScroll.Controls.Add(this.vScrollBar);
+            this.panelVScroll.Controls.Add(this.panelContenedor);
+            this.panelVScroll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelVScroll.Location = new System.Drawing.Point(0, 36);
+            this.panelVScroll.Name = "panelVScroll";
+            this.panelVScroll.Size = new System.Drawing.Size(1022, 714);
+            this.panelVScroll.TabIndex = 4;
             // 
-            // txtComentarios
+            // vScrollBar
             // 
-            this.txtComentarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentarios.ForeColor = System.Drawing.Color.White;
-            this.txtComentarios.Location = new System.Drawing.Point(35, 91);
-            this.txtComentarios.Multiline = true;
-            this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Size = new System.Drawing.Size(935, 127);
-            this.txtComentarios.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label6.Location = new System.Drawing.Point(20, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 33);
-            this.label6.TabIndex = 81;
-            this.label6.Text = "Observaciones";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // shapeContainer6
-            // 
-            this.shapeContainer6.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer6.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer6.Name = "shapeContainer6";
-            this.shapeContainer6.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape6});
-            this.shapeContainer6.Size = new System.Drawing.Size(993, 238);
-            this.shapeContainer6.TabIndex = 82;
-            this.shapeContainer6.TabStop = false;
-            // 
-            // lineShape6
-            // 
-            this.lineShape6.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape6.Enabled = false;
-            this.lineShape6.Name = "lineShape2";
-            this.lineShape6.X1 = 26;
-            this.lineShape6.X2 = 245;
-            this.lineShape6.Y1 = 65;
-            this.lineShape6.Y2 = 65;
-            // 
-            // txtTotalTramite
-            // 
-            this.txtTotalTramite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtTotalTramite.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalTramite.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalTramite.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTotalTramite.Location = new System.Drawing.Point(143, 101);
-            this.txtTotalTramite.Name = "txtTotalTramite";
-            this.txtTotalTramite.ReadOnly = true;
-            this.txtTotalTramite.Size = new System.Drawing.Size(247, 34);
-            this.txtTotalTramite.TabIndex = 83;
-            this.txtTotalTramite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label7.Location = new System.Drawing.Point(40, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 18);
-            this.label7.TabIndex = 84;
-            this.label7.Text = "Total trámite:";
-            // 
-            // lineShape7
-            // 
-            this.lineShape7.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape7.Enabled = false;
-            this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 137;
-            this.lineShape7.X2 = 394;
-            this.lineShape7.Y1 = 135;
-            this.lineShape7.Y2 = 135;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape8.Enabled = false;
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 36;
-            this.lineShape8.X2 = 36;
-            this.lineShape8.Y1 = 130;
-            this.lineShape8.Y2 = 107;
-            // 
-            // txtTotalGastos
-            // 
-            this.txtTotalGastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtTotalGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalGastos.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalGastos.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTotalGastos.Location = new System.Drawing.Point(143, 159);
-            this.txtTotalGastos.Name = "txtTotalGastos";
-            this.txtTotalGastos.ReadOnly = true;
-            this.txtTotalGastos.Size = new System.Drawing.Size(247, 34);
-            this.txtTotalGastos.TabIndex = 85;
-            this.txtTotalGastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label8.Location = new System.Drawing.Point(40, 167);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 18);
-            this.label8.TabIndex = 86;
-            this.label8.Text = "Total gastos:";
-            // 
-            // lineShape9
-            // 
-            this.lineShape9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape9.Enabled = false;
-            this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 36;
-            this.lineShape9.X2 = 36;
-            this.lineShape9.Y1 = 188;
-            this.lineShape9.Y2 = 165;
-            // 
-            // lineShape10
-            // 
-            this.lineShape10.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape10.Enabled = false;
-            this.lineShape10.Name = "lineShape10";
-            this.lineShape10.X1 = 138;
-            this.lineShape10.X2 = 395;
-            this.lineShape10.Y1 = 193;
-            this.lineShape10.Y2 = 193;
-            // 
-            // txtMayorContable
-            // 
-            this.txtMayorContable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtMayorContable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMayorContable.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMayorContable.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMayorContable.Location = new System.Drawing.Point(734, 101);
-            this.txtMayorContable.Name = "txtMayorContable";
-            this.txtMayorContable.Size = new System.Drawing.Size(168, 34);
-            this.txtMayorContable.TabIndex = 87;
-            this.txtMayorContable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMayorContable.TextChanged += new System.EventHandler(this.txtMayorContable_TextChanged);
-            this.txtMayorContable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMayorContable_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label9.Location = new System.Drawing.Point(516, 109);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 18);
-            this.label9.TabIndex = 88;
-            this.label9.Text = "Valor mayor contable:";
-            // 
-            // lineShape11
-            // 
-            this.lineShape11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape11.Enabled = false;
-            this.lineShape11.Name = "lineShape11";
-            this.lineShape11.X1 = 512;
-            this.lineShape11.X2 = 512;
-            this.lineShape11.Y1 = 130;
-            this.lineShape11.Y2 = 107;
-            // 
-            // lineShape12
-            // 
-            this.lineShape12.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape12.Enabled = false;
-            this.lineShape12.Name = "lineShape12";
-            this.lineShape12.X1 = 669;
-            this.lineShape12.X2 = 915;
-            this.lineShape12.Y1 = 135;
-            this.lineShape12.Y2 = 135;
-            // 
-            // txtDiferencia
-            // 
-            this.txtDiferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtDiferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDiferencia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiferencia.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDiferencia.Location = new System.Drawing.Point(614, 159);
-            this.txtDiferencia.Name = "txtDiferencia";
-            this.txtDiferencia.ReadOnly = true;
-            this.txtDiferencia.Size = new System.Drawing.Size(236, 34);
-            this.txtDiferencia.TabIndex = 89;
-            this.txtDiferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label10.Location = new System.Drawing.Point(516, 167);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 18);
-            this.label10.TabIndex = 90;
-            this.label10.Text = "Diferencia:";
-            // 
-            // lineShape13
-            // 
-            this.lineShape13.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape13.Enabled = false;
-            this.lineShape13.Name = "lineShape13";
-            this.lineShape13.X1 = 607;
-            this.lineShape13.X2 = 853;
-            this.lineShape13.Y1 = 193;
-            this.lineShape13.Y2 = 193;
-            // 
-            // lineShape14
-            // 
-            this.lineShape14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape14.Enabled = false;
-            this.lineShape14.Name = "lineShape14";
-            this.lineShape14.X1 = 512;
-            this.lineShape14.X2 = 512;
-            this.lineShape14.Y1 = 188;
-            this.lineShape14.Y2 = 165;
-            // 
-            // lblDolar
-            // 
-            this.lblDolar.AutoSize = true;
-            this.lblDolar.Font = new System.Drawing.Font("Century Gothic", 20.25F);
-            this.lblDolar.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDolar.Location = new System.Drawing.Point(705, 101);
-            this.lblDolar.Name = "lblDolar";
-            this.lblDolar.Size = new System.Drawing.Size(30, 33);
-            this.lblDolar.TabIndex = 91;
-            this.lblDolar.Text = "$";
-            this.lblDolar.Visible = false;
+            this.vScrollBar.AllowCursorChanges = true;
+            this.vScrollBar.AllowHomeEndKeysDetection = false;
+            this.vScrollBar.AllowIncrementalClickMoves = true;
+            this.vScrollBar.AllowMouseDownEffects = true;
+            this.vScrollBar.AllowMouseHoverEffects = true;
+            this.vScrollBar.AllowScrollingAnimations = true;
+            this.vScrollBar.AllowScrollKeysDetection = true;
+            this.vScrollBar.AllowScrollOptionsMenu = true;
+            this.vScrollBar.AllowShrinkingOnFocusLost = false;
+            this.vScrollBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vScrollBar.BackgroundImage")));
+            this.vScrollBar.BindingContainer = null;
+            this.vScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BorderRadius = 0;
+            this.vScrollBar.BorderThickness = 1;
+            this.vScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar.DurationBeforeShrink = 2000;
+            this.vScrollBar.LargeChange = 10;
+            this.vScrollBar.Location = new System.Drawing.Point(1005, 0);
+            this.vScrollBar.Maximum = 50;
+            this.vScrollBar.Minimum = 0;
+            this.vScrollBar.MinimumThumbLength = 18;
+            this.vScrollBar.Name = "vScrollBar";
+            this.vScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.vScrollBar.OnDisable.ThumbColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ShrinkSizeLimit = 3;
+            this.vScrollBar.Size = new System.Drawing.Size(17, 714);
+            this.vScrollBar.SmallChange = 1;
+            this.vScrollBar.TabIndex = 47;
+            this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.vScrollBar.ThumbLength = 139;
+            this.vScrollBar.ThumbMargin = 1;
+            this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.vScrollBar.Value = 0;
+            this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
             // 
             // FormInfoFacturasCarta
             // 
@@ -1064,7 +1166,7 @@ namespace Presentacion
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(1022, 750);
-            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panelVScroll);
             this.Controls.Add(this.panelOpciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInfoFacturasCarta";
@@ -1083,14 +1185,15 @@ namespace Presentacion
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFacturas)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelFacturas.ResumeLayout(false);
+            this.panelFacturas.PerformLayout();
+            this.panelComentarios.ResumeLayout(false);
+            this.panelComentarios.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panelVScroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1130,7 +1233,7 @@ namespace Presentacion
         public System.Windows.Forms.Label label1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         public Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelFacturas;
         private System.Windows.Forms.CheckedListBox checkListFacturas;
         public System.Windows.Forms.Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
@@ -1148,7 +1251,7 @@ namespace Presentacion
         public System.Windows.Forms.Button btnGenerar;
         public System.Windows.Forms.ComboBox cmbTipoCarta;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnGenerar;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelComentarios;
         public System.Windows.Forms.TextBox txtComentarios;
         public System.Windows.Forms.Label label6;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer6;
@@ -1170,5 +1273,8 @@ namespace Presentacion
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape12;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape11;
         private System.Windows.Forms.Label lblDolar;
+        private System.Windows.Forms.Panel panelVScroll;
+        private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
+        private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
     }
 }

@@ -36,6 +36,7 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridClientes.DataSource = Read.readCartaCliente(dateInicio.Value.ToString("yyyy-MM-dd"), dateFin.Value.ToString("yyyy-MM-dd"));
+            acoplarScrolls();
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -58,6 +59,7 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridClientes.DataSource = Read.readCartaClienteB(dateInicio.Value.ToString("yyyy-MM-dd"), dateFin.Value.ToString("yyyy-MM-dd"), txtBuscar.Text);
+            acoplarScrolls();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -110,6 +112,46 @@ namespace Presentacion
                 formPrincipal.AddOwnedForm(formInfo);
                 formPrincipal.AbrirFormInPanel(formInfo);
             }
+        }
+
+        private void acoplarScrolls()
+        {
+
+            if (dataGridClientes.RowCount > 0)
+            {
+                if (dataGridClientes.RowCount == 1)
+                {
+                    vScrollBar.Maximum = dataGridClientes.RowCount;
+                }
+                else
+                {
+                    vScrollBar.Maximum = dataGridClientes.RowCount - 1;
+                }
+
+            }
+            else
+            {
+
+                vScrollBar.Minimum = 0;
+                vScrollBar.Maximum = 1;
+            }
+
+            hScrollBar.Maximum = dataGridClientes.ColumnCount - 1;
+        }
+
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            dataGridClientes.FirstDisplayedScrollingRowIndex = e.Value;
+        }
+
+        private void dataGridClientes_Scroll(object sender, ScrollEventArgs e)
+        {
+            vScrollBar.Value = e.NewValue;
+        }
+
+        private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
+        {
+            dataGridClientes.FirstDisplayedScrollingColumnIndex = e.Value;
         }
     }
 }

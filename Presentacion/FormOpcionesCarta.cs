@@ -43,6 +43,12 @@ namespace Presentacion
             {
                 FormBuscarCarta formBuscarCarta = new FormBuscarCarta();
                 formBuscarCarta.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+
+                //formBuscarCarta.panelGeneral.RowStyles[2].Height = 0;
+                //formBuscarCarta.panelGeneral.RowStyles[0].Height = (float)14;
+
+                formPrincipal.panelInferior.Visible = false;
+                formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
                 formPrincipal.AddOwnedForm(formBuscarCarta);
                 formPrincipal.AbrirFormInPanel(formBuscarCarta);
             }

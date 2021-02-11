@@ -369,8 +369,11 @@ namespace Presentacion
 
                 values[0] = "Delete";
                 values[1] = nFactura;
+                values[3] = TramiteCache.nTramite.ToString();
+                values[4] = dataGridDetalles.Rows[iTabla].Cells[0].Value.ToString();
                 values[5] = "2020-03-03";
                 values[24] = "2020-03-03";
+
 
                 if (Write.InsertDataFactura(values))
                 {

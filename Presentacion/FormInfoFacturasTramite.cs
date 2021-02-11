@@ -218,6 +218,7 @@ namespace Presentacion
                 int iTabla = dataGridFacturas.CurrentCell.RowIndex;
                 string nFactura = dataGridFacturas.Rows[iTabla].Cells[2].Value.ToString();
 
+
                 for (int i = 0; i < 37; i++)
                 {
                     values[i] = "0";
@@ -225,8 +226,10 @@ namespace Presentacion
 
                 values[0] = "Delete";
                 values[1] = nFactura;
+                values[3] = TramiteCache.nTramite.ToString();
+                values[4] = dataGridFacturas.Rows[iTabla].Cells[0].Value.ToString();
                 values[5] = "2020-03-03";
-                values[24] = "2020-03-03"; 
+                values[24] = "2020-03-03";
 
                 if (Write.InsertDataFactura(values))
                 {

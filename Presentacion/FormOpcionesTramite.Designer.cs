@@ -91,11 +91,11 @@
             // 
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 39.75F);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(345, 38);
+            this.lblTitulo.Location = new System.Drawing.Point(372, 55);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(310, 78);
+            this.lblTitulo.Size = new System.Drawing.Size(257, 63);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "TRÁMITES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,10 +126,10 @@
             this.panelDocumentos.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelDocumentos.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelDocumentos.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelDocumentos.Location = new System.Drawing.Point(758, 50);
+            this.panelDocumentos.Location = new System.Drawing.Point(718, 50);
             this.panelDocumentos.Name = "panelDocumentos";
             this.panelDocumentos.Quality = 10;
-            this.panelDocumentos.Size = new System.Drawing.Size(234, 194);
+            this.panelDocumentos.Size = new System.Drawing.Size(192, 179);
             this.panelDocumentos.TabIndex = 5;
             this.panelDocumentos.TabStop = true;
             this.panelDocumentos.Enter += new System.EventHandler(this.pnlEditarTramite_Enter);
@@ -144,10 +144,10 @@
             this.btnDocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocumentos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnDocumentos.Location = new System.Drawing.Point(84, 97);
+            this.btnDocumentos.Location = new System.Drawing.Point(73, 97);
             this.btnDocumentos.Margin = new System.Windows.Forms.Padding(0);
             this.btnDocumentos.Name = "btnDocumentos";
-            this.btnDocumentos.Size = new System.Drawing.Size(70, 70);
+            this.btnDocumentos.Size = new System.Drawing.Size(50, 50);
             this.btnDocumentos.TabIndex = 0;
             this.btnDocumentos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDocumentos.UseVisualStyleBackColor = false;
@@ -158,11 +158,11 @@
             // 
             this.lblDocumentos.AutoSize = true;
             this.lblDocumentos.BackColor = System.Drawing.Color.Transparent;
-            this.lblDocumentos.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumentos.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.lblDocumentos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblDocumentos.Location = new System.Drawing.Point(15, 34);
+            this.lblDocumentos.Location = new System.Drawing.Point(-1, 31);
             this.lblDocumentos.Name = "lblDocumentos";
-            this.lblDocumentos.Size = new System.Drawing.Size(216, 39);
+            this.lblDocumentos.Size = new System.Drawing.Size(198, 36);
             this.lblDocumentos.TabIndex = 0;
             this.lblDocumentos.Text = "Documentos";
             this.lblDocumentos.Enter += new System.EventHandler(this.pnlEditarTramite_Enter);
@@ -182,10 +182,10 @@
             this.panelBuscar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelBuscar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelBuscar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.Location = new System.Drawing.Point(510, 50);
+            this.panelBuscar.Location = new System.Drawing.Point(511, 50);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Quality = 10;
-            this.panelBuscar.Size = new System.Drawing.Size(234, 194);
+            this.panelBuscar.Size = new System.Drawing.Size(192, 179);
             this.panelBuscar.TabIndex = 4;
             this.panelBuscar.TabStop = true;
             this.panelBuscar.Click += new System.EventHandler(this.pnlBuscar_Click);
@@ -201,10 +201,10 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnBuscar.Location = new System.Drawing.Point(84, 97);
+            this.btnBuscar.Location = new System.Drawing.Point(75, 97);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(70, 70);
+            this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -216,11 +216,11 @@
             // 
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblBuscar.Location = new System.Drawing.Point(57, 34);
+            this.lblBuscar.Location = new System.Drawing.Point(46, 31);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(119, 39);
+            this.lblBuscar.Size = new System.Drawing.Size(109, 36);
             this.lblBuscar.TabIndex = 0;
             this.lblBuscar.Text = "Buscar";
             this.lblBuscar.Click += new System.EventHandler(this.pnlBuscar_Click);
@@ -241,10 +241,10 @@
             this.panelAgregarInfo.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelAgregarInfo.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelAgregarInfo.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelAgregarInfo.Location = new System.Drawing.Point(260, 50);
+            this.panelAgregarInfo.Location = new System.Drawing.Point(304, 50);
             this.panelAgregarInfo.Name = "panelAgregarInfo";
             this.panelAgregarInfo.Quality = 10;
-            this.panelAgregarInfo.Size = new System.Drawing.Size(234, 194);
+            this.panelAgregarInfo.Size = new System.Drawing.Size(192, 179);
             this.panelAgregarInfo.TabIndex = 3;
             this.panelAgregarInfo.TabStop = true;
             this.panelAgregarInfo.Click += new System.EventHandler(this.lblAgregarInfo_Click);
@@ -255,13 +255,13 @@
             // 
             this.lblAgregarInfo.AutoSize = true;
             this.lblAgregarInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgregarInfo.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgregarInfo.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.lblAgregarInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblAgregarInfo.Location = new System.Drawing.Point(12, 34);
+            this.lblAgregarInfo.Location = new System.Drawing.Point(33, 19);
             this.lblAgregarInfo.Name = "lblAgregarInfo";
-            this.lblAgregarInfo.Size = new System.Drawing.Size(215, 39);
+            this.lblAgregarInfo.Size = new System.Drawing.Size(141, 72);
             this.lblAgregarInfo.TabIndex = 0;
-            this.lblAgregarInfo.Text = "Agregar Info";
+            this.lblAgregarInfo.Text = "Agregar \r\n    Info";
             this.lblAgregarInfo.Click += new System.EventHandler(this.lblAgregarInfo_Click);
             this.lblAgregarInfo.Enter += new System.EventHandler(this.lblAgregarInfo_Enter);
             this.lblAgregarInfo.MouseEnter += new System.EventHandler(this.lblAgregarInfo_Enter);
@@ -275,10 +275,10 @@
             this.btnAgregarInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnAgregarInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnAgregarInfo.Location = new System.Drawing.Point(84, 97);
+            this.btnAgregarInfo.Location = new System.Drawing.Point(71, 97);
             this.btnAgregarInfo.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregarInfo.Name = "btnAgregarInfo";
-            this.btnAgregarInfo.Size = new System.Drawing.Size(70, 70);
+            this.btnAgregarInfo.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarInfo.TabIndex = 0;
             this.btnAgregarInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAgregarInfo.UseVisualStyleBackColor = false;
@@ -300,10 +300,10 @@
             this.panelCrear.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelCrear.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelCrear.Location = new System.Drawing.Point(12, 50);
+            this.panelCrear.Location = new System.Drawing.Point(97, 50);
             this.panelCrear.Name = "panelCrear";
             this.panelCrear.Quality = 10;
-            this.panelCrear.Size = new System.Drawing.Size(234, 194);
+            this.panelCrear.Size = new System.Drawing.Size(192, 179);
             this.panelCrear.TabIndex = 2;
             this.panelCrear.TabStop = true;
             this.panelCrear.Click += new System.EventHandler(this.panelCrearTramite_Click);
@@ -319,10 +319,10 @@
             this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnCrear.Location = new System.Drawing.Point(84, 97);
+            this.btnCrear.Location = new System.Drawing.Point(73, 97);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(0);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(70, 70);
+            this.btnCrear.Size = new System.Drawing.Size(50, 50);
             this.btnCrear.TabIndex = 0;
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -334,11 +334,11 @@
             // 
             this.lblCrear.AutoSize = true;
             this.lblCrear.BackColor = System.Drawing.Color.Transparent;
-            this.lblCrear.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCrear.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.lblCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblCrear.Location = new System.Drawing.Point(63, 34);
+            this.lblCrear.Location = new System.Drawing.Point(50, 31);
             this.lblCrear.Name = "lblCrear";
-            this.lblCrear.Size = new System.Drawing.Size(106, 39);
+            this.lblCrear.Size = new System.Drawing.Size(96, 36);
             this.lblCrear.TabIndex = 0;
             this.lblCrear.Text = "Crear";
             this.lblCrear.Click += new System.EventHandler(this.panelCrearTramite_Click);

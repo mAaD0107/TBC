@@ -178,18 +178,36 @@ namespace DataAccess
             DataTable table = new DataTable();
             using (var connection = GetSqlConnection())
             {
-                connection.Open();
-
-                using (var command = new SqlCommand())
+                try
                 {
-                    command.Connection = connection;
-                    command.CommandText = "readTramitesImport";
-                    command.CommandType = CommandType.StoredProcedure;
-                    SqlDataReader reader = command.ExecuteReader();
+                    connection.Open();
 
-                    table.Load(reader);
-                    return table;
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "readTramitesImport";
+                        command.CommandType = CommandType.StoredProcedure;
+                        SqlDataReader reader = command.ExecuteReader();
 
+                        table.Load(reader);
+                        return table;
+
+                    }
+                }
+                catch (SqlException)
+                {
+
+                    DialogResult result = MessageBox.Show(
+                    "Error al conectarse con el servidor:\n\n" +
+                    "Servidor no encontrado o inaccesible\n" +
+                    "Por favor, verifique su conexión a Internet o\n" +
+                    "Verifique el estado del Servidor.",
+                    "ALERTA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                    return null; 
+                    //Application.Exit();
                 }
             }
         }
@@ -898,6 +916,82 @@ namespace DataAccess
             }
         }
 
+        public DataTable readTransferencia(string nTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchTransferencia";
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable readDevolucion(int nTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchDevolucion";
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable readTablaSaldoCliente(int nTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchTablaSaldoCliente";
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable readPagoTransferencia(string nTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchTransferencias";
+                    command.Parameters.AddWithValue("@numeroTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
 
         public DataTable informeTBC()
         {
@@ -1383,7 +1477,6 @@ namespace DataAccess
         {
             DataTable table = new DataTable();
             double totalSaldo = 0;
-
             using (var connection = GetSqlConnection())
             {
                 connection.Open();
@@ -1391,6 +1484,169 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = "searchSaldoTramite";
+                    command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            totalSaldo += double.Parse(table.Rows[i]["Saldo"].ToString());
+                        }
+
+                        return totalSaldo;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+
+        public double trasnferenciaTramite(string numeroTramite)
+        {
+            DataTable table = new DataTable();
+            double totalSaldo = 0;
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchTransferenciaTramite";
+                    command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            totalSaldo += double.Parse(table.Rows[i]["Saldo"].ToString());
+                        }
+                        return totalSaldo;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+
+        public double trasnferenciaTramiteHacia(string numeroTramite)
+        {
+            DataTable table = new DataTable();
+            double totalSaldo = 0;
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchTransferenciaTramiteHacia";
+                    command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            totalSaldo += double.Parse(table.Rows[i]["Saldo"].ToString());
+                        }
+                        return totalSaldo;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+        public double devolucionTramite(int numeroTramite)
+        {
+            DataTable table = new DataTable();
+            double totalSaldo = 0;
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchDevolucionTramite";
+                    command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            totalSaldo += double.Parse(table.Rows[i]["Saldo"].ToString());
+                        }
+
+                        return totalSaldo;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+        public double devolucionTransferencia(int numeroTramite)
+        {
+            DataTable table = new DataTable();
+            double totalSaldo = 0;
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchDevolucionTransferencia";
+                    command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    table.Load(reader);
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            totalSaldo += double.Parse(table.Rows[i]["Saldo"].ToString());
+                        }
+
+                        return totalSaldo;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+
+
+        public double pagoTransferencia(string numeroTramite)
+        {
+            DataTable table = new DataTable();
+            double totalSaldo = 0;
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchPagoTransferencia";
                     command.Parameters.AddWithValue("@numeroTramite", numeroTramite);
                     command.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = command.ExecuteReader();
@@ -1410,12 +1666,9 @@ namespace DataAccess
                     {
                         return 0;
                     }
-
-                    
                 }
             }
         }
-
 
         public void searchRetenciones(string RUCEmpresa)
         {
@@ -1655,8 +1908,11 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@Ext_PC2", values[121]);
                         command.Parameters.AddWithValue("@Ext_PC3", values[122]);
 
-
-
+                        //Agregar barrio y provincia
+                        command.Parameters.AddWithValue("@Barrio1", values[123]);
+                        command.Parameters.AddWithValue("@Provincia1", values[124]);
+                        command.Parameters.AddWithValue("@Barrio2", values[125]);
+                        command.Parameters.AddWithValue("@Provincia2", values[126]);
 
 
 
@@ -2182,6 +2438,51 @@ namespace DataAccess
         }
 
 
+        public bool InsertDataPT(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyPagoTransferencia";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idPTransferencia", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@Saldo", double.Parse(values[2]));
+                        command.Parameters.AddWithValue("@fechaTransferencia", values[3]);
+                        command.Parameters.AddWithValue("@idTramite", values[4]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
 
         public bool insertDataSaldo(string[] values)
         {
@@ -2226,6 +2527,146 @@ namespace DataAccess
                 }
             }
         }
+
+
+
+        public bool insertDataTransferencia(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyTransferencia";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idTransferencia", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@Saldo", double.Parse(values[2]));
+                        command.Parameters.AddWithValue("@FechaTransferencia", values[3]);
+                        command.Parameters.AddWithValue("@idTramiteDesde", values[4]);
+                        command.Parameters.AddWithValue("@idTramiteHacia", values[5]);
+                        command.Parameters.AddWithValue("@DetalleTransferencia", values[6]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
+        public bool insertDataDevolucion(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyDevolucion";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idDevolucion", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@Saldo", double.Parse(values[2]));
+                        command.Parameters.AddWithValue("@FechaDevolucion", values[3]);
+                        command.Parameters.AddWithValue("@idTramite", int.Parse(values[4]));
+                        command.Parameters.AddWithValue("@detalleDevolucion", values[5]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
+
+        public bool insertDataDevolucionTransferencia(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "modifyDevolucionTransferencia";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+
+                        command.Parameters.AddWithValue("@idDevTransf", int.Parse(values[1]));
+                        command.Parameters.AddWithValue("@Saldo", double.Parse(values[2]));
+                        command.Parameters.AddWithValue("@FechaDevolucion", values[3]);
+                        command.Parameters.AddWithValue("@idTramite", int.Parse(values[4]));
+                        command.Parameters.AddWithValue("@detalleDevolucion", values[5]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
 
 
 

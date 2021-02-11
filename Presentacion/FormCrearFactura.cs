@@ -162,9 +162,9 @@ namespace Presentacion
 
 
 
-        double subTotal, totalFactura, ivaFactura, valorACobrar, valorIVA, totalRetencion;
-        double subTotal2, porcentajeIVA2, valorIVA2;
-        double subTotal3, porcentajeIVA3, valorIVA3;
+        Decimal subTotal, totalFactura, ivaFactura, valorACobrar, valorIVA, totalRetencion;
+        Decimal subTotal2, porcentajeIVA2, valorIVA2;
+        Decimal subTotal3, porcentajeIVA3, valorIVA3;
 
         private void calcularFactura()
         {
@@ -174,15 +174,15 @@ namespace Presentacion
                 string txtSubT = txtSubtotalFactura.Text;
                 //txtSubT = txtSubT.Replace(".", ",");
                 if (txtSubT == "") txtSubT = "0";
-                 subTotal = double.Parse(txtSubT);
+                 subTotal = Decimal.Parse(txtSubT);
 
                 if (txtSubT2.Text == "") txtSubT2.Text = "0";
                 if (cmbIVA2.Text == "") cmbIVA2.Text = "0";
-                subTotal2 = double.Parse(txtSubT2.Text);
+                subTotal2 = Decimal.Parse(txtSubT2.Text);
 
-                if (Double.TryParse(cmbIVA2.Text, out porcentajeIVA2))
+                if (Decimal.TryParse(cmbIVA2.Text, out porcentajeIVA2))
                 {
-                    porcentajeIVA2 = double.Parse(cmbIVA2.Text);
+                    porcentajeIVA2 = Decimal.Parse(cmbIVA2.Text);
                 }
                 else
                 {
@@ -192,12 +192,12 @@ namespace Presentacion
 
                 if (txtSubT3.Text == "") txtSubT3.Text = "0";
                 if (cmbIVA3.Text == "") cmbIVA3.Text = "0";
-                subTotal3 = double.Parse(txtSubT3.Text);
+                subTotal3 = Decimal.Parse(txtSubT3.Text);
                 //porcentajeIVA3 = double.Parse(cmbIVA3.Text);
 
-                if (Double.TryParse(cmbIVA3.Text, out porcentajeIVA3))
+                if (Decimal.TryParse(cmbIVA3.Text, out porcentajeIVA3))
                 {
-                    porcentajeIVA3 = double.Parse(cmbIVA3.Text);
+                    porcentajeIVA3 = Decimal.Parse(cmbIVA3.Text);
                 }
                 else
                 {
@@ -206,9 +206,9 @@ namespace Presentacion
 
                 string iva = cmbIVA.Text;
 
-                if (double.TryParse(cmbIVA.Text, out ivaFactura))
+                if (Decimal.TryParse(cmbIVA.Text, out ivaFactura))
                 {
-                    ivaFactura = double.Parse(iva);
+                    ivaFactura = Decimal.Parse(iva);
                 }
                 else
                 {
@@ -216,11 +216,14 @@ namespace Presentacion
                 }
                 
 
-                valorIVA = subTotal * ivaFactura / 100;
+                valorIVA = subTotal * ivaFactura / 100m;
+                //valorIVA = Math.Ceiling(valorIVA * 100) / 100;
                 valorIVA = Math.Round(valorIVA, 2, MidpointRounding.AwayFromZero);
-                valorIVA2 = subTotal2 * porcentajeIVA2 / 100;
+                valorIVA2 = subTotal2 * porcentajeIVA2 / 100m;
+                //valorIVA2 = Math.Ceiling(valorIVA2 * 100) / 100;
                 valorIVA2 = Math.Round(valorIVA2, 2, MidpointRounding.AwayFromZero);
-                valorIVA3 = subTotal3 * porcentajeIVA3 / 100;
+                valorIVA3 = subTotal3 * porcentajeIVA3 / 100m;
+                //valorIVA3 = Math.Ceiling(valorIVA3 * 100) / 100;
                 valorIVA3 = Math.Round(valorIVA3, 2, MidpointRounding.AwayFromZero);
 
                 totalFactura = subTotal + valorIVA + subTotal2 + valorIVA2 + subTotal3 + valorIVA3;
@@ -249,22 +252,26 @@ namespace Presentacion
                 //string pRetRenta = cmbPorcentajeRetRenta.GetItemText(cmbPorcentajeRetRenta.SelectedItem);
                 string pRetRenta = cmbPorcentajeRetRenta.SelectedItem == null ? cmbPorcentajeRetRenta.Text : cmbPorcentajeRetRenta.GetItemText(cmbPorcentajeRetRenta.SelectedItem);
                 //pRetRenta = pRetRenta.Replace(".", ",");
-                double valPRetRenta = double.Parse(pRetRenta);
+                Decimal valPRetRenta = Decimal.Parse(pRetRenta);
 
-                double valRetRenta = subTotal * valPRetRenta / 100;
+                // MessageBox.Show(valPRetRenta.ToString());
+
+                Decimal valRetRenta = subTotal * valPRetRenta / 100m;
+                //valRetRenta = Math.Ceiling(valRetRenta * 100) / 100;
                 valRetRenta = Math.Round(valRetRenta, 2, MidpointRounding.AwayFromZero);
 
                 string pRetIVA = cmbPorcentajeRetIVA.SelectedItem == null ? cmbPorcentajeRetIVA.Text : cmbPorcentajeRetIVA.GetItemText(cmbPorcentajeRetIVA.SelectedItem);
-                //pRetIVA = pRetIVA.Replace(".", ",");
-                double valPRetIVA = double.Parse(pRetIVA);
+                Decimal valPRetIVA = Decimal.Parse(pRetIVA);
 
-                double valRetIVA = subTotal * ivaFactura / 100 * valPRetIVA / 100;
+                Decimal valRetIVA = subTotal * ivaFactura / 100m * valPRetIVA / 100m;
+                //valRetIVA = Math.Ceiling(valRetIVA * 100) / 100;
                 valRetIVA = Math.Round(valRetIVA, 2, MidpointRounding.AwayFromZero);
 
                 totalRetencion = valRetRenta + valRetIVA;
+                totalRetencion = Math.Round(totalRetencion, 2, MidpointRounding.AwayFromZero);
 
                 valorACobrar = totalFactura - totalRetencion;
-                valorACobrar = Math.Round(valorACobrar,2);
+                valorACobrar = Math.Round(valorACobrar, 2, MidpointRounding.AwayFromZero);
 
                 txtValorRetencioRenta.Text = valRetRenta.ToString("N2");
                 txtValorRetencionIVA.Text = valRetIVA.ToString("N2");
@@ -1003,8 +1010,8 @@ namespace Presentacion
             calcularValorACobrar();
         }
 
-        double totNotaCredito, ivaNotCredito, subTotalNotCredito;
-        double totNotaCreditoII, ivaNotCreditoII, subTotalNotCreditoII;
+        Decimal totNotaCredito, ivaNotCredito, subTotalNotCredito;
+        Decimal totNotaCreditoII, ivaNotCreditoII, subTotalNotCreditoII;
 
 
         private void dateFactura_onValueChanged(object sender, EventArgs e)
@@ -1711,6 +1718,8 @@ namespace Presentacion
             }
         }
 
+
+
         private void txtSubTotalNotCreditoII_Leave(object sender, EventArgs e)
         {
             if (txtSubTotalNotCreditoII.Text != "")
@@ -1789,7 +1798,7 @@ namespace Presentacion
             }
             else
             {
-                subTotalNotCredito = double.Parse(txtSubTotalNotCredito.Text);
+                subTotalNotCredito = Decimal.Parse(txtSubTotalNotCredito.Text);
             }
 
             if (txtIVANotCredito.Text == "")
@@ -1798,7 +1807,7 @@ namespace Presentacion
             }
             else
             {
-                ivaNotCredito = double.Parse(txtIVANotCredito.Text);
+                ivaNotCredito = Decimal.Parse(txtIVANotCredito.Text);
             }
 
 
@@ -1808,7 +1817,7 @@ namespace Presentacion
             }
             else
             {
-                subTotalNotCreditoII = double.Parse(txtSubTotalNotCreditoII.Text);
+                subTotalNotCreditoII = Decimal.Parse(txtSubTotalNotCreditoII.Text);
             }
 
 
@@ -1818,16 +1827,16 @@ namespace Presentacion
             }
             else
             {
-                ivaNotCreditoII = double.Parse(txtIVANotCreditoII.Text);
+                ivaNotCreditoII = Decimal.Parse(txtIVANotCreditoII.Text);
             }
 
 
-            totNotaCredito = subTotalNotCredito  + subTotalNotCredito * ivaNotCredito / 100;
-            totNotaCredito = Math.Round(totNotaCredito, 2);
+            totNotaCredito = subTotalNotCredito  + subTotalNotCredito * ivaNotCredito / 100m;
+            totNotaCredito = Math.Round(totNotaCredito, 2, MidpointRounding.AwayFromZero);
             txtTotalNotCredito.Text = totNotaCredito.ToString("N2");
 
-            totNotaCreditoII = subTotalNotCreditoII + subTotalNotCreditoII * ivaNotCreditoII / 100;
-            totNotaCreditoII = Math.Round(totNotaCreditoII, 2);
+            totNotaCreditoII = subTotalNotCreditoII + subTotalNotCreditoII * ivaNotCreditoII / 100m;
+            totNotaCreditoII = Math.Round(totNotaCreditoII, 2, MidpointRounding.AwayFromZero);
             txtTotalNotCreditoII.Text = totNotaCreditoII.ToString("N2");
 
             valorACobrar = totalFactura - totalRetencion - totNotaCredito - totNotaCreditoII; 

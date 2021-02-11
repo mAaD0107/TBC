@@ -51,7 +51,16 @@ namespace Presentacion
                 formBuscarTramite.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formBuscarTramite.panelBtnDer.Visible = false;
                 formBuscarTramite.panelBtnIzq.Visible = false;
-                formBuscarTramite.realizarPago = true; 
+                formBuscarTramite.realizarPago = true;
+
+                formBuscarTramite.panelGeneral.RowStyles[2].Height = 0;
+                formBuscarTramite.panelGeneral.RowStyles[0].Height = (float)14;
+                //formBuscarTramite.panelGeneral.RowStyles[1].Height = (float)30;
+
+                formPrincipal.panelInferior.Visible = false;
+                formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
+              //  formPrincipal.panelGlobal.ColumnStyles[0].Width = (float)0.1;
+
                 formPrincipal.AddOwnedForm(formBuscarTramite);
                 formPrincipal.AbrirFormInPanel(formBuscarTramite);
             }

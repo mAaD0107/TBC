@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\OneDrive\Documentos\Frameworks Visual Studio\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -61,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -179,6 +183,12 @@
     <Compile Include="FormDesplegarClientes.Designer.cs">
       <DependentUpon>FormDesplegarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDevolucionTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDevolucionTransferencia.Designer.cs">
+      <DependentUpon>FormDevolucionTransferencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +291,12 @@
     <Compile Include="FormOpcionesProveedores.Designer.cs">
       <DependentUpon>FormOpcionesProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOpcionesSaldoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesSaldoCliente.Designer.cs">
+      <DependentUpon>FormOpcionesSaldoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOpcionesTramite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +338,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="FormTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoPago.Designer.cs">
+      <DependentUpon>FormTipoPago.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBuscarCarta.resx">
       <DependentUpon>FormBuscarCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDesplegarClientes.resx">
       <DependentUpon>FormDesplegarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDevolucionTransferencia.resx">
+      <DependentUpon>FormDevolucionTransferencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarClientes.resx">
       <DependentUpon>FormEditarClientes.cs</DependentUpon>
@@ -424,6 +449,9 @@
     <EmbeddedResource Include="FormOpcionesProveedores.resx">
       <DependentUpon>FormOpcionesProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesSaldoCliente.resx">
+      <DependentUpon>FormOpcionesSaldoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesTramite.resx">
       <DependentUpon>FormOpcionesTramite.cs</DependentUpon>
     </EmbeddedResource>
@@ -454,6 +482,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormTipoPago.resx">
+      <DependentUpon>FormTipoPago.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>

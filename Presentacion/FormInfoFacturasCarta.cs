@@ -43,6 +43,11 @@ namespace Presentacion
         public FormInfoFacturasCarta()
         {
             InitializeComponent();
+
+            this.panelContenedor.MouseWheel += new MouseEventHandler(panelScroll);
+            this.txtComentarios.MouseWheel += new MouseEventHandler(deshabilitarTexto);
+            this.checkListFacturas.MouseWheel += new MouseEventHandler(deshabilitarCheckList);
+
         }
 
         private void FormInfoFacturasCarta_Load(object sender, EventArgs e)
@@ -71,13 +76,15 @@ namespace Presentacion
 
 
 
-
             txtTotalTramite.Text = "$ " + valorAPagar.ToString("N2");
             txtTotalGastos.Text = "$ " + totalGastos.ToString("N2");
 
-
+            vScrollBar.Minimum = panelContenedor.VerticalScroll.Minimum;
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum;
+            hScrollBar.Maximum = dataFacturas.ColumnCount - 1;
 
             ActiveControl = null;
+            panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Focus();
 
 
@@ -233,6 +240,77 @@ namespace Presentacion
             }
             
             txtDiferencia.Text = "$ "+(totalGastos - Math.Round(valorMayorContable, 2)).ToString("N2");
+        }
+
+        private void panelContenedor_Scroll(object sender, ScrollEventArgs e)
+        {
+           // MessageBox.Show("scroll");
+            //vScrollBar.Value = e.NewValue;
+        }
+
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelContenedor.VerticalScroll.Value = e.Value;
+        }
+
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelContenedor.Focus();
+            vScrollBar.Value = panelContenedor.VerticalScroll.Value;
+        }
+
+        private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
+        {
+            dataFacturas.FirstDisplayedScrollingColumnIndex = e.Value;
+        }
+
+        private void deshabilitarTexto(object sender, MouseEventArgs e)
+        {
+            txtComentarios.Enabled = false;
+            panelContenedor.Focus();
+        }
+
+        private void deshabilitarCheckList(object sender, MouseEventArgs e)
+        {
+            checkListFacturas.Enabled = false;
+            checkListFacturas.SelectedIndex = -1; 
+            panelContenedor.Focus();
+        }
+
+        private void habilitarTexto(object sender, MouseEventArgs e)
+        {
+            if (txtComentarios.Enabled == false)
+            {
+                if ((e.X >= txtComentarios.Location.X && e.X <= (txtComentarios.Location.X + txtComentarios.Width)) 
+                    && 
+                    (e.Y >= txtComentarios.Location.Y && e.Y <= (txtComentarios.Location.Y + txtComentarios.Height)))
+                {
+                    txtComentarios.Enabled = true;
+                    txtComentarios.Focus();
+                }
+            }
+
+        }
+
+
+        private void panelComentarios_MouseClick(object sender, MouseEventArgs e)
+        {
+            habilitarTexto(sender, e);
+        }
+
+ 
+        private void panelFacturas_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (checkListFacturas.Enabled == false)
+            {
+                if ((e.X >= checkListFacturas.Location.X && e.X <= (checkListFacturas.Location.X + checkListFacturas.Width))
+                    &&
+                    (e.Y >= checkListFacturas.Location.Y && e.Y <= (checkListFacturas.Location.Y + checkListFacturas.Height)))
+                {
+                    checkListFacturas.Enabled = true;
+                    checkListFacturas.Focus();
+                }
+            }
         }
     }
 }

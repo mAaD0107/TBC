@@ -525,6 +525,18 @@
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.redondeoBtnADir = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoBtnQuitarDir = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.txtProvincia1 = new System.Windows.Forms.TextBox();
+            this.txtBarrio1 = new System.Windows.Forms.TextBox();
+            this.label173 = new System.Windows.Forms.Label();
+            this.label174 = new System.Windows.Forms.Label();
+            this.lineShape113 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape114 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.txtProvincia2 = new System.Windows.Forms.TextBox();
+            this.txtBarrio2 = new System.Windows.Forms.TextBox();
+            this.label175 = new System.Windows.Forms.Label();
+            this.label176 = new System.Windows.Forms.Label();
+            this.lineShape115 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape116 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -5902,6 +5914,10 @@
             this.panelDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDireccion.Controls.Add(this.txtProvincia1);
+            this.panelDireccion.Controls.Add(this.txtBarrio1);
+            this.panelDireccion.Controls.Add(this.label173);
+            this.panelDireccion.Controls.Add(this.label174);
             this.panelDireccion.Controls.Add(this.txtCodPostal);
             this.panelDireccion.Controls.Add(this.txtCiudad);
             this.panelDireccion.Controls.Add(this.label110);
@@ -5921,7 +5937,7 @@
             this.panelDireccion.Controls.Add(this.shapeContainer14);
             this.panelDireccion.Location = new System.Drawing.Point(3, 5136);
             this.panelDireccion.Name = "panelDireccion";
-            this.panelDireccion.Size = new System.Drawing.Size(989, 347);
+            this.panelDireccion.Size = new System.Drawing.Size(989, 421);
             this.panelDireccion.TabIndex = 16;
             this.panelDireccion.TabStop = true;
             // 
@@ -5931,7 +5947,7 @@
             this.txtCodPostal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodPostal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodPostal.ForeColor = System.Drawing.Color.White;
-            this.txtCodPostal.Location = new System.Drawing.Point(545, 179);
+            this.txtCodPostal.Location = new System.Drawing.Point(546, 236);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(212, 19);
             this.txtCodPostal.TabIndex = 52;
@@ -5954,7 +5970,7 @@
             this.label110.AutoSize = true;
             this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label110.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label110.Location = new System.Drawing.Point(436, 179);
+            this.label110.Location = new System.Drawing.Point(437, 236);
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(106, 18);
             this.label110.TabIndex = 50;
@@ -5989,10 +6005,10 @@
             this.txtReferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReferencia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferencia.ForeColor = System.Drawing.Color.White;
-            this.txtReferencia.Location = new System.Drawing.Point(138, 244);
+            this.txtReferencia.Location = new System.Drawing.Point(138, 302);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(640, 66);
+            this.txtReferencia.Size = new System.Drawing.Size(757, 66);
             this.txtReferencia.TabIndex = 5;
             // 
             // label94
@@ -6000,7 +6016,7 @@
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label94.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label94.Location = new System.Drawing.Point(43, 244);
+            this.label94.Location = new System.Drawing.Point(43, 302);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(83, 18);
             this.label94.TabIndex = 47;
@@ -6115,13 +6131,15 @@
             this.shapeContainer14.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer14.Name = "shapeContainer14";
             this.shapeContainer14.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape114,
+            this.lineShape113,
             this.lineShape77,
             this.lineShape76,
             this.lineShape26,
             this.lineShape65,
             this.lineShape66,
             this.lineShape67});
-            this.shapeContainer14.Size = new System.Drawing.Size(987, 345);
+            this.shapeContainer14.Size = new System.Drawing.Size(987, 419);
             this.shapeContainer14.TabIndex = 44;
             this.shapeContainer14.TabStop = false;
             // 
@@ -6130,8 +6148,8 @@
             this.lineShape77.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape77.Enabled = false;
             this.lineShape77.Name = "lineShape77";
-            this.lineShape77.X1 = 545;
-            this.lineShape77.X2 = 761;
+            this.lineShape77.X1 = 522;
+            this.lineShape77.X2 = 738;
             this.lineShape77.Y1 = 198;
             this.lineShape77.Y2 = 198;
             // 
@@ -6190,6 +6208,10 @@
             this.panelDireccion2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDireccion2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDireccion2.Controls.Add(this.txtProvincia2);
+            this.panelDireccion2.Controls.Add(this.txtBarrio2);
+            this.panelDireccion2.Controls.Add(this.label175);
+            this.panelDireccion2.Controls.Add(this.label176);
             this.panelDireccion2.Controls.Add(this.txtCodPostal2);
             this.panelDireccion2.Controls.Add(this.txtCiudad2);
             this.panelDireccion2.Controls.Add(this.label111);
@@ -6207,9 +6229,9 @@
             this.panelDireccion2.Controls.Add(this.label118);
             this.panelDireccion2.Controls.Add(this.txtCallePrincipal2);
             this.panelDireccion2.Controls.Add(this.shapeContainer16);
-            this.panelDireccion2.Location = new System.Drawing.Point(3, 5489);
+            this.panelDireccion2.Location = new System.Drawing.Point(3, 5563);
             this.panelDireccion2.Name = "panelDireccion2";
-            this.panelDireccion2.Size = new System.Drawing.Size(989, 347);
+            this.panelDireccion2.Size = new System.Drawing.Size(989, 407);
             this.panelDireccion2.TabIndex = 19;
             this.panelDireccion2.TabStop = true;
             this.panelDireccion2.Visible = false;
@@ -6220,7 +6242,7 @@
             this.txtCodPostal2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodPostal2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodPostal2.ForeColor = System.Drawing.Color.White;
-            this.txtCodPostal2.Location = new System.Drawing.Point(545, 179);
+            this.txtCodPostal2.Location = new System.Drawing.Point(546, 235);
             this.txtCodPostal2.Name = "txtCodPostal2";
             this.txtCodPostal2.Size = new System.Drawing.Size(212, 19);
             this.txtCodPostal2.TabIndex = 52;
@@ -6243,7 +6265,7 @@
             this.label111.AutoSize = true;
             this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label111.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label111.Location = new System.Drawing.Point(436, 179);
+            this.label111.Location = new System.Drawing.Point(437, 235);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(106, 18);
             this.label111.TabIndex = 50;
@@ -6278,10 +6300,10 @@
             this.txtReferencia2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReferencia2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferencia2.ForeColor = System.Drawing.Color.White;
-            this.txtReferencia2.Location = new System.Drawing.Point(138, 244);
+            this.txtReferencia2.Location = new System.Drawing.Point(138, 291);
             this.txtReferencia2.Multiline = true;
             this.txtReferencia2.Name = "txtReferencia2";
-            this.txtReferencia2.Size = new System.Drawing.Size(640, 66);
+            this.txtReferencia2.Size = new System.Drawing.Size(757, 66);
             this.txtReferencia2.TabIndex = 5;
             // 
             // label113
@@ -6289,7 +6311,7 @@
             this.label113.AutoSize = true;
             this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label113.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label113.Location = new System.Drawing.Point(43, 244);
+            this.label113.Location = new System.Drawing.Point(43, 291);
             this.label113.Name = "label113";
             this.label113.Size = new System.Drawing.Size(83, 18);
             this.label113.TabIndex = 47;
@@ -6404,13 +6426,15 @@
             this.shapeContainer16.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer16.Name = "shapeContainer16";
             this.shapeContainer16.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape116,
+            this.lineShape115,
             this.lineShape78,
             this.lineShape79,
             this.lineShape80,
             this.lineShape81,
             this.lineShape82,
             this.lineShape83});
-            this.shapeContainer16.Size = new System.Drawing.Size(987, 345);
+            this.shapeContainer16.Size = new System.Drawing.Size(987, 405);
             this.shapeContainer16.TabIndex = 44;
             this.shapeContainer16.TabStop = false;
             // 
@@ -6419,8 +6443,8 @@
             this.lineShape78.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape78.Enabled = false;
             this.lineShape78.Name = "lineShape77";
-            this.lineShape78.X1 = 545;
-            this.lineShape78.X2 = 761;
+            this.lineShape78.X1 = 529;
+            this.lineShape78.X2 = 745;
             this.lineShape78.Y1 = 198;
             this.lineShape78.Y2 = 198;
             // 
@@ -6478,7 +6502,7 @@
             // 
             this.panelBtnDireccion2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBtnDireccion2.Controls.Add(this.pnlBotonesDireccion);
-            this.panelBtnDireccion2.Location = new System.Drawing.Point(3, 5842);
+            this.panelBtnDireccion2.Location = new System.Drawing.Point(3, 5976);
             this.panelBtnDireccion2.Name = "panelBtnDireccion2";
             this.panelBtnDireccion2.Size = new System.Drawing.Size(989, 78);
             this.panelBtnDireccion2.TabIndex = 25;
@@ -6555,7 +6579,7 @@
             // 
             // panel6
             // 
-            this.panel6.Location = new System.Drawing.Point(3, 5926);
+            this.panel6.Location = new System.Drawing.Point(3, 6060);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(990, 81);
             this.panel6.TabIndex = 26;
@@ -6563,7 +6587,7 @@
             // panelBtn
             // 
             this.panelBtn.Controls.Add(this.btnAgregar);
-            this.panelBtn.Location = new System.Drawing.Point(3, 6013);
+            this.panelBtn.Location = new System.Drawing.Point(3, 6147);
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(990, 100);
             this.panelBtn.TabIndex = 17;
@@ -6604,6 +6628,138 @@
             // 
             this.redondeoBtnQuitarDir.ElipseRadius = 20;
             this.redondeoBtnQuitarDir.TargetControl = this.btnQuitarDir;
+            // 
+            // txtProvincia1
+            // 
+            this.txtProvincia1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtProvincia1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProvincia1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvincia1.ForeColor = System.Drawing.Color.White;
+            this.txtProvincia1.Location = new System.Drawing.Point(523, 179);
+            this.txtProvincia1.Name = "txtProvincia1";
+            this.txtProvincia1.Size = new System.Drawing.Size(212, 19);
+            this.txtProvincia1.TabIndex = 56;
+            this.txtProvincia1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBarrio1
+            // 
+            this.txtBarrio1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtBarrio1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBarrio1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarrio1.ForeColor = System.Drawing.Color.White;
+            this.txtBarrio1.Location = new System.Drawing.Point(104, 235);
+            this.txtBarrio1.Name = "txtBarrio1";
+            this.txtBarrio1.Size = new System.Drawing.Size(212, 19);
+            this.txtBarrio1.TabIndex = 55;
+            this.txtBarrio1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label173.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label173.Location = new System.Drawing.Point(437, 179);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(73, 18);
+            this.label173.TabIndex = 54;
+            this.label173.Text = "Provincia:";
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label174.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label174.Location = new System.Drawing.Point(42, 236);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(57, 18);
+            this.label174.TabIndex = 53;
+            this.label174.Text = "Barrrio:";
+            // 
+            // lineShape113
+            // 
+            this.lineShape113.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape113.Enabled = false;
+            this.lineShape113.Name = "lineShape113";
+            this.lineShape113.X1 = 545;
+            this.lineShape113.X2 = 761;
+            this.lineShape113.Y1 = 255;
+            this.lineShape113.Y2 = 255;
+            // 
+            // lineShape114
+            // 
+            this.lineShape114.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape114.Enabled = false;
+            this.lineShape114.Name = "lineShape114";
+            this.lineShape114.X1 = 103;
+            this.lineShape114.X2 = 319;
+            this.lineShape114.Y1 = 254;
+            this.lineShape114.Y2 = 254;
+            // 
+            // txtProvincia2
+            // 
+            this.txtProvincia2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtProvincia2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProvincia2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvincia2.ForeColor = System.Drawing.Color.White;
+            this.txtProvincia2.Location = new System.Drawing.Point(532, 179);
+            this.txtProvincia2.Name = "txtProvincia2";
+            this.txtProvincia2.Size = new System.Drawing.Size(212, 19);
+            this.txtProvincia2.TabIndex = 60;
+            this.txtProvincia2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBarrio2
+            // 
+            this.txtBarrio2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtBarrio2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBarrio2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarrio2.ForeColor = System.Drawing.Color.White;
+            this.txtBarrio2.Location = new System.Drawing.Point(106, 234);
+            this.txtBarrio2.Name = "txtBarrio2";
+            this.txtBarrio2.Size = new System.Drawing.Size(212, 19);
+            this.txtBarrio2.TabIndex = 59;
+            this.txtBarrio2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label175.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label175.Location = new System.Drawing.Point(437, 179);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(73, 18);
+            this.label175.TabIndex = 58;
+            this.label175.Text = "Provincia:";
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label176.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label176.Location = new System.Drawing.Point(44, 235);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(57, 18);
+            this.label176.TabIndex = 57;
+            this.label176.Text = "Barrrio:";
+            // 
+            // lineShape115
+            // 
+            this.lineShape115.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape115.Enabled = false;
+            this.lineShape115.Name = "lineShape115";
+            this.lineShape115.X1 = 99;
+            this.lineShape115.X2 = 315;
+            this.lineShape115.Y1 = 253;
+            this.lineShape115.Y2 = 253;
+            // 
+            // lineShape116
+            // 
+            this.lineShape116.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape116.Enabled = false;
+            this.lineShape116.Name = "lineShape116";
+            this.lineShape116.X1 = 544;
+            this.lineShape116.X2 = 760;
+            this.lineShape116.Y1 = 254;
+            this.lineShape116.Y2 = 254;
             // 
             // FormCrearCliente
             // 
@@ -7186,5 +7342,17 @@
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.TableLayoutPanel pnlBotonesDireccion;
         public System.Windows.Forms.Panel panelDireccion2;
+        public System.Windows.Forms.TextBox txtProvincia1;
+        public System.Windows.Forms.TextBox txtBarrio1;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.Label label174;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape114;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape113;
+        public System.Windows.Forms.TextBox txtProvincia2;
+        public System.Windows.Forms.TextBox txtBarrio2;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.Label label176;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape116;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape115;
     }
 }

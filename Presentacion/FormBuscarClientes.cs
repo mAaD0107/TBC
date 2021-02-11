@@ -67,7 +67,7 @@ namespace Presentacion
 
             int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-            for (int i = 0; i < 123 - 1; i++)
+            for (int i = 0; i < 127 - 1; i++)
             {
                 values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
             }
@@ -202,6 +202,12 @@ namespace Presentacion
             formClientes.txtExtPC2.Text = values[120];
             formClientes.txtExtPC3.Text = values[121];
 
+            //Agregar provincia y barrio
+            formClientes.txtBarrio1.Text = values[122];
+            formClientes.txtProvincia1.Text = values[123];
+            formClientes.txtBarrio2.Text = values[124];
+            formClientes.txtProvincia2.Text = values[125];
+
 
 
 
@@ -309,7 +315,7 @@ namespace Presentacion
             acoplarPaneles();
         }
 
-        string[] values = new string[123];
+        string[] values = new string[127];
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cargarDatos();
@@ -326,7 +332,7 @@ namespace Presentacion
 
                 int iTabla = dataGridClientes.CurrentCell.RowIndex;
 
-                for (int i = 0; i < 117 - 1; i++)
+                for (int i = 0; i < 127 - 1; i++)
                 {
                     values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
                 }
@@ -461,6 +467,13 @@ namespace Presentacion
                 formClientes.txtExtPC2.Text = values[120];
                 formClientes.txtExtPC3.Text = values[121];
 
+
+                //Agregar provincia y barrio
+                formClientes.txtBarrio1.Text = values[122];
+                formClientes.txtProvincia1.Text = values[123];
+                formClientes.txtBarrio2.Text = values[124];
+                formClientes.txtProvincia2.Text = values[125];
+
                 if (formClientes.txtPC2.Text != "" || formClientes.txtPCTelf2.Text != "") { formClientes.panelPC2.Visible = true; formClientes.contPC = 1; }
                 if (formClientes.txtPC3.Text != "" || formClientes.txtPCTelf3.Text != "") { formClientes.panelPC3.Visible = true; formClientes.contPC = 2; }
                 if (formClientes.txtPC4.Text != "" || formClientes.txtPCTelf4.Text != "") { formClientes.panelPC4.Visible = true; formClientes.contPC = 3; }
@@ -525,7 +538,7 @@ namespace Presentacion
             values[1] = dataGridClientes.Rows[e].Cells[0].Value.ToString();
             nombre = dataGridClientes.Rows[e].Cells[1].Value.ToString();
 
-            for (int i = 2; i < 123; i++)
+            for (int i = 2; i < 127; i++)
             {
                 values[i] = "0";
             }

@@ -13,6 +13,7 @@ namespace Common.Cache
         public static string DAI { get; set; }
         public static string secuencialCliente { get; set; }
         public static string idTramite { get; set; }
+        public static string tipoPago { get; set; }
 
     }
 }

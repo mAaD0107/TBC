@@ -68,7 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineConcepto = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape18 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape40 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape25 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -86,17 +85,12 @@
             this.txtComentariosCrear = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panelDatos = new System.Windows.Forms.Panel();
-            this.lblDAI = new System.Windows.Forms.Label();
-            this.lblErrorDAI = new System.Windows.Forms.Label();
-            this.txtDAI = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtOrdenLDM = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNLiquidacion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape23 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape27 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -176,6 +170,11 @@
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.redondeoFormulario = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lblDAI = new System.Windows.Forms.Label();
+            this.lblErrorDAI = new System.Windows.Forms.Label();
+            this.txtDAI = new System.Windows.Forms.TextBox();
+            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -329,6 +328,9 @@
             // panelDatosGenerales
             // 
             this.panelDatosGenerales.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatosGenerales.Controls.Add(this.lblDAI);
+            this.panelDatosGenerales.Controls.Add(this.lblErrorDAI);
+            this.panelDatosGenerales.Controls.Add(this.txtDAI);
             this.panelDatosGenerales.Controls.Add(this.label26);
             this.panelDatosGenerales.Controls.Add(this.label9);
             this.panelDatosGenerales.Controls.Add(this.txtAlertaSecuencial);
@@ -365,7 +367,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.label26.Location = new System.Drawing.Point(22, 595);
+            this.label26.Location = new System.Drawing.Point(22, 599);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(169, 20);
             this.label26.TabIndex = 63;
@@ -710,8 +712,9 @@
             this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape8,
+            this.lineShape22,
             this.lineConcepto,
-            this.lineShape18,
             this.lineShape2,
             this.lineShape40,
             this.lineShape25,
@@ -740,16 +743,6 @@
             this.lineConcepto.Y1 = 244;
             this.lineConcepto.Y2 = 244;
             // 
-            // lineShape18
-            // 
-            this.lineShape18.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape18.Enabled = false;
-            this.lineShape18.Name = "lineShape18";
-            this.lineShape18.X1 = 119;
-            this.lineShape18.X2 = 868;
-            this.lineShape18.Y1 = 546;
-            this.lineShape18.Y2 = 546;
-            // 
             // lineShape2
             // 
             this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
@@ -777,8 +770,8 @@
             this.lineShape25.Name = "lineShape25";
             this.lineShape25.X1 = 50;
             this.lineShape25.X2 = 50;
-            this.lineShape25.Y1 = 425;
-            this.lineShape25.Y2 = 402;
+            this.lineShape25.Y1 = 426;
+            this.lineShape25.Y2 = 403;
             // 
             // lineShape5
             // 
@@ -845,8 +838,8 @@
             this.lineShape21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
             this.lineShape21.Enabled = false;
             this.lineShape21.Name = "lineShape21";
-            this.lineShape21.X1 = 49;
-            this.lineShape21.X2 = 49;
+            this.lineShape21.X1 = 50;
+            this.lineShape21.X2 = 50;
             this.lineShape21.Y1 = 487;
             this.lineShape21.Y2 = 464;
             // 
@@ -920,9 +913,6 @@
             // panelDatos
             // 
             this.panelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDatos.Controls.Add(this.lblDAI);
-            this.panelDatos.Controls.Add(this.lblErrorDAI);
-            this.panelDatos.Controls.Add(this.txtDAI);
             this.panelDatos.Controls.Add(this.label19);
             this.panelDatos.Controls.Add(this.txtOrdenLDM);
             this.panelDatos.Controls.Add(this.label11);
@@ -931,47 +921,9 @@
             this.panelDatos.Controls.Add(this.shapeContainer3);
             this.panelDatos.Location = new System.Drawing.Point(3, 1277);
             this.panelDatos.Name = "panelDatos";
-            this.panelDatos.Size = new System.Drawing.Size(994, 285);
+            this.panelDatos.Size = new System.Drawing.Size(994, 203);
             this.panelDatos.TabIndex = 4;
             this.panelDatos.Visible = false;
-            // 
-            // lblDAI
-            // 
-            this.lblDAI.AutoSize = true;
-            this.lblDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblDAI.Location = new System.Drawing.Point(31, 85);
-            this.lblDAI.Name = "lblDAI";
-            this.lblDAI.Size = new System.Drawing.Size(93, 18);
-            this.lblDAI.TabIndex = 53;
-            this.lblDAI.Text = "Número DAI:";
-            // 
-            // lblErrorDAI
-            // 
-            this.lblErrorDAI.AutoSize = true;
-            this.lblErrorDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lblErrorDAI.Location = new System.Drawing.Point(462, 82);
-            this.lblErrorDAI.Name = "lblErrorDAI";
-            this.lblErrorDAI.Size = new System.Drawing.Size(39, 18);
-            this.lblErrorDAI.TabIndex = 60;
-            this.lblErrorDAI.Text = "DAI ";
-            this.lblErrorDAI.Visible = false;
-            // 
-            // txtDAI
-            // 
-            this.txtDAI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtDAI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDAI.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDAI.ForeColor = System.Drawing.Color.White;
-            this.txtDAI.Location = new System.Drawing.Point(135, 79);
-            this.txtDAI.MaxLength = 26;
-            this.txtDAI.Name = "txtDAI";
-            this.txtDAI.Size = new System.Drawing.Size(300, 30);
-            this.txtDAI.TabIndex = 2;
-            this.txtDAI.TextChanged += new System.EventHandler(this.txtDAI_TextChanged);
-            this.txtDAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDAI_KeyPress);
-            this.txtDAI.Leave += new System.EventHandler(this.txtDAI_Leave);
             // 
             // label19
             // 
@@ -990,7 +942,7 @@
             this.txtOrdenLDM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOrdenLDM.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrdenLDM.ForeColor = System.Drawing.Color.White;
-            this.txtOrdenLDM.Location = new System.Drawing.Point(194, 217);
+            this.txtOrdenLDM.Location = new System.Drawing.Point(194, 142);
             this.txtOrdenLDM.Name = "txtOrdenLDM";
             this.txtOrdenLDM.Size = new System.Drawing.Size(212, 19);
             this.txtOrdenLDM.TabIndex = 7;
@@ -1002,7 +954,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label11.Location = new System.Drawing.Point(31, 217);
+            this.label11.Location = new System.Drawing.Point(31, 142);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(160, 18);
             this.label11.TabIndex = 53;
@@ -1014,7 +966,7 @@
             this.txtNLiquidacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNLiquidacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNLiquidacion.ForeColor = System.Drawing.Color.White;
-            this.txtNLiquidacion.Location = new System.Drawing.Point(187, 152);
+            this.txtNLiquidacion.Location = new System.Drawing.Point(187, 77);
             this.txtNLiquidacion.Name = "txtNLiquidacion";
             this.txtNLiquidacion.Size = new System.Drawing.Size(212, 19);
             this.txtNLiquidacion.TabIndex = 6;
@@ -1026,7 +978,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label10.Location = new System.Drawing.Point(31, 152);
+            this.label10.Location = new System.Drawing.Point(31, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(144, 18);
             this.label10.TabIndex = 53;
@@ -1038,35 +990,13 @@
             this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer3.Name = "shapeContainer3";
             this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape22,
-            this.lineShape8,
             this.lineShape23,
             this.lineShape10,
             this.lineShape27,
             this.lineShape9});
-            this.shapeContainer3.Size = new System.Drawing.Size(992, 283);
+            this.shapeContainer3.Size = new System.Drawing.Size(992, 201);
             this.shapeContainer3.TabIndex = 53;
             this.shapeContainer3.TabStop = false;
-            // 
-            // lineShape22
-            // 
-            this.lineShape22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.lineShape22.Enabled = false;
-            this.lineShape22.Name = "lineShape22";
-            this.lineShape22.X1 = 28;
-            this.lineShape22.X2 = 28;
-            this.lineShape22.Y1 = 105;
-            this.lineShape22.Y2 = 82;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape8.Enabled = false;
-            this.lineShape8.Name = "lineShape5";
-            this.lineShape8.X1 = 129;
-            this.lineShape8.X2 = 431;
-            this.lineShape8.Y1 = 109;
-            this.lineShape8.Y2 = 109;
             // 
             // lineShape23
             // 
@@ -1075,8 +1005,8 @@
             this.lineShape23.Name = "lineShape23";
             this.lineShape23.X1 = 28;
             this.lineShape23.X2 = 28;
-            this.lineShape23.Y1 = 238;
-            this.lineShape23.Y2 = 215;
+            this.lineShape23.Y1 = 163;
+            this.lineShape23.Y2 = 140;
             // 
             // lineShape10
             // 
@@ -1085,8 +1015,8 @@
             this.lineShape10.Name = "lineShape5";
             this.lineShape10.X1 = 190;
             this.lineShape10.X2 = 406;
-            this.lineShape10.Y1 = 236;
-            this.lineShape10.Y2 = 236;
+            this.lineShape10.Y1 = 161;
+            this.lineShape10.Y2 = 161;
             // 
             // lineShape27
             // 
@@ -1095,8 +1025,8 @@
             this.lineShape27.Name = "lineShape27";
             this.lineShape27.X1 = 28;
             this.lineShape27.X2 = 28;
-            this.lineShape27.Y1 = 173;
-            this.lineShape27.Y2 = 150;
+            this.lineShape27.Y1 = 98;
+            this.lineShape27.Y2 = 75;
             // 
             // lineShape9
             // 
@@ -1105,8 +1035,8 @@
             this.lineShape9.Name = "lineShape5";
             this.lineShape9.X1 = 179;
             this.lineShape9.X2 = 395;
-            this.lineShape9.Y1 = 171;
-            this.lineShape9.Y2 = 171;
+            this.lineShape9.Y1 = 96;
+            this.lineShape9.Y2 = 96;
             // 
             // panelNContenedor
             // 
@@ -1121,7 +1051,7 @@
             this.panelNContenedor.Controls.Add(this.txtNContenedor);
             this.panelNContenedor.Controls.Add(this.label12);
             this.panelNContenedor.Controls.Add(this.shapeContainer11);
-            this.panelNContenedor.Location = new System.Drawing.Point(3, 1568);
+            this.panelNContenedor.Location = new System.Drawing.Point(3, 1486);
             this.panelNContenedor.Name = "panelNContenedor";
             this.panelNContenedor.Size = new System.Drawing.Size(993, 312);
             this.panelNContenedor.TabIndex = 5;
@@ -1339,7 +1269,7 @@
             this.panelNGuia.Controls.Add(this.txtNGuia);
             this.panelNGuia.Controls.Add(this.label13);
             this.panelNGuia.Controls.Add(this.shapeContainer12);
-            this.panelNGuia.Location = new System.Drawing.Point(3, 1886);
+            this.panelNGuia.Location = new System.Drawing.Point(3, 1804);
             this.panelNGuia.Name = "panelNGuia";
             this.panelNGuia.Size = new System.Drawing.Size(993, 249);
             this.panelNGuia.TabIndex = 6;
@@ -1512,7 +1442,7 @@
             this.panelNPasePuerta.Controls.Add(this.txtPasePuerta);
             this.panelNPasePuerta.Controls.Add(this.label14);
             this.panelNPasePuerta.Controls.Add(this.shapeContainer13);
-            this.panelNPasePuerta.Location = new System.Drawing.Point(3, 2141);
+            this.panelNPasePuerta.Location = new System.Drawing.Point(3, 2059);
             this.panelNPasePuerta.Name = "panelNPasePuerta";
             this.panelNPasePuerta.Size = new System.Drawing.Size(993, 132);
             this.panelNPasePuerta.TabIndex = 7;
@@ -1693,7 +1623,7 @@
             this.panelTransporteCourier.Controls.Add(this.txtNGuiaCourier);
             this.panelTransporteCourier.Controls.Add(this.label33);
             this.panelTransporteCourier.Controls.Add(this.shapeContainer1);
-            this.panelTransporteCourier.Location = new System.Drawing.Point(3, 2279);
+            this.panelTransporteCourier.Location = new System.Drawing.Point(3, 2197);
             this.panelTransporteCourier.Name = "panelTransporteCourier";
             this.panelTransporteCourier.Size = new System.Drawing.Size(993, 249);
             this.panelTransporteCourier.TabIndex = 11;
@@ -1861,7 +1791,7 @@
             this.panelComentarios.Controls.Add(this.txtComentariosAgregar);
             this.panelComentarios.Controls.Add(this.label16);
             this.panelComentarios.Controls.Add(this.shapeContainer4);
-            this.panelComentarios.Location = new System.Drawing.Point(3, 2534);
+            this.panelComentarios.Location = new System.Drawing.Point(3, 2452);
             this.panelComentarios.Name = "panelComentarios";
             this.panelComentarios.Size = new System.Drawing.Size(992, 132);
             this.panelComentarios.TabIndex = 1;
@@ -1919,7 +1849,7 @@
             // 
             this.panelInferior.Controls.Add(this.btnGuardar);
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInferior.Location = new System.Drawing.Point(3, 2672);
+            this.panelInferior.Location = new System.Drawing.Point(3, 2590);
             this.panelInferior.Name = "panelInferior";
             this.panelInferior.Size = new System.Drawing.Size(944, 68);
             this.panelInferior.TabIndex = 10;
@@ -1966,6 +1896,62 @@
             // 
             this.redondeoFormulario.ElipseRadius = 20;
             this.redondeoFormulario.TargetControl = this;
+            // 
+            // lblDAI
+            // 
+            this.lblDAI.AutoSize = true;
+            this.lblDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblDAI.Location = new System.Drawing.Point(58, 531);
+            this.lblDAI.Name = "lblDAI";
+            this.lblDAI.Size = new System.Drawing.Size(93, 18);
+            this.lblDAI.TabIndex = 65;
+            this.lblDAI.Text = "Número DAI:";
+            // 
+            // lblErrorDAI
+            // 
+            this.lblErrorDAI.AutoSize = true;
+            this.lblErrorDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lblErrorDAI.Location = new System.Drawing.Point(489, 528);
+            this.lblErrorDAI.Name = "lblErrorDAI";
+            this.lblErrorDAI.Size = new System.Drawing.Size(39, 18);
+            this.lblErrorDAI.TabIndex = 66;
+            this.lblErrorDAI.Text = "DAI ";
+            this.lblErrorDAI.Visible = false;
+            // 
+            // txtDAI
+            // 
+            this.txtDAI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtDAI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDAI.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDAI.ForeColor = System.Drawing.Color.White;
+            this.txtDAI.Location = new System.Drawing.Point(162, 525);
+            this.txtDAI.MaxLength = 26;
+            this.txtDAI.Name = "txtDAI";
+            this.txtDAI.Size = new System.Drawing.Size(300, 30);
+            this.txtDAI.TabIndex = 64;
+            this.txtDAI.TextChanged += new System.EventHandler(this.txtDAI_TextChanged);
+            // 
+            // lineShape22
+            // 
+            this.lineShape22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.lineShape22.Enabled = false;
+            this.lineShape22.Name = "lineShape22";
+            this.lineShape22.X1 = 50;
+            this.lineShape22.X2 = 50;
+            this.lineShape22.Y1 = 552;
+            this.lineShape22.Y2 = 529;
+            // 
+            // lineShape8
+            // 
+            this.lineShape8.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape8.Enabled = false;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 158;
+            this.lineShape8.X2 = 460;
+            this.lineShape8.Y1 = 555;
+            this.lineShape8.Y2 = 555;
             // 
             // FormCrearTramite
             // 
@@ -2035,9 +2021,6 @@
         public System.Windows.Forms.TextBox txtNFacturaProveedor;
         private System.Windows.Forms.Label label8;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
-        public System.Windows.Forms.TextBox txtDAI;
-        private System.Windows.Forms.Label lblDAI;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         public System.Windows.Forms.TextBox txtNLiquidacion;
         private System.Windows.Forms.Label label10;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
@@ -2074,7 +2057,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape25;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape21;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape26;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape22;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape27;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape23;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape28;
@@ -2099,7 +2081,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape34;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape33;
         private System.Windows.Forms.Panel panelTramite;
-        private System.Windows.Forms.Label lblErrorDAI;
         public System.Windows.Forms.TextBox txtForwarderMaritima;
         private System.Windows.Forms.Label label24;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape39;
@@ -2115,7 +2096,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape40;
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox txtProveedor;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape18;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         public Bunifu.Framework.UI.BunifuDatepicker dateInicio;
         public Bunifu.Framework.UI.BunifuDatepicker dateLimite;
@@ -2163,5 +2143,10 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape46;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape47;
         private Bunifu.Framework.UI.BunifuElipse redondeoFormulario;
+        private System.Windows.Forms.Label lblDAI;
+        private System.Windows.Forms.Label lblErrorDAI;
+        public System.Windows.Forms.TextBox txtDAI;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape22;
     }
 }

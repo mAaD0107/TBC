@@ -62,6 +62,28 @@ namespace Domain
             return userDao.readAbonoFactura(nFactura);
         }
 
+
+        public DataTable readTransferencia(string nTramite)
+        {
+            return userDao.readTransferencia(nTramite);
+        }
+
+        public DataTable readDevolucion(int nTramite)
+        {
+            return userDao.readDevolucion(nTramite);
+        }
+
+        public DataTable readTablaSaldoCliente(int nTramite)
+        {
+            return userDao.readTablaSaldoCliente(nTramite);
+        }
+
+
+        public DataTable readPagoTransferencia(string nTramite)
+        {
+            return userDao.readPagoTransferencia(nTramite);
+        }
+
         public DataTable informeTBC()
         {
             return userDao.informeTBC();
@@ -151,6 +173,32 @@ namespace Domain
         public double saldoTramite(int nTramite)
         {
             return userDao.saldoTramite(nTramite);
+        }
+
+        public double trasnferenciaTramite(string nTramite)
+        {
+            return userDao.trasnferenciaTramite(nTramite);
+        }
+
+        public double trasnferenciaTramiteHacia(string nTramite)
+        {
+            return userDao.trasnferenciaTramiteHacia(nTramite);
+        }
+
+
+        public double devolucionTramite(int nTramite)
+        {
+            return userDao.devolucionTramite(nTramite);
+        }
+
+        public double devolucionTransferencia(int nTramite)
+        {
+            return userDao.devolucionTransferencia(nTramite);
+        }
+
+        public double pagoTransferencia(string nTramite)
+        {
+            return userDao.pagoTransferencia(nTramite);
         }
 
 
@@ -309,6 +357,11 @@ namespace Domain
             return userDao.insertDataPago(values);
         }
 
+        public bool InsertDataPT(string[] values)
+        {
+            return userDao.InsertDataPT(values);
+        }
+
         public bool InsertDataAnticipo(string[] values)
         {
             return userDao.insertDataAnticipo(values);
@@ -317,6 +370,21 @@ namespace Domain
         public bool InsertDataSaldo(string[] values)
         {
             return userDao.insertDataSaldo(values);
+        }
+
+        public bool insertDataTransferencia(string[] values)
+        {
+            return userDao.insertDataTransferencia(values);
+        }
+
+        public bool insertDataDevolucion(string[] values)
+        {
+            return userDao.insertDataDevolucion(values);
+        }
+
+        public bool insertDataDevolucionTransferencia(string[] values)
+        {
+            return userDao.insertDataDevolucionTransferencia(values);
         }
 
         public bool InsertInforme(string[] values)

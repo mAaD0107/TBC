@@ -90,13 +90,9 @@ namespace Presentacion
                 {
                     panelInferior.Visible = true;
                 }
-                
-                
 
-                
+                txtDAI.Enabled = false;
             }
-
-
         }
 
         public int IDTramite = 0;
@@ -577,7 +573,7 @@ namespace Presentacion
                         txtDAI.Text = "";
                         txtDAI.Enabled = false;
                         break;
-                }
+            }
 
 
     /*
@@ -618,6 +614,8 @@ namespace Presentacion
             txtDAI.Focus();
             txtDAI.ScrollToCaret();
             */
+
+
         }
 
 
@@ -979,6 +977,7 @@ namespace Presentacion
             formCrearTramite.dateFinalizacion.Enabled = false;
             formCrearTramite.txtComentariosCrear.Enabled = false;
             formCrearTramite.btnNuevaEmpresa.Visible = false;
+            
 
             formCrearTramite.cmbEmpresa.FlatStyle = FlatStyle.Standard;
             formCrearTramite.cmbTipoTramite.FlatStyle = FlatStyle.Standard;
@@ -1049,6 +1048,7 @@ namespace Presentacion
             formCrearTramite.desplegar = true;
             //formCrearTramite.editar = true;
             formCrearTramite.agregarInfo = true;
+            formCrearTramite.txtDAI.Enabled = false;
 
             formCrearTramite.Opacity = 0.9;
             formCrearTramite.Height = Screen.PrimaryScreen.WorkingArea.Size.Height - 30;

@@ -555,7 +555,7 @@ namespace Presentacion
         }
 
 
-        string[] values = new string[123]; 
+        string[] values = new string[127]; 
         public string[] insertDataClient()
         {
             values[0] = "Insert";
@@ -790,6 +790,11 @@ namespace Presentacion
             values[120] = txtExtPC.Text;
             values[121] = txtExtPC2.Text;
             values[122] = txtExtPC3.Text;
+            // Barrio y Provincia
+            values[123] = txtBarrio1.Text;
+            values[124] = txtProvincia1.Text;
+            values[125] = txtBarrio2.Text;
+            values[126] = txtProvincia2.Text;
 
 
             for (int i = 92; i < 116; i++)

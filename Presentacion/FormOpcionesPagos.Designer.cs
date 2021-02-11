@@ -53,9 +53,9 @@
             this.panelSubmenu.Controls.Add(this.panelBuscar);
             this.panelSubmenu.Controls.Add(this.panelCrear);
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubmenu.Location = new System.Drawing.Point(0, 191);
+            this.panelSubmenu.Location = new System.Drawing.Point(0, 144);
             this.panelSubmenu.Name = "panelSubmenu";
-            this.panelSubmenu.Size = new System.Drawing.Size(809, 271);
+            this.panelSubmenu.Size = new System.Drawing.Size(809, 318);
             this.panelSubmenu.TabIndex = 9;
             // 
             // panelBuscar
@@ -73,7 +73,7 @@
             this.panelBuscar.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelBuscar.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelBuscar.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelBuscar.Location = new System.Drawing.Point(406, 23);
+            this.panelBuscar.Location = new System.Drawing.Point(406, 47);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Quality = 10;
             this.panelBuscar.Size = new System.Drawing.Size(206, 179);
@@ -148,7 +148,7 @@
             this.panelCrear.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelCrear.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelCrear.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panelCrear.Location = new System.Drawing.Point(194, 23);
+            this.panelCrear.Location = new System.Drawing.Point(194, 47);
             this.panelCrear.Name = "panelCrear";
             this.panelCrear.Quality = 10;
             this.panelCrear.Size = new System.Drawing.Size(206, 179);
@@ -198,7 +198,7 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(809, 191);
+            this.panelTitulo.Size = new System.Drawing.Size(809, 144);
             this.panelTitulo.TabIndex = 8;
             // 
             // lblTitulo
@@ -207,7 +207,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
-            this.lblTitulo.Location = new System.Drawing.Point(274, 56);
+            this.lblTitulo.Location = new System.Drawing.Point(274, 33);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(260, 78);
             this.lblTitulo.TabIndex = 1;
