@@ -81,6 +81,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesComplementarias\MyColorTable.cs" />
     <Compile Include="FormBuscarCarta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +196,12 @@
     <Compile Include="FormEditarClientes.Designer.cs">
       <DependentUpon>FormEditarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarPago.Designer.cs">
+      <DependentUpon>FormEditarPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormElaborarInforme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +231,18 @@
     </Compile>
     <Compile Include="FormInformeCarta.Designer.cs">
       <DependentUpon>FormInformeCarta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInformeCXCDetallado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeCXCDetallado.Designer.cs">
+      <DependentUpon>FormInformeCXCDetallado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInformeCXCGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeCXCGeneral.Designer.cs">
+      <DependentUpon>FormInformeCXCGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -291,6 +310,12 @@
     <Compile Include="FormOpcionesProveedores.Designer.cs">
       <DependentUpon>FormOpcionesProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOpcionesReporteGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesReporteGeneral.Designer.cs">
+      <DependentUpon>FormOpcionesReporteGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOpcionesSaldoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +362,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="FormTipoPago.cs">
       <SubType>Form</SubType>
@@ -401,6 +432,9 @@
     <EmbeddedResource Include="FormEditarClientes.resx">
       <DependentUpon>FormEditarClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarPago.resx">
+      <DependentUpon>FormEditarPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormElaborarInforme.resx">
       <DependentUpon>FormElaborarInforme.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +449,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInformeCarta.resx">
       <DependentUpon>FormInformeCarta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInformeCXCDetallado.resx">
+      <DependentUpon>FormInformeCXCDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInformeCXCGeneral.resx">
+      <DependentUpon>FormInformeCXCGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -449,6 +489,9 @@
     <EmbeddedResource Include="FormOpcionesProveedores.resx">
       <DependentUpon>FormOpcionesProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesReporteGeneral.resx">
+      <DependentUpon>FormOpcionesReporteGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesSaldoCliente.resx">
       <DependentUpon>FormOpcionesSaldoCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +511,8 @@
       <DependentUpon>FormOpcionesClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\InformeCarta.rdlc" />
+    <EmbeddedResource Include="Informes\InformeCuentasPorCobrarGeneral.rdlc" />
+    <EmbeddedResource Include="Informes\InformeCXCDetallado.rdlc" />
     <EmbeddedResource Include="Informes\InformeFactuas.rdlc" />
     <EmbeddedResource Include="Informes\InformeLDM-TBC.rdlc" />
     <EmbeddedResource Include="FormOpcionesReportes.resx">
@@ -485,11 +530,18 @@
     <EmbeddedResource Include="FormTipoPago.resx">
       <DependentUpon>FormTipoPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Domain.Carta.InformeCarta.datasource" />
+    <None Include="Properties\DataSources\Domain.CuentasPorCobrar.InformeCXCGeneral.datasource" />
+    <None Include="Properties\DataSources\Domain.CuentasPorCobrar.ListaCXC.datasource" />
+    <None Include="Properties\DataSources\Domain.CuentasPorCobrarDetallado.InformeCXCDetallado.datasource" />
+    <None Include="Properties\DataSources\Domain.CuentasPorCobrarDetallado.ListaCXCD.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.InformacionTramite.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.InformeFacturas.datasource" />
     <None Include="Properties\DataSources\Domain.Facturacion.ListadoFacturas.datasource" />

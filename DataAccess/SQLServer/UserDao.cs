@@ -11,13 +11,18 @@ using System.Data.SqlTypes;
 using Common.Cache;
 using System.Globalization;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 
 namespace DataAccess
 {
     public class UserDao : ConnectionToSql                                   // Esta clase hereda atributos de ConnectionToSql
     {
+
+
+
         public bool Login(string user, string pass)                 // Crea un metodo donde se leen los datos de la BD
         {
+
             using (var connection = GetSqlConnection())
             {
                 try
@@ -32,10 +37,10 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@pass", pass);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
-                       
+
                         if (reader.HasRows)
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
                                 UserCache.idUser = reader.GetInt32(0);
                                 UserCache.FirstName = reader.GetString(3);
@@ -53,21 +58,19 @@ namespace DataAccess
                 }
                 catch (SqlException)
                 {
-                    
+
                     DialogResult result = MessageBox.Show(
                         "Error al conectarse a la base de datos:\n\n" +
                         "Servidor no encontrado o inaccesible\n" +
                         "Por favor, verifique su conexión a Internet o\n" +
                         "Verifique el estado del Servidor",
-                        "ALERTA", 
-                        MessageBoxButtons.OK, 
+                        "ALERTA",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
                         );
                     //Application.Exit();
                     return false;
                 }
-                
-
             }
         }
 
@@ -121,7 +124,7 @@ namespace DataAccess
                            "\nPor favor, revise su conexión a Internet";
 
                 }
-                
+
 
             }
         }
@@ -146,6 +149,47 @@ namespace DataAccess
             }
         }
 
+        public DataTable readShortClientes()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readShortClientes";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+
+        public DataTable getClientes()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getClientes";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
 
 
 
@@ -483,6 +527,27 @@ namespace DataAccess
             }
         }
 
+        public DataTable datosRetencionCredito(string nFactura)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "datosRetencionCredito";
+                    command.Parameters.AddWithValue("@nFactura", nFactura);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
 
         public DataTable readInfoFacturasT()
         {
@@ -550,6 +615,37 @@ namespace DataAccess
             }
         }
 
+
+        public bool updateFacturas(int DiasCredito, string dateVencimiento, string nFactura)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "updateFacturas";
+                    command.Parameters.AddWithValue("@DiasCredito", DiasCredito);
+                    command.Parameters.AddWithValue("@dateVencimiento", dateVencimiento);
+                    command.Parameters.AddWithValue("@nFactura", nFactura);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    int retorno = command.ExecuteNonQuery();
+
+                    if (retorno != 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+            }
+        }
 
         public void searchIDTramite(string nFactura)
         {
@@ -907,6 +1003,27 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "searchAbonoFactura";
                     command.Parameters.AddWithValue("@nFactura", nFactura);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable readListaPagos(string idTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "searchListaPagos";
+                    command.Parameters.AddWithValue("@idTramite", idTramite);
                     command.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -1359,6 +1476,27 @@ namespace DataAccess
         }
 
 
+        public DataTable getSaldoTransferencia(string idTaramiteDesde)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "saldoTransferencia";
+                    command.Parameters.AddWithValue("@idTramiteDesde", idTaramiteDesde);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
 
         public DataTable getFacturasPagos(int idTaramite)
         {
@@ -1397,6 +1535,396 @@ namespace DataAccess
 
                     table.Load(reader);
                     return table;
+                }
+            }
+        }
+
+        public DataTable getCXC()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXC";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCP()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCP";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCPD(string cliente, DateTime desde, DateTime hasta, string estado)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCPD";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@cliente", cliente);
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCPDL(string cliente, DateTime desde, DateTime hasta, string[] estado)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCPDL";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@cliente", cliente);
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.Parameters.AddWithValue("@estado", estado[0]);
+                    command.Parameters.AddWithValue("@estado1", estado[1]);
+                    command.Parameters.AddWithValue("@estado2", estado[2]);
+                    command.Parameters.AddWithValue("@estado3", estado[3]);
+                    command.Parameters.AddWithValue("@estado4", estado[4]);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable getCXCDPD(string cliente, DateTime desde, DateTime hasta, string estado)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCDPD";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@cliente", cliente);
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCDPDL(string cliente, DateTime desde, DateTime hasta, string[] estado)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCDPDL";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@cliente", cliente);
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.Parameters.AddWithValue("@estado", estado[0]);
+                    command.Parameters.AddWithValue("@estado1", estado[1]);
+                    command.Parameters.AddWithValue("@estado2", estado[2]);
+                    command.Parameters.AddWithValue("@estado3", estado[3]);
+                    command.Parameters.AddWithValue("@estado4", estado[4]);
+                    command.Parameters.AddWithValue("@estado5", estado[5]);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCD()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCD";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCDP()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "CXCDP";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCFecha(string desde, string hasta)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCFecha";
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getCXCCliente(string Cliente, DateTime desde, DateTime hasta)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getCXCCliente";
+                    command.Parameters.AddWithValue("@Cliente", Cliente);
+                    command.Parameters.AddWithValue("@desde", desde);
+                    command.Parameters.AddWithValue("@hasta", hasta);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+
+        public double getVTF(string ID_Tramite, string TF)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getValorTipoFactura";
+                    command.Parameters.AddWithValue("@IDTramite", ID_Tramite);
+                    command.Parameters.AddWithValue("@TipoFactura", TF);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        return double.Parse(table.Rows[0]["ValorACobrarFactura"].ToString());
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+
+        public double getGastos(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            double valor = 0; 
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getGastos";
+                    command.Parameters.AddWithValue("@IDTramite", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        if (double.TryParse(table.Rows[0]["Gastos"].ToString(), out valor))
+                        {
+                            return valor; 
+                        }
+                        else
+                        {
+                            return 0; 
+                        }
+                        
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+        public DateTime? getFechaVencimiento(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getFechaVencimiento";
+                    command.Parameters.AddWithValue("@IDTramite", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    
+                    table.Load(reader);
+                   
+                    if (table.Rows.Count > 0)
+                    {
+                        return DateTime.Parse(table.Rows[0][1].ToString());
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public string[] getNFAG(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getNFAG";
+                    command.Parameters.AddWithValue("@IDTramite", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    int dimTabla = table.Rows.Count;
+                    string[] facturas;
+                    if (dimTabla == 0)
+                    {
+                        facturas = new string[1];
+                    }
+                    else
+                    {
+                        facturas = new string[dimTabla];
+                    }
+
+                    if (dimTabla > 0)
+                    {
+                        for (int i = 0; i < dimTabla; i++)
+                        {
+                            facturas[i] = table.Rows[i]["Numero_Factura"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        facturas[0] = " - ";
+                    }
+                    return facturas;
+                }
+            }
+        }
+
+
+        public string getNFTBC(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getNFTBC";
+                    command.Parameters.AddWithValue("@IDTramite", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        return table.Rows[0]["Numero_Factura"].ToString();
+                    }
+                    else
+                    {
+                        return " - ";
+                    }
                 }
             }
         }
@@ -1689,8 +2217,8 @@ namespace DataAccess
                                               "Dias_Credito_Factura_TBC, " +
                                               "Dias_Credito_Gastos, " +
                                               "Dias_Credito_Transporte " +
-                                              "from Cliente where RUC = @RUC";
-                        
+                                              "from Cliente where NombreEmpresa = @RUC";
+
                         command.Parameters.AddWithValue("@RUC", RUCEmpresa);
 
                         command.CommandType = CommandType.Text;
@@ -1715,7 +2243,6 @@ namespace DataAccess
                                     "ERROR",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
-
                 }
 
 

@@ -74,7 +74,15 @@ namespace Presentacion
             if (UserCache.Position == Positions.Contabilidad)
             {
                 panelComisiones.Visible = false;
+            }
 
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                panelTramite.Visible = false;
+                panelComisiones.Visible = false;
+                pnlReporte.Visible = false;
+                //panelComisiones.Visible = false;
+               // panelComisiones.Visible = false;
             }
         }
 

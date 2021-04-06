@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Common.Cache;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Common.Cache;
 
 namespace Presentacion
 {
@@ -21,20 +15,10 @@ namespace Presentacion
         private void panelCrear_Enter(object sender, EventArgs e)
         {
             lblCrear.ForeColor = Color.FromArgb(185, 209, 234);
-            lblBuscar.ForeColor = Color.FromArgb(57, 60, 67);
-            lblEditar.ForeColor = Color.FromArgb(57, 60, 67);
 
             btnCrear.Focus();
         }
 
-        private void panelBuscar_Enter(object sender, EventArgs e)
-        {
-            lblBuscar.ForeColor = Color.FromArgb(185, 209, 234);
-            lblEditar.ForeColor = Color.FromArgb(185, 209, 234);
-            lblCrear.ForeColor = Color.FromArgb(57, 60, 67);
-
-            btnBuscar.Focus();
-        }
 
         private void panelCrear_Click(object sender, EventArgs e)
         {
@@ -79,6 +63,11 @@ namespace Presentacion
             }
 
             if (UserCache.Position == Positions.Export)
+            {
+                panelCrear.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Contabilidad2)
             {
                 panelCrear.Visible = false;
             }

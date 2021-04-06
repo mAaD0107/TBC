@@ -64,7 +64,6 @@ namespace Presentacion
             if (UserCache.Position == Positions.Contabilidad)
             {
                 panelCrear.Visible = false;
-
             }
         }
     }

@@ -868,6 +868,7 @@
             this.cmbTipoFactura.TabIndex = 51;
             this.cmbTipoFactura.SelectedIndexChanged += new System.EventHandler(this.cmbTipoFactura_SelectedIndexChanged);
             this.cmbTipoFactura.SelectedValueChanged += new System.EventHandler(this.cmbTipoFactura_SelectedValueChanged);
+            this.cmbTipoFactura.TextChanged += new System.EventHandler(this.cmbTipoFactura_TextChanged);
             // 
             // label31
             // 

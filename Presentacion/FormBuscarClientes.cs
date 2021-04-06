@@ -5,9 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 using Domain;
+using Presentacion.ClasesComplementarias;
 
 namespace Presentacion
 {
@@ -18,17 +21,58 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        SplashScreen splash = null;
+        public void SplashStart()
+        {
+            try
+            {
+                splash = new SplashScreen();
+                Application.Run(splash);
+            }
+            catch (ThreadAbortException)
+            {
+                Thread.ResetAbort();
+            }
+            catch
+            { }
+        }
+
+
+        private void SplashShow()
+        { 
+            Thread t = new Thread(new ThreadStart(SplashStart));
+            t.SetApartmentState(ApartmentState.STA);
+            t.IsBackground = true;
+            t.Start();
+        }
+
+        private void SplashClose()
+        {
+            if (splash != null)
+            {
+                splash.CloseSplash();
+            }
+        }
+
+        DataTable clientes;
         private void showClients()
         {
             UserModel Read = new UserModel();
-            dataGridClientes.DataSource = Read.readClients();
+            clientes = Read.readClients();
+            dataGridClientes.DataSource = Read.readShortClientes();
+            acoplarScrolls();
+
         }
 
         private void FormBuscarClientes_Load(object sender, EventArgs e)
         {
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+            formPrincipal.Hide();
+            SplashShow();
             showClients();
             acoplarPaneles();
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            SplashClose();
+            formPrincipal.Show();
         }
 
         private void acoplarPaneles()
@@ -54,6 +98,7 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridClientes.DataSource = Read.searchClients(data);
+            acoplarScrolls();
         }
 
         private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -66,10 +111,21 @@ namespace Presentacion
             FormCrearCliente formClientes = new FormCrearCliente();
 
             int iTabla = dataGridClientes.CurrentCell.RowIndex;
+            string RUC = dataGridClientes.Rows[iTabla].Cells[0].Value.ToString();
+            
+            for (int i = 0; i < clientes.Rows.Count; i++)
+            {
+                if (clientes.Rows[i][0].ToString() == RUC)
+                {
+                    iTabla = i;
+                    break; 
+                }
+            }
 
             for (int i = 0; i < 127 - 1; i++)
             {
-                values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
+               // values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
+                values[i] = clientes.Rows[iTabla][i].ToString();
             }
 
             formClientes.txtRUC.Text = values[0];
@@ -276,6 +332,11 @@ namespace Presentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            Actualizar();
+        }
+
+        private void Actualizar()
+        {
             showClients();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
@@ -331,10 +392,21 @@ namespace Presentacion
                 FormCrearCliente formClientes = new FormCrearCliente();
 
                 int iTabla = dataGridClientes.CurrentCell.RowIndex;
+                string RUC = dataGridClientes.Rows[iTabla].Cells[0].Value.ToString();
+
+                for (int i = 0; i < clientes.Rows.Count; i++)
+                {
+                    if (clientes.Rows[i][0].ToString() == RUC)
+                    {
+                        iTabla = i;
+                        break;
+                    }
+                }
 
                 for (int i = 0; i < 127 - 1; i++)
                 {
-                    values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
+                    // values[i] = dataGridClientes.Rows[iTabla].Cells[i].Value.ToString();
+                    values[i] = clientes.Rows[iTabla][i].ToString();
                 }
 
                 formClientes.txtRUC.Text = values[0];
@@ -504,29 +576,43 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            UserModel model = new UserModel();
+            Eliminar();
+        }
 
-            if (model.InsertDataClient(deleteDataClient()))
-            {
-                MessageBox.Show(
-                "El cliente: " + nombre +
-                "\nHa sido elimininado exitosamente",
+        private void Eliminar()
+        {
+               DialogResult result =  MessageBox.Show(
+                "Seguro desea eliminar el cliente: "+ nombre,
                 "Info",
-                MessageBoxButtons.OK,
+                MessageBoxButtons.YesNo,
                 MessageBoxIcon.Information
                 );
 
-                showClients();
-            }
-            else
+            if(result == DialogResult.Yes)
             {
-                MessageBox.Show(
-                "No ha sido posible eliminar al cliente\n" +
-                "Por favor, inténtelo una vez más.",
-                "Alerta",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-                );
+                UserModel model = new UserModel();
+                if (model.InsertDataClient(deleteDataClient()))
+                {
+                    MessageBox.Show(
+                    "El cliente: " + nombre +
+                    "\nHa sido elimininado exitosamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+
+                    showClients();
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No ha sido posible eliminar al cliente\n" +
+                    "Por favor, inténtelo una vez más.",
+                    "Alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                }
             }
         }
 
@@ -549,6 +635,136 @@ namespace Presentacion
             return values;
         }
 
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            dataGridClientes.FirstDisplayedScrollingRowIndex = e.Value;
+        }
 
+        private void dataGridClientes_Scroll(object sender, ScrollEventArgs e)
+        {
+            vScrollBar.Value = e.NewValue;
+        }
+
+        private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
+        {
+            dataGridClientes.FirstDisplayedScrollingColumnIndex = e.Value;
+        }
+
+        private void acoplarScrolls()
+        {
+
+            if (dataGridClientes.RowCount > 0)
+            {
+                if (dataGridClientes.RowCount == 1)
+                {
+                    vScrollBar.Maximum = dataGridClientes.RowCount;
+                }
+                else
+                {
+                    vScrollBar.Maximum = dataGridClientes.RowCount - 1;
+                }
+
+            }
+            else
+            {
+
+                vScrollBar.Minimum = 0;
+                vScrollBar.Maximum = 1;
+            }
+
+            hScrollBar.Maximum = dataGridClientes.ColumnCount - 1;
+        }
+
+        ToolStripProfessionalRenderer r = new ToolStripProfessionalRenderer(new MyColorTable(Color.Red));
+        ToolStripProfessionalRenderer normal = new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(185, 209, 234)));
+        private void dataGridClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenuStrip menu = new ContextMenuStrip();
+                ToolStripMenuItem mi;
+
+                // Item 1, null in constructor to say : no picture on the label
+                mi = new ToolStripMenuItem("Actualizar", null, (s, a) => Actualizar());
+                mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+                mi.ForeColor = Color.White;
+                mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+                mi.MouseLeave += new EventHandler(menuItem_MouseLeave); 
+                menu.Items.Add(mi);
+
+                // Item 2
+
+                mi = new ToolStripMenuItem("Desplegar", null, (s, a) => agregarCampos());
+                mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+                mi.ForeColor = Color.White;
+                mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+                mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+                menu.Items.Add(mi);
+
+                // Item 3
+                if (UserCache.Position != Positions.Contabilidad2)
+                {
+                    mi = new ToolStripMenuItem("Editar", null, (s, a) => cargarDatos());
+                    mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+                    mi.ForeColor = Color.White;
+                    mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+                    mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+                    menu.Items.Add(mi);
+
+                    // Item 3
+                    mi = new ToolStripMenuItem("Eliminar", null, (s, a) => Eliminar());
+                    mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+                    mi.ForeColor = Color.White;
+                    mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+                    mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+                    menu.Items.Add(mi);
+
+                }
+
+
+                menu.RenderMode = ToolStripRenderMode.ManagerRenderMode;
+                
+               // menu.MouseLeave +
+
+                menu.BackColor = Color.FromArgb(100, 41, 46, 54);
+                menu.Show(new Point(Cursor.Position.X - 50, Cursor.Position.Y - 50));
+            }
+        }
+
+        private void menuItem_MouseEnter(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item.Text == "Eliminar")
+            {
+                ToolStripManager.Renderer = r;
+            }
+            else
+            {
+                ToolStripManager.Renderer = normal;
+                item.ForeColor = Color.FromArgb(200, 41, 46, 54);
+            }
+        }
+
+        private void menuItem_MouseLeave(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item.Text == "Eliminar")
+            {
+                ToolStripManager.Renderer = r;
+            }
+            else
+            {
+                ToolStripManager.Renderer = normal;
+                item.ForeColor = Color.White;
+            }
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                showClients();
+            }
+        }
     }
 }

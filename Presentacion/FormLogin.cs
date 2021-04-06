@@ -11,8 +11,29 @@ namespace Presentacion
     {
         public FormLogin()
         {
+
             InitializeComponent();
+
         }
+
+        SplashScreen splash = null; 
+        public void SplashStart()
+        {
+            try
+            {
+                splash = new SplashScreen();
+                Application.Run(splash);
+                //Application.Run(new SplashScreen());
+            }
+            catch (ThreadAbortException)
+            {
+                Thread.ResetAbort();
+            }
+            catch
+            {}
+        }
+
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -108,13 +129,29 @@ namespace Presentacion
             {
                 if (txtpass.Text != "Contraseña")
                 {
+                    this.Hide();
+                    // Crea un hilo 
+
+                    
+                    Thread t = new Thread(new ThreadStart(SplashStart));
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.IsBackground = true; 
+                    t.Start();
+                    
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtuser.Text, txtpass.Text);
+                    
+                    if (splash != null)
+                    {
+                        splash.CloseSplash();
+                    }
+
+                   
                     if (validLogin == true)
                     {
                         FormPrincipal mainMenu = new FormPrincipal();
                         mainMenu.panelGlobal.Visible = false;
-                        mainMenu.panelTitulo.Visible = false; 
+                        mainMenu.panelTitulo.Visible = false;
                         mainMenu.Show();
                         this.Hide();
                     }
@@ -123,8 +160,11 @@ namespace Presentacion
                         msgError("Usuario o Contraseña incorrectos \nPor favor inténtelo de nuevo");
                         txtpass.Clear();
                         txtuser.Focus();
-
+                        this.Show();
                     }
+                    
+                    
+
                 }
                 else msgError("Ingrese la contraseña");
             }

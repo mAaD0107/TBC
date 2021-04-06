@@ -37,6 +37,7 @@ namespace Presentacion
             this.panelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDesplegar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -70,7 +71,7 @@ namespace Presentacion
             this.panelGeneral.RowCount = 3;
             this.panelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.16384F));
             this.panelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.83616F));
-            this.panelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.panelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.panelGeneral.Size = new System.Drawing.Size(1000, 550);
             this.panelGeneral.TabIndex = 47;
             // 
@@ -85,8 +86,8 @@ namespace Presentacion
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 117);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 119);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // bunifuGradientPanel1
@@ -94,6 +95,7 @@ namespace Presentacion
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.button1);
             this.bunifuGradientPanel1.Controls.Add(this.btnDesplegar);
             this.bunifuGradientPanel1.Controls.Add(this.btnEliminar);
             this.bunifuGradientPanel1.Controls.Add(this.btnEditar);
@@ -105,11 +107,31 @@ namespace Presentacion
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 31);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 36);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(988, 83);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(988, 80);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.button1.Location = new System.Drawing.Point(472, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 38);
+            this.button1.TabIndex = 74;
+            this.button1.Text = "INICIAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDesplegar
             // 
@@ -122,7 +144,7 @@ namespace Presentacion
             this.btnDesplegar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesplegar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesplegar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.btnDesplegar.Location = new System.Drawing.Point(592, 44);
+            this.btnDesplegar.Location = new System.Drawing.Point(592, 40);
             this.btnDesplegar.Name = "btnDesplegar";
             this.btnDesplegar.Size = new System.Drawing.Size(123, 38);
             this.btnDesplegar.TabIndex = 73;
@@ -141,7 +163,7 @@ namespace Presentacion
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.btnEliminar.Location = new System.Drawing.Point(841, 44);
+            this.btnEliminar.Location = new System.Drawing.Point(841, 40);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(114, 38);
             this.btnEliminar.TabIndex = 72;
@@ -160,7 +182,7 @@ namespace Presentacion
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnEditar.Location = new System.Drawing.Point(721, 44);
+            this.btnEditar.Location = new System.Drawing.Point(721, 40);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(114, 38);
             this.btnEditar.TabIndex = 71;
@@ -202,7 +224,7 @@ namespace Presentacion
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(988, 83);
+            this.shapeContainer1.Size = new System.Drawing.Size(988, 80);
             this.shapeContainer1.TabIndex = 3;
             this.shapeContainer1.TabStop = false;
             // 
@@ -231,7 +253,7 @@ namespace Presentacion
             this.bunifuGradientPanel4.Location = new System.Drawing.Point(3, 3);
             this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             this.bunifuGradientPanel4.Quality = 10;
-            this.bunifuGradientPanel4.Size = new System.Drawing.Size(988, 22);
+            this.bunifuGradientPanel4.Size = new System.Drawing.Size(988, 27);
             this.bunifuGradientPanel4.TabIndex = 1;
             // 
             // maximizar
@@ -264,17 +286,17 @@ namespace Presentacion
             // panelTabla
             // 
             this.panelTabla.ColumnCount = 3;
-            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.012048F));
-            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.98795F));
-            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.218274F));
+            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.78172F));
+            this.panelTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.panelTabla.Controls.Add(this.dataGridDetalles, 1, 0);
             this.panelTabla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTabla.Location = new System.Drawing.Point(3, 126);
+            this.panelTabla.Location = new System.Drawing.Point(3, 128);
             this.panelTabla.Name = "panelTabla";
             this.panelTabla.RowCount = 2;
             this.panelTabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.panelTabla.Size = new System.Drawing.Size(994, 402);
+            this.panelTabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.panelTabla.Size = new System.Drawing.Size(994, 408);
             this.panelTabla.TabIndex = 41;
             // 
             // dataGridDetalles
@@ -317,7 +339,7 @@ namespace Presentacion
             this.dataGridDetalles.GridColor = System.Drawing.Color.DimGray;
             this.dataGridDetalles.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.dataGridDetalles.HeaderForeColor = System.Drawing.Color.LightGray;
-            this.dataGridDetalles.Location = new System.Drawing.Point(31, 3);
+            this.dataGridDetalles.Location = new System.Drawing.Point(15, 3);
             this.dataGridDetalles.Name = "dataGridDetalles";
             this.dataGridDetalles.ReadOnly = true;
             this.dataGridDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -330,7 +352,7 @@ namespace Presentacion
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridDetalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridDetalles.Size = new System.Drawing.Size(927, 376);
+            this.dataGridDetalles.Size = new System.Drawing.Size(967, 394);
             this.dataGridDetalles.StandardTab = true;
             this.dataGridDetalles.TabIndex = 2;
             this.dataGridDetalles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDetalles_CellDoubleClick);
@@ -377,5 +399,6 @@ namespace Presentacion
         public System.Windows.Forms.Button btnDesplegar;
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnEditar;
+        public System.Windows.Forms.Button button1;
     }
 }

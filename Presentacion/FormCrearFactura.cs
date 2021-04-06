@@ -263,8 +263,9 @@ namespace Presentacion
                 string pRetIVA = cmbPorcentajeRetIVA.SelectedItem == null ? cmbPorcentajeRetIVA.Text : cmbPorcentajeRetIVA.GetItemText(cmbPorcentajeRetIVA.SelectedItem);
                 Decimal valPRetIVA = Decimal.Parse(pRetIVA);
 
-                Decimal valRetIVA = subTotal * ivaFactura / 100m * valPRetIVA / 100m;
-                //valRetIVA = Math.Ceiling(valRetIVA * 100) / 100;
+                //Decimal valRetIVA = subTotal * ivaFactura / 100m * valPRetIVA / 100m;
+                Decimal valRetIVA = valorIVA * valPRetIVA / 100m;
+
                 valRetIVA = Math.Round(valRetIVA, 2, MidpointRounding.AwayFromZero);
 
                 totalRetencion = valRetRenta + valRetIVA;
@@ -640,10 +641,10 @@ namespace Presentacion
 
         private void txtNumeroRetencion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            /*if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-            }
+            }*/
         }
 
 
@@ -739,18 +740,25 @@ namespace Presentacion
 
         private void cmbTipoFactura_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            /*
             readRetenciones();
             calcularFactura();
             calcularTotalRetención();
             calcularValorACobrar();
-
+            */
 
         }
 
         int diasCredito = 0;
         public void readRetenciones()
         {
+            // UserModel Read = new UserModel();  
+            // Read.searchRetenciones(TramiteCache.rucEmpresa);
+            // MessageBox.Show("Leyo las retenciones");
+
+            UserModel Read = new UserModel();
+            Read.searchRetenciones(txtCliente.Text);
+
             switch (cmbTipoFactura.Text)
             {
                 case "Otros":
@@ -760,11 +768,34 @@ namespace Presentacion
                     if (cmbOtros.Text.Contains("Honorarios"))
                     {
                         txtDiasCredito.Text = TramiteCache.diasCreditoFacturaTBC.ToString();
+                    }else if (cmbOtros.Text.Contains("Transporte_I"))
+                    {
+                        txtDiasCredito.Text = TramiteCache.diasCreditoTransporte.ToString();
+                    }else  if (cmbOtros.Text.Contains("Transporte_II"))
+                    {
+                        txtDiasCredito.Text = TramiteCache.diasCreditoTransporte.ToString();
+                    }else if (cmbOtros.Text.Contains("Transporte_III"))
+                    {
+                        txtDiasCredito.Text = TramiteCache.diasCreditoTransporte.ToString();
                     }
-
+                    else
+                    {
+                        txtDiasCredito.Text = TramiteCache.diasCreditoGastos.ToString();
+                    }
                     break;
 
                 case "Agente":
+                    cmbPorcentajeRetIVA.Text = TramiteCache.porcentajeRetIVAAgente.ToString();
+                    cmbPorcentajeRetRenta.Text = TramiteCache.porcentajeRetRentaAgente.ToString();
+
+                    txtDiasCredito.Text = TramiteCache.diasCreditoFacturaAgente.ToString();
+
+                    //cmbPorcentajeRetIVA.Enabled = true;
+                    //cmbPorcentajeRetRenta.Enabled = false;
+                    break;
+
+
+                case "Agente_LDM":
                     cmbPorcentajeRetIVA.Text = TramiteCache.porcentajeRetIVAAgente.ToString();
                     cmbPorcentajeRetRenta.Text = TramiteCache.porcentajeRetRentaAgente.ToString();
 
@@ -790,6 +821,7 @@ namespace Presentacion
 
                     break;
 
+
                 default:
                     
                     txtDiasCredito.Text = TramiteCache.diasCreditoGastos.ToString();
@@ -810,8 +842,6 @@ namespace Presentacion
                 cmbOtros.Visible = false;
                 panelConceptoFactura.Visible = false;
             }
-
-            
 
             if (txtDiasCredito.Text != "")
             {
@@ -891,8 +921,6 @@ namespace Presentacion
                 formAuxiliar.BringToFront();
                 formAuxiliar.WindowState = FormWindowState.Normal;
             }
-
-
         }
 
         private void cmbIVA_SelectedIndexChanged(object sender, EventArgs e)
@@ -1021,7 +1049,7 @@ namespace Presentacion
 
         private void cmbTipoFactura_SelectedValueChanged(object sender, EventArgs e)
         {
-            readRetenciones();
+           // readRetenciones();
         }
 
         private void cmbOtros_SelectedValueChanged(object sender, EventArgs e)
@@ -1718,7 +1746,13 @@ namespace Presentacion
             }
         }
 
-
+        private void cmbTipoFactura_TextChanged(object sender, EventArgs e)
+        {
+            readRetenciones();
+            calcularFactura();
+            calcularTotalRetención();
+            calcularValorACobrar();
+        }
 
         private void txtSubTotalNotCreditoII_Leave(object sender, EventArgs e)
         {

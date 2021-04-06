@@ -2936,6 +2936,22 @@ namespace Presentacion
             txtAbonoPagoGeneral.Focus();
         }
 
+        private void dataGridPagos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridPagos.Rows.Count > 0)
+            {
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormEditarPago formEditarPago = new FormEditarPago();
+                    formEditarPago.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formEditarPago);
+                    formPrincipal.AbrirFormInPanel(formEditarPago);
+                }
+            }
+        }
+
         private void lblSaldoTransferencia_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)

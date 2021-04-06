@@ -40,7 +40,13 @@ namespace Presentacion
 
         private void panelGeneral_Click(object sender, EventArgs e)
         {
-            
+            callCuentasPorCobrar();
+        }
+
+        private void callCuentasPorCobrar()
+        {
+            FormInformeCXCGeneral cxc = new FormInformeCXCGeneral();
+            cxc.Show(); 
         }
 
         private void panelDetallado_Click(object sender, EventArgs e)
@@ -50,6 +56,7 @@ namespace Presentacion
 
         private void callOpcionesDetallado()
         {
+            /*
             FormPrincipal formPrincipal = Owner as FormPrincipal;
 
             if (formPrincipal != null)
@@ -59,6 +66,9 @@ namespace Presentacion
                 formPrincipal.AddOwnedForm(formOpcionesDetallado);
                 formPrincipal.AbrirFormInPanel(formOpcionesDetallado);
             }
+            */
+            FormInformeCXCDetallado cxc = new FormInformeCXCDetallado();
+            cxc.Show();
         }
 
         private void FormOpcionesCuentasCobrar_Shown(object sender, EventArgs e)

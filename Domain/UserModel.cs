@@ -30,6 +30,17 @@ namespace Domain
             return userDao.readClients();
         }
 
+
+        public DataTable readShortClientes()
+        {
+            return userDao.readShortClientes();
+        }
+
+        public DataTable getClientes()
+        {
+            return userDao.getClientes();
+        }
+
         public DataTable readProveedores()
         {
             return userDao.readProveedores();
@@ -60,6 +71,11 @@ namespace Domain
         public DataTable readAbonoFactura(string nFactura)
         {
             return userDao.readAbonoFactura(nFactura);
+        }
+
+        public DataTable readListaPagos(string idTramite)
+        {
+            return userDao.readListaPagos(idTramite);
         }
 
 
@@ -276,6 +292,12 @@ namespace Domain
             return userDao.readInfoFacturas(ID_Tramite);
         }
 
+
+        public DataTable datosRetencionCredito(string nFactura)
+        {
+            return userDao.datosRetencionCredito(nFactura);
+        }
+
         public DataTable readInfoFacturasT()
         {
             return userDao.readInfoFacturasT();
@@ -321,10 +343,15 @@ namespace Domain
             return userDao.readRUCEmpresaTramite(RUC);
         }
 
-
         public bool InsertDataClient(string[] values)
         {
             return userDao.insertDataClient(values);
+        }
+
+
+        public bool updateFacturas(int DiasCredito, string dateVencimiento, string nFactura)
+        {
+            return userDao.updateFacturas(DiasCredito, dateVencimiento, nFactura);
         }
 
         public bool InsertDataProveedor(string[] values)

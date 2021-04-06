@@ -10,9 +10,11 @@ namespace Common.Cache
     {
         public const string Administrador = "Administrador";
         public const string Contabilidad = "Contabilidad";
+        public const string Contabilidad2 = "Contabilidad2";
         public const string Tramitacion = "Tramitacion";
         public const string Informacion = "Informacion";
         public const string Clientes = "Clientes";
         public const string Export = "Export";
+
     }
 }

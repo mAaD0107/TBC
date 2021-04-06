@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Cache;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,14 @@ namespace Presentacion
                 if (formPrincipal != null)
                 {
                     formBuscarClientes.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+
+                    formBuscarClientes.panelGeneral.RowStyles[2].Height = 0;
+                    formBuscarClientes.panelGeneral.RowStyles[0].Height = (float)14;
+                    //formBuscarTramite.panelGeneral.RowStyles[1].Height = (float)30;
+
+                    formPrincipal.panelInferior.Visible = false;
+                    formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
+                    //  formPrincipal.panelGlobal.ColumnStyles[0].Width = (float)0.1;
                     formPrincipal.AddOwnedForm(formBuscarClientes);
                     formPrincipal.AbrirFormInPanel(formBuscarClientes);
                 }
@@ -175,6 +184,14 @@ namespace Presentacion
         private void FormOpcionesClientes_Shown(object sender, EventArgs e)
         {
             InterfaceCache.idCliente = 0; 
+        }
+
+        private void FormOpcionesClientes_Load(object sender, EventArgs e)
+        {
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                panelCrear.Visible = false;
+            }
         }
     }
 }

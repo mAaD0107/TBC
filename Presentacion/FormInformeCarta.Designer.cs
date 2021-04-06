@@ -33,16 +33,34 @@ namespace Presentacion
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.InformeCartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informeCartaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listadoAbonoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informeCartaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformeCartaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoAbonoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // listadoFacturasBindingSource
+            // 
+            this.listadoFacturasBindingSource.DataMember = "listadoFacturas";
+            this.listadoFacturasBindingSource.DataSource = this.InformeCartaBindingSource;
+            // 
+            // InformeCartaBindingSource
+            // 
+            this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
+            // 
+            // listadoAbonoBindingSource
+            // 
+            this.listadoAbonoBindingSource.DataMember = "listadoAbono";
+            this.listadoAbonoBindingSource.DataSource = this.informeCartaBindingSource1;
+            // 
+            // informeCartaBindingSource1
+            // 
+            this.informeCartaBindingSource1.DataSource = typeof(Domain.Carta.InformeCarta);
             // 
             // reportViewer1
             // 
@@ -60,40 +78,23 @@ namespace Presentacion
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(814, 636);
             this.reportViewer1.TabIndex = 1;
-            // 
-            // listadoFacturasBindingSource
-            // 
-            this.listadoFacturasBindingSource.DataMember = "listadoFacturas";
-            this.listadoFacturasBindingSource.DataSource = this.InformeCartaBindingSource;
-            // 
-            // InformeCartaBindingSource
-            // 
-            this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
-            // 
-            // informeCartaBindingSource1
-            // 
-            this.informeCartaBindingSource1.DataSource = typeof(Domain.Carta.InformeCarta);
-            // 
-            // listadoAbonoBindingSource
-            // 
-            this.listadoAbonoBindingSource.DataMember = "listadoAbono";
-            this.listadoAbonoBindingSource.DataSource = this.informeCartaBindingSource1;
             // 
             // FormInformeCarta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(814, 636);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormInformeCarta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformeCarta";
             this.Load += new System.EventHandler(this.FormInformeCarta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformeCartaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoAbonoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

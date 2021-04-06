@@ -23,6 +23,12 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridFacturas.DataSource = Read.readInfoFacturas(FacturaCache.ID_Tramite);
+
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+            }
         }
 
         public int tipoFormulario;

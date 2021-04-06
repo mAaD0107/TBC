@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DataAccess;
 using System.Data;
 using Common.Cache;
-
+using System.Windows.Forms;
 
 namespace Domain.Carta
 {
@@ -35,7 +35,7 @@ namespace Domain.Carta
 
         
         
-        List<string> NumeroFactura; 
+        List<string> NumeroFactura;
 
         public void CrearInformeCarta(string ID_Tramite)
         {
@@ -86,10 +86,11 @@ namespace Domain.Carta
             DataTable facturasPagadas = Read.getFacturasPagos(NTramite);
             DataTable facturasImpagas = Read.getFacturasImpagas(NTramite);
             //DataTable facturasTodas = Read.getFacturas(NTramite);
+            DataTable infoFacturas = Read.readInfoFacturas(FacturaCache.ID_Tramite);
             DataTable pagos = Read.getAbonosCarta(NTramite);
             DataTable saldoCliente = Read.getSaldoCliente(NTramite);
-            
-            
+            DataTable saldoTransferencias = Read.getSaldoTransferencia(FacturaCache.ID_Tramite);
+
             listadoFacturas = new List<ListadoFacturas>();
             listadoAbono = new List<AbonosFacturas>();
 
@@ -120,7 +121,7 @@ namespace Domain.Carta
 
                     listadoFacturas.Add(facturasModel);
                     NumeroFactura.Add((rowrs[2].ToString()));
-                    valPagar += Convert.ToDouble(rowrs[8]);
+                    //valPagar += Convert.ToDouble(rowrs[8]);
                     totalSaldoFavor += Convert.ToDouble(rowrs[9]);
                 }
 
@@ -148,9 +149,16 @@ namespace Domain.Carta
                     };
                     listadoFacturas.Add(facturasModel);
                     NumeroFactura.Add((row[2].ToString()));
-                    valPagar += Convert.ToDouble(row[8]);
+                    //valPagar += Convert.ToDouble(row[8]);
                 }
+            }
 
+            foreach (DataRow row in infoFacturas.Rows)
+            {
+                if (existeFactura(row[0].ToString()))
+                {
+                    valPagar += Convert.ToDouble(row[10]);
+                }
             }
 
             foreach (DataRow row in pagos.Rows)
@@ -172,13 +180,20 @@ namespace Domain.Carta
 
             foreach (DataRow row in saldoCliente.Rows)
             {
-                saldo += Convert.ToDouble(row[0] is DBNull? 0 : row[0]);
+                saldo += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
             }
-            
+
+            double saldoTransferencia = 0;
+
+            foreach (DataRow row in saldoTransferencias.Rows)
+            {
+                saldoTransferencia += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
+            }
+
 
             TotalValorTramite = valPagar;
             TotalPagos = TotalValorTramite - totalSaldoFavor;
-            TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo;
+            TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo - saldoTransferencia;
 
             Observaciones = CartaCache.Observaciones;
 

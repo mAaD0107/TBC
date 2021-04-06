@@ -45,6 +45,10 @@
     <Compile Include="Carta\AbonosFacturas.cs" />
     <Compile Include="Carta\InformeCarta.cs" />
     <Compile Include="Carta\ListadoFacturas.cs" />
+    <Compile Include="CuentasPorCobrarDetallado\InformeCXCDetallado.cs" />
+    <Compile Include="CuentasPorCobrarDetallado\ListaCXCD.cs" />
+    <Compile Include="CuentasPorCobrar\InformeCXCGeneral.cs" />
+    <Compile Include="CuentasPorCobrar\ListaCXC.cs" />
     <Compile Include="Facturacion\InformacionTramite.cs" />
     <Compile Include="Facturacion\InformeFacturas.cs" />
     <Compile Include="Facturacion\ListadoFacturas.cs" />

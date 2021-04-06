@@ -22,6 +22,12 @@ namespace Presentacion
         private void FormBuscarporDetalle_Load(object sender, EventArgs e)
         {
             showFacturas();
+
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+            }
         }
 
 
@@ -200,7 +206,7 @@ namespace Presentacion
             formCrearFactura.panelBotonesNotaCredito.Visible = false;
             formCrearFactura.panelInferior.Visible = false;
 
-            formCrearFactura.Opacity = 0.9;
+            formCrearFactura.Opacity = 0.95;
             formCrearFactura.Height = Screen.PrimaryScreen.WorkingArea.Size.Height - 30;
             formCrearFactura.Text = "Factura: " + values[0];
             formCrearFactura.StartPosition = FormStartPosition.CenterScreen;
@@ -400,6 +406,98 @@ namespace Presentacion
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserModel Read = new UserModel();
 
+            string texto = ""; 
+
+            for (int i = 0; i < dataGridDetalles.RowCount; i++)
+            {
+                string nFactura = dataGridDetalles.Rows[i].Cells[2].Value.ToString();
+                //MessageBox.Show(nFactura);
+                DataTable datosF = Read.datosRetencionCredito(nFactura);
+
+                string RUC = datosF.Rows[0][0].ToString();
+                string nombreEmpresa = datosF.Rows[0][1].ToString();
+                DateTime fechaFactura = Convert.ToDateTime(datosF.Rows[0][2].ToString());
+                string tipoFactura = datosF.Rows[0][3].ToString();
+
+                int DCFA = Convert.ToInt32(datosF.Rows[0][4].ToString());
+                int DCTBC = Convert.ToInt32(datosF.Rows[0][5].ToString());
+                int DCG = Convert.ToInt32(datosF.Rows[0][6].ToString());
+                int DCT = Convert.ToInt32(datosF.Rows[0][7].ToString());
+
+                int DiasCredito = 0;
+
+                switch (tipoFactura)
+                {
+                    case "Agente":
+                        DiasCredito = DCFA;
+                        break;
+                    case "Agente_LDM":
+                        DiasCredito = DCFA;
+                        break;
+                    case "TBC":
+                        DiasCredito = DCTBC;
+                        break;
+
+
+                    case "Transporte":
+                        DiasCredito = DCT;
+                        break;
+                    case "Transporte_I":
+                        DiasCredito = DCT;
+                        break;
+                    case "Transporte_II":
+                        DiasCredito = DCT;
+                        break;
+                    case "Transporte_III":
+                        DiasCredito = DCT;
+                        break;
+
+
+
+                    case "Honorarios":
+                        DiasCredito = DCTBC;
+                        break;
+                    case "Honorarios_I":
+                        DiasCredito = DCTBC;
+                        break;
+                    case "Honorarios_II":
+                        DiasCredito = DCTBC;
+                        break;
+                    case "Honorarios_III":
+                        DiasCredito = DCTBC;
+                        break;
+
+
+                    default:
+
+                        DiasCredito = DCG;
+                        break;
+                }
+
+
+                DateTime fechaVencimiento = fechaFactura.AddDays(DiasCredito);
+                string dateVencimiento = fechaVencimiento.ToString("yyyy-MM-dd");
+
+                //Actualizar
+                bool estado = Read.updateFacturas(DiasCredito, dateVencimiento, nFactura);
+                if (estado)
+                {
+                    texto += nFactura + "\t\t OK ";
+                    //MessageBox.Show("La factura: " + nFactura + " se actualizo correctamente");
+                }
+                else
+                {
+                    texto += nFactura + "\t\t FALLO ";
+                    //MessageBox.Show("La factura: " + nFactura + " NO se actualizo");
+                }
+            }
+
+           // textBox1.Text = texto;
+            MessageBox.Show("Proceso Finalizado...");
+        }
     }
 }

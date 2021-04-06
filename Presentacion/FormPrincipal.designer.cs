@@ -38,16 +38,17 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
-            this.btnOtrosServicios = new System.Windows.Forms.Button();
+            this.PanelBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnTramites = new System.Windows.Forms.Button();
+            this.btnImportaciones = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnExportaciones = new System.Windows.Forms.Button();
             this.btnRecaudacion = new System.Windows.Forms.Button();
+            this.btnOtrosServicios = new System.Windows.Forms.Button();
             this.btnConfigurar = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
-            this.btnExportaciones = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnImportaciones = new System.Windows.Forms.Button();
-            this.btnTramites = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.panelInferior = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panelMenuVertical.SuspendLayout();
+            this.PanelBotones.SuspendLayout();
             this.panelInferior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelGlobal.SuspendLayout();
@@ -162,16 +164,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelMenuVertical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMenuVertical.Controls.Add(this.btnOtrosServicios);
-            this.panelMenuVertical.Controls.Add(this.btnRecaudacion);
+            this.panelMenuVertical.Controls.Add(this.PanelBotones);
             this.panelMenuVertical.Controls.Add(this.btnConfigurar);
             this.panelMenuVertical.Controls.Add(this.btnLogOut);
             this.panelMenuVertical.Controls.Add(this.btnInicio);
-            this.panelMenuVertical.Controls.Add(this.btnExportaciones);
-            this.panelMenuVertical.Controls.Add(this.btnReportes);
-            this.panelMenuVertical.Controls.Add(this.btnImportaciones);
-            this.panelMenuVertical.Controls.Add(this.btnTramites);
-            this.panelMenuVertical.Controls.Add(this.btnClientes);
             this.animacionPanel.SetDecoration(this.panelMenuVertical, BunifuAnimatorNS.DecorationType.None);
             this.panelMenuVertical.Location = new System.Drawing.Point(3, 3);
             this.panelMenuVertical.Name = "panelMenuVertical";
@@ -179,27 +175,127 @@
             this.panelMenuVertical.Size = new System.Drawing.Size(250, 614);
             this.panelMenuVertical.TabIndex = 0;
             // 
-            // btnOtrosServicios
+            // PanelBotones
             // 
-            this.animacionPanel.SetDecoration(this.btnOtrosServicios, BunifuAnimatorNS.DecorationType.None);
-            this.btnOtrosServicios.FlatAppearance.BorderSize = 0;
-            this.btnOtrosServicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnOtrosServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOtrosServicios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtrosServicios.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOtrosServicios.Image = ((System.Drawing.Image)(resources.GetObject("btnOtrosServicios.Image")));
-            this.btnOtrosServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtrosServicios.Location = new System.Drawing.Point(0, 290);
-            this.btnOtrosServicios.Name = "btnOtrosServicios";
-            this.btnOtrosServicios.Size = new System.Drawing.Size(250, 45);
-            this.btnOtrosServicios.TabIndex = 9;
-            this.btnOtrosServicios.Text = "   Otros Servicios";
-            this.btnOtrosServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOtrosServicios.UseVisualStyleBackColor = true;
-            this.btnOtrosServicios.Click += new System.EventHandler(this.btnOtrosServicios_Click);
+            this.PanelBotones.BackColor = System.Drawing.Color.Transparent;
+            this.PanelBotones.Controls.Add(this.btnClientes);
+            this.PanelBotones.Controls.Add(this.btnTramites);
+            this.PanelBotones.Controls.Add(this.btnImportaciones);
+            this.PanelBotones.Controls.Add(this.btnReportes);
+            this.PanelBotones.Controls.Add(this.btnExportaciones);
+            this.PanelBotones.Controls.Add(this.btnRecaudacion);
+            this.PanelBotones.Controls.Add(this.btnOtrosServicios);
+            this.animacionPanel.SetDecoration(this.PanelBotones, BunifuAnimatorNS.DecorationType.None);
+            this.PanelBotones.Location = new System.Drawing.Point(0, 95);
+            this.PanelBotones.Name = "PanelBotones";
+            this.PanelBotones.Size = new System.Drawing.Size(253, 398);
+            this.PanelBotones.TabIndex = 0;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(3, 3);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(250, 45);
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Text = "  Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientes.UseCompatibleTextRendering = true;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnTramites
+            // 
+            this.btnTramites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnTramites, BunifuAnimatorNS.DecorationType.None);
+            this.btnTramites.FlatAppearance.BorderSize = 0;
+            this.btnTramites.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnTramites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTramites.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTramites.ForeColor = System.Drawing.Color.Transparent;
+            this.btnTramites.Image = ((System.Drawing.Image)(resources.GetObject("btnTramites.Image")));
+            this.btnTramites.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTramites.Location = new System.Drawing.Point(3, 54);
+            this.btnTramites.Name = "btnTramites";
+            this.btnTramites.Size = new System.Drawing.Size(250, 45);
+            this.btnTramites.TabIndex = 2;
+            this.btnTramites.Text = "   Proveedores";
+            this.btnTramites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTramites.UseVisualStyleBackColor = false;
+            this.btnTramites.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
+            // btnImportaciones
+            // 
+            this.btnImportaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnImportaciones, BunifuAnimatorNS.DecorationType.None);
+            this.btnImportaciones.FlatAppearance.BorderSize = 0;
+            this.btnImportaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnImportaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportaciones.ForeColor = System.Drawing.Color.Transparent;
+            this.btnImportaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnImportaciones.Image")));
+            this.btnImportaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportaciones.Location = new System.Drawing.Point(3, 105);
+            this.btnImportaciones.Name = "btnImportaciones";
+            this.btnImportaciones.Size = new System.Drawing.Size(250, 45);
+            this.btnImportaciones.TabIndex = 3;
+            this.btnImportaciones.Text = "   Importaciones";
+            this.btnImportaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImportaciones.UseVisualStyleBackColor = false;
+            this.btnImportaciones.Click += new System.EventHandler(this.btnImportaciones_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnReportes, BunifuAnimatorNS.DecorationType.None);
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(3, 156);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(250, 45);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "   Reportes";
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // btnExportaciones
+            // 
+            this.btnExportaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnExportaciones, BunifuAnimatorNS.DecorationType.None);
+            this.btnExportaciones.FlatAppearance.BorderSize = 0;
+            this.btnExportaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnExportaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportaciones.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExportaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnExportaciones.Image")));
+            this.btnExportaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportaciones.Location = new System.Drawing.Point(3, 207);
+            this.btnExportaciones.Name = "btnExportaciones";
+            this.btnExportaciones.Size = new System.Drawing.Size(250, 45);
+            this.btnExportaciones.TabIndex = 4;
+            this.btnExportaciones.Text = "   Exportaciones";
+            this.btnExportaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportaciones.UseVisualStyleBackColor = false;
+            this.btnExportaciones.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnRecaudacion
             // 
+            this.btnRecaudacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.animacionPanel.SetDecoration(this.btnRecaudacion, BunifuAnimatorNS.DecorationType.None);
             this.btnRecaudacion.FlatAppearance.BorderSize = 0;
             this.btnRecaudacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
@@ -208,14 +304,34 @@
             this.btnRecaudacion.ForeColor = System.Drawing.Color.Transparent;
             this.btnRecaudacion.Image = ((System.Drawing.Image)(resources.GetObject("btnRecaudacion.Image")));
             this.btnRecaudacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecaudacion.Location = new System.Drawing.Point(0, 341);
+            this.btnRecaudacion.Location = new System.Drawing.Point(3, 258);
             this.btnRecaudacion.Name = "btnRecaudacion";
             this.btnRecaudacion.Size = new System.Drawing.Size(250, 45);
             this.btnRecaudacion.TabIndex = 6;
             this.btnRecaudacion.Text = "   Recaudación";
             this.btnRecaudacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRecaudacion.UseVisualStyleBackColor = true;
+            this.btnRecaudacion.UseVisualStyleBackColor = false;
             this.btnRecaudacion.Click += new System.EventHandler(this.btnRecaudacion_Click);
+            // 
+            // btnOtrosServicios
+            // 
+            this.btnOtrosServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.animacionPanel.SetDecoration(this.btnOtrosServicios, BunifuAnimatorNS.DecorationType.None);
+            this.btnOtrosServicios.FlatAppearance.BorderSize = 0;
+            this.btnOtrosServicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnOtrosServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtrosServicios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtrosServicios.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOtrosServicios.Image = ((System.Drawing.Image)(resources.GetObject("btnOtrosServicios.Image")));
+            this.btnOtrosServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOtrosServicios.Location = new System.Drawing.Point(3, 309);
+            this.btnOtrosServicios.Name = "btnOtrosServicios";
+            this.btnOtrosServicios.Size = new System.Drawing.Size(250, 45);
+            this.btnOtrosServicios.TabIndex = 9;
+            this.btnOtrosServicios.Text = "   Otros Servicios";
+            this.btnOtrosServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOtrosServicios.UseVisualStyleBackColor = false;
+            this.btnOtrosServicios.Click += new System.EventHandler(this.btnOtrosServicios_Click);
             // 
             // btnConfigurar
             // 
@@ -278,104 +394,6 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
-            // btnExportaciones
-            // 
-            this.animacionPanel.SetDecoration(this.btnExportaciones, BunifuAnimatorNS.DecorationType.None);
-            this.btnExportaciones.FlatAppearance.BorderSize = 0;
-            this.btnExportaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnExportaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportaciones.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExportaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnExportaciones.Image")));
-            this.btnExportaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportaciones.Location = new System.Drawing.Point(0, 239);
-            this.btnExportaciones.Name = "btnExportaciones";
-            this.btnExportaciones.Size = new System.Drawing.Size(250, 45);
-            this.btnExportaciones.TabIndex = 4;
-            this.btnExportaciones.Text = "   Exportaciones";
-            this.btnExportaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportaciones.UseVisualStyleBackColor = true;
-            this.btnExportaciones.Click += new System.EventHandler(this.btnPagos_Click);
-            // 
-            // btnReportes
-            // 
-            this.animacionPanel.SetDecoration(this.btnReportes, BunifuAnimatorNS.DecorationType.None);
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 390);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(250, 45);
-            this.btnReportes.TabIndex = 5;
-            this.btnReportes.Text = "   Reportes";
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnImportaciones
-            // 
-            this.animacionPanel.SetDecoration(this.btnImportaciones, BunifuAnimatorNS.DecorationType.None);
-            this.btnImportaciones.FlatAppearance.BorderSize = 0;
-            this.btnImportaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnImportaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportaciones.ForeColor = System.Drawing.Color.Transparent;
-            this.btnImportaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnImportaciones.Image")));
-            this.btnImportaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportaciones.Location = new System.Drawing.Point(0, 190);
-            this.btnImportaciones.Name = "btnImportaciones";
-            this.btnImportaciones.Size = new System.Drawing.Size(250, 45);
-            this.btnImportaciones.TabIndex = 3;
-            this.btnImportaciones.Text = "   Importaciones";
-            this.btnImportaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImportaciones.UseVisualStyleBackColor = true;
-            this.btnImportaciones.Click += new System.EventHandler(this.btnImportaciones_Click);
-            // 
-            // btnTramites
-            // 
-            this.animacionPanel.SetDecoration(this.btnTramites, BunifuAnimatorNS.DecorationType.None);
-            this.btnTramites.FlatAppearance.BorderSize = 0;
-            this.btnTramites.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnTramites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTramites.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTramites.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTramites.Image = ((System.Drawing.Image)(resources.GetObject("btnTramites.Image")));
-            this.btnTramites.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTramites.Location = new System.Drawing.Point(0, 141);
-            this.btnTramites.Name = "btnTramites";
-            this.btnTramites.Size = new System.Drawing.Size(250, 45);
-            this.btnTramites.TabIndex = 2;
-            this.btnTramites.Text = "   Proveedores";
-            this.btnTramites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTramites.UseVisualStyleBackColor = true;
-            this.btnTramites.Click += new System.EventHandler(this.btnProveedores_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.animacionPanel.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 92);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(250, 45);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "  Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseCompatibleTextRendering = true;
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
             // panelInferior
             // 
             this.panelInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
@@ -387,9 +405,9 @@
             this.animacionPanel.SetDecoration(this.panelInferior, BunifuAnimatorNS.DecorationType.None);
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInferior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.panelInferior.Location = new System.Drawing.Point(3, 517);
+            this.panelInferior.Location = new System.Drawing.Point(3, 497);
             this.panelInferior.Name = "panelInferior";
-            this.panelInferior.Size = new System.Drawing.Size(1032, 94);
+            this.panelInferior.Size = new System.Drawing.Size(1032, 114);
             this.panelInferior.TabIndex = 2;
             // 
             // lblFecha
@@ -401,7 +419,7 @@
             this.lblFecha.Location = new System.Drawing.Point(610, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFecha.Size = new System.Drawing.Size(422, 94);
+            this.lblFecha.Size = new System.Drawing.Size(422, 114);
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "03 de Septiembre del 2020";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -412,7 +430,7 @@
             this.animacionPanel.SetDecoration(this.lblEmail, BunifuAnimatorNS.DecorationType.None);
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(115)))), ((int)(((byte)(121)))));
-            this.lblEmail.Location = new System.Drawing.Point(105, 64);
+            this.lblEmail.Location = new System.Drawing.Point(105, 71);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(47, 17);
             this.lblEmail.TabIndex = 3;
@@ -448,7 +466,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(26, 18);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -502,8 +520,8 @@
             this.PanelSubContenedor.Location = new System.Drawing.Point(259, 3);
             this.PanelSubContenedor.Name = "PanelSubContenedor";
             this.PanelSubContenedor.RowCount = 2;
-            this.PanelSubContenedor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.87622F));
-            this.PanelSubContenedor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12378F));
+            this.PanelSubContenedor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.61889F));
+            this.PanelSubContenedor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.38111F));
             this.PanelSubContenedor.Size = new System.Drawing.Size(1038, 614);
             this.PanelSubContenedor.TabIndex = 0;
             // 
@@ -515,7 +533,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(3, 3);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1032, 508);
+            this.panelContenedor.Size = new System.Drawing.Size(1032, 488);
             this.panelContenedor.TabIndex = 0;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
@@ -540,7 +558,7 @@
             this.animacionPanel.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrincipal";
-            this.Opacity = 0.96D;
+            this.Opacity = 0.97D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Best Cargo";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
@@ -552,6 +570,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panelMenuVertical.ResumeLayout(false);
+            this.PanelBotones.ResumeLayout(false);
             this.panelInferior.ResumeLayout(false);
             this.panelInferior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -591,6 +610,7 @@
         public System.Windows.Forms.Panel panelTitulo;
         private Bunifu.Framework.UI.BunifuElipse redondeoFormPrincipal;
         private System.Windows.Forms.Button btnOtrosServicios;
+        private System.Windows.Forms.FlowLayoutPanel PanelBotones;
     }
 }
 

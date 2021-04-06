@@ -350,9 +350,17 @@ namespace Presentacion
             btnReportes.BackColor = Color.FromArgb(57, 60, 67);
             btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
             btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
+
+            FormOpcionesReporteGeneral opcionesReporteGeneral = new FormOpcionesReporteGeneral();
+            opcionesReporteGeneral.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+            AddOwnedForm(opcionesReporteGeneral);
+            AbrirFormInPanel(opcionesReporteGeneral);
+
             vCliente = false;
             vProveedor = false;
             vImportaciones = false;
+
+            
         }
 
 
@@ -379,7 +387,7 @@ namespace Presentacion
         private void btnLogOut_Click(object sender, EventArgs e)
         {
 
-           
+           // Application.Restart();
             FormLogin loggin = new FormLogin();
             loggin.Show();
             this.Close();
@@ -457,8 +465,11 @@ namespace Presentacion
 
         }
 
+
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+
+
             LoadUserData();
             mostrarLogo();
 
@@ -517,7 +528,16 @@ namespace Presentacion
                 btnReportes.Visible = false;
                 btnTramites.Visible = false;
             }
-        }
+        
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                btnExportaciones.Visible = false;
+                btnOtrosServicios.Visible = false;
+                btnRecaudacion.Visible = false;
+                //btnReportes.Visible = false;
+                btnTramites.Visible = false;
+            }
+}
 
         private void btnMinimizar_MouseEnter(object sender, EventArgs e)
         {

@@ -260,7 +260,6 @@ namespace Presentacion
 
 
                             UserModel Read = new UserModel();
-
                             Read.searchRetenciones(TramiteCache.rucEmpresa);
 
 

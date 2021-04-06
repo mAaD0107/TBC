@@ -240,6 +240,7 @@
             this.Name = "FormOpcionesClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "opcionesClientes";
+            this.Load += new System.EventHandler(this.FormOpcionesClientes_Load);
             this.Shown += new System.EventHandler(this.FormOpcionesClientes_Shown);
             this.Resize += new System.EventHandler(this.opcionesClientes_Resize);
             this.panelCrear.ResumeLayout(false);
