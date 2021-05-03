@@ -260,6 +260,7 @@
             this.lblTituloP = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
             this.panelInfoPagos = new System.Windows.Forms.Panel();
+            this.lblDevolucion = new System.Windows.Forms.Label();
             this.lblSaldoTransferencia = new System.Windows.Forms.Label();
             this.porcentajePago = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.lblTotalCobrado = new System.Windows.Forms.Label();
@@ -342,6 +343,7 @@
             this.redondeoPagoUnico = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoPagoMultiple = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.redondeoDevolucion = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelInfoPago.SuspendLayout();
@@ -985,11 +987,11 @@
             this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(17, 556);
+            this.bunifuVScrollBar1.Size = new System.Drawing.Size(17, 526);
             this.bunifuVScrollBar1.SmallChange = 1;
             this.bunifuVScrollBar1.TabIndex = 44;
             this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.bunifuVScrollBar1.ThumbLength = 109;
+            this.bunifuVScrollBar1.ThumbLength = 103;
             this.bunifuVScrollBar1.ThumbMargin = 1;
             this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar1.Value = 0;
@@ -1034,7 +1036,7 @@
             this.panelPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPagos.Location = new System.Drawing.Point(0, 49);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(703, 556);
+            this.panelPagos.Size = new System.Drawing.Size(703, 526);
             this.panelPagos.TabIndex = 41;
             this.panelPagos.Resize += new System.EventHandler(this.panelPagos_Resize);
             // 
@@ -3551,27 +3553,41 @@
             this.panelTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.panelTotal.Controls.Add(this.panelInfoPagos);
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTotal.Location = new System.Drawing.Point(0, 605);
+            this.panelTotal.Location = new System.Drawing.Point(0, 575);
             this.panelTotal.Name = "panelTotal";
-            this.panelTotal.Size = new System.Drawing.Size(726, 137);
+            this.panelTotal.Size = new System.Drawing.Size(726, 167);
             this.panelTotal.TabIndex = 43;
             // 
             // panelInfoPagos
             // 
-            this.panelInfoPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelInfoPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.panelInfoPagos.Controls.Add(this.lblDevolucion);
             this.panelInfoPagos.Controls.Add(this.lblSaldoTransferencia);
             this.panelInfoPagos.Controls.Add(this.porcentajePago);
             this.panelInfoPagos.Controls.Add(this.lblTotalCobrado);
             this.panelInfoPagos.Controls.Add(this.lblSaldoCliente);
             this.panelInfoPagos.Controls.Add(this.lblTotalaPagar);
             this.panelInfoPagos.Controls.Add(this.shapeContainer5);
-            this.panelInfoPagos.Location = new System.Drawing.Point(14, 6);
+            this.panelInfoPagos.Location = new System.Drawing.Point(9, 9);
             this.panelInfoPagos.Name = "panelInfoPagos";
-            this.panelInfoPagos.Size = new System.Drawing.Size(699, 131);
+            this.panelInfoPagos.Size = new System.Drawing.Size(700, 158);
             this.panelInfoPagos.TabIndex = 43;
+            // 
+            // lblDevolucion
+            // 
+            this.lblDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDevolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.lblDevolucion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDevolucion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevolucion.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblDevolucion.Location = new System.Drawing.Point(121, 129);
+            this.lblDevolucion.Name = "lblDevolucion";
+            this.lblDevolucion.Size = new System.Drawing.Size(255, 24);
+            this.lblDevolucion.TabIndex = 45;
+            this.lblDevolucion.Text = "Devolución: 0,00";
+            this.lblDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDevolucion.Click += new System.EventHandler(this.lblDevolucion_Click);
             // 
             // lblSaldoTransferencia
             // 
@@ -3581,9 +3597,9 @@
             this.lblSaldoTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSaldoTransferencia.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldoTransferencia.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblSaldoTransferencia.Location = new System.Drawing.Point(121, 100);
+            this.lblSaldoTransferencia.Location = new System.Drawing.Point(121, 101);
             this.lblSaldoTransferencia.Name = "lblSaldoTransferencia";
-            this.lblSaldoTransferencia.Size = new System.Drawing.Size(466, 24);
+            this.lblSaldoTransferencia.Size = new System.Drawing.Size(339, 24);
             this.lblSaldoTransferencia.TabIndex = 44;
             this.lblSaldoTransferencia.Text = "Saldo Transferencia: 0,00";
             this.lblSaldoTransferencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3603,13 +3619,13 @@
             this.porcentajePago.LabelVisible = true;
             this.porcentajePago.LineProgressThickness = 8;
             this.porcentajePago.LineThickness = 2;
-            this.porcentajePago.Location = new System.Drawing.Point(7, 12);
+            this.porcentajePago.Location = new System.Drawing.Point(6, 27);
             this.porcentajePago.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.porcentajePago.MaxValue = 100;
             this.porcentajePago.Name = "porcentajePago";
             this.porcentajePago.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.porcentajePago.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.porcentajePago.Size = new System.Drawing.Size(106, 106);
+            this.porcentajePago.Size = new System.Drawing.Size(113, 113);
             this.porcentajePago.TabIndex = 40;
             this.porcentajePago.Value = 0;
             // 
@@ -3638,7 +3654,7 @@
             this.lblSaldoCliente.ForeColor = System.Drawing.Color.DarkGray;
             this.lblSaldoCliente.Location = new System.Drawing.Point(121, 73);
             this.lblSaldoCliente.Name = "lblSaldoCliente";
-            this.lblSaldoCliente.Size = new System.Drawing.Size(466, 24);
+            this.lblSaldoCliente.Size = new System.Drawing.Size(315, 24);
             this.lblSaldoCliente.TabIndex = 42;
             this.lblSaldoCliente.Text = "Saldo Cliente: 0,00";
             this.lblSaldoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3667,7 +3683,7 @@
             this.shapeContainer5.Name = "shapeContainer5";
             this.shapeContainer5.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer5.Size = new System.Drawing.Size(699, 131);
+            this.shapeContainer5.Size = new System.Drawing.Size(700, 158);
             this.shapeContainer5.TabIndex = 43;
             this.shapeContainer5.TabStop = false;
             // 
@@ -4496,6 +4512,11 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // redondeoDevolucion
+            // 
+            this.redondeoDevolucion.ElipseRadius = 10;
+            this.redondeoDevolucion.TargetControl = this.lblDevolucion;
+            // 
             // FormCrearPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4953,5 +4974,7 @@
         private Bunifu.Framework.UI.BunifuElipse redondeoPagoMultiple;
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.Label lblDevolucion;
+        private Bunifu.Framework.UI.BunifuElipse redondeoDevolucion;
     }
 }

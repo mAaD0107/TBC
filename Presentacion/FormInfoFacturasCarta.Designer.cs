@@ -31,10 +31,10 @@ namespace Presentacion
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoFacturasCarta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
@@ -111,6 +111,8 @@ namespace Presentacion
             this.redondeoBtnGenerar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelVScroll = new System.Windows.Forms.Panel();
             this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -134,7 +136,7 @@ namespace Presentacion
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOpciones.Location = new System.Drawing.Point(0, 0);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(1022, 36);
+            this.panelOpciones.Size = new System.Drawing.Size(1049, 36);
             this.panelOpciones.TabIndex = 2;
             // 
             // minimizar
@@ -143,7 +145,7 @@ namespace Presentacion
             this.minimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(930, 10);
+            this.minimizar.Location = new System.Drawing.Point(957, 10);
             this.minimizar.Name = "minimizar";
             this.minimizar.Size = new System.Drawing.Size(17, 16);
             this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +159,7 @@ namespace Presentacion
             this.maximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
-            this.maximizar.Location = new System.Drawing.Point(959, 10);
+            this.maximizar.Location = new System.Drawing.Point(986, 10);
             this.maximizar.Name = "maximizar";
             this.maximizar.Size = new System.Drawing.Size(15, 15);
             this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +174,7 @@ namespace Presentacion
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.cerrar.Location = new System.Drawing.Point(982, 9);
+            this.cerrar.Location = new System.Drawing.Point(1009, 9);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(17, 16);
             this.cerrar.TabIndex = 4;
@@ -191,7 +193,7 @@ namespace Presentacion
             this.panelContenedor.Controls.Add(this.panel4);
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(999, 714);
+            this.panelContenedor.Size = new System.Drawing.Size(1026, 714);
             this.panelContenedor.TabIndex = 3;
             this.panelContenedor.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelContenedor_Scroll);
             // 
@@ -514,36 +516,36 @@ namespace Presentacion
             // 
             this.dataFacturas.AllowUserToAddRows = false;
             this.dataFacturas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataFacturas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.dataFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = "--------------";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataFacturas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = "--------------";
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataFacturas.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataFacturas.DoubleBuffered = true;
             this.dataFacturas.EnableHeadersVisualStyles = false;
             this.dataFacturas.GridColor = System.Drawing.Color.DimGray;
@@ -553,14 +555,14 @@ namespace Presentacion
             this.dataFacturas.Name = "dataFacturas";
             this.dataFacturas.ReadOnly = true;
             this.dataFacturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataFacturas.Size = new System.Drawing.Size(944, 264);
             this.dataFacturas.StandardTab = true;
@@ -1022,6 +1024,7 @@ namespace Presentacion
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnGuardar);
             this.panel4.Controls.Add(this.btnGenerar);
             this.panel4.Controls.Add(this.cmbTipoCarta);
             this.panel4.Controls.Add(this.label5);
@@ -1042,9 +1045,9 @@ namespace Presentacion
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnGenerar.Location = new System.Drawing.Point(627, 16);
+            this.btnGenerar.Location = new System.Drawing.Point(463, 21);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(344, 59);
+            this.btnGenerar.Size = new System.Drawing.Size(255, 59);
             this.btnGenerar.TabIndex = 85;
             this.btnGenerar.Text = "GENERAR";
             this.btnGenerar.UseVisualStyleBackColor = false;
@@ -1064,7 +1067,7 @@ namespace Presentacion
             "SIN LOGO"});
             this.cmbTipoCarta.Location = new System.Drawing.Point(244, 33);
             this.cmbTipoCarta.Name = "cmbTipoCarta";
-            this.cmbTipoCarta.Size = new System.Drawing.Size(353, 28);
+            this.cmbTipoCarta.Size = new System.Drawing.Size(192, 28);
             this.cmbTipoCarta.TabIndex = 84;
             // 
             // label5
@@ -1114,7 +1117,7 @@ namespace Presentacion
             this.panelVScroll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelVScroll.Location = new System.Drawing.Point(0, 36);
             this.panelVScroll.Name = "panelVScroll";
-            this.panelVScroll.Size = new System.Drawing.Size(1022, 714);
+            this.panelVScroll.Size = new System.Drawing.Size(1049, 714);
             this.panelVScroll.TabIndex = 4;
             // 
             // vScrollBar
@@ -1138,7 +1141,7 @@ namespace Presentacion
             this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar.DurationBeforeShrink = 2000;
             this.vScrollBar.LargeChange = 10;
-            this.vScrollBar.Location = new System.Drawing.Point(1005, 0);
+            this.vScrollBar.Location = new System.Drawing.Point(1032, 0);
             this.vScrollBar.Maximum = 50;
             this.vScrollBar.Minimum = 0;
             this.vScrollBar.MinimumThumbLength = 18;
@@ -1159,13 +1162,37 @@ namespace Presentacion
             this.vScrollBar.Value = 0;
             this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnGuardar.Location = new System.Drawing.Point(724, 21);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(255, 59);
+            this.btnGuardar.TabIndex = 86;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // redondeoBtnGuardar
+            // 
+            this.redondeoBtnGuardar.ElipseRadius = 20;
+            this.redondeoBtnGuardar.TargetControl = this.btnGuardar;
+            // 
             // FormInfoFacturasCarta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1022, 750);
+            this.ClientSize = new System.Drawing.Size(1049, 750);
             this.Controls.Add(this.panelVScroll);
             this.Controls.Add(this.panelOpciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1276,5 +1303,7 @@ namespace Presentacion
         private System.Windows.Forms.Panel panelVScroll;
         private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
         private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
+        public System.Windows.Forms.Button btnGuardar;
+        private Bunifu.Framework.UI.BunifuElipse redondeoBtnGuardar;
     }
 }

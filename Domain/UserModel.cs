@@ -185,6 +185,11 @@ namespace Domain
             return userDao.seacrhComisiones(idTramite);
         }
 
+        public DataTable seacrhDevoluciones(int idTramite)
+        {
+            return userDao.seacrhDevoluciones(idTramite);
+        }
+
 
         public double saldoTramite(int nTramite)
         {
@@ -228,6 +233,22 @@ namespace Domain
         public DataTable readTramitesImport()
         {
             return userDao.readTramitesImport();
+        }
+
+        public DataTable readDetallesP(string idTramite)
+        {
+            return userDao.readDetallesP(idTramite);
+        }
+
+
+        public DataTable ListaTramites()
+        {
+            return userDao.readListaTramites();
+        }
+
+        public DataTable readTramitesImportFiltroF(string tpF, string dato)
+        {
+            return userDao.readTramitesImportFiltroF(tpF, dato);
         }
 
 
@@ -382,6 +403,11 @@ namespace Domain
         public bool InsertDataPago(string[] values)
         {
             return userDao.insertDataPago(values);
+        }
+
+        public bool InsertDataCarta(string[] values)
+        {
+            return userDao.insertDataCarta(values);
         }
 
         public bool InsertDataPT(string[] values)

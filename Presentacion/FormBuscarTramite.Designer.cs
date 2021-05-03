@@ -37,6 +37,8 @@
             this.panelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBuscar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.fechaFiltro = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -63,6 +65,7 @@
             this.redondeoBtnEliminar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.redondeoFiltro = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelGeneral.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelBuscar.SuspendLayout();
@@ -114,6 +117,8 @@
             this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.panelBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBuscar.BackgroundImage")));
             this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBuscar.Controls.Add(this.fechaFiltro);
+            this.panelBuscar.Controls.Add(this.lblFiltro);
             this.panelBuscar.Controls.Add(this.txtBuscar);
             this.panelBuscar.Controls.Add(this.lblBuscar);
             this.panelBuscar.Controls.Add(this.shapeContainer1);
@@ -128,6 +133,39 @@
             this.panelBuscar.Size = new System.Drawing.Size(824, 57);
             this.panelBuscar.TabIndex = 0;
             // 
+            // fechaFiltro
+            // 
+            this.fechaFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fechaFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.fechaFiltro.BorderRadius = 20;
+            this.fechaFiltro.Enabled = false;
+            this.fechaFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.fechaFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.fechaFiltro.FormatCustom = "";
+            this.fechaFiltro.Location = new System.Drawing.Point(774, 12);
+            this.fechaFiltro.Name = "fechaFiltro";
+            this.fechaFiltro.Size = new System.Drawing.Size(47, 36);
+            this.fechaFiltro.TabIndex = 47;
+            this.fechaFiltro.Value = new System.DateTime(2021, 4, 12, 14, 9, 30, 164);
+            this.fechaFiltro.Visible = false;
+            this.fechaFiltro.onValueChanged += new System.EventHandler(this.fechaFiltro_onValueChanged);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.lblFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.ForeColor = System.Drawing.Color.LightGray;
+            this.lblFiltro.Location = new System.Drawing.Point(459, 10);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(309, 40);
+            this.lblFiltro.TabIndex = 45;
+            this.lblFiltro.Text = "   FILTRAR POR:  ";
+            this.lblFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblFiltro.Visible = false;
+            this.lblFiltro.Click += new System.EventHandler(this.lblFiltro_Click);
+            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
@@ -141,6 +179,7 @@
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // lblBuscar
             // 
@@ -405,6 +444,7 @@
             this.dataGridTramites.Size = new System.Drawing.Size(824, 320);
             this.dataGridTramites.StandardTab = true;
             this.dataGridTramites.TabIndex = 2;
+            this.dataGridTramites.Visible = false;
             this.dataGridTramites.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTramites_CellDoubleClick);
             this.dataGridTramites.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridTramites_Scroll);
             // 
@@ -544,6 +584,11 @@
             this.DragControl2.TargetControl = this.panelBuscar;
             this.DragControl2.Vertical = true;
             // 
+            // redondeoFiltro
+            // 
+            this.redondeoFiltro.ElipseRadius = 20;
+            this.redondeoFiltro.TargetControl = this.lblFiltro;
+            // 
             // FormBuscarTramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,5 +653,8 @@
         private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
         private System.Windows.Forms.Panel panelDataGrid;
         private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
+        public System.Windows.Forms.Label lblFiltro;
+        private Bunifu.Framework.UI.BunifuElipse redondeoFiltro;
+        private Bunifu.Framework.UI.BunifuDatepicker fechaFiltro;
     }
 }

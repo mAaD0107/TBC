@@ -64,10 +64,19 @@ namespace Presentacion
 
         public void CloseSplash()
         {
-            Invoke((MethodInvoker)delegate
+            try
             {
-                this.Close();
-            });
+                Invoke((MethodInvoker)delegate
+                {
+                    this.Close();
+                });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

@@ -61,6 +61,11 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.redondeoPanelInferior = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoFormPrincipal = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoPanelIzq = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoUsuario = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoCargo = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoMail = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.redondeoPicture = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -396,7 +401,7 @@
             // 
             // panelInferior
             // 
-            this.panelInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.panelInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.panelInferior.Controls.Add(this.lblFecha);
             this.panelInferior.Controls.Add(this.lblEmail);
             this.panelInferior.Controls.Add(this.lblCargo);
@@ -412,6 +417,7 @@
             // 
             // lblFecha
             // 
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.animacionPanel.SetDecoration(this.lblFecha, BunifuAnimatorNS.DecorationType.None);
             this.lblFecha.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -426,47 +432,51 @@
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.animacionPanel.SetDecoration(this.lblEmail, BunifuAnimatorNS.DecorationType.None);
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(115)))), ((int)(((byte)(121)))));
-            this.lblEmail.Location = new System.Drawing.Point(105, 71);
+            this.lblEmail.Location = new System.Drawing.Point(105, 69);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEmail.Size = new System.Drawing.Size(243, 28);
             this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "E-mail";
+            this.lblEmail.Text = " E-mail";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCargo
             // 
-            this.lblCargo.AutoSize = true;
+            this.lblCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.animacionPanel.SetDecoration(this.lblCargo, BunifuAnimatorNS.DecorationType.None);
             this.lblCargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(115)))), ((int)(((byte)(121)))));
-            this.lblCargo.Location = new System.Drawing.Point(105, 41);
+            this.lblCargo.Location = new System.Drawing.Point(105, 40);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(50, 17);
+            this.lblCargo.Size = new System.Drawing.Size(151, 28);
             this.lblCargo.TabIndex = 2;
-            this.lblCargo.Text = "Cargo";
+            this.lblCargo.Text = " Cargo";
+            this.lblCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.animacionPanel.SetDecoration(this.lblUsuario, BunifuAnimatorNS.DecorationType.None);
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(115)))), ((int)(((byte)(121)))));
-            this.lblUsuario.Location = new System.Drawing.Point(105, 22);
+            this.lblUsuario.Location = new System.Drawing.Point(105, 11);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(54, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(186, 28);
             this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Text = " Usuario";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.animacionPanel.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(26, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(25, 17);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox2.Size = new System.Drawing.Size(74, 74);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -547,6 +557,31 @@
             this.redondeoFormPrincipal.ElipseRadius = 20;
             this.redondeoFormPrincipal.TargetControl = this;
             // 
+            // redondeoPanelIzq
+            // 
+            this.redondeoPanelIzq.ElipseRadius = 20;
+            this.redondeoPanelIzq.TargetControl = this.lblFecha;
+            // 
+            // redondeoUsuario
+            // 
+            this.redondeoUsuario.ElipseRadius = 20;
+            this.redondeoUsuario.TargetControl = this.lblUsuario;
+            // 
+            // redondeoCargo
+            // 
+            this.redondeoCargo.ElipseRadius = 20;
+            this.redondeoCargo.TargetControl = this.lblCargo;
+            // 
+            // redondeoMail
+            // 
+            this.redondeoMail.ElipseRadius = 20;
+            this.redondeoMail.TargetControl = this.lblEmail;
+            // 
+            // redondeoPicture
+            // 
+            this.redondeoPicture.ElipseRadius = 50;
+            this.redondeoPicture.TargetControl = this.pictureBox2;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,7 +607,6 @@
             this.panelMenuVertical.ResumeLayout(false);
             this.PanelBotones.ResumeLayout(false);
             this.panelInferior.ResumeLayout(false);
-            this.panelInferior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelGlobal.ResumeLayout(false);
             this.PanelSubContenedor.ResumeLayout(false);
@@ -611,6 +645,11 @@
         private Bunifu.Framework.UI.BunifuElipse redondeoFormPrincipal;
         private System.Windows.Forms.Button btnOtrosServicios;
         private System.Windows.Forms.FlowLayoutPanel PanelBotones;
+        private Bunifu.Framework.UI.BunifuElipse redondeoPanelIzq;
+        private Bunifu.Framework.UI.BunifuElipse redondeoUsuario;
+        private Bunifu.Framework.UI.BunifuElipse redondeoCargo;
+        private Bunifu.Framework.UI.BunifuElipse redondeoMail;
+        private Bunifu.Framework.UI.BunifuElipse redondeoPicture;
     }
 }
 

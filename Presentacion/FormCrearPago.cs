@@ -120,7 +120,11 @@ namespace Presentacion
             // Hacia -> se suma a saldo cliente 
             lblSaldoCliente.Text = "Saldo Cliente: $" + (saldCliente).ToString("N2");
             lblSaldoTransferencia.Text = "Saldo Transferencia: $" + (transferenciaHacia).ToString("N2");
+
+            lblDevolucion.Text = "Devolución: $" + devolucion.ToString("N2"); 
         }
+
+
 
 
         private void cargarDatosTramite()
@@ -2949,6 +2953,37 @@ namespace Presentacion
                     formPrincipal.AddOwnedForm(formEditarPago);
                     formPrincipal.AbrirFormInPanel(formEditarPago);
                 }
+            }
+        }
+
+
+
+        private void lblDevolucion_Click(object sender, EventArgs e)
+        {
+            if (devolucion > 0)
+            {
+                UserModel Read = new UserModel();
+
+                string fecha;
+                string detalle;
+                string valDev; 
+
+                DataTable infoDev = Read.seacrhDevoluciones(PagosCache.numeroTramite);
+
+                for (int i = 0; i < infoDev.Rows.Count; i++)
+                {
+                    fecha = infoDev.Rows[i][0].ToString(); 
+                    detalle = infoDev.Rows[i][1].ToString();
+                    valDev = "$ "+Convert.ToDouble(infoDev.Rows[i][2].ToString()).ToString("N2");
+
+                    MessageBox.Show("Fecha Devolución: " + fecha +
+                        "\r\nDetalle: " + detalle +
+                          "\r\nValor: " + valDev, "Detalles devolución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+
             }
         }
 

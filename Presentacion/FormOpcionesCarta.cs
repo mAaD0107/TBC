@@ -17,6 +17,11 @@ namespace Presentacion
         public FormOpcionesCarta()
         {
             InitializeComponent();
+
+            if (UserCache.Position == Positions.Clientes)
+            {
+                panelBuscarEditar.Visible = false; 
+            }
         }
 
         private void panelCrear_MouseEnter(object sender, EventArgs e)

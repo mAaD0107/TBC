@@ -44,6 +44,11 @@ namespace Presentacion
         {
             InitializeComponent();
 
+            if (UserCache.Position == Positions.Clientes)
+            {
+                btnGenerar.Visible = false; 
+            }
+
             this.panelContenedor.MouseWheel += new MouseEventHandler(panelScroll);
             this.txtComentarios.MouseWheel += new MouseEventHandler(deshabilitarTexto);
             this.checkListFacturas.MouseWheel += new MouseEventHandler(deshabilitarCheckList);
@@ -137,31 +142,6 @@ namespace Presentacion
         }
 
 
-        private string[] InsertData()
-        {
-            string[] dato = new string[13];
-
-            UserModel Read = new UserModel();
-            DataTable datosCarta = Read.readDatosCarta(TramiteCache.idTramite);
-
-            /*
-            dato[1] = readIDInforme();
-            dato[2] = txtNumInforme.Text;
-            dato[3] = txtClienteTramite.Text;
-            dato[4] = txtDAI.Text;
-            dato[5] = txtSecuencialCliente.Text;
-            dato[6] = txtNFacturaLDM.Text;
-            dato[7] = txtSubTotalLDM.Text;
-            dato[8] = txtPersonaComision.Text;
-            dato[9] = txtValorComision.Text;
-            dato[10] = txtPersonaComisionExtra.Text;
-            dato[11] = txtValComisionExtra.Text;
-            dato[12] = idTramite.ToString();
-            */
-            dato[0] = "Insert";
-
-            return dato;
-        }
 
         private bool agregarFacturas()
         {
@@ -182,11 +162,23 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("No es posible generar la Carta.\n"+
-                                "Por favor, selecione las facturas que desea agregar.",
-                                "Alerta.",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                if (btnG)
+                {
+                      MessageBox.Show("No es posible guardar la Carta.\n" +
+                    "Por favor, selecione las facturas que desea agregar.",
+                    "Alerta.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("No es posible generar la Carta.\n" +
+                "Por favor, selecione las facturas que desea agregar.",
+                "Alerta.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                }
+
 
                 checkListFacturas.Focus();
 
@@ -311,6 +303,90 @@ namespace Presentacion
                     checkListFacturas.Focus();
                 }
             }
+        }
+
+
+        bool btnG = false; 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            UserModel model = new UserModel();
+            btnG = true; 
+            if (agregarFacturas())
+            {
+                if (model.InsertDataCarta(dataCarta()))
+                {
+                    MessageBox.Show("La Carta se ha guardado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No ha sido posible guardar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            btnG = false;
+        }
+
+        private string[] dataCarta()
+        {
+            string[] data = new string[40];
+            List<string> facturas = new List<string>(); 
+
+            foreach (var item in checkListFacturas.CheckedItems)
+            {
+                var row = (item as DataRowView).Row;
+                string tipoFactura = row.Field<string>("Tipo_Factura");
+                facturas.Add(tipoFactura);
+            }
+
+            data[0] = "Insert"; 
+            data[1] = "0"; 
+            data[2] = txtTramite.Text;
+            data[3] = txtCliente.Text;
+            data[4] = txtDAI.Text;
+            data[5] = txtSecuencialCliente.Text;
+            data[6] = valorAPagar.ToString("N2");
+            data[7] = totalGastos.ToString("N2");
+            data[8] = valorMayorContable.ToString("N2");
+            data[9] = (totalGastos - Math.Round(valorMayorContable, 2)).ToString("N2");
+            data[10] = DateTime.Now.ToString("yyyy-MM-dd");
+            data[11] = estaEnLista("Agente_LDM", facturas) ? "true" : "false";
+            data[12] = estaEnLista("Agente", facturas) ? "true" : "false";
+            data[13] = estaEnLista("TBC", facturas) ? "true" : "false";
+            data[14] = estaEnLista("Transporte", facturas) ? "true" : "false";
+            data[15] = estaEnLista("Gastos_Locales", facturas) ? "true" : "false";
+            data[16] = estaEnLista("Visto_THC", facturas) ? "true" : "false";
+            data[17] = estaEnLista("Retiro_BL", facturas) ? "true" : "false";
+            data[18] = estaEnLista("Liquidación_Aduana", facturas) ? "true" : "false";
+            data[19] = estaEnLista("Retiro_Guía", facturas) ? "true" : "false";
+            data[20] = estaEnLista("Demoraje", facturas) ? "true" : "false";
+            data[21] = estaEnLista("Actualización_Carta", facturas) ? "true" : "false";
+            data[22] = estaEnLista("Almacenaje", facturas) ? "true" : "false";
+            data[23] = estaEnLista("Devolución_Contenedor", facturas) ? "true" : "false";
+            data[24] = estaEnLista("Manipulación_Contenedor", facturas) ? "true" : "false";
+            data[25] = estaEnLista("Gastos_I", facturas) ? "true" : "false";
+            data[26] = estaEnLista("Gastos_II", facturas) ? "true" : "false";
+            data[27] = estaEnLista("Gastos_III", facturas) ? "true" : "false";
+            data[28] = estaEnLista("Gastos_IV", facturas) ? "true" : "false";
+            data[29] = estaEnLista("Gastos_V", facturas) ? "true" : "false";
+            data[30] = estaEnLista("Honorarios_I", facturas) ? "true" : "false";
+            data[31] = estaEnLista("Honorarios_II", facturas) ? "true" : "false";
+            data[32] = estaEnLista("Honorarios_III", facturas) ? "true" : "false";
+            data[33] = estaEnLista("Transporte_I", facturas) ? "true" : "false";
+            data[34] = estaEnLista("Transporte_II", facturas) ? "true" : "false";
+            data[35] = estaEnLista("Transporte_III", facturas) ? "true" : "false";
+            data[36] = txtComentarios.Text;
+            data[37] = cmbTipoCarta.Text == "SIN LOGO" ? "false" : "true";
+            data[38] = UserCache.FirstName +" "+ UserCache.LastName; 
+
+
+
+
+            return data; 
+        }
+
+
+        private bool estaEnLista(string campo, List<string> lista)
+        {
+            return lista.ToList().Any(x => x == campo); 
         }
     }
 }

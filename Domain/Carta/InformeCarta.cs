@@ -85,11 +85,11 @@ namespace Domain.Carta
             int NTramite = obtenerNTramite(ID_Tramite);
             DataTable facturasPagadas = Read.getFacturasPagos(NTramite);
             DataTable facturasImpagas = Read.getFacturasImpagas(NTramite);
-            //DataTable facturasTodas = Read.getFacturas(NTramite);
             DataTable infoFacturas = Read.readInfoFacturas(FacturaCache.ID_Tramite);
             DataTable pagos = Read.getAbonosCarta(NTramite);
             DataTable saldoCliente = Read.getSaldoCliente(NTramite);
             DataTable saldoTransferencias = Read.getSaldoTransferencia(FacturaCache.ID_Tramite);
+            DataTable saldoDevoluciones = Read.seacrhDevoluciones(obtenerNTramite(FacturaCache.ID_Tramite)); 
 
             listadoFacturas = new List<ListadoFacturas>();
             listadoAbono = new List<AbonosFacturas>();
@@ -190,37 +190,28 @@ namespace Domain.Carta
                 saldoTransferencia += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
             }
 
+            double devoluciones = 0;
+            foreach (DataRow row in saldoDevoluciones.Rows)
+            {
+                devoluciones += Convert.ToDouble(row[2] is DBNull ? 0 : row[2]);
+            }
+
 
             TotalValorTramite = valPagar;
             TotalPagos = TotalValorTramite - totalSaldoFavor;
-            TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo - saldoTransferencia;
+            TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo - saldoTransferencia + devoluciones;
 
             Observaciones = CartaCache.Observaciones;
 
             Usuario = UserCache.FirstName + " " + UserCache.LastName;
+
+
         }
 
         private int obtenerNTramite(string ID_Tramite)
         {
             string[] texto = ID_Tramite.Split(new string[] { "-" }, StringSplitOptions.None);
             return int.Parse(texto[1]);
-        }
-
-
-        private double calcularValorTotalTramite(DataTable facturas)
-        {
-            double valorTramite = 0; 
-
-            foreach (DataRow row in facturas.Rows)valorTramite += Convert.ToDouble(row[8]);
-            return valorTramite;
-        }
-
-        private double calcularSaldo(DataTable facturasPagadas)
-        {
-            double valorSaldo = 0;
-
-            foreach (DataRow row in facturasPagadas.Rows) valorSaldo += Convert.ToDouble(row[9]);
-            return valorSaldo;
         }
 
         private bool existeFactura(string tipoFactura)

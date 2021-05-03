@@ -504,7 +504,7 @@ namespace Presentacion
             if (UserCache.Position == Positions.Clientes)
             {
                 btnTramites.Visible = false;
-                btnImportaciones.Visible = false;
+                btnImportaciones.Visible = true;
                 btnExportaciones.Visible = false;
                 btnRecaudacion.Visible = false;
                 btnReportes.Visible = false;
@@ -556,9 +556,9 @@ namespace Presentacion
 
         private void LoadUserData()
         {
-            lblUsuario.Text = UserCache.FirstName + " " + UserCache.LastName;
-            lblCargo.Text = UserCache.Position;
-            lblEmail.Text = UserCache.Email; 
+            lblUsuario.Text = " " + UserCache.FirstName + " " + UserCache.LastName;
+            lblCargo.Text = " " + UserCache.Position;
+            lblEmail.Text = " " + UserCache.Email; 
         }
 
 

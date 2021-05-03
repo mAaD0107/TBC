@@ -1,12 +1,16 @@
 ﻿using Common.Cache;
 using Domain;
+using Presentacion.ClasesComplementarias;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -67,6 +71,7 @@ namespace Presentacion
         }
 
         public bool buscarTramite = false;
+        public bool mostrarDAI = false; 
         private void FormBuscarTramite_Load(object sender, EventArgs e)
         {
             showTramites();
@@ -89,6 +94,17 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.readTramitesImport();
+
+            for (int i = 6; i < dataGridTramites.Columns.Count; i++) 
+                dataGridTramites.Columns[i].Visible = false;
+
+            if (mostrarDAI)
+            {
+                dataGridTramites.Columns[12].Visible = true;
+                dataGridTramites.Columns[9].Visible = true;
+            }
+            dataGridTramites.Visible = true; 
+
             acoplarScrolls();
         }
 
@@ -111,14 +127,27 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.searchTramiteImport(data);
+
+            for (int i = 6; i < dataGridTramites.Columns.Count; i++)
+                dataGridTramites.Columns[i].Visible = false;
+
+            if (mostrarDAI)
+            {
+                dataGridTramites.Columns[12].Visible = true;
+                dataGridTramites.Columns[9].Visible = true;
+            }
+            dataGridTramites.Visible = true;
+
+
             acoplarScrolls();
         }
 
 
+        int colMax; 
         private void acoplarScrolls()
         {
 
-            if (dataGridTramites.RowCount > 0)
+            if (dataGridTramites.RowCount > 10)
             {
                 if (dataGridTramites.RowCount == 1)
                 {
@@ -128,17 +157,31 @@ namespace Presentacion
                 {
                     vScrollBar.Maximum = dataGridTramites.RowCount - 1;
                 }
-                
+
+                vScrollBar.Visible = true;
+
             }
             else
             {
 
                 vScrollBar.Minimum = 0;
                 vScrollBar.Maximum = 1;
+
+                vScrollBar.Visible = false;
             }
 
-            hScrollBar.Maximum = dataGridTramites.ColumnCount - 1;
+            if (dataGridTramites.ColumnCount > 0)
+            {
+                colMax = 0; 
+                for (int i = 0; i < dataGridTramites.ColumnCount; i++)
+                    if (dataGridTramites.Columns[i].Visible) colMax++;
+
+                hScrollBar.Maximum = colMax;
+            }
+
+            
         }
+        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -628,14 +671,29 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (txtBuscar.Text == "")
+                if (filtro == "")
                 {
-                    showTramites();
+                    if (txtBuscar.Text == "")
+                    {
+                        showTramites();
+                    }
+                    else
+                    {
+                        searchData(txtBuscar.Text);
+                    }
                 }
                 else
                 {
-                    searchData(txtBuscar.Text);
+                    actionOnClicItem(filtro);
                 }
+            }
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (filtro == "Abono")
+            {
+                comprobarNumero(sender, e);
             }
         }
 
@@ -651,7 +709,227 @@ namespace Presentacion
 
         private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
         {
-            dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;
+
+            if (dataGridTramites.Columns[e.Value].Visible)
+            {
+                dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;
+            }
+            
+        }
+
+        private void lblFiltro_Click(object sender, EventArgs e)
+        {
+            ContextMenuStrip menu = new ContextMenuStrip();
+            ToolStripMenuItem mi;
+            
+            // Item 1
+            mi = new ToolStripMenuItem("Numero Factura", null, (s, a) => actionOnClicItem("Número Factura"));
+            mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+            mi.ForeColor = Color.White;
+            mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+            mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+            menu.Items.Add(mi);
+
+            // Item 2
+            mi = new ToolStripMenuItem("Asiento", null, (s, a) => actionOnClicItem("Asiento"));
+            mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+            mi.ForeColor = Color.White;
+            mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+            mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+            menu.Items.Add(mi);
+
+            // Item 3
+            mi = new ToolStripMenuItem("Abono", null, (s, a) => actionOnClicItem("Abono"));
+            mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+            mi.ForeColor = Color.White;
+            mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+            mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+            menu.Items.Add(mi);
+
+            // Item 4
+            mi = new ToolStripMenuItem("Fecha", null, (s, a) => actionOnClicItem("Fecha"));
+            mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+            mi.ForeColor = Color.White;
+            mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+            mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+            menu.Items.Add(mi);
+
+            mi = new ToolStripMenuItem("Quitar Filtro", null, (s, a) => actionOnClicItem("Quitar Filtro"));
+            mi.BackColor = Color.FromArgb(200, 41, 46, 54);
+            mi.ForeColor = Color.White;
+            mi.MouseEnter += new EventHandler(menuItem_MouseEnter);
+            mi.MouseLeave += new EventHandler(menuItem_MouseLeave);
+            menu.Items.Add(mi);
+
+            menu.RenderMode = ToolStripRenderMode.ManagerRenderMode;
+            menu.BackColor = Color.FromArgb(100, 41, 46, 54);
+            menu.Show(new Point(Cursor.Position.X - 50, Cursor.Position.Y - 50));
+     
+        }
+
+        string filtro = "";
+        private void actionOnClicItem(string item)
+        {
+            if (item == "Quitar Filtro")
+            {
+                lblFiltro.Text = "   FILTRAR POR:  ";
+                if (txtBuscar.Text != "")
+                {
+                    searchData(txtBuscar.Text);
+                }
+                else
+                { 
+                    showTramites();
+                }
+
+                if (fechaFiltro.Enabled)
+                {
+                    fechaFiltro.Visible = false;
+                    fechaFiltro.Enabled = false;
+                    txtBuscar.Enabled = true;
+                }
+
+                filtro = "";
+
+            }
+            else
+            {
+                lblFiltro.Text = "   FILTRAR POR:  " + item.ToUpper();
+                if (item == "Abono")
+                {
+                    string texto;
+                    texto = clearNumber(txtBuscar.Text);
+                    texto = texto.Replace(',','.');
+                    texto = clearDot(texto);
+                    txtBuscar.Text = texto; 
+                }
+
+                if (item == "Fecha")
+                {
+                    fechaFiltro.Visible = true;
+                    fechaFiltro.Enabled = true;
+
+                    txtBuscar.Enabled = false;
+                }
+                else
+                {
+                    fechaFiltro.Visible = false;
+                    fechaFiltro.Enabled = false;
+                    txtBuscar.Enabled = true;
+                }
+
+                showTramitesFiltro(item.ToUpper());
+                filtro = item;
+            }
+
+            txtBuscar.Focus();
+
+        }
+
+        public string clearNumber(string dato)
+        {
+            Regex digitsOnly = new Regex(@"[^\d.,]");
+            return digitsOnly.Replace(dato, "");
+        }
+
+        public string clearDot(string dato)
+        {
+            return Regex.Replace(
+                    dato, //input string
+                    @"(?<=\.).*", //match everything after 1st "."
+                    m => m.Value.Replace(".", string.Empty)); 
+        }
+
+
+
+        public void showTramitesFiltro(string filtro)
+        {
+            UserModel Read = new UserModel();
+            if (filtro != "FECHA")
+            {
+                dataGridTramites.DataSource = Read.readTramitesImportFiltroF(filtro, txtBuscar.Text);
+            }
+            else
+            {
+                dataGridTramites.DataSource = Read.readTramitesImportFiltroF(filtro, fechaFiltro.Value.ToString("yyyy-MM-dd"));
+            }
+
+
+            for (int i = 6; i < dataGridTramites.Columns.Count; i++)
+                dataGridTramites.Columns[i].Visible = false;
+
+
+            if (mostrarDAI)
+            {
+                dataGridTramites.Columns[12].Visible = true;
+                dataGridTramites.Columns[9].Visible = true;
+            }
+            dataGridTramites.Visible = true;
+
+            acoplarScrolls();
+        }
+
+
+
+
+        ToolStripProfessionalRenderer r = new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb( 187, 42, 89)));
+        ToolStripProfessionalRenderer normal = new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(185, 209, 234)));
+        private void menuItem_MouseEnter(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item.Text == "Quitar Filtro")
+            {
+                ToolStripManager.Renderer = r;
+            }
+            else
+            {
+                ToolStripManager.Renderer = normal;
+                item.ForeColor = Color.FromArgb(200, 41, 46, 54);
+            }
+        }
+
+        private void menuItem_MouseLeave(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item.Text == "Quitar Filtro")
+            {
+                ToolStripManager.Renderer = r;
+            }
+            else
+            {
+                ToolStripManager.Renderer = normal;
+                item.ForeColor = Color.White;
+            }
+        }
+
+
+        private void comprobarNumero(object sender, KeyPressEventArgs e)
+        {
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-EC");
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != ',') && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void fechaFiltro_onValueChanged(object sender, EventArgs e)
+        {
+            actionOnClicItem(filtro);
         }
     }
 }
+

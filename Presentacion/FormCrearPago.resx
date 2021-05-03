@@ -398,15 +398,15 @@
   </metadata>
   <data name="bunifuVScrollBar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABEAAAIsCAYAAAAUFkKgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGJSURBVHhe7c6xalNhHIfhgLfh5JKcNCchNDlB6UW4ZHST
-        4uCgdOugxSu3B6f6BhrB8fng2X7/l28xv3Gc3g776dMwTr+u9ry/2Z+GP4HD3bvl7vi03B4fVuPx87Xm
-        /TAen4btYb9Y7U73q/Hw7dLwNcP2+GU5To+L+WuXBtea70VeEimREimREimREimREimREimREimREimR
-        EimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimR
-        EimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimREimR
-        EimREimREimREimREimREimREimREimREimREimREqn5XuQlkRIpkRIpkRIpkRIpkRIpkRIpkRIpkRIp
-        kRKp/xdZ7W6/rzbT10uD16x3p/v15vBjsdl/eL/eTD//HlxjuJkeh830cTG/7e3pbv7WP3sOnM/nN78B
-        TTfe64eu0SwAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABEAAAIOCAYAAABecuadAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVHhe7c6xalNhHIfhgLfh5JKcNCchNDlB6UW4ZHST
+        4uCgdOugxSu3B6f6BhpXeT54tt//5VvMbxynt8N++jSM06+rPe9v9qfhT+Bw9265Oz4tt8eH1Xj8fK15
+        P4zHp2F72C9Wu9P9ajx8uzR8zbA9flmO0+Ni/tqlwbXme5GXREqkREqkREqkREqkREqkREqkREqkREqk
+        REqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqk
+        REqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqkREqk
+        REqkREqkREqkREqkREqkREqkREqkREqkREqkREqkRGq+F3lJpERKpERKpERKpERKpETqf4ysdrffV5vp
+        66XBa9a70/16c/ix2Ow/vF9vpp9/D64x3EyPw2b6uJjf9vZ0N3/rnz0Hzufzm99uv/0pAIMdnAAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <metadata name="lineShape4.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -429,36 +429,38 @@
   </metadata>
   <data name="porcentajePago.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -526,129 +528,135 @@
     <value>290, 0</value>
   </metadata>
   <metadata name="redondeoBtnAgregar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>401, 17</value>
+    <value>369, 17</value>
   </metadata>
   <metadata name="redondeoPanelAbonoAgente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>191, 17</value>
+    <value>175, 17</value>
   </metadata>
   <metadata name="redondeoPanelPAgente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>17, 98</value>
   </metadata>
   <metadata name="redondeoPanelTBC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>198, 56</value>
+    <value>198, 98</value>
   </metadata>
   <metadata name="redondeoPanelTransporte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>683, 56</value>
+    <value>635, 98</value>
   </metadata>
   <metadata name="r.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>876, 56</value>
+    <value>812, 98</value>
   </metadata>
   <metadata name="redondeoPanelVistoTHC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>187, 95</value>
+    <value>171, 179</value>
   </metadata>
   <metadata name="redondeoPanelRetiroBL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>556, 95</value>
+    <value>508, 179</value>
   </metadata>
   <metadata name="redondeoPanelLiquidAduana.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>736, 95</value>
+    <value>672, 179</value>
   </metadata>
   <metadata name="redondeoPanelRetiroGuia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>946, 95</value>
+    <value>866, 179</value>
   </metadata>
   <metadata name="redondeoPanelDemoraje.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>215, 134</value>
+    <value>199, 260</value>
   </metadata>
   <metadata name="redondeoPanelActCarta.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>402, 134</value>
+    <value>370, 260</value>
   </metadata>
   <metadata name="redondeoPanelAlmacenaje.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>583, 134</value>
+    <value>535, 260</value>
   </metadata>
   <metadata name="redondeoPanelDevCont.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>780, 134</value>
+    <value>716, 260</value>
   </metadata>
   <metadata name="redondeoPanelManipConte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
+    <value>882, 260</value>
   </metadata>
   <metadata name="redondeoPanelGastosI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>219, 173</value>
+    <value>17, 341</value>
   </metadata>
   <metadata name="redondeoPanelGastosII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>393, 173</value>
+    <value>175, 341</value>
   </metadata>
   <metadata name="redondeoPanelGastosIII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>571, 173</value>
+    <value>337, 341</value>
   </metadata>
   <metadata name="redondeoPanelGastosIV.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>752, 173</value>
+    <value>518, 341</value>
   </metadata>
   <metadata name="redondeoPanelGastosV.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>934, 173</value>
+    <value>684, 341</value>
   </metadata>
   <metadata name="redondeoPanelTotal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>521, 56</value>
+    <value>489, 98</value>
   </metadata>
   <metadata name="redondeoPanelPagos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>354, 56</value>
+    <value>338, 98</value>
   </metadata>
   <metadata name="redondeoPanelInfoPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>372, 95</value>
+    <value>340, 179</value>
   </metadata>
   <metadata name="redondeoAbonoGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>949, 17</value>
+    <value>869, 17</value>
   </metadata>
   <metadata name="redondeoPagoGeneral.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 212</value>
+    <value>17, 422</value>
   </metadata>
   <metadata name="redondeoPanelHonorariosI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
+    <value>17, 260</value>
   </metadata>
   <metadata name="redondeoPanelHonorariosII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>191, 212</value>
+    <value>175, 422</value>
   </metadata>
   <metadata name="redondeoPanelHonorariosIII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>393, 212</value>
+    <value>361, 422</value>
   </metadata>
   <metadata name="redondeoPanelTransporteI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>598, 212</value>
+    <value>550, 422</value>
   </metadata>
   <metadata name="redondeoPanelTransporteII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>794, 212</value>
+    <value>730, 422</value>
   </metadata>
   <metadata name="redondeoPanelTransporteIII.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 251</value>
+    <value>914, 422</value>
   </metadata>
   <metadata name="redondeoPanelAnticipo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>769, 17</value>
+    <value>705, 17</value>
   </metadata>
   <metadata name="redondeoBtnAnticipo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>220, 251</value>
+    <value>17, 503</value>
   </metadata>
   <metadata name="redondeoAgenteLDM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>17, 179</value>
   </metadata>
   <metadata name="redondeoInfoTramite.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>932, 56</value>
+    <value>875, 98</value>
   </metadata>
   <metadata name="rendondeoSaldoCLiente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>388, 251</value>
+    <value>169, 383</value>
   </metadata>
   <metadata name="redondeoPanelInfoPagos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>571, 251</value>
+    <value>352, 503</value>
   </metadata>
   <metadata name="redondeoSaldoTransfrencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>568, 17</value>
+    <value>520, 17</value>
   </metadata>
   <metadata name="redondeoPagoUnico.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>760, 251</value>
+    <value>525, 503</value>
   </metadata>
   <metadata name="redondeoPagoMultiple.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>884, 251</value>
+    <value>673, 503</value>
   </metadata>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1061, 251</value>
+    <value>834, 503</value>
+  </metadata>
+  <metadata name="redondeoDevolucion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>847, 341</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

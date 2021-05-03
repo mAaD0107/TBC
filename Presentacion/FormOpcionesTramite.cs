@@ -138,6 +138,9 @@ namespace Presentacion
             {
                 FormBuscarTramite formBuscarTramite = new FormBuscarTramite();
                 formBuscarTramite.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                formBuscarTramite.mostrarDAI = true; 
+                formPrincipal.panelInferior.Visible = false;
+                formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
                 formPrincipal.AddOwnedForm(formBuscarTramite);
                 formPrincipal.AbrirFormInPanel(formBuscarTramite);
             }

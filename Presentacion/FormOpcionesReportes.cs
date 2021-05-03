@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Cache;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace Presentacion
         public FormOpcionesReportes()
         {
             InitializeComponent();
+
+            if (UserCache.Position == Positions.Clientes)
+            {
+                panelCuentasCobrar.Visible = false; 
+            }
         }
 
         private void FormOpcionesReportes_Resize(object sender, EventArgs e)

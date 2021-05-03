@@ -257,6 +257,128 @@ namespace DataAccess
         }
 
 
+        public DataTable readDetallesP(string idTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "readDetallesP";
+                        command.Parameters.AddWithValue("@idTramite", idTramite);
+                        command.CommandType = CommandType.StoredProcedure;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        table.Load(reader);
+                        return table;
+
+                    }
+                }
+                catch (SqlException)
+                {
+
+                    DialogResult result = MessageBox.Show(
+                    "Error al conectarse con el servidor:\n\n" +
+                    "Servidor no encontrado o inaccesible\n" +
+                    "Por favor, verifique su conexión a Internet o\n" +
+                    "Verifique el estado del Servidor.",
+                    "ALERTA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                    return null;
+                    //Application.Exit();
+                }
+            }
+        }
+
+
+        public DataTable readListaTramites()
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "listaTramites";
+                        command.CommandType = CommandType.StoredProcedure;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        table.Load(reader);
+                        return table;
+
+                    }
+                }
+                catch (SqlException)
+                {
+
+                    DialogResult result = MessageBox.Show(
+                    "Error al conectarse con el servidor:\n\n" +
+                    "Servidor no encontrado o inaccesible\n" +
+                    "Por favor, verifique su conexión a Internet o\n" +
+                    "Verifique el estado del Servidor.",
+                    "ALERTA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                    return null;
+                    //Application.Exit();
+                }
+            }
+        }
+
+
+        public DataTable readTramitesImportFiltroF(string tpF, string dato)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "tramitesFiltroFacturas";
+                        command.Parameters.AddWithValue("@tipoFiltro", tpF);
+                        command.Parameters.AddWithValue("@dato", dato);
+                        command.CommandType = CommandType.StoredProcedure;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        table.Load(reader);
+                        return table;
+
+                    }
+                }
+                catch (SqlException)
+                {
+
+                    DialogResult result = MessageBox.Show(
+                    "Error al conectarse con el servidor:\n\n" +
+                    "Servidor no encontrado o inaccesible\n" +
+                    "Por favor, verifique su conexión a Internet o\n" +
+                    "Verifique el estado del Servidor.",
+                    "ALERTA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                    return null;
+                }
+            }
+        }
+
+
 
         public DataTable readTramitesComision()
         {
@@ -2001,6 +2123,27 @@ namespace DataAccess
             }
         }
 
+
+        public DataTable seacrhDevoluciones(int idTramiite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "readDevoluciones";
+                    command.Parameters.AddWithValue("@idTramite", idTramiite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
         public double saldoTramite(int numeroTramite)
         {
             DataTable table = new DataTable();
@@ -2896,6 +3039,89 @@ namespace DataAccess
                         command.Parameters.AddWithValue("@DetallePago", values[5]);
                         command.Parameters.AddWithValue("@idFactura", values[6]);
                         command.Parameters.AddWithValue("@destinoPago", values[7]);
+
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
+
+
+        public bool insertDataCarta(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+
+                        command.Connection = connection;
+                        command.CommandText = "modifyCarta";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+                        command.Parameters.AddWithValue("@N_Carta", values[1]);
+                        command.Parameters.AddWithValue("@ID_TRAMITE", values[2]);
+                        command.Parameters.AddWithValue("@Cliente", values[3]);
+                        command.Parameters.AddWithValue("@DAI", values[4]);
+                        command.Parameters.AddWithValue("@SecuencialCliente", values[5]);
+                        command.Parameters.AddWithValue("@TotalTramite", Convert.ToDouble(values[6]));
+                        command.Parameters.AddWithValue("@TotalGastos", Convert.ToDouble(values[7]));
+                        command.Parameters.AddWithValue("@ValorMayorContable", Convert.ToDouble(values[8]));
+                        command.Parameters.AddWithValue("@Difrencia", Convert.ToDouble(values[9]));
+                        command.Parameters.AddWithValue("@FechaCarta", values[10]);
+
+                        command.Parameters.AddWithValue("@Agente_LDM", values[11]);
+                        command.Parameters.AddWithValue("@Agente", values[12]);
+                        command.Parameters.AddWithValue("@TBC", values[13]);
+                        command.Parameters.AddWithValue("@Transporte", values[14]);
+                        command.Parameters.AddWithValue("@Gastos_Locales", values[15]);
+                        command.Parameters.AddWithValue("@Visto_THC", values[16]);
+                        command.Parameters.AddWithValue("@Retiro_BL", values[17]);
+                        command.Parameters.AddWithValue("@Liquidación_Aduana", values[18]);
+                        command.Parameters.AddWithValue("@Retiro_Guía", values[19]);
+                        command.Parameters.AddWithValue("@Demoraje", values[20]);
+                        command.Parameters.AddWithValue("@Actualización_Carta", values[21]);
+                        command.Parameters.AddWithValue("@Almacenaje", values[22]);
+                        command.Parameters.AddWithValue("@Devolución_Contenedor", values[23]);
+                        command.Parameters.AddWithValue("@Manipulación_Contenedor", values[24]);
+                        command.Parameters.AddWithValue("@Gastos_I", values[25]);
+                        command.Parameters.AddWithValue("@Gastos_II", values[26]);
+                        command.Parameters.AddWithValue("@Gastos_III", values[27]);
+                        command.Parameters.AddWithValue("@Gastos_IV", values[28]);
+                        command.Parameters.AddWithValue("@Gastos_V", values[29]);
+                        command.Parameters.AddWithValue("@Honorarios_I", values[30]);
+                        command.Parameters.AddWithValue("@Honorarios_II", values[31]);
+                        command.Parameters.AddWithValue("@Honorarios_III", values[32]);
+                        command.Parameters.AddWithValue("@Transporte_I", values[33]);
+                        command.Parameters.AddWithValue("@Transporte_II", values[34]);
+                        command.Parameters.AddWithValue("@Transporte_III", values[35]);
+
+                        command.Parameters.AddWithValue("@Observaciones", values[36]);
+                        command.Parameters.AddWithValue("@TipoCarta", values[37]);
+
+                        command.Parameters.AddWithValue("@Usuario", values[38]);
+
+
 
 
                         int retorno = command.ExecuteNonQuery();

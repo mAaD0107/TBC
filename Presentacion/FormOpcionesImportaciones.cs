@@ -18,6 +18,28 @@ namespace Presentacion
         public FormOpcionesImportaciones()
         {
             InitializeComponent();
+
+            if (UserCache.Position == Positions.Contabilidad)
+            {
+                panelComisiones.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Contabilidad2)
+            {
+                panelTramite.Visible = false;
+                panelComisiones.Visible = false;
+                pnlReporte.Visible = false;
+            }
+
+            if (UserCache.Position == Positions.Clientes)
+            {
+                panelTramite.Visible = false;
+                panelComisiones.Visible = false;
+                pnlPago.Visible = false;
+                panelComisiones.Visible = false;
+                pnlFactura.Visible = false;
+                pnlReporte.Visible = true;
+            }
         }
 
         private void panelTramite_MouseClick(object sender, MouseEventArgs e)
@@ -71,19 +93,7 @@ namespace Presentacion
 
         private void FormOpcionesImportaciones_Load(object sender, EventArgs e)
         {
-            if (UserCache.Position == Positions.Contabilidad)
-            {
-                panelComisiones.Visible = false;
-            }
 
-            if (UserCache.Position == Positions.Contabilidad2)
-            {
-                panelTramite.Visible = false;
-                panelComisiones.Visible = false;
-                pnlReporte.Visible = false;
-                //panelComisiones.Visible = false;
-               // panelComisiones.Visible = false;
-            }
         }
 
 

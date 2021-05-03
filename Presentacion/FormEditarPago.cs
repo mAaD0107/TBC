@@ -35,6 +35,7 @@ namespace Presentacion
 
             dataGridPagos.Columns[0].Visible = false;
             dataGridPagos.Columns[1].ReadOnly = true;
+            dataGridPagos.Columns[2].ReadOnly = true;
 
             dataGridPagos.Width = 920;
 
