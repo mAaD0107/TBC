@@ -1618,6 +1618,66 @@ namespace DataAccess
             }
         }
 
+        public DataTable getTransferenciaOrigen(string idTaramiteOrigen)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getTransferenciaOrigen";
+                    command.Parameters.AddWithValue("@idTaramiteOrigen", idTaramiteOrigen);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+        public DataTable getTransferenciaDestino(string idTaramiteDestino)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getTransferenciaDestino";
+                    command.Parameters.AddWithValue("@idTaramiteDestino", idTaramiteDestino);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable getPagoConTransferencia(string idTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getPagoConTransferencia";
+                    command.Parameters.AddWithValue("@idTaramite", idTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
 
 
         public DataTable getFacturasPagos(int idTaramite)

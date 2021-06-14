@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Carta\AbonosFacturas.cs" />
+    <Compile Include="Carta\DevolucionSaldo.cs" />
     <Compile Include="Carta\InformeCarta.cs" />
     <Compile Include="Carta\ListadoFacturas.cs" />
+    <Compile Include="Carta\TransferenciaDestino.cs" />
+    <Compile Include="Carta\TransferenciaOrigen.cs" />
     <Compile Include="CuentasPorCobrarDetallado\InformeCXCDetallado.cs" />
     <Compile Include="CuentasPorCobrarDetallado\ListaCXCD.cs" />
     <Compile Include="CuentasPorCobrar\InformeCXCGeneral.cs" />

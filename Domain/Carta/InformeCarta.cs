@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess;
 using System.Data;
 using Common.Cache;
-using System.Windows.Forms;
 
 namespace Domain.Carta
 {
@@ -25,16 +22,22 @@ namespace Domain.Carta
         public string OrdenLDM { get; private set; }
         public string Proveedor { get; private set; }
         public string NFacturaProveedor { get; private set; }
-        public List<ListadoFacturas> listadoFacturas { get; private set; }
         public double TotalValorTramite { get; private set; }
         public double TotalSaldoAFavor { get; private set; }
         public double TotalPagos { get; private set; }
         public string Observaciones { get; private set; }
         public string Usuario { get; private set; }
+        public double totalAbonado { get; private set; }
+        public double Saldo { get; private set; }
+        public double SaldoTramite { get; private set; }
+        public double SaldoTramiteST { get; private set; }
         public List<AbonosFacturas> listadoAbono { get; private set; }
+        public List<DevolucionSaldo> listadoDevoluciones { get; private set; }
+        public List<ListadoFacturas> listadoFacturas { get; private set; }
+        public List<TransferenciaDestino> listadoTransferenciaDestino { get; private set; }
+        public List<TransferenciaOrigen> listadoTransferenciaOrigen { get; private set; }
 
-        
-        
+
         List<string> NumeroFactura;
 
         public void CrearInformeCarta(string ID_Tramite)
@@ -89,22 +92,39 @@ namespace Domain.Carta
             DataTable pagos = Read.getAbonosCarta(NTramite);
             DataTable saldoCliente = Read.getSaldoCliente(NTramite);
             DataTable saldoTransferencias = Read.getSaldoTransferencia(FacturaCache.ID_Tramite);
-            DataTable saldoDevoluciones = Read.seacrhDevoluciones(obtenerNTramite(FacturaCache.ID_Tramite)); 
+            DataTable saldoDevoluciones = Read.seacrhDevoluciones(obtenerNTramite(FacturaCache.ID_Tramite));
+            DataTable transferenciaOrigen = Read.getTransferenciaOrigen(FacturaCache.ID_Tramite);
+            DataTable transferenciaDestino = Read.getTransferenciaDestino(FacturaCache.ID_Tramite);
+            DataTable pagoConTransferencia = Read.getPagoConTransferencia(FacturaCache.ID_Tramite);
+
 
             listadoFacturas = new List<ListadoFacturas>();
             listadoAbono = new List<AbonosFacturas>();
+            listadoDevoluciones = new List<DevolucionSaldo>();
+            listadoTransferenciaDestino = new List<TransferenciaDestino>();
+            listadoTransferenciaOrigen = new List<TransferenciaOrigen>();
 
             NumeroFactura = new List<string>();
             double valPagar = 0;
             double totalSaldoFavor = 0;
+            string tipoG;
 
             foreach (DataRow rowrs in facturasPagadas.Rows)
             {
                 if (existeFactura(rowrs[0].ToString()))
                 {
+                    if (necesitaConcepto(Convert.ToString(rowrs[0])))
+                    {
+                        tipoG = Convert.ToString(rowrs[12]);
+                    }
+                    else
+                    {
+                        tipoG = Convert.ToString(rowrs[0]);
+                    }
+
                     var facturasModel = new ListadoFacturas()
                     {
-                        TipoGasto = Convert.ToString(rowrs[0]),
+                        TipoGasto = tipoG,
                         Empresa = Convert.ToString(rowrs[1]),
                         NFactura = Convert.ToString(rowrs[2]),
                         TotalFactura = Convert.ToDouble(rowrs[3]),
@@ -131,9 +151,17 @@ namespace Domain.Carta
             {
                 if (existeFactura(row[0].ToString()))
                 {
+                    if (necesitaConcepto(Convert.ToString(row[0])))
+                    {
+                        tipoG = Convert.ToString(row[9]);
+                    }
+                    else
+                    {
+                        tipoG = Convert.ToString(row[0]);
+                    }
                     var facturasModel = new ListadoFacturas()
                     {
-                        TipoGasto = Convert.ToString(row[0]),
+                        TipoGasto = tipoG,
                         Empresa = Convert.ToString(row[1]),
                         NFactura = Convert.ToString(row[2]),
                         TotalFactura = Convert.ToDouble(row[3]),
@@ -176,8 +204,43 @@ namespace Domain.Carta
                 }
             }
 
-            double saldo = 0;
+            foreach (DataRow row in saldoDevoluciones.Rows)
+            {
+                var Devolucion = new DevolucionSaldo()
+                {
+                    valor = Convert.ToDouble(row[2]),
+                    dateDevolucion = Convert.ToDateTime(row[0]),
+                    detalleDevolucion = Convert.ToString(row[1])
+                };
+                listadoDevoluciones.Add(Devolucion);
+            }
 
+            foreach (DataRow row in transferenciaOrigen.Rows)
+            {
+                var transfOrigen = new TransferenciaOrigen()
+                {
+                    valor = Convert.ToDouble(row[0]),
+                    dateTransferencia = Convert.ToDateTime(row[1]),
+                    idOrigen = Convert.ToString(row[2]),
+                    detalleTransferencia = Convert.ToString(row[3])
+                };
+                listadoTransferenciaOrigen.Add(transfOrigen);
+            }
+
+            foreach (DataRow row in transferenciaDestino.Rows)
+            {
+                var transfDestino = new TransferenciaDestino()
+                {
+                    valor = Convert.ToDouble(row[0]),
+                    dateTransferencia = Convert.ToDateTime(row[1]),
+                    idDestino = Convert.ToString(row[2]),
+                    detalleTransferencia = Convert.ToString(row[3])
+                };
+                listadoTransferenciaDestino.Add(transfDestino);
+            }
+
+
+            double saldo = 0;
             foreach (DataRow row in saldoCliente.Rows)
             {
                 saldo += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
@@ -196,10 +259,41 @@ namespace Domain.Carta
                 devoluciones += Convert.ToDouble(row[2] is DBNull ? 0 : row[2]);
             }
 
+            double pagoTransferencia = 0;
+            foreach (DataRow row in pagoConTransferencia.Rows)
+            {
+                pagoTransferencia += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
+            }
 
+            //totalAbonado = valPagar - saldo + saldoTransferencia;
+            
+            totalAbonado = valPagar - saldo;
             TotalValorTramite = valPagar;
             TotalPagos = TotalValorTramite - totalSaldoFavor;
             TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo - saldoTransferencia + devoluciones;
+            Saldo = -saldo + saldoTransferencia;
+            SaldoTramite = totalAbonado - TotalValorTramite + saldoTransferencia;
+
+            totalAbonado = valPagar - saldo - pagoTransferencia;
+
+            if (SaldoTramite == SaldoTramiteST)
+            {
+                SaldoTramiteST = 0;
+                
+            }
+            else
+            {
+                if (SaldoTramiteST < SaldoTramite)
+                {
+                    SaldoTramiteST = 0;
+                }
+                else
+                {
+                    SaldoTramiteST = valPagar - saldo - TotalValorTramite;
+                    
+                }
+                
+            }
 
             Observaciones = CartaCache.Observaciones;
 
@@ -223,8 +317,25 @@ namespace Domain.Carta
         {
             return NumeroFactura.Any(x => x == nFactura);
         }
+
+        List<string> listaConceptos = new List<string>()
+        {
+            "Gastos_I",
+            "Gastos_II",
+            "Gastos_III",
+            "Gastos_IV",
+            "Gastos_V",
+            "Honorarios_I",
+            "Honorarios_II",
+            "Honorarios_III",
+            "Transporte_I",
+            "Transporte_II",
+            "Transporte_III"
+        };
+
+        private bool necesitaConcepto(string tipoFactura)
+        {
+            return listaConceptos.Any(x => x == tipoFactura);
+        }
     }
-
-
-
 }

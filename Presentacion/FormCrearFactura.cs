@@ -1057,206 +1057,229 @@ namespace Presentacion
             readRetenciones();
         }
 
+        private bool comprobarConcepto()
+        {
+            if (panelConceptoFactura.Visible)
+            {
+                if (txtConceptoFactura.Text != "")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("El concepto de la factura es requerido.", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtConceptoFactura.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                return true; 
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            if (cmbTipoFactura.Text != "" && cmbOtros.Text != "")
+            if (comprobarConcepto())
             {
-                if (valorACobrar >= 0)
+                if (cmbTipoFactura.Text != "" && cmbOtros.Text != "")
                 {
-                    UserModel model = new UserModel();
-                    DialogResult result;
-
-                    if (!editar)
+                    if (valorACobrar >= 0)
                     {
-                        result = MessageBox.Show(
-                        "Está seguro que desea guardar la factura",
-                        "Info",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                        result = MessageBox.Show(
-                        "Está seguro que desea guardar los cambios",
-                        "Info",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Exclamation);
-                    }
+                        UserModel model = new UserModel();
+                        DialogResult result;
 
-                    FormPrincipal formPrincipal = Owner as FormPrincipal;
-
-                    if (result == DialogResult.Yes)
-                    {
-                        if (validarNumeroFactura() || editar)
+                        if (!editar)
                         {
-                            if (model.InsertDataFactura(insertDataFactura()))
+                            result = MessageBox.Show(
+                            "Está seguro que desea guardar la factura",
+                            "Info",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            result = MessageBox.Show(
+                            "Está seguro que desea guardar los cambios",
+                            "Info",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Exclamation);
+                        }
+
+                        FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (validarNumeroFactura() || editar)
                             {
-                                desplegarFactura();
-
-                                if (!editar)
+                                if (model.InsertDataFactura(insertDataFactura()))
                                 {
-                                    DialogResult resultS = MessageBox.Show("La factura: " + values[1] +
-                                "\n\nSe ha guardado exitosamente" +
-                                "\nDesea crear otra factura del mismo trámite?",
-                                "Info",
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Information);
+                                    desplegarFactura();
 
-
-                                    if (resultS == DialogResult.Yes)
+                                    if (!editar)
                                     {
+                                        DialogResult resultS = MessageBox.Show("La factura: " + values[1] +
+                                    "\n\nSe ha guardado exitosamente" +
+                                    "\nDesea crear otra factura del mismo trámite?",
+                                    "Info",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Information);
 
-                                        //desplegarFactura();
 
-                                        if (formPrincipal != null)
+                                        if (resultS == DialogResult.Yes)
                                         {
-                                            FormCrearFactura formCrearFactura = new FormCrearFactura();
-                                            formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                                            formCrearFactura.panelPrincipal.Visible = false;
 
-                                            formCrearFactura.txtBuscarTramite.Text = TramiteCache.idTramite;
-                                            formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
-                                            using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;
-                                            formCrearFactura.txtBuscarTramite.ForeColor = Color.White;
-                                            formCrearFactura.txtBuscarTramite.Enabled = false;
-                                            formCrearFactura.txtBuscarTramite.Enabled = false;
+                                            //desplegarFactura();
 
-                                            formCrearFactura.txtDAI.Text = TramiteCache.DAI;
-                                            formCrearFactura.txtSecuencialCliente.Text = TramiteCache.secuencialCliente;
-                                            formCrearFactura.txtCliente.Text = TramiteCache.rucEmpresa;
-                                            UserModel Read = new UserModel();
-
-                                            Read.searchRetenciones(TramiteCache.rucEmpresa);
-
-
-                                            List<string> tipoFactura = new List<string>();
-                                            List<string> tipoFacturaOtros = new List<string>();
-
-                                            string[] array = Read.readTipoFactura(TramiteCache.nTramite).ToArray();
-                                            int indice = 0;
-
-                                            for (int i = 0; i < array.Length; i++)
+                                            if (formPrincipal != null)
                                             {
-                                                if (array[i] == "Otros")
+                                                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                                                formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                                                formCrearFactura.panelPrincipal.Visible = false;
+
+                                                formCrearFactura.txtBuscarTramite.Text = TramiteCache.idTramite;
+                                                formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
+                                                using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;
+                                                formCrearFactura.txtBuscarTramite.ForeColor = Color.White;
+                                                formCrearFactura.txtBuscarTramite.Enabled = false;
+                                                formCrearFactura.txtBuscarTramite.Enabled = false;
+
+                                                formCrearFactura.txtDAI.Text = TramiteCache.DAI;
+                                                formCrearFactura.txtSecuencialCliente.Text = TramiteCache.secuencialCliente;
+                                                formCrearFactura.txtCliente.Text = TramiteCache.rucEmpresa;
+                                                UserModel Read = new UserModel();
+
+                                                Read.searchRetenciones(TramiteCache.rucEmpresa);
+
+
+                                                List<string> tipoFactura = new List<string>();
+                                                List<string> tipoFacturaOtros = new List<string>();
+
+                                                string[] array = Read.readTipoFactura(TramiteCache.nTramite).ToArray();
+                                                int indice = 0;
+
+                                                for (int i = 0; i < array.Length; i++)
                                                 {
-                                                    indice = i;
-                                                    break;
+                                                    if (array[i] == "Otros")
+                                                    {
+                                                        indice = i;
+                                                        break;
+                                                    }
+                                                }
+
+                                                for (int i = 0; i <= indice; i++)
+                                                {
+                                                    tipoFactura.Add(array[i]);
+                                                }
+
+                                                for (int i = indice + 1; i < array.Length; i++)
+                                                {
+                                                    tipoFacturaOtros.Add(array[i]);
+                                                }
+
+                                                formCrearFactura.cmbTipoFactura.DataSource = tipoFactura;
+                                                formCrearFactura.cmbOtros.DataSource = tipoFacturaOtros;
+
+
+                                                formCrearFactura.readRetenciones();
+                                                formCrearFactura.buscarEstaAbierta = false;
+
+
+
+                                                formPrincipal.AddOwnedForm(formCrearFactura);
+                                                formPrincipal.AbrirFormInPanel(formCrearFactura);
+
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            DialogResult resultS2 = MessageBox.Show(
+                                                                                    "Desea crear una factura ?",
+                                                                                    "Info",
+                                                                                    MessageBoxButtons.YesNo,
+                                                                                    MessageBoxIcon.Information);
+                                            if (resultS2 == DialogResult.Yes)
+                                            {
+                                                if (formPrincipal != null)
+                                                {
+                                                    FormCrearFactura formCrearFactura1 = new FormCrearFactura();
+                                                    formCrearFactura1.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                                                    formPrincipal.AddOwnedForm(formCrearFactura1);
+                                                    formPrincipal.AbrirFormInPanel(formCrearFactura1);
                                                 }
                                             }
-
-                                            for (int i = 0; i <= indice; i++)
+                                            else
                                             {
-                                                tipoFactura.Add(array[i]);
+                                                if (formPrincipal != null)
+                                                {
+                                                    FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
+                                                    formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                                                    formPrincipal.AddOwnedForm(formOpcionesFactura);
+                                                    formPrincipal.AbrirFormInPanel(formOpcionesFactura);
+                                                }
                                             }
-
-                                            for (int i = indice + 1; i < array.Length; i++)
-                                            {
-                                                tipoFacturaOtros.Add(array[i]);
-                                            }
-
-                                            formCrearFactura.cmbTipoFactura.DataSource = tipoFactura;
-                                            formCrearFactura.cmbOtros.DataSource = tipoFacturaOtros;
-
-
-                                            formCrearFactura.readRetenciones();
-                                            formCrearFactura.buscarEstaAbierta = false;
-
-
-
-                                            formPrincipal.AddOwnedForm(formCrearFactura);
-                                            formPrincipal.AbrirFormInPanel(formCrearFactura);
-
 
                                         }
                                     }
                                     else
                                     {
-                                        DialogResult resultS2 = MessageBox.Show(
-                                                                                "Desea crear una factura ?",
-                                                                                "Info",
-                                                                                MessageBoxButtons.YesNo,
-                                                                                MessageBoxIcon.Information);
-                                        if (resultS2 == DialogResult.Yes)
+
+                                        DialogResult resultS = MessageBox.Show("La factura: " + values[1] +
+                                        "\n\nSe ha guardado exitosamente",
+                                        "Info",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                                        if (formPrincipal != null)
                                         {
-                                            if (formPrincipal != null)
-                                            {
-                                                FormCrearFactura formCrearFactura1 = new FormCrearFactura();
-                                                formCrearFactura1.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                                                formPrincipal.AddOwnedForm(formCrearFactura1);
-                                                formPrincipal.AbrirFormInPanel(formCrearFactura1);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if (formPrincipal != null)
-                                            {
-                                                FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
-                                                formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                                                formPrincipal.AddOwnedForm(formOpcionesFactura);
-                                                formPrincipal.AbrirFormInPanel(formOpcionesFactura);
-                                            }
+                                            FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
+                                            formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                                            formPrincipal.AddOwnedForm(formOpcionesFactura);
+                                            formPrincipal.AbrirFormInPanel(formOpcionesFactura);
                                         }
 
                                     }
                                 }
                                 else
                                 {
-
-                                    DialogResult resultS = MessageBox.Show("La factura: " + values[1] +
-                                    "\n\nSe ha guardado exitosamente",
-                                    "Info",
+                                    MessageBox.Show("No ha sido posible guardar la factura\n" +
+                                    "Por favor, inténtelo mas tarde.",
+                                    "Alerta",
                                     MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
-                                    if (formPrincipal != null)
-                                    {
-                                        FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
-                                        formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                                        formPrincipal.AddOwnedForm(formOpcionesFactura);
-                                        formPrincipal.AbrirFormInPanel(formOpcionesFactura);
-                                    }
-
+                                    MessageBoxIcon.Warning);
                                 }
+
                             }
                             else
                             {
-                                MessageBox.Show("No ha sido posible guardar la factura\n" +
-                                "Por favor, inténtelo mas tarde.",
+                                MessageBox.Show("El Número de Factura ingresado no es válido\n" +
+                                "Por favor, ingrese un Número de Factura válido.",
                                 "Alerta",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
                             }
 
                         }
-                        else
-                        {
-                            MessageBox.Show("El Número de Factura ingresado no es válido\n" +
-                            "Por favor, ingrese un Número de Factura válido.",
-                            "Alerta",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        }
 
                     }
-                    
+                    else
+                    {
+                        MessageBox.Show("El valor a cobrar no puede ser menor a cero\n" +
+                        "Por favor, revise los valores ingresados.",
+                        "Alerta",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El valor a cobrar no puede ser menor a cero\n" +
-                    "Por favor, revise los valores ingresados.",
+                    MessageBox.Show("El tipo de factura seleccionada no es válido\n" +
+                    "Por favor, ingrese un tipo válido.",
                     "Alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 }
-            }
-            else
-            {
-                MessageBox.Show("El tipo de factura seleccionada no es válido\n" +
-                "Por favor, ingrese un tipo válido.",
-                "Alerta",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
             }
             
         }

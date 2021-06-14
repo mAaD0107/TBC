@@ -33,53 +33,75 @@ namespace Presentacion
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.listadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.InformeCartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listadoAbonoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informeCartaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).BeginInit();
+            this.InformeCartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ListadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AbonosFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DevolucionSaldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TransferenciaOrigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TransferenciaDestinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InformeCartaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoAbonoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AbonosFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevolucionSaldoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferenciaOrigenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferenciaDestinoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // listadoFacturasBindingSource
+            // reportViewer1
             // 
-            this.listadoFacturasBindingSource.DataMember = "listadoFacturas";
-            this.listadoFacturasBindingSource.DataSource = this.InformeCartaBindingSource;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "InformacionCarta";
+            reportDataSource1.Value = this.InformeCartaBindingSource;
+            reportDataSource2.Name = "ListadoFacturas";
+            reportDataSource2.Value = this.ListadoFacturasBindingSource;
+            reportDataSource3.Name = "ListadoAbonos";
+            reportDataSource3.Value = this.AbonosFacturasBindingSource;
+            reportDataSource4.Name = "ListadoDevoluciones";
+            reportDataSource4.Value = this.DevolucionSaldoBindingSource;
+            reportDataSource5.Name = "ListadoTransferenciaOrigen";
+            reportDataSource5.Value = this.TransferenciaOrigenBindingSource;
+            reportDataSource6.Name = "ListadoTransferenciaDestino";
+            reportDataSource6.Value = this.TransferenciaDestinoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Informes.InformeCarta1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(814, 636);
+            this.reportViewer1.TabIndex = 0;
             // 
             // InformeCartaBindingSource
             // 
             this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
             // 
-            // listadoAbonoBindingSource
+            // ListadoFacturasBindingSource
             // 
-            this.listadoAbonoBindingSource.DataMember = "listadoAbono";
-            this.listadoAbonoBindingSource.DataSource = this.informeCartaBindingSource1;
+            this.ListadoFacturasBindingSource.DataSource = typeof(Domain.Carta.ListadoFacturas);
             // 
-            // informeCartaBindingSource1
+            // AbonosFacturasBindingSource
             // 
-            this.informeCartaBindingSource1.DataSource = typeof(Domain.Carta.InformeCarta);
+            this.AbonosFacturasBindingSource.DataSource = typeof(Domain.Carta.AbonosFacturas);
             // 
-            // reportViewer1
+            // DevolucionSaldoBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ListadoFacturas";
-            reportDataSource1.Value = this.listadoFacturasBindingSource;
-            reportDataSource2.Name = "InformacionCarta";
-            reportDataSource2.Value = this.InformeCartaBindingSource;
-            reportDataSource3.Name = "ListadoAbonos";
-            reportDataSource3.Value = this.listadoAbonoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Informes.InformeCarta.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(814, 636);
-            this.reportViewer1.TabIndex = 1;
+            this.DevolucionSaldoBindingSource.DataSource = typeof(Domain.Carta.DevolucionSaldo);
+            // 
+            // TransferenciaOrigenBindingSource
+            // 
+            this.TransferenciaOrigenBindingSource.DataSource = typeof(Domain.Carta.TransferenciaOrigen);
+            // 
+            // TransferenciaDestinoBindingSource
+            // 
+            this.TransferenciaDestinoBindingSource.DataSource = typeof(Domain.Carta.TransferenciaDestino);
             // 
             // FormInformeCarta
             // 
@@ -91,10 +113,12 @@ namespace Presentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformeCarta";
             this.Load += new System.EventHandler(this.FormInformeCarta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.listadoFacturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformeCartaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoAbonoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeCartaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AbonosFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevolucionSaldoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferenciaOrigenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferenciaDestinoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,8 +127,10 @@ namespace Presentacion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource InformeCartaBindingSource;
-        private System.Windows.Forms.BindingSource listadoFacturasBindingSource;
-        private System.Windows.Forms.BindingSource informeCartaBindingSource1;
-        private System.Windows.Forms.BindingSource listadoAbonoBindingSource;
+        private System.Windows.Forms.BindingSource ListadoFacturasBindingSource;
+        private System.Windows.Forms.BindingSource AbonosFacturasBindingSource;
+        private System.Windows.Forms.BindingSource DevolucionSaldoBindingSource;
+        private System.Windows.Forms.BindingSource TransferenciaOrigenBindingSource;
+        private System.Windows.Forms.BindingSource TransferenciaDestinoBindingSource;
     }
 }

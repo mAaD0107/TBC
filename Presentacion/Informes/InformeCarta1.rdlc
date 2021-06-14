@@ -7,28 +7,42 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>abd21de9-8993-48af-b336-ab136e54aa09</rd:DataSourceID>
+      <rd:DataSourceID>0a4527df-f767-4081-8563-f904e8ed204b</rd:DataSourceID>
     </DataSource>
     <DataSource Name="DomainCarta1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>30d25c01-687f-4f85-88b4-28ee2573a52a</rd:DataSourceID>
+      <rd:DataSourceID>0e5730bd-56d5-4b0f-81c7-fb1271d2a114</rd:DataSourceID>
     </DataSource>
     <DataSource Name="DomainCarta2">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>050bf92f-f25e-4394-a769-2c2f44a83055</rd:DataSourceID>
+      <rd:DataSourceID>51adc4de-0882-401d-9770-956567959b13</rd:DataSourceID>
     </DataSource>
     <DataSource Name="DomainCarta3">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>50dc49c3-b5fb-4e51-93ea-6bfa85ccca74</rd:DataSourceID>
+      <rd:DataSourceID>e24680d0-efe7-4583-8ed8-302713d76e59</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="DomainCarta4">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>5c66601a-38ca-4db2-a88e-4b4b43f9e738</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="DomainCarta5">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>76079fcd-43db-4071-80ca-270f20b1be19</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -82,6 +96,18 @@
           <DataField>Proveedor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Saldo">
+          <DataField>Saldo</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SaldoTramite">
+          <DataField>SaldoTramite</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SaldoTramiteST">
+          <DataField>SaldoTramiteST</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
         <Field Name="SecuencialCliente">
           <DataField>SecuencialCliente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -93,6 +119,10 @@
         <Field Name="TipoDAI">
           <DataField>TipoDAI</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="totalAbonado">
+          <DataField>totalAbonado</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="TotalPagos">
           <DataField>TotalPagos</DataField>
@@ -232,6 +262,64 @@
         <rd:ObjectDataSourceType>Domain.Carta.DevolucionSaldo, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="ListadoTransferenciaOrigen">
+      <Query>
+        <DataSourceName>DomainCarta4</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="dateTransferencia">
+          <DataField>dateTransferencia</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="detalleTransferencia">
+          <DataField>detalleTransferencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idOrigen">
+          <DataField>idOrigen</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="valor">
+          <DataField>valor</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Domain.Carta</rd:DataSetName>
+        <rd:TableName>TransferenciaOrigen</rd:TableName>
+        <rd:ObjectDataSourceType>Domain.Carta.TransferenciaOrigen, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ListadoTransferenciaDestino">
+      <Query>
+        <DataSourceName>DomainCarta5</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="dateTransferencia">
+          <DataField>dateTransferencia</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="detalleTransferencia">
+          <DataField>detalleTransferencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idDestino">
+          <DataField>idDestino</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="valor">
+          <DataField>valor</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Domain.Carta</rd:DataSetName>
+        <rd:TableName>TransferenciaDestino</rd:TableName>
+        <rd:ObjectDataSourceType>Domain.Carta.TransferenciaDestino, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -255,8 +343,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>0.45638cm</Top>
-            <Left>2.16325cm</Left>
+            <Top>0.635cm</Top>
+            <Left>2.21928cm</Left>
             <Height>0.6cm</Height>
             <Width>5.78083cm</Width>
             <Style>
@@ -284,8 +372,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.66492cm</Top>
-            <Left>1.06554cm</Left>
+            <Top>1.80232cm</Top>
+            <Left>1.12157cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>1</ZIndex>
@@ -314,8 +402,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.26492cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>2.40232cm</Top>
+            <Left>1.12158cm</Left>
             <Height>0.6cm</Height>
             <Width>10.99614cm</Width>
             <ZIndex>2</ZIndex>
@@ -344,8 +432,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.31472cm</Top>
-            <Left>1.06554cm</Left>
+            <Top>3.45212cm</Top>
+            <Left>1.12157cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>3</ZIndex>
@@ -374,8 +462,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.91472cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>4.05212cm</Top>
+            <Left>1.12158cm</Left>
             <Height>0.6cm</Height>
             <Width>10.99614cm</Width>
             <ZIndex>4</ZIndex>
@@ -420,8 +508,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.17562cm</Top>
-            <Left>1.06554cm</Left>
+            <Top>5.31302cm</Top>
+            <Left>1.12157cm</Left>
             <Height>0.6cm</Height>
             <Width>4.405cm</Width>
             <ZIndex>5</ZIndex>
@@ -454,8 +542,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.47208cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>6.60948cm</Top>
+            <Left>1.12158cm</Left>
             <Height>1.44667cm</Height>
             <Width>18.79833cm</Width>
             <ZIndex>6</ZIndex>
@@ -500,8 +588,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.19618cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>9.01608cm</Top>
+            <Left>1.08627cm</Left>
             <Height>0.6cm</Height>
             <Width>4.405cm</Width>
             <ZIndex>7</ZIndex>
@@ -546,8 +634,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.97256cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>9.79246cm</Top>
+            <Left>1.08627cm</Left>
             <Height>0.6cm</Height>
             <Width>4.405cm</Width>
             <ZIndex>8</ZIndex>
@@ -578,8 +666,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>10.74895cm</Top>
-            <Left>1.00378cm</Left>
+            <Top>10.56885cm</Top>
+            <Left>1.05981cm</Left>
             <Height>0.6cm</Height>
             <Width>4.43146cm</Width>
             <ZIndex>9</ZIndex>
@@ -610,8 +698,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>11.52534cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>11.34524cm</Top>
+            <Left>1.08627cm</Left>
             <Height>0.6cm</Height>
             <Width>4.405cm</Width>
             <ZIndex>10</ZIndex>
@@ -642,8 +730,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.19618cm</Top>
-            <Left>10.56344cm</Left>
+            <Top>9.01608cm</Top>
+            <Left>10.61947cm</Left>
             <Height>0.6cm</Height>
             <Width>3.53188cm</Width>
             <ZIndex>11</ZIndex>
@@ -674,8 +762,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.97256cm</Top>
-            <Left>10.56344cm</Left>
+            <Top>9.79246cm</Top>
+            <Left>10.61947cm</Left>
             <Height>0.6cm</Height>
             <Width>3.53188cm</Width>
             <ZIndex>12</ZIndex>
@@ -706,8 +794,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>10.74895cm</Top>
-            <Left>10.56344cm</Left>
+            <Top>10.56885cm</Top>
+            <Left>10.61947cm</Left>
             <Height>0.6cm</Height>
             <Width>3.53188cm</Width>
             <ZIndex>13</ZIndex>
@@ -738,8 +826,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>11.52534cm</Top>
-            <Left>10.56344cm</Left>
+            <Top>11.34524cm</Top>
+            <Left>10.61947cm</Left>
             <Height>0.6cm</Height>
             <Width>3.49658cm</Width>
             <ZIndex>14</ZIndex>
@@ -770,8 +858,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.19618cm</Top>
-            <Left>5.50579cm</Left>
+            <Top>9.01608cm</Top>
+            <Left>5.56182cm</Left>
             <Height>0.6cm</Height>
             <Width>4.98709cm</Width>
             <ZIndex>15</ZIndex>
@@ -802,8 +890,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.97256cm</Top>
-            <Left>5.5058cm</Left>
+            <Top>9.79246cm</Top>
+            <Left>5.56183cm</Left>
             <Height>0.6cm</Height>
             <Width>4.98709cm</Width>
             <ZIndex>16</ZIndex>
@@ -832,8 +920,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>10.74895cm</Top>
-            <Left>5.47052cm</Left>
+            <Top>10.56885cm</Top>
+            <Left>5.52655cm</Left>
             <Height>0.6cm</Height>
             <Width>5.02236cm</Width>
             <ZIndex>17</ZIndex>
@@ -862,8 +950,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>11.52534cm</Top>
-            <Left>5.50579cm</Left>
+            <Top>11.34524cm</Top>
+            <Left>5.56182cm</Left>
             <Height>0.6cm</Height>
             <Width>4.98709cm</Width>
             <ZIndex>18</ZIndex>
@@ -892,8 +980,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.19618cm</Top>
-            <Left>14.09532cm</Left>
+            <Top>9.01608cm</Top>
+            <Left>14.15134cm</Left>
             <Height>0.6cm</Height>
             <Width>5.76856cm</Width>
             <ZIndex>19</ZIndex>
@@ -922,8 +1010,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.97256cm</Top>
-            <Left>14.09532cm</Left>
+            <Top>9.79246cm</Top>
+            <Left>14.15134cm</Left>
             <Height>0.6cm</Height>
             <Width>5.76856cm</Width>
             <ZIndex>20</ZIndex>
@@ -952,8 +1040,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>10.74895cm</Top>
-            <Left>14.0953cm</Left>
+            <Top>10.56885cm</Top>
+            <Left>14.15133cm</Left>
             <Height>0.6cm</Height>
             <Width>5.76858cm</Width>
             <ZIndex>21</ZIndex>
@@ -982,8 +1070,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>11.52534cm</Top>
-            <Left>14.0953cm</Left>
+            <Top>11.34524cm</Top>
+            <Left>14.15133cm</Left>
             <Height>0.6cm</Height>
             <Width>5.76858cm</Width>
             <ZIndex>22</ZIndex>
@@ -1014,8 +1102,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox352</rd:DefaultName>
-            <Top>24.38231cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>33.40971cm</Top>
+            <Left>1.08627cm</Left>
             <Height>3.66917cm</Height>
             <Width>18.79833cm</Width>
             <ZIndex>23</ZIndex>
@@ -1046,8 +1134,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.45638cm</Top>
-            <Left>1.06554cm</Left>
+            <Top>0.635cm</Top>
+            <Left>1.12157cm</Left>
             <Height>0.6cm</Height>
             <Width>1.09771cm</Width>
             <ZIndex>24</ZIndex>
@@ -2148,7 +2236,6 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
-                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -2525,8 +2612,8 @@
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>ListadoFacturas</DataSetName>
-            <Top>12.96141cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>12.78131cm</Top>
+            <Left>1.08627cm</Left>
             <Height>3.47542cm</Height>
             <Width>18.85392cm</Width>
             <ZIndex>25</ZIndex>
@@ -2557,8 +2644,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>17.83083cm</Top>
-            <Left>1.10086cm</Left>
+            <Top>17.96823cm</Top>
+            <Left>1.15689cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>26</ZIndex>
@@ -2576,13 +2663,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.99792cm</Width>
+                  <Width>6.98614cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.48822cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.48822cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2599,7 +2686,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>PAGOS</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2611,6 +2701,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2629,7 +2720,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>VALOR</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2641,6 +2735,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2659,7 +2754,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>FECHA</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2671,6 +2769,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2793,9 +2892,6 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                  </Visibility>
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
@@ -2804,11 +2900,14 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ListadoAbonos</DataSetName>
-            <Top>19.67465cm</Top>
-            <Left>1.06552cm</Left>
+            <Top>22.89858cm</Top>
+            <Left>1.15689cm</Left>
             <Height>1.2cm</Height>
-            <Width>11.99792cm</Width>
+            <Width>11.96258cm</Width>
             <ZIndex>27</ZIndex>
+            <Visibility>
+              <Hidden>=iif(CountRows("PagosGenerales") &gt; 0, false, true)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Color>White</Color>
@@ -2835,15 +2934,31 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>19.0041cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>19.1415cm</Top>
+            <Left>1.15689cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.74896cm</Width>
+            <Width>6.96258cm</Width>
             <ZIndex>28</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2867,15 +2982,31 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>19.0041cm</Top>
-            <Left>8.00646cm</Left>
+            <Top>19.1415cm</Top>
+            <Left>8.11947cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.55698cm</Width>
+            <Width>2.5cm</Width>
             <ZIndex>29</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2902,8 +3033,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>23.29861cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>32.64351cm</Top>
+            <Left>1.08627cm</Left>
             <Height>0.6cm</Height>
             <Width>3.69062cm</Width>
             <ZIndex>30</ZIndex>
@@ -2936,8 +3067,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>28.83458cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>37.54448cm</Top>
+            <Left>1.12158cm</Left>
             <Height>0.7323cm</Height>
             <Width>6.253cm</Width>
             <ZIndex>31</ZIndex>
@@ -2968,8 +3099,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>29.74327cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>38.45317cm</Top>
+            <Left>1.12158cm</Left>
             <Height>0.6cm</Height>
             <Width>9.39206cm</Width>
             <ZIndex>32</ZIndex>
@@ -3002,15 +3133,31 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>20.94521cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>30.51774cm</Top>
+            <Left>1.15689cm</Left>
             <Height>0.6cm</Height>
-            <Width>6.20682cm</Width>
+            <Width>6.96258cm</Width>
             <ZIndex>33</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3034,15 +3181,31 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>20.94521cm</Top>
-            <Left>8.00646cm</Left>
+            <Top>30.51774cm</Top>
+            <Left>8.11947cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.55698cm</Width>
+            <Width>2.5cm</Width>
             <ZIndex>34</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3069,8 +3232,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>30.41382cm</Top>
-            <Left>1.06555cm</Left>
+            <Top>39.12372cm</Top>
+            <Left>1.12158cm</Left>
             <Height>0.6cm</Height>
             <Width>7.63292cm</Width>
             <ZIndex>35</ZIndex>
@@ -3103,8 +3266,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>16.61322cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>16.43312cm</Top>
+            <Left>1.08627cm</Left>
             <Height>0.6cm</Height>
             <Width>11.56439cm</Width>
             <ZIndex>36</ZIndex>
@@ -3150,8 +3313,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>16.61322cm</Top>
-            <Left>12.59463cm</Left>
+            <Top>16.43312cm</Top>
+            <Left>12.65066cm</Left>
             <Height>0.6cm</Height>
             <Width>1.55631cm</Width>
             <ZIndex>37</ZIndex>
@@ -3198,8 +3361,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>16.61322cm</Top>
-            <Left>14.1306cm</Left>
+            <Top>16.43312cm</Top>
+            <Left>14.18662cm</Left>
             <Height>0.6cm</Height>
             <Width>1.68161cm</Width>
             <ZIndex>38</ZIndex>
@@ -3247,8 +3410,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>16.61322cm</Top>
-            <Left>15.81221cm</Left>
+            <Top>16.43312cm</Top>
+            <Left>15.86824cm</Left>
             <Height>0.6cm</Height>
             <Width>1.42124cm</Width>
             <ZIndex>39</ZIndex>
@@ -3303,7 +3466,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>DEVOLUCIÓN</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -3315,74 +3481,18 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox43">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>VALOR</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox43</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox45">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>FECHA</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox45</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -3390,21 +3500,21 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="dateDevolucion">
+                        <Textbox Name="detalleDevolucion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!dateDevolucion.Value</Value>
+                                  <Value>=Fields!detalleDevolucion.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>dateDevolucion</rd:DefaultName>
+                          <rd:DefaultName>detalleDevolucion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3428,7 +3538,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!valor.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$' 0.00;'$' -0.00</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -3444,6 +3556,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3458,7 +3571,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!dateDevolucion.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -3500,28 +3615,133 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ListadoDevoluciones</DataSetName>
-            <Top>21.9575cm</Top>
-            <Left>1.03024cm</Left>
+            <Top>28.14931cm</Top>
+            <Left>1.12157cm</Left>
             <Height>1.2cm</Height>
             <Width>11.96258cm</Width>
             <ZIndex>40</ZIndex>
+            <Visibility>
+              <Hidden>=iif(CountRows("Tablix2") &gt; 0, false, true)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Tablix Name="Tablix1">
+          <Textbox Name="Textbox38">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TOTAL ABONADO</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>20.3765cm</Top>
+            <Left>1.15689cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.96258cm</Width>
+            <ZIndex>41</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox39">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!totalAbonado.Value, "InformacionCarta")</Value>
+                    <Style>
+                      <Format>'$' 0.00;('$' 0.00)</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>20.3765cm</Top>
+            <Left>8.11947cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>42</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Silver</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Silver</Color>
+                <Width>1pt</Width>
+              </RightBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
+          <Tablix Name="TransferenciaOrigen">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>6.98614cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.48822cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.48822cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.74874cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -3530,26 +3750,30 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox40">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>abono</Value>
-                                  <Style />
+                                  <Value>TRANSFERENCIA</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3560,26 +3784,30 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox39">
+                        <Textbox Name="Textbox43">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>date Abono</Value>
-                                  <Style />
+                                  <Value>VALOR</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox39</rd:DefaultName>
+                          <rd:DefaultName>Textbox43</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3590,26 +3818,64 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox42">
+                        <Textbox Name="Textbox45">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Empresa</Value>
-                                  <Style />
+                                  <Value>FECHA</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox108">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ORIGEN</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox108</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3625,21 +3891,21 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="abono2">
+                        <Textbox Name="detalleTransferencia">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!abono.Value</Value>
+                                  <Value>=Fields!detalleTransferencia.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>abono2</rd:DefaultName>
+                          <rd:DefaultName>detalleTransferencia</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3655,21 +3921,56 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="dateAbono2">
+                        <Textbox Name="valor1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!dateAbono.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!valor.Value</Value>
+                                  <Style>
+                                    <Format>'$' 0.00;'$' -0.00;'-'</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>dateAbono2</rd:DefaultName>
+                          <rd:DefaultName>valor1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="dateTransferencia">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!dateTransferencia.Value</Value>
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>dateTransferencia</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3685,21 +3986,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Empresa">
+                        <Textbox Name="idOrigen">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Empresa.Value</Value>
+                                  <Value>=Fields!idOrigen.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Empresa</rd:DefaultName>
+                          <rd:DefaultName>idOrigen</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3722,6 +4023,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -3734,32 +4036,639 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>ListadoFacturas</DataSetName>
-            <Top>19.36541cm</Top>
-            <Left>13.32841cm</Left>
+            <DataSetName>ListadoTransferenciaOrigen</DataSetName>
+            <Top>21.52219cm</Top>
+            <Left>1.15689cm</Left>
             <Height>1.2cm</Height>
-            <Width>7.5cm</Width>
-            <ZIndex>41</ZIndex>
+            <Width>14.71132cm</Width>
+            <ZIndex>43</ZIndex>
+            <Visibility>
+              <Hidden>=iif(CountRows("TransferenciaOrigen") &gt; 0, false, true)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Tablix Name="TransferenciaDestino">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>7.02146cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.47644cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.71344cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox94">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>TRANSFERENCIA </Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox94</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox44">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>VALOR</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox43</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox46">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>FECHA</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox110">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>DESTINO</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox110</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="detalleTransferencia1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!detalleTransferencia.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>detalleTransferencia1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="valor2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!valor.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>valor2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="dateTransferencia1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!dateTransferencia.Value</Value>
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>dateTransferencia1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="idDestino1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!idDestino.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>idDestino1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Detalles4" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>ListadoTransferenciaDestino</DataSetName>
+            <Top>25.86247cm</Top>
+            <Left>1.15689cm</Left>
+            <Height>1.2cm</Height>
+            <Width>14.71134cm</Width>
+            <ZIndex>44</ZIndex>
+            <Visibility>
+              <Hidden>=iif(CountRows("TransferenciaDestino") &gt; 0, false, true)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox42">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>SALDO CLIENTE</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>27.23886cm</Top>
+            <Left>1.12158cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.9979cm</Width>
+            <ZIndex>45</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox47">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!Saldo.Value, "InformacionCarta")</Value>
+                    <Style>
+                      <Format>'$' 0.00;'$' -0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>27.23886cm</Top>
+            <Left>8.13125cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>46</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox48">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>SALDO TRAMITE</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>24.43604cm</Top>
+            <Left>1.12157cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.9979cm</Width>
+            <ZIndex>47</ZIndex>
+            <Visibility>
+              <Hidden>=iif(Sum(Fields!SaldoTramite.Value, "InformacionCarta") &gt; 0, False, True)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox49">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!SaldoTramite.Value, "InformacionCarta")</Value>
+                    <Style>
+                      <Format>'$' 0.00;'$' -0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>24.43604cm</Top>
+            <Left>8.11947cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>48</ZIndex>
+            <Visibility>
+              <Hidden>=iif(Sum(Fields!SaldoTramite.Value, "InformacionCarta") &gt; 0, False, True)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox50">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>SALDO TRAMITE</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>25.03604cm</Top>
+            <Left>1.12157cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.9979cm</Width>
+            <ZIndex>49</ZIndex>
+            <Visibility>
+              <Hidden>=iif(Sum(Fields!SaldoTramiteST.Value, "InformacionCarta") &gt; 0, False, True)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!SaldoTramiteST.Value, "InformacionCarta")</Value>
+                    <Style>
+                      <Format>'$' 0.00;'$' -0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>25.03604cm</Top>
+            <Left>8.11947cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>50</ZIndex>
+            <Visibility>
+              <Hidden>=iif(Sum(Fields!SaldoTramiteST.Value, "InformacionCarta") &gt; 0, False, True)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Width>1pt</Width>
+              </TopBorder>
+              <LeftBorder>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Width>1pt</Width>
+              </RightBorder>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>es-EC</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>32.00188cm</Height>
+        <Height>40.04122cm</Height>
         <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
           <BackgroundImage>
             <Source>Embedded</Source>
             <Value>=IIF(Parameters!Fondo.Value = true,"HojaMembretadaF","")</Value>
-            <BackgroundRepeat>RepeatY</BackgroundRepeat>
           </BackgroundImage>
         </Style>
       </Body>
-      <Width>22.39287cm</Width>
+      <Width>21cm</Width>
       <Page>
         <PageHeader>
           <Height>4cm</Height>
@@ -3772,7 +4681,6 @@
             <BackgroundImage>
               <Source>Embedded</Source>
               <Value>=IIF(Parameters!Fondo.Value = true,"HojaMembretadaT","")</Value>
-              <BackgroundRepeat>RepeatY</BackgroundRepeat>
             </BackgroundImage>
           </Style>
         </PageHeader>
@@ -3787,7 +4695,6 @@
             <BackgroundImage>
               <Source>Embedded</Source>
               <Value>=IIF(Parameters!Fondo.Value = true,"HojaMembretadaB","")</Value>
-              <BackgroundRepeat>RepeatY</BackgroundRepeat>
             </BackgroundImage>
           </Style>
         </PageFooter>
@@ -4097,5 +5004,5 @@ AfDKUHFK9ZPf/PRf/qs/yU0f1oXT3o2OovCNyU9RZPOTGQDqpAt5LWosvsxafz6zC3xtbKhitwP4Y8A4
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ca466fb9-41c0-40d8-9c02-56623f8c60f8</rd:ReportID>
+  <rd:ReportID>710143a8-1364-4da2-9078-03525feba9b9</rd:ReportID>
 </Report>
