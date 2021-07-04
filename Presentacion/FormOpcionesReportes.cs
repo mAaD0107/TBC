@@ -22,7 +22,40 @@ namespace Presentacion
                 panelCuentasCobrar.Visible = false; 
             }
         }
+        public int diferenciar = 1;
 
+        public void diferenciar_atras(int x)
+        {
+            diferenciar = x;
+
+        }
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (diferenciar == 1)
+            {
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
+                    formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formOpcionesImportaciones);
+                    formPrincipal.AbrirFormInPanel(formOpcionesImportaciones);
+                }
+            }
+            else
+            {
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormOpcionesExportaciones formOpcionesExportaciones = new FormOpcionesExportaciones();
+                    formOpcionesExportaciones.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formOpcionesExportaciones);
+                    formPrincipal.AbrirFormInPanel(formOpcionesExportaciones);
+                }
+            }
+        }
         private void FormOpcionesReportes_Resize(object sender, EventArgs e)
         {
             lblTitulo.Left = (lblTitulo.Parent.Width / 2) - (lblTitulo.Width / 2);
@@ -49,6 +82,7 @@ namespace Presentacion
             if (formPrincipal != null)
             {
                 FormOpcionesCuentasCobrar formOpcionesCuentasCobrar = new FormOpcionesCuentasCobrar();
+                formOpcionesCuentasCobrar.diferenciar_atras(diferenciar);
                 formOpcionesCuentasCobrar.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formPrincipal.AddOwnedForm(formOpcionesCuentasCobrar);
                 formPrincipal.AbrirFormInPanel(formOpcionesCuentasCobrar);
@@ -76,6 +110,7 @@ namespace Presentacion
             if (formPrincipal != null)
             {
                 FormOpcionesCarta formOpcionesCarta = new FormOpcionesCarta();
+                formOpcionesCarta.diferenciar_atras(diferenciar);
                 formOpcionesCarta.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formPrincipal.AddOwnedForm(formOpcionesCarta);
                 formPrincipal.AbrirFormInPanel(formOpcionesCarta);

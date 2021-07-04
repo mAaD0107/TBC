@@ -31,6 +31,10 @@ namespace Presentacion
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoFacturasCarta));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,12 +68,14 @@ namespace Presentacion
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DataCartas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.hScrollBar = new Bunifu.UI.WinForms.BunifuHScrollBar();
             this.dataFacturas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Calculadora = new System.Windows.Forms.Button();
             this.lblDolar = new System.Windows.Forms.Label();
             this.txtDiferencia = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -103,6 +109,7 @@ namespace Presentacion
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.cmbTipoCarta = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -111,7 +118,6 @@ namespace Presentacion
             this.redondeoBtnGenerar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelVScroll = new System.Windows.Forms.Panel();
             this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.redondeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
@@ -120,6 +126,7 @@ namespace Presentacion
             this.panelTitulo.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataCartas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFacturas)).BeginInit();
             this.panel3.SuspendLayout();
             this.panelFacturas.SuspendLayout();
@@ -463,14 +470,72 @@ namespace Presentacion
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.DataCartas);
             this.panel1.Controls.Add(this.hScrollBar);
             this.panel1.Controls.Add(this.dataFacturas);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Location = new System.Drawing.Point(3, 395);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 358);
+            this.panel1.Size = new System.Drawing.Size(996, 377);
             this.panel1.TabIndex = 4;
+            // 
+            // DataCartas
+            // 
+            this.DataCartas.AllowUserToAddRows = false;
+            this.DataCartas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.DataCartas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataCartas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataCartas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataCartas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.DataCartas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataCartas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.DataCartas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataCartas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataCartas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = "--------------";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataCartas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataCartas.DoubleBuffered = true;
+            this.DataCartas.EnableHeadersVisualStyles = false;
+            this.DataCartas.GridColor = System.Drawing.Color.DimGray;
+            this.DataCartas.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.DataCartas.HeaderForeColor = System.Drawing.Color.LightGray;
+            this.DataCartas.Location = new System.Drawing.Point(25, 309);
+            this.DataCartas.Name = "DataCartas";
+            this.DataCartas.ReadOnly = true;
+            this.DataCartas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataCartas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataCartas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataCartas.Size = new System.Drawing.Size(944, 10);
+            this.DataCartas.StandardTab = true;
+            this.DataCartas.TabIndex = 61;
+            this.DataCartas.Visible = false;
             // 
             // hScrollBar
             // 
@@ -564,7 +629,7 @@ namespace Presentacion
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFacturas.Size = new System.Drawing.Size(944, 264);
+            this.dataFacturas.Size = new System.Drawing.Size(944, 229);
             this.dataFacturas.StandardTab = true;
             this.dataFacturas.TabIndex = 59;
             // 
@@ -589,7 +654,7 @@ namespace Presentacion
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(994, 356);
+            this.shapeContainer1.Size = new System.Drawing.Size(994, 375);
             this.shapeContainer1.TabIndex = 50;
             this.shapeContainer1.TabStop = false;
             // 
@@ -607,6 +672,7 @@ namespace Presentacion
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Calculadora);
             this.panel3.Controls.Add(this.lblDolar);
             this.panel3.Controls.Add(this.txtDiferencia);
             this.panel3.Controls.Add(this.label10);
@@ -618,10 +684,29 @@ namespace Presentacion
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.shapeContainer4);
-            this.panel3.Location = new System.Drawing.Point(3, 759);
+            this.panel3.Location = new System.Drawing.Point(3, 778);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(995, 240);
             this.panel3.TabIndex = 6;
+            // 
+            // Calculadora
+            // 
+            this.Calculadora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.Calculadora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Calculadora.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.Calculadora.FlatAppearance.BorderSize = 0;
+            this.Calculadora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.Calculadora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.Calculadora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Calculadora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calculadora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.Calculadora.Location = new System.Drawing.Point(755, 18);
+            this.Calculadora.Name = "Calculadora";
+            this.Calculadora.Size = new System.Drawing.Size(147, 38);
+            this.Calculadora.TabIndex = 85;
+            this.Calculadora.Text = "Calculadora";
+            this.Calculadora.UseVisualStyleBackColor = false;
+            this.Calculadora.Click += new System.EventHandler(this.Calculadora_Click);
             // 
             // lblDolar
             // 
@@ -633,7 +718,6 @@ namespace Presentacion
             this.lblDolar.Size = new System.Drawing.Size(30, 33);
             this.lblDolar.TabIndex = 91;
             this.lblDolar.Text = "$";
-            this.lblDolar.Visible = false;
             // 
             // txtDiferencia
             // 
@@ -670,8 +754,6 @@ namespace Presentacion
             this.txtMayorContable.Size = new System.Drawing.Size(168, 34);
             this.txtMayorContable.TabIndex = 87;
             this.txtMayorContable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMayorContable.TextChanged += new System.EventHandler(this.txtMayorContable_TextChanged);
-            this.txtMayorContable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMayorContable_KeyPress);
             // 
             // label9
             // 
@@ -863,7 +945,7 @@ namespace Presentacion
             this.panelFacturas.Controls.Add(this.label3);
             this.panelFacturas.Controls.Add(this.checkListFacturas);
             this.panelFacturas.Controls.Add(this.shapeContainer3);
-            this.panelFacturas.Location = new System.Drawing.Point(3, 1005);
+            this.panelFacturas.Location = new System.Drawing.Point(3, 1024);
             this.panelFacturas.Name = "panelFacturas";
             this.panelFacturas.Size = new System.Drawing.Size(995, 240);
             this.panelFacturas.TabIndex = 5;
@@ -967,7 +1049,7 @@ namespace Presentacion
             this.panelComentarios.Controls.Add(this.txtComentarios);
             this.panelComentarios.Controls.Add(this.label6);
             this.panelComentarios.Controls.Add(this.shapeContainer6);
-            this.panelComentarios.Location = new System.Drawing.Point(3, 1251);
+            this.panelComentarios.Location = new System.Drawing.Point(3, 1270);
             this.panelComentarios.Name = "panelComentarios";
             this.panelComentarios.Size = new System.Drawing.Size(995, 240);
             this.panelComentarios.TabIndex = 8;
@@ -1029,10 +1111,29 @@ namespace Presentacion
             this.panel4.Controls.Add(this.cmbTipoCarta);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.shapeContainer5);
-            this.panel4.Location = new System.Drawing.Point(3, 1497);
+            this.panel4.Location = new System.Drawing.Point(3, 1516);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(994, 93);
             this.panel4.TabIndex = 7;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnGuardar.Location = new System.Drawing.Point(724, 21);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(255, 59);
+            this.btnGuardar.TabIndex = 86;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnGenerar
             // 
@@ -1162,25 +1263,6 @@ namespace Presentacion
             this.vScrollBar.Value = 0;
             this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnGuardar.Location = new System.Drawing.Point(724, 21);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(255, 59);
-            this.btnGuardar.TabIndex = 86;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // redondeoBtnGuardar
             // 
             this.redondeoBtnGuardar.ElipseRadius = 20;
@@ -1211,6 +1293,7 @@ namespace Presentacion
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataCartas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFacturas)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1305,5 +1388,7 @@ namespace Presentacion
         private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
         public System.Windows.Forms.Button btnGuardar;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnGuardar;
+        public System.Windows.Forms.Button Calculadora;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid DataCartas;
     }
 }

@@ -648,6 +648,27 @@ namespace DataAccess
                 }
             }
         }
+        public DataTable readInfoCartas(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "buscarCartas";
+                    command.Parameters.AddWithValue("@ID_Tramite", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+
+                }
+            }
+        }
 
         public DataTable datosRetencionCredito(string nFactura)
         {

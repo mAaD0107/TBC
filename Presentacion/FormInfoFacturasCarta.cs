@@ -22,7 +22,7 @@ namespace Presentacion
         double valorAPagar = 0;
         double totalGastos = 0;
         double valorMayorContable = 0;
-
+       
         public ReadOnlyCollection<string> tipoFactura { get; } = new ReadOnlyCollection<string>
         (
             new string[] 
@@ -54,13 +54,20 @@ namespace Presentacion
             this.checkListFacturas.MouseWheel += new MouseEventHandler(deshabilitarCheckList);
 
         }
-
+        public bool ACalcu = false;
         private void FormInfoFacturasCarta_Load(object sender, EventArgs e)
         {
             UserModel Read = new UserModel();
             DataTable Facturas = Read.readInfoFacturas(FacturaCache.ID_Tramite);
-            dataFacturas.DataSource = Facturas;
+            DataTable Cartas = Read.readInfoCartas(FacturaCache.ID_Tramite);
             
+            dataFacturas.DataSource = Facturas;
+            DataCartas.DataSource = Cartas;
+            
+            if (DataCartas.Rows.Count>0)
+            {
+                this.txtMayorContable.Text = DataCartas.Rows[0].Cells[7].Value.ToString();
+            }
 
             int n = obtenerNTramite(FacturaCache.ID_Tramite);
 
@@ -68,7 +75,7 @@ namespace Presentacion
             checkListFacturas.DataSource = TipoFactura;
             checkListFacturas.DisplayMember = "Tipo_Factura";
             checkListFacturas.ValueMember = "Tipo_Factura";
-
+            
 
             foreach (DataRow row in Facturas.Rows)
             {
@@ -102,6 +109,10 @@ namespace Presentacion
         {
             string[] texto = ID_Tramite.Split(new string[] { "-" }, StringSplitOptions.None);
             return int.Parse(texto[1]);
+        }
+        public void SetTextoMayor(string texto)
+        {
+            this.txtMayorContable.Text = this.txtMayorContable.Text + texto;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -387,6 +398,17 @@ namespace Presentacion
         private bool estaEnLista(string campo, List<string> lista)
         {
             return lista.ToList().Any(x => x == campo); 
+        }
+
+       
+        private void Calculadora_Click(object sender, EventArgs e)
+        {   if (ACalcu == false)
+            {
+                ACalcu = true;
+                FormCalculadora Calcu = new FormCalculadora();
+                AddOwnedForm(Calcu);
+                Calcu.Show();
+            }
         }
     }
 }

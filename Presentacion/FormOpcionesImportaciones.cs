@@ -78,6 +78,7 @@ namespace Presentacion
             if (formPrincipal != null)
             {
                 FormOpcionesFactura formOpcionesFactura = new FormOpcionesFactura();
+                formOpcionesFactura.diferenciar_atras(1);
                 formOpcionesFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formPrincipal.AddOwnedForm(formOpcionesFactura);
                 formPrincipal.AbrirFormInPanel(formOpcionesFactura);
@@ -212,6 +213,7 @@ namespace Presentacion
             if (formPrincipal != null)
             {
                 FormOpcionesReportes formOpcionesReportes = new FormOpcionesReportes();
+                formOpcionesReportes.diferenciar_atras(1);
                 formOpcionesReportes.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formPrincipal.AddOwnedForm(formOpcionesReportes);
                 formPrincipal.AbrirFormInPanel(formOpcionesReportes);

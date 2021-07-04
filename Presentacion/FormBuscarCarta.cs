@@ -98,7 +98,7 @@ namespace Presentacion
             FacturaCache.ID_Tramite = dataGridClientes.Rows[iTabla].Cells[3].Value.ToString();
             FacturaCache.SecuencialCliente = dataGridClientes.Rows[iTabla].Cells[4].Value.ToString();
             FacturaCache.DAI = dataGridClientes.Rows[iTabla].Cells[5].Value.ToString();
-             
+            
 
             FormPrincipal formPrincipal = Owner as FormPrincipal;
             if (formPrincipal != null)

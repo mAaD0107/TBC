@@ -312,7 +312,10 @@ namespace Domain
         {
             return userDao.readInfoFacturas(ID_Tramite);
         }
-
+        public DataTable readInfoCartas(string ID_Tramite)
+        {
+            return userDao.readInfoCartas(ID_Tramite);
+        }
 
         public DataTable datosRetencionCredito(string nFactura)
         {

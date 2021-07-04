@@ -136,6 +136,7 @@ namespace Presentacion
         bool vCliente = false;
         bool vProveedor = false;
         bool vImportaciones = false;
+        bool vExportaciones = false;
 
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -159,6 +160,7 @@ namespace Presentacion
                 vCliente = true;
                 vProveedor = false;
                 vImportaciones = false;
+                vExportaciones = false;
 
             }
             else
@@ -197,6 +199,7 @@ namespace Presentacion
                 vProveedor = true;
                 vCliente = false;
                 vImportaciones = false;
+                vExportaciones = false;
             }
             else
             {
@@ -213,9 +216,34 @@ namespace Presentacion
 
 
         }
+        private void btnExportaciones_Click(object sender, EventArgs e)
+        {
+            if (!vExportaciones)
+            {
+                btnInicio.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnClientes.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnTramites.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnImportaciones.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnExportaciones.BackColor = Color.FromArgb(57, 60, 67);
+                btnReportes.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnConfigurar.BackColor = Color.FromArgb(150, 33, 31, 41);
+                btnLogOut.BackColor = Color.FromArgb(150, 33, 31, 41);
 
-        
-        private void btnImportaciones_Click(object sender, EventArgs e)
+                FormOpcionesExportaciones formOpcionesExportaciones = new FormOpcionesExportaciones();
+                formOpcionesExportaciones.FormClosed += new FormClosedEventHandler(mostrarLogoAlCerrar);
+                AddOwnedForm(formOpcionesExportaciones);
+                AbrirFormInPanel(formOpcionesExportaciones);
+
+                vImportaciones = false;
+                vCliente = false;
+                vProveedor = false;
+                vExportaciones = true;
+            }
+            else
+            {
+            }
+        }
+                private void btnImportaciones_Click(object sender, EventArgs e)
         {
             if (!vImportaciones)
             {
@@ -236,6 +264,7 @@ namespace Presentacion
                 vImportaciones = true;
                 vCliente = false;
                 vProveedor = false;
+                vExportaciones = false;
             }
             else
             {
@@ -338,6 +367,7 @@ namespace Presentacion
             vCliente = false;
             vProveedor = false;
             vImportaciones = false;
+            vExportaciones = false;
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
@@ -359,10 +389,10 @@ namespace Presentacion
             vCliente = false;
             vProveedor = false;
             vImportaciones = false;
+            vExportaciones = false;
 
-            
+
         }
-
 
 
 
@@ -379,6 +409,7 @@ namespace Presentacion
             vCliente = false;
             vProveedor = false;
             vImportaciones = false;
+            vExportaciones = false;
         }
 
 
@@ -416,6 +447,7 @@ namespace Presentacion
             vCliente = false;
             vProveedor = false;
             vImportaciones = false;
+            vExportaciones = false;
         }
 
 

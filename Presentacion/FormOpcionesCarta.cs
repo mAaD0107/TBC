@@ -23,7 +23,27 @@ namespace Presentacion
                 panelBuscarEditar.Visible = false; 
             }
         }
+        public int diferenciar = 1;
 
+        public void diferenciar_atras(int x)
+        {
+            diferenciar = x;
+        }
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormOpcionesReportes formOpcionesReportes = new FormOpcionesReportes();
+                    formOpcionesReportes.diferenciar_atras(diferenciar);
+                    formOpcionesReportes.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formOpcionesReportes);
+                    formPrincipal.AbrirFormInPanel(formOpcionesReportes);
+                }
+        }
+        
         private void panelCrear_MouseEnter(object sender, EventArgs e)
         {
             lblCrear.ForeColor = Color.FromArgb(185, 209, 234);

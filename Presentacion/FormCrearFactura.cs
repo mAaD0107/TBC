@@ -71,7 +71,14 @@ namespace Presentacion
             cmbPorcentajeRetRenta.MouseWheel += new MouseEventHandler(scrollsOff);
             cmbPorcentajeRetIVA.MouseWheel += new MouseEventHandler(scrollsOff);
         }
+        DataTable clientes;
+        private void searchData(string data)
+        {
+            UserModel Read = new UserModel();
+            dataGridClientes.DataSource = Read.searchClients(data);
+            clientes = Read.readClients();
 
+        }
         private void scrollsOff(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
@@ -537,7 +544,21 @@ namespace Presentacion
 
         private void txtSubtotalFactura_Leave(object sender, EventArgs e)
         {
+            
             formatearTexto();
+            string respuesta="";
+            if (TramiteCache.tipoTramite == "Marítimo") { respuesta = values1[44]; }
+            if (TramiteCache.tipoTramite == "Terrestre") { respuesta = values1[73]; }
+            if (TramiteCache.tipoTramite == "Aéreo") { respuesta = values1[45]; }
+            if (txtSubtotalFactura.Text != respuesta && Convert.ToString(cmbTipoFactura.SelectedValue) == "Agente_LDM")
+            {
+                var result = MessageBox.Show("¿Esta seguro que desea cambiar el valor de la base de datos?", "¡Alerta!", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+
+                if (result == DialogResult.No)
+                {
+                    txtSubtotalFactura.Text = respuesta;
+                }            
+            }
         }
 
 
@@ -592,7 +613,7 @@ namespace Presentacion
 
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                txtNumeroRetencion.Focus();
+                cmbIVA.Focus();
             }
         }
 
@@ -734,7 +755,7 @@ namespace Presentacion
             calcularFactura();
             calcularTotalRetención();
             calcularValorACobrar();
-
+            
         }
 
 
@@ -1049,7 +1070,32 @@ namespace Presentacion
 
         private void cmbTipoFactura_SelectedValueChanged(object sender, EventArgs e)
         {
-           // readRetenciones();
+
+            if (Convert.ToString(cmbTipoFactura.SelectedValue) == "Agente_LDM")
+            {
+                searchData(txtCliente.Text);
+                //dataGridClientes.Visible = true;
+                int iTabla = 0;
+
+                string RUC = dataGridClientes.Rows[0].Cells[0].Value.ToString();
+
+                for (int i = 0; i < clientes.Rows.Count; i++)
+                {
+                    if (clientes.Rows[i][0].ToString() == RUC)
+                    {
+                        iTabla = i;
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < 127 - 1; i++)
+                {
+
+                    values1[i] = clientes.Rows[iTabla][i].ToString();
+                }
+                
+            }
+            else { txtSubtotalFactura.Text = ""; }
         }
 
         private void cmbOtros_SelectedValueChanged(object sender, EventArgs e)
@@ -1490,6 +1536,7 @@ namespace Presentacion
 
 
         string[] values = new string[37];
+        string[] values1 = new string[127];
         public bool editar = false;
         // Nuevos valores
         public double iva2;
@@ -1775,6 +1822,11 @@ namespace Presentacion
             calcularFactura();
             calcularTotalRetención();
             calcularValorACobrar();
+        }
+        
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+           
         }
 
         private void txtSubTotalNotCreditoII_Leave(object sender, EventArgs e)
