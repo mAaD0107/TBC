@@ -75,6 +75,7 @@ namespace Presentacion
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Dolar = new System.Windows.Forms.Label();
             this.Calculadora = new System.Windows.Forms.Button();
             this.lblDolar = new System.Windows.Forms.Label();
             this.txtDiferencia = new System.Windows.Forms.TextBox();
@@ -519,7 +520,7 @@ namespace Presentacion
             this.DataCartas.GridColor = System.Drawing.Color.DimGray;
             this.DataCartas.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.DataCartas.HeaderForeColor = System.Drawing.Color.LightGray;
-            this.DataCartas.Location = new System.Drawing.Point(25, 309);
+            this.DataCartas.Location = new System.Drawing.Point(25, 249);
             this.DataCartas.Name = "DataCartas";
             this.DataCartas.ReadOnly = true;
             this.DataCartas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -532,10 +533,9 @@ namespace Presentacion
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataCartas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataCartas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataCartas.Size = new System.Drawing.Size(944, 10);
+            this.DataCartas.Size = new System.Drawing.Size(944, 70);
             this.DataCartas.StandardTab = true;
             this.DataCartas.TabIndex = 61;
-            this.DataCartas.Visible = false;
             // 
             // hScrollBar
             // 
@@ -629,7 +629,7 @@ namespace Presentacion
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFacturas.Size = new System.Drawing.Size(944, 229);
+            this.dataFacturas.Size = new System.Drawing.Size(944, 127);
             this.dataFacturas.StandardTab = true;
             this.dataFacturas.TabIndex = 59;
             // 
@@ -672,6 +672,7 @@ namespace Presentacion
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Dolar);
             this.panel3.Controls.Add(this.Calculadora);
             this.panel3.Controls.Add(this.lblDolar);
             this.panel3.Controls.Add(this.txtDiferencia);
@@ -688,6 +689,18 @@ namespace Presentacion
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(995, 240);
             this.panel3.TabIndex = 6;
+            // 
+            // Dolar
+            // 
+            this.Dolar.AutoSize = true;
+            this.Dolar.Font = new System.Drawing.Font("Century Gothic", 20.25F);
+            this.Dolar.ForeColor = System.Drawing.Color.DimGray;
+            this.Dolar.Location = new System.Drawing.Point(638, 159);
+            this.Dolar.Name = "Dolar";
+            this.Dolar.Size = new System.Drawing.Size(30, 33);
+            this.Dolar.TabIndex = 92;
+            this.Dolar.Text = "$";
+            this.Dolar.Visible = false;
             // 
             // Calculadora
             // 
@@ -718,6 +731,7 @@ namespace Presentacion
             this.lblDolar.Size = new System.Drawing.Size(30, 33);
             this.lblDolar.TabIndex = 91;
             this.lblDolar.Text = "$";
+            this.lblDolar.Visible = false;
             // 
             // txtDiferencia
             // 
@@ -725,12 +739,13 @@ namespace Presentacion
             this.txtDiferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiferencia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiferencia.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDiferencia.Location = new System.Drawing.Point(614, 159);
+            this.txtDiferencia.Location = new System.Drawing.Point(669, 159);
             this.txtDiferencia.Name = "txtDiferencia";
             this.txtDiferencia.ReadOnly = true;
-            this.txtDiferencia.Size = new System.Drawing.Size(236, 34);
+            this.txtDiferencia.Size = new System.Drawing.Size(181, 34);
             this.txtDiferencia.TabIndex = 89;
             this.txtDiferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiferencia.TextChanged += new System.EventHandler(this.txtDiferencia_TextChanged);
             // 
             // label10
             // 
@@ -754,6 +769,7 @@ namespace Presentacion
             this.txtMayorContable.Size = new System.Drawing.Size(168, 34);
             this.txtMayorContable.TabIndex = 87;
             this.txtMayorContable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMayorContable.TextChanged += new System.EventHandler(this.txtMayorContable_TextChanged_1);
             // 
             // label9
             // 
@@ -1390,5 +1406,6 @@ namespace Presentacion
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnGuardar;
         public System.Windows.Forms.Button Calculadora;
         public Bunifu.Framework.UI.BunifuCustomDataGrid DataCartas;
+        private System.Windows.Forms.Label Dolar;
     }
 }

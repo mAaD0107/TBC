@@ -24,8 +24,10 @@ namespace Presentacion
         {
             this.txtpantalla.Focus();
         }
+        Decimal resultado = 0;
         Decimal a=0;
-        Decimal b=0;      
+        Decimal b=0;
+        bool enter = false;
         string c;
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -149,34 +151,178 @@ namespace Presentacion
 
         public void btndivision_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDecimal(this.txtpantalla.Text);
-            c = "/";
-            this.txtpantalla.Clear();
-            this.txtpantalla.Focus();
+            if (this.txtpantalla.Text != "")
+            {
+                if (a == 0)
+                {
+                    a = Convert.ToDecimal(this.txtpantalla.Text);
+                    this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "/";
+                    c = "/";
+                    this.txtpantalla.Clear();
+                    this.txtpantalla.Focus();
+                }
+                else
+                {
+                    b = Convert.ToDecimal(this.txtpantalla.Text);
+                    switch (c)
+                    {
+                        case "+":
+                            resultado = Math.Round((a + b), 2, MidpointRounding.AwayFromZero);
+                            break;
+
+                        case "-":
+                            resultado = Math.Round((a - b), 2, MidpointRounding.AwayFromZero);
+                            break;
+
+                        case "*":
+                            resultado = Math.Round((a * b), 2, MidpointRounding.AwayFromZero);
+                            break;
+
+                        case "/":
+                            resultado = Math.Round((a / b), 2, MidpointRounding.AwayFromZero);
+                            break;
+                    }
+                    this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "/";
+                    c = "/";
+                    a = resultado;
+                    this.txtpantalla.Clear();
+                    this.txtpantalla.Focus();
+
+                }
+            }
+            else { MessageBox.Show("escriba un número primero"); }
         }
 
         public void btnmultiplicacion_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDecimal(this.txtpantalla.Text);
-            c = "*";
-            this.txtpantalla.Clear();
-            this.txtpantalla.Focus();
+            if (this.txtpantalla.Text != "")
+            {
+                if (a == 0)
+                {
+                a = Convert.ToDecimal(this.txtpantalla.Text);
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "*";
+                c = "*";
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+                }
+                else
+                 {
+                b = Convert.ToDecimal(this.txtpantalla.Text);
+                switch (c)
+                {
+                    case "+":
+                        resultado = Math.Round((a + b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "-":
+                        resultado = Math.Round((a - b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "*":
+                        resultado = Math.Round((a * b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "/":
+                        resultado = Math.Round((a / b), 2, MidpointRounding.AwayFromZero);
+                        break;
+                }
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "*";
+                c = "*";
+                a = resultado;
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+
+                 }
+            }
+            else { MessageBox.Show("escriba un número primero"); }
         }
 
         public void btnresta_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDecimal(this.txtpantalla.Text);
-            c = "-";
-            this.txtpantalla.Clear();
-            this.txtpantalla.Focus();
+            if (this.txtpantalla.Text != "")
+            {
+                if (a == 0)
+                {
+                a = Convert.ToDecimal(this.txtpantalla.Text);
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "-";
+                c = "-";
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+                }
+                 else
+                {
+                b = Convert.ToDecimal(this.txtpantalla.Text);
+                switch (c)
+                {
+                    case "+":
+                        resultado = Math.Round((a + b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "-":
+                        resultado = Math.Round((a - b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "*":
+                        resultado = Math.Round((a * b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "/":
+                        resultado = Math.Round((a / b), 2, MidpointRounding.AwayFromZero);
+                        break;
+                }
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "-";
+                c = "-";
+                a = resultado;
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+
+                 }
+            }
+            else { MessageBox.Show("escriba un número primero"); }
         }
 
         public void btnsuma_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDecimal(this.txtpantalla.Text);
-            c = "+";
-            this.txtpantalla.Clear();
-            this.txtpantalla.Focus();
+            if (this.txtpantalla.Text != "")
+            {
+                if (a == 0)
+                {
+                a = Convert.ToDecimal(this.txtpantalla.Text);
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "+";
+                c = "+";
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+                }
+                else
+                 {
+                b = Convert.ToDecimal(this.txtpantalla.Text);
+                switch (c)
+                {
+                    case "+":
+                        resultado = Math.Round((a + b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "-":
+                        resultado = Math.Round((a - b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "*":
+                        resultado = Math.Round((a * b), 2, MidpointRounding.AwayFromZero);
+                        break;
+
+                    case "/":
+                        resultado = Math.Round((a / b), 2, MidpointRounding.AwayFromZero);
+                        break;
+                }
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "+";
+                c = "+";
+                a = resultado;
+                this.txtpantalla.Clear();
+                this.txtpantalla.Focus();
+
+                }
+            }
+            else { MessageBox.Show("escriba un número primero"); }
         }
 
         private void btnpunto_Click(object sender, EventArgs e)
@@ -200,9 +346,12 @@ namespace Presentacion
 
         private void btnigual_Click(object sender, EventArgs e)
         {
-            if (a != 0)
+            if (this.txtpantalla.Text != "")
             {
+                if (a != 0)
+                {
                 b = Convert.ToDecimal(this.txtpantalla.Text);
+                this.txtHistorial.Text = this.txtHistorial.Text + this.txtpantalla.Text + "=";
                 switch (c)
                 {
                     case "+":
@@ -221,14 +370,19 @@ namespace Presentacion
                         this.txtpantalla.Text = Convert.ToString(Math.Round((a / b), 2, MidpointRounding.AwayFromZero));
                         break;
                 }
+                 }
             }
+            else { MessageBox.Show("escriba un número primero"); }
         }
 
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             a = 0;
             b = 0;
+            resultado = 0;
             this.txtpantalla.Text = "";
+            this.txtHistorial.Text = "";
+            enter = false;
         }
 
         private void cerrar_Click(object sender, EventArgs e)
@@ -291,8 +445,13 @@ namespace Presentacion
                 btnresta_Click(sender, e); 
                 }
                 if (e.KeyChar == '/') { btndivision_Click(sender, e); }
-                if (e.KeyChar == Convert.ToChar(Keys.Enter) ) { btnigual_Click(sender, e);}
+                if (e.KeyChar == Convert.ToChar(Keys.Enter) && enter == false) { btnigual_Click(sender, e); enter = true; }
+                if (e.KeyChar == Convert.ToChar(Keys.Enter) && enter == true) { MessageBox.Show("limpiar pantalla para el siguiente calculo"); }
         }
 
+        private void txtpantalla_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) { btnlimpiar_Click(sender, e); }
+        }
     }
 }

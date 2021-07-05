@@ -55,6 +55,7 @@ namespace Presentacion
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.txtHistorial = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@ namespace Presentacion
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.txtHistorial);
             this.bunifuGradientPanel1.Controls.Add(this.txtpantalla);
             this.bunifuGradientPanel1.Controls.Add(this.cerrar);
             this.bunifuGradientPanel1.Controls.Add(this.buttonAtras);
@@ -103,11 +105,12 @@ namespace Presentacion
             this.txtpantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpantalla.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpantalla.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtpantalla.Location = new System.Drawing.Point(76, 58);
+            this.txtpantalla.Location = new System.Drawing.Point(72, 76);
             this.txtpantalla.Name = "txtpantalla";
             this.txtpantalla.Size = new System.Drawing.Size(305, 33);
             this.txtpantalla.TabIndex = 4;
             this.txtpantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtpantalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpantalla_KeyDown);
             this.txtpantalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpantalla_KeyPress);
             // 
             // cerrar
@@ -332,6 +335,18 @@ namespace Presentacion
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // txtHistorial
+            // 
+            this.txtHistorial.BackColor = System.Drawing.Color.Silver;
+            this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHistorial.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHistorial.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtHistorial.Location = new System.Drawing.Point(72, 42);
+            this.txtHistorial.Name = "txtHistorial";
+            this.txtHistorial.Size = new System.Drawing.Size(305, 33);
+            this.txtHistorial.TabIndex = 20;
+            this.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,5 +393,6 @@ namespace Presentacion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        public System.Windows.Forms.TextBox txtHistorial;
     }
 }

@@ -67,6 +67,8 @@ namespace Presentacion
             if (DataCartas.Rows.Count>0)
             {
                 this.txtMayorContable.Text = DataCartas.Rows[0].Cells[7].Value.ToString();
+                this.txtDiferencia.Text = DataCartas.Rows[0].Cells[8].Value.ToString();
+                this.txtComentarios.Text = DataCartas.Rows[0].Cells[35].Value.ToString();
             }
 
             int n = obtenerNTramite(FacturaCache.ID_Tramite);
@@ -409,6 +411,16 @@ namespace Presentacion
                 AddOwnedForm(Calcu);
                 Calcu.Show();
             }
+        }
+
+        private void txtMayorContable_TextChanged_1(object sender, EventArgs e)
+        {
+            lblDolar.Visible = true;
+        }
+
+        private void txtDiferencia_TextChanged(object sender, EventArgs e)
+        {
+            Dolar.Visible = true;
         }
     }
 }
