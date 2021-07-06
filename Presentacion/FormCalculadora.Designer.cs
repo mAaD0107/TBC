@@ -32,8 +32,12 @@ namespace Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalculadora));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.txtpantalla = new System.Windows.Forms.TextBox();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.cerrar = new System.Windows.Forms.Label();
+            this.txtHistorial = new System.Windows.Forms.TextBox();
+            this.txtpantalla = new System.Windows.Forms.TextBox();
             this.buttonAtras = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -55,8 +59,12 @@ namespace Presentacion
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.txtHistorial = new System.Windows.Forms.TextBox();
+            this.elipsepanel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
+            this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -64,9 +72,9 @@ namespace Presentacion
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.panelTitulo);
             this.bunifuGradientPanel1.Controls.Add(this.txtHistorial);
             this.bunifuGradientPanel1.Controls.Add(this.txtpantalla);
-            this.bunifuGradientPanel1.Controls.Add(this.cerrar);
             this.bunifuGradientPanel1.Controls.Add(this.buttonAtras);
             this.bunifuGradientPanel1.Controls.Add(this.buttonLimpiar);
             this.bunifuGradientPanel1.Controls.Add(this.buttonReset);
@@ -99,6 +107,70 @@ namespace Presentacion
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(458, 433);
             this.bunifuGradientPanel1.TabIndex = 1;
             // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.panelTitulo.Controls.Add(this.imgLogo);
+            this.panelTitulo.Controls.Add(this.lblTitulo);
+            this.panelTitulo.Controls.Add(this.cerrar);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(458, 30);
+            this.panelTitulo.TabIndex = 26;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
+            this.imgLogo.Location = new System.Drawing.Point(7, 5);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(20, 20);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogo.TabIndex = 2;
+            this.imgLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
+            this.lblTitulo.Location = new System.Drawing.Point(29, 6);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(37, 19);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "TBC";
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.AutoSize = true;
+            this.cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.cerrar.Location = new System.Drawing.Point(420, 9);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(17, 16);
+            this.cerrar.TabIndex = 24;
+            this.cerrar.Text = "X";
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
+            // txtHistorial
+            // 
+            this.txtHistorial.BackColor = System.Drawing.Color.Silver;
+            this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHistorial.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHistorial.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtHistorial.Location = new System.Drawing.Point(72, 42);
+            this.txtHistorial.Multiline = true;
+            this.txtHistorial.Name = "txtHistorial";
+            this.txtHistorial.ReadOnly = true;
+            this.txtHistorial.Size = new System.Drawing.Size(305, 36);
+            this.txtHistorial.TabIndex = 15;
+            this.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txtpantalla
             // 
             this.txtpantalla.BackColor = System.Drawing.Color.Silver;
@@ -112,21 +184,6 @@ namespace Presentacion
             this.txtpantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtpantalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpantalla_KeyDown);
             this.txtpantalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpantalla_KeyPress);
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.AutoSize = true;
-            this.cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.cerrar.Location = new System.Drawing.Point(430, 9);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(17, 16);
-            this.cerrar.TabIndex = 24;
-            this.cerrar.Text = "X";
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // buttonAtras
             // 
@@ -335,17 +392,22 @@ namespace Presentacion
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // txtHistorial
+            // elipsepanel
             // 
-            this.txtHistorial.BackColor = System.Drawing.Color.Silver;
-            this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHistorial.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHistorial.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtHistorial.Location = new System.Drawing.Point(72, 42);
-            this.txtHistorial.Name = "txtHistorial";
-            this.txtHistorial.Size = new System.Drawing.Size(305, 33);
-            this.txtHistorial.TabIndex = 20;
-            this.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.elipsepanel.ElipseRadius = 30;
+            this.elipsepanel.TargetControl = this.bunifuGradientPanel1;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panelTitulo;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 30;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // FormCalculadora
             // 
@@ -363,6 +425,9 @@ namespace Presentacion
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
+            this.panelTitulo.ResumeLayout(false);
+            this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -394,5 +459,11 @@ namespace Presentacion
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         public System.Windows.Forms.TextBox txtHistorial;
+        private Bunifu.Framework.UI.BunifuElipse elipsepanel;
+        public System.Windows.Forms.Panel panelTitulo;
+        public System.Windows.Forms.PictureBox imgLogo;
+        public System.Windows.Forms.Label lblTitulo;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

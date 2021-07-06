@@ -22,7 +22,8 @@ namespace Presentacion
         double valorAPagar = 0;
         double totalGastos = 0;
         double valorMayorContable = 0;
-       
+        string[] NombresColumnas = new string[50];
+        string[] Nombreschecklist = new string[50];
         public ReadOnlyCollection<string> tipoFactura { get; } = new ReadOnlyCollection<string>
         (
             new string[] 
@@ -55,29 +56,47 @@ namespace Presentacion
 
         }
         public bool ACalcu = false;
+       
         private void FormInfoFacturasCarta_Load(object sender, EventArgs e)
         {
             UserModel Read = new UserModel();
             DataTable Facturas = Read.readInfoFacturas(FacturaCache.ID_Tramite);
             DataTable Cartas = Read.readInfoCartas(FacturaCache.ID_Tramite);
-            
+            int n = obtenerNTramite(FacturaCache.ID_Tramite);
+            DataTable TipoFactura = Read.readPagos(n);
             dataFacturas.DataSource = Facturas;
             DataCartas.DataSource = Cartas;
-            
+            dataTipoFactura.DataSource = TipoFactura;
             if (DataCartas.Rows.Count>0)
             {
                 this.txtMayorContable.Text = DataCartas.Rows[0].Cells[7].Value.ToString();
                 this.txtDiferencia.Text = DataCartas.Rows[0].Cells[8].Value.ToString();
                 this.txtComentarios.Text = DataCartas.Rows[0].Cells[35].Value.ToString();
             }
+            
+            if (DataCartas.Rows.Count > 0)
+            {
+                int x = 0;
+                foreach (DataGridViewColumn column in DataCartas.Columns)
+                {
+                    NombresColumnas[x] = column.HeaderText;
+                    x++;
+                }
 
-            int n = obtenerNTramite(FacturaCache.ID_Tramite);
+               
+                x = 0;
+            }
 
-            DataTable TipoFactura = Read.readPagos(n);
+            for (int i = 0; i < dataTipoFactura.Rows.Count; i++) { 
+                    Nombreschecklist[i]= dataTipoFactura.Rows[i].Cells[0].Value.ToString();
+                }
+            
+                
             checkListFacturas.DataSource = TipoFactura;
             checkListFacturas.DisplayMember = "Tipo_Factura";
             checkListFacturas.ValueMember = "Tipo_Factura";
-            
+
+            checkItems();
 
             foreach (DataRow row in Facturas.Rows)
             {
@@ -100,7 +119,7 @@ namespace Presentacion
             ActiveControl = null;
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Focus();
-
+            
 
         }
 
@@ -112,10 +131,7 @@ namespace Presentacion
             string[] texto = ID_Tramite.Split(new string[] { "-" }, StringSplitOptions.None);
             return int.Parse(texto[1]);
         }
-        public void SetTextoMayor(string texto)
-        {
-            this.txtMayorContable.Text = this.txtMayorContable.Text + texto;
-        }
+       
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -154,13 +170,35 @@ namespace Presentacion
             }
         }
 
+        public void checkItems()
+        {
+           
+            if (checkListFacturas.Items.Count > 0 && DataCartas.Rows.Count > 0)
+            {
+                for (int i = 0; i < checkListFacturas.Items.Count; i++)
+                {
+                    
+                    for (int j = 10; j < 35; j++)
+                    {
+                        if (Nombreschecklist[i] == NombresColumnas[j])
+                        {
+                            if (DataCartas.Rows[0].Cells[j].Value.ToString() == "True") 
+                            {
+                                checkListFacturas.SetItemChecked(i, true);
+                            }
+                        }
+                        
+                    }
+                }
+               
 
-
+            }
+        }
         private bool agregarFacturas()
         {
             if (checkListFacturas.CheckedItems.Count > 0)
             {
-                
+
                 if (CartaCache.Facturas != null) CartaCache.Facturas.Clear();
                 CartaCache.Facturas = new List<string>();
 
@@ -171,6 +209,8 @@ namespace Presentacion
                     CartaCache.Facturas.Add(tipoFactura);
                 }
 
+               
+            
                 return true;
             }
             else
@@ -178,7 +218,7 @@ namespace Presentacion
                 if (btnG)
                 {
                       MessageBox.Show("No es posible guardar la Carta.\n" +
-                    "Por favor, selecione las facturas que desea agregar.",
+                    "Por favor, seleccione las facturas que desea agregar.",
                     "Alerta.",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -186,7 +226,7 @@ namespace Presentacion
                 else
                 {
                     MessageBox.Show("No es posible generar la Carta.\n" +
-                "Por favor, selecione las facturas que desea agregar.",
+                "Por favor, seleccione las facturas que desea agregar.",
                 "Alerta.",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
@@ -416,11 +456,22 @@ namespace Presentacion
         private void txtMayorContable_TextChanged_1(object sender, EventArgs e)
         {
             lblDolar.Visible = true;
+            
         }
 
         private void txtDiferencia_TextChanged(object sender, EventArgs e)
         {
             Dolar.Visible = true;
+           
+
         }
+
+
+        private void txtComentarios_TextChanged(object sender, EventArgs e)
+        {
+            //checkItems();
+        }
+
+        
     }
 }
