@@ -480,5 +480,14 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape) { btnlimpiar_Click(sender, e); }
         }
+
+        private void txtpantalla_TextChanged(object sender, EventArgs e)
+        {
+            txtpantalla.Focus();
+            txtpantalla.DeselectAll();
+            txtpantalla.Select(txtpantalla.Text.Length, 0);
+
+
+        }
     }
 }

@@ -69,6 +69,8 @@ namespace Presentacion
             // 
             // bunifuGradientPanel1
             // 
+            this.bunifuGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -104,28 +106,31 @@ namespace Presentacion
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(458, 433);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(611, 533);
             this.bunifuGradientPanel1.TabIndex = 1;
             // 
             // panelTitulo
             // 
+            this.panelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
             this.panelTitulo.Controls.Add(this.imgLogo);
             this.panelTitulo.Controls.Add(this.lblTitulo);
             this.panelTitulo.Controls.Add(this.cerrar);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(458, 30);
+            this.panelTitulo.Size = new System.Drawing.Size(611, 37);
             this.panelTitulo.TabIndex = 26;
             // 
             // imgLogo
             // 
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
-            this.imgLogo.Location = new System.Drawing.Point(7, 5);
+            this.imgLogo.Location = new System.Drawing.Point(9, 6);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(20, 20);
+            this.imgLogo.Size = new System.Drawing.Size(27, 25);
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 2;
             this.imgLogo.TabStop = false;
@@ -136,9 +141,10 @@ namespace Presentacion
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
-            this.lblTitulo.Location = new System.Drawing.Point(29, 6);
+            this.lblTitulo.Location = new System.Drawing.Point(39, 7);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(37, 19);
+            this.lblTitulo.Size = new System.Drawing.Size(46, 23);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "TBC";
             // 
@@ -150,9 +156,10 @@ namespace Presentacion
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.cerrar.Location = new System.Drawing.Point(420, 9);
+            this.cerrar.Location = new System.Drawing.Point(560, 11);
+            this.cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(17, 16);
+            this.cerrar.Size = new System.Drawing.Size(21, 20);
             this.cerrar.TabIndex = 24;
             this.cerrar.Text = "X";
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
@@ -163,11 +170,12 @@ namespace Presentacion
             this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHistorial.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHistorial.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtHistorial.Location = new System.Drawing.Point(72, 42);
+            this.txtHistorial.Location = new System.Drawing.Point(96, 52);
+            this.txtHistorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHistorial.Multiline = true;
             this.txtHistorial.Name = "txtHistorial";
             this.txtHistorial.ReadOnly = true;
-            this.txtHistorial.Size = new System.Drawing.Size(305, 36);
+            this.txtHistorial.Size = new System.Drawing.Size(407, 44);
             this.txtHistorial.TabIndex = 15;
             this.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -177,19 +185,22 @@ namespace Presentacion
             this.txtpantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpantalla.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpantalla.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtpantalla.Location = new System.Drawing.Point(72, 76);
+            this.txtpantalla.Location = new System.Drawing.Point(96, 94);
+            this.txtpantalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtpantalla.Name = "txtpantalla";
-            this.txtpantalla.Size = new System.Drawing.Size(305, 33);
+            this.txtpantalla.Size = new System.Drawing.Size(407, 41);
             this.txtpantalla.TabIndex = 4;
             this.txtpantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtpantalla.TextChanged += new System.EventHandler(this.txtpantalla_TextChanged);
             this.txtpantalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpantalla_KeyDown);
             this.txtpantalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpantalla_KeyPress);
             // 
             // buttonAtras
             // 
-            this.buttonAtras.Location = new System.Drawing.Point(340, 140);
+            this.buttonAtras.Location = new System.Drawing.Point(453, 172);
+            this.buttonAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAtras.Name = "buttonAtras";
-            this.buttonAtras.Size = new System.Drawing.Size(107, 63);
+            this.buttonAtras.Size = new System.Drawing.Size(143, 78);
             this.buttonAtras.TabIndex = 23;
             this.buttonAtras.Text = "<-";
             this.buttonAtras.UseVisualStyleBackColor = true;
@@ -197,9 +208,10 @@ namespace Presentacion
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(340, 209);
+            this.buttonLimpiar.Location = new System.Drawing.Point(453, 257);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(107, 63);
+            this.buttonLimpiar.Size = new System.Drawing.Size(143, 78);
             this.buttonLimpiar.TabIndex = 22;
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
@@ -207,9 +219,10 @@ namespace Presentacion
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(340, 347);
+            this.buttonReset.Location = new System.Drawing.Point(453, 427);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(107, 63);
+            this.buttonReset.Size = new System.Drawing.Size(143, 78);
             this.buttonReset.TabIndex = 21;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -217,9 +230,10 @@ namespace Presentacion
             // 
             // buttonSet
             // 
-            this.buttonSet.Location = new System.Drawing.Point(340, 278);
+            this.buttonSet.Location = new System.Drawing.Point(453, 342);
+            this.buttonSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(107, 63);
+            this.buttonSet.Size = new System.Drawing.Size(143, 78);
             this.buttonSet.TabIndex = 20;
             this.buttonSet.Text = "Set";
             this.buttonSet.UseVisualStyleBackColor = true;
@@ -227,9 +241,10 @@ namespace Presentacion
             // 
             // buttonPunto
             // 
-            this.buttonPunto.Location = new System.Drawing.Point(12, 347);
+            this.buttonPunto.Location = new System.Drawing.Point(16, 427);
+            this.buttonPunto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPunto.Name = "buttonPunto";
-            this.buttonPunto.Size = new System.Drawing.Size(76, 63);
+            this.buttonPunto.Size = new System.Drawing.Size(101, 78);
             this.buttonPunto.TabIndex = 19;
             this.buttonPunto.Text = ",";
             this.buttonPunto.UseVisualStyleBackColor = true;
@@ -237,9 +252,10 @@ namespace Presentacion
             // 
             // buttonDivision
             // 
-            this.buttonDivision.Location = new System.Drawing.Point(258, 347);
+            this.buttonDivision.Location = new System.Drawing.Point(344, 427);
+            this.buttonDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDivision.Name = "buttonDivision";
-            this.buttonDivision.Size = new System.Drawing.Size(76, 63);
+            this.buttonDivision.Size = new System.Drawing.Size(101, 78);
             this.buttonDivision.TabIndex = 18;
             this.buttonDivision.Text = "*";
             this.buttonDivision.UseVisualStyleBackColor = true;
@@ -247,9 +263,10 @@ namespace Presentacion
             // 
             // buttonMultiplicacion
             // 
-            this.buttonMultiplicacion.Location = new System.Drawing.Point(258, 278);
+            this.buttonMultiplicacion.Location = new System.Drawing.Point(344, 342);
+            this.buttonMultiplicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMultiplicacion.Name = "buttonMultiplicacion";
-            this.buttonMultiplicacion.Size = new System.Drawing.Size(76, 63);
+            this.buttonMultiplicacion.Size = new System.Drawing.Size(101, 78);
             this.buttonMultiplicacion.TabIndex = 17;
             this.buttonMultiplicacion.Text = "/";
             this.buttonMultiplicacion.UseVisualStyleBackColor = true;
@@ -257,9 +274,10 @@ namespace Presentacion
             // 
             // buttonMenos
             // 
-            this.buttonMenos.Location = new System.Drawing.Point(258, 209);
+            this.buttonMenos.Location = new System.Drawing.Point(344, 257);
+            this.buttonMenos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMenos.Name = "buttonMenos";
-            this.buttonMenos.Size = new System.Drawing.Size(76, 63);
+            this.buttonMenos.Size = new System.Drawing.Size(101, 78);
             this.buttonMenos.TabIndex = 16;
             this.buttonMenos.Text = "-";
             this.buttonMenos.UseVisualStyleBackColor = true;
@@ -267,9 +285,10 @@ namespace Presentacion
             // 
             // buttonMas
             // 
-            this.buttonMas.Location = new System.Drawing.Point(258, 140);
+            this.buttonMas.Location = new System.Drawing.Point(344, 172);
+            this.buttonMas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMas.Name = "buttonMas";
-            this.buttonMas.Size = new System.Drawing.Size(76, 63);
+            this.buttonMas.Size = new System.Drawing.Size(101, 78);
             this.buttonMas.TabIndex = 15;
             this.buttonMas.Text = "+";
             this.buttonMas.UseVisualStyleBackColor = true;
@@ -277,9 +296,10 @@ namespace Presentacion
             // 
             // buttonIgual
             // 
-            this.buttonIgual.Location = new System.Drawing.Point(176, 347);
+            this.buttonIgual.Location = new System.Drawing.Point(235, 427);
+            this.buttonIgual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonIgual.Name = "buttonIgual";
-            this.buttonIgual.Size = new System.Drawing.Size(76, 63);
+            this.buttonIgual.Size = new System.Drawing.Size(101, 78);
             this.buttonIgual.TabIndex = 14;
             this.buttonIgual.Text = "=";
             this.buttonIgual.UseVisualStyleBackColor = true;
@@ -287,9 +307,10 @@ namespace Presentacion
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(94, 347);
+            this.button0.Location = new System.Drawing.Point(125, 427);
+            this.button0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(76, 63);
+            this.button0.Size = new System.Drawing.Size(101, 78);
             this.button0.TabIndex = 13;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -297,9 +318,10 @@ namespace Presentacion
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(176, 278);
+            this.button9.Location = new System.Drawing.Point(235, 342);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(76, 63);
+            this.button9.Size = new System.Drawing.Size(101, 78);
             this.button9.TabIndex = 12;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
@@ -307,9 +329,10 @@ namespace Presentacion
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(94, 278);
+            this.button8.Location = new System.Drawing.Point(125, 342);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(76, 63);
+            this.button8.Size = new System.Drawing.Size(101, 78);
             this.button8.TabIndex = 11;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
@@ -317,9 +340,10 @@ namespace Presentacion
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(12, 278);
+            this.button7.Location = new System.Drawing.Point(16, 342);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(76, 63);
+            this.button7.Size = new System.Drawing.Size(101, 78);
             this.button7.TabIndex = 10;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
@@ -327,9 +351,10 @@ namespace Presentacion
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(176, 209);
+            this.button6.Location = new System.Drawing.Point(235, 257);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(76, 63);
+            this.button6.Size = new System.Drawing.Size(101, 78);
             this.button6.TabIndex = 9;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -337,9 +362,10 @@ namespace Presentacion
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(94, 209);
+            this.button5.Location = new System.Drawing.Point(125, 257);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 63);
+            this.button5.Size = new System.Drawing.Size(101, 78);
             this.button5.TabIndex = 8;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -347,9 +373,10 @@ namespace Presentacion
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 209);
+            this.button4.Location = new System.Drawing.Point(16, 257);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 63);
+            this.button4.Size = new System.Drawing.Size(101, 78);
             this.button4.TabIndex = 7;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -357,9 +384,10 @@ namespace Presentacion
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(176, 140);
+            this.button3.Location = new System.Drawing.Point(235, 172);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 63);
+            this.button3.Size = new System.Drawing.Size(101, 78);
             this.button3.TabIndex = 6;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
@@ -367,9 +395,10 @@ namespace Presentacion
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(94, 140);
+            this.button2.Location = new System.Drawing.Point(125, 172);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 63);
+            this.button2.Size = new System.Drawing.Size(101, 78);
             this.button2.TabIndex = 5;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
@@ -377,9 +406,10 @@ namespace Presentacion
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 140);
+            this.button1.Location = new System.Drawing.Point(16, 172);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 63);
+            this.button1.Size = new System.Drawing.Size(101, 78);
             this.button1.TabIndex = 25;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
@@ -411,13 +441,14 @@ namespace Presentacion
             // 
             // FormCalculadora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(459, 434);
+            this.ClientSize = new System.Drawing.Size(612, 534);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(10, 10);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCalculadora";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

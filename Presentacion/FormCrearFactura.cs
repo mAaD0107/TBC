@@ -58,7 +58,6 @@ namespace Presentacion
             }
 
             desactivarScrolls();
-
         }
 
         private void desactivarScrolls()
