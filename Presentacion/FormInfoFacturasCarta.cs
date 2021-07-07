@@ -97,6 +97,13 @@ namespace Presentacion
             checkListFacturas.ValueMember = "Tipo_Factura";
 
             checkItems();
+            if (DataCartas.Rows[0].Cells[36].Value.ToString() == "True") {
+                cmbTipoCarta.SelectedIndex=1;
+            }
+            if (DataCartas.Rows[0].Cells[36].Value.ToString() == "False")
+            {
+                cmbTipoCarta.SelectedIndex = 2;
+            }
 
             foreach (DataRow row in Facturas.Rows)
             {
