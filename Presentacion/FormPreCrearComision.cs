@@ -17,6 +17,8 @@ namespace Presentacion
         public FormPreCrearComision()
         {
             InitializeComponent();
+            this.panelGeneral.MouseWheel += new MouseEventHandler(panelScroll);
+            
         }
 
         private void FormPreCrearComision_Load(object sender, EventArgs e)
@@ -26,8 +28,18 @@ namespace Presentacion
 
             cmbCiudadNacionalizacion.SelectedIndex = 0;
             cmbTipoDocumento.SelectedIndex = 0;
-
+            FormPrincipal formPrincipal = Owner as FormPrincipal;
+            formPrincipal.panelInferior.Visible = false;
+            formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
             showTramites();
+            vScrollBar.Minimum = panelGeneral.VerticalScroll.Minimum;
+            vScrollBar.Maximum = panelGeneral.VerticalScroll.Maximum;
+            //hScrollBar.Maximum = dataFacturas.ColumnCount - 1;
+            panelGeneral.VerticalScroll.Visible = false;
+            panelGeneral.HorizontalScroll.Visible = false;
+            ActiveControl = null;
+            panelGeneral.Dock = DockStyle.Fill;
+            panelGeneral.Focus();
 
         }
 
@@ -35,6 +47,77 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
             dataGridTramites.DataSource = Read.readTramitesComision();
+            acoplarScrolls();
+        }
+        int colMax;
+        private void acoplarScrolls()
+        {
+
+            if (dataGridTramites.RowCount > 10)
+            {
+                if (dataGridTramites.RowCount == 1)
+                {
+                    datavScrollBar.Maximum = dataGridTramites.RowCount;
+                }
+                else
+                {
+                    datavScrollBar.Maximum = dataGridTramites.RowCount - 1;
+                }
+
+                datavScrollBar.Visible = true;
+
+            }
+            else
+            {
+
+                datavScrollBar.Minimum = 0;
+                datavScrollBar.Maximum = 1;
+                datavScrollBar.Visible = false;
+            }
+
+            if (dataGridTramites.ColumnCount > 0)
+            {
+                colMax = 0;
+                for (int i = 0; i < dataGridTramites.ColumnCount; i++)
+                    if (dataGridTramites.Columns[i].Visible) colMax++;
+
+                hScrollBar.Maximum = colMax;
+            }
+
+
+        }
+        private void panelContenedor_Scroll(object sender, ScrollEventArgs e)
+        {
+            // MessageBox.Show("scroll");
+            //vScrollBar.Value = e.NewValue;
+        }
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelGeneral.Focus();
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
+        }
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelGeneral.VerticalScroll.Value = e.Value;
+        }
+        private void datavScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            dataGridTramites.FirstDisplayedScrollingRowIndex = e.Value;
+        }
+
+        private void dataGridTramites_Scroll(object sender, ScrollEventArgs e)
+        {
+            datavScrollBar.Value = e.NewValue;
+        }
+
+        private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
+        {
+
+            if (dataGridTramites.Columns[e.Value].Visible)
+            {
+                dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;
+            }
+
         }
 
         string[] values = new string[3];
@@ -54,6 +137,7 @@ namespace Presentacion
             {
                 dataGridTramites.DataSource = Read.readTramitesComisionNotaVenta(values);
             }
+            acoplarScrolls();
         }
 
        
@@ -117,32 +201,23 @@ namespace Presentacion
 
             FormPrincipal formPrincipal = Owner as FormPrincipal;
 
-            switch (cmbTipoDocumento.Text)
-            {
-                case "Nota de Venta":
-                    if (formPrincipal != null)
-                    {
+            if(dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[2].Value.ToString()=="Guayaquil")
+            { 
+                    
                         FormCrearComisionNV formCrearComisionNV = new FormCrearComisionNV();
                         formCrearComisionNV.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                         formPrincipal.AddOwnedForm(formCrearComisionNV);
                         formPrincipal.AbrirFormInPanel(formCrearComisionNV);
-                    }
-                    break;
+            }else { 
+                   
 
-                case "Factura":
-                    if (formPrincipal != null)
-                    {
+              
+                   
                         FormCrearComisionFactura formCrearComisionFactura = new FormCrearComisionFactura();
                         formCrearComisionFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                         formPrincipal.AddOwnedForm(formCrearComisionFactura);
                         formPrincipal.AbrirFormInPanel(formCrearComisionFactura);
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-
+             }                  
         }
 
         private void FormPreCrearComision_Shown(object sender, EventArgs e)
@@ -159,12 +234,12 @@ namespace Presentacion
             {
                 formPrincipal.panelMenuVertical.Visible = false;
                 valAnterior = formPrincipal.panelGlobal.ColumnStyles[0].Width;
-                valAntAltoMenuInf = formPrincipal.PanelSubContenedor.RowStyles[1].Height;
+                //valAntAltoMenuInf = formPrincipal.PanelSubContenedor.RowStyles[1].Height;
                 formPrincipal.panelInferior.Visible = false;
                 formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
                 formPrincipal.panelGlobal.ColumnStyles[0].Width = 0;
 
-                lblTitulo.Left = (lblTitulo.Parent.Width / 2) - (lblTitulo.Width / 2) + 15;
+                lblTitulo.Left = (lblTitulo.Parent.Width / 2) - (lblTitulo.Width / 2);
 
 
 
@@ -173,9 +248,9 @@ namespace Presentacion
             else
             {
                 formPrincipal.panelGlobal.ColumnStyles[0].Width = valAnterior;
-                formPrincipal.PanelSubContenedor.RowStyles[1].Height = valAntAltoMenuInf;
+                formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
                 formPrincipal.panelMenuVertical.Visible = true;
-                formPrincipal.panelInferior.Visible = true;
+                //formPrincipal.panelInferior.Visible = true;
 
                 lblTitulo.Left = (lblTitulo.Parent.Width / 2) - (lblTitulo.Width / 2);
 
