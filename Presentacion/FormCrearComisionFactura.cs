@@ -30,6 +30,7 @@ namespace Presentacion
             cargarComisiones();
             compararValores();
             calcularTotalFactura();
+            this.panelGeneral.MouseWheel += new MouseEventHandler(panelScroll);
         }
 
         private void readIVA()
@@ -75,13 +76,9 @@ namespace Presentacion
             else
             {
 
-                string valor = Interaction.InputBox(
-                                     "El subtotal de la factura LDM es inusual." +
-                                    "\n\nPor favor, ingrese un nuevo valor de comisión",
-                                    "Info.",
-                                    "");
+                
 
-                txtComision.Text = valor;
+            
             }
 
         }
@@ -115,7 +112,16 @@ namespace Presentacion
 
         }
 
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelGeneral.VerticalScroll.Value = e.Value;
+        }
 
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelGeneral.Focus();
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
+        }
         private void calcularTotalFactura()
         {
 

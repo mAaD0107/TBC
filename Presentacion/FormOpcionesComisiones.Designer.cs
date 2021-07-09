@@ -98,7 +98,7 @@
             this.panelCrear.Location = new System.Drawing.Point(157, 32);
             this.panelCrear.Name = "panelCrear";
             this.panelCrear.Quality = 10;
-            this.panelCrear.Size = new System.Drawing.Size(236, 207);
+            this.panelCrear.Size = new System.Drawing.Size(192, 179);
             this.panelCrear.TabIndex = 1;
             this.panelCrear.Click += new System.EventHandler(this.panelCrear_Click);
             this.panelCrear.Enter += new System.EventHandler(this.panelCrear_Enter);
@@ -113,10 +113,10 @@
             this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnCrear.Location = new System.Drawing.Point(86, 110);
+            this.btnCrear.Location = new System.Drawing.Point(68, 96);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(0);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(70, 70);
+            this.btnCrear.Size = new System.Drawing.Size(50, 50);
             this.btnCrear.TabIndex = 1;
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -128,11 +128,11 @@
             // 
             this.lblCrear.AutoSize = true;
             this.lblCrear.BackColor = System.Drawing.Color.Transparent;
-            this.lblCrear.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCrear.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblCrear.Location = new System.Drawing.Point(61, 36);
+            this.lblCrear.Location = new System.Drawing.Point(47, 31);
             this.lblCrear.Name = "lblCrear";
-            this.lblCrear.Size = new System.Drawing.Size(121, 44);
+            this.lblCrear.Size = new System.Drawing.Size(96, 36);
             this.lblCrear.TabIndex = 0;
             this.lblCrear.Text = "Crear";
             this.lblCrear.Click += new System.EventHandler(this.panelCrear_Click);
@@ -157,7 +157,7 @@
             this.panelBuscar.Location = new System.Drawing.Point(428, 32);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Quality = 10;
-            this.panelBuscar.Size = new System.Drawing.Size(236, 207);
+            this.panelBuscar.Size = new System.Drawing.Size(192, 179);
             this.panelBuscar.TabIndex = 2;
             this.panelBuscar.Click += new System.EventHandler(this.panelBuscar_Click);
             this.panelBuscar.Enter += new System.EventHandler(this.panelBuscar_Enter);
@@ -169,11 +169,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditar.AutoSize = true;
             this.lblEditar.BackColor = System.Drawing.Color.Transparent;
-            this.lblEditar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblEditar.Location = new System.Drawing.Point(50, 56);
+            this.lblEditar.Location = new System.Drawing.Point(37, 46);
             this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(147, 42);
+            this.lblEditar.Size = new System.Drawing.Size(125, 36);
             this.lblEditar.TabIndex = 3;
             this.lblEditar.Text = "Informe";
             this.lblEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,10 +190,10 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnBuscar.Location = new System.Drawing.Point(90, 110);
+            this.btnBuscar.Location = new System.Drawing.Point(76, 92);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(70, 70);
+            this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -207,11 +207,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.lblBuscar.Location = new System.Drawing.Point(40, 12);
+            this.lblBuscar.Location = new System.Drawing.Point(33, 12);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(170, 42);
+            this.lblBuscar.Size = new System.Drawing.Size(142, 36);
             this.lblBuscar.TabIndex = 0;
             this.lblBuscar.Text = "Elaborar ";
             this.lblBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

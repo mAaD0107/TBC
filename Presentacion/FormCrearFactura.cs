@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Globalization;
+using System.Globalization;using System.Drawing;
+
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Common.Cache;
 using Domain;
+using Microsoft.VisualBasic;
 
 namespace Presentacion
 {
@@ -58,6 +59,7 @@ namespace Presentacion
             }
 
             desactivarScrolls();
+            this.panelPrincipal.MouseWheel += new MouseEventHandler(panelScroll);
         }
 
         private void desactivarScrolls()
@@ -540,10 +542,9 @@ namespace Presentacion
         }
 
 
-
+        public decimal ValorComision = 0;
         private void txtSubtotalFactura_Leave(object sender, EventArgs e)
-        {
-            
+        {            
             formatearTexto();
             string respuesta="";
             if (TramiteCache.tipoTramite == "Marítimo") { respuesta = values1[44]; }
@@ -553,9 +554,18 @@ namespace Presentacion
             {
                 var result = MessageBox.Show("¿Esta seguro que desea cambiar el valor de la base de datos?", "¡Alerta!", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
 
-                if (result == DialogResult.No)
+                if (result == DialogResult.Yes)
+                {
+                    string valorcomision = Interaction.InputBox(
+                                         "Ingrese el valor de comisión requerido",
+                                        "Info.",
+                                        "");
+                    ValorComision = Convert.ToDecimal(valorcomision);
+                }
+                    if (result == DialogResult.No)
                 {
                     txtSubtotalFactura.Text = respuesta;
+                    
                 }            
             }
         }
@@ -606,6 +616,16 @@ namespace Presentacion
 
         }
 
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelPrincipal.VerticalScroll.Value = e.Value;
+        }
+
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelPrincipal.Focus();
+            vScrollBar.Value = panelPrincipal.VerticalScroll.Value;
+        }
         private void txtSubtotalFactura_KeyPress(object sender, KeyPressEventArgs e)
         {
             comprobarNumero(sender, e);

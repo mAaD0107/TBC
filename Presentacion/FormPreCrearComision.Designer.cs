@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelPropiedades = new System.Windows.Forms.Panel();
-            this.cerrar = new System.Windows.Forms.Label();
-            this.maximizar = new System.Windows.Forms.PictureBox();
             this.panelGeneral = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -58,57 +55,24 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelDatos = new System.Windows.Forms.Panel();
+            this.hScrollBar = new Bunifu.UI.WinForms.BunifuHScrollBar();
+            this.datavScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridTramites = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.redondeoBtnCrear = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panelPropiedades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
+            this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
+            this.maximizar = new System.Windows.Forms.PictureBox();
+            this.cerrar = new System.Windows.Forms.Label();
+            this.panelPropiedades = new System.Windows.Forms.Panel();
             this.panelGeneral.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.panelTituloFiltro.SuspendLayout();
             this.panelFiltros.SuspendLayout();
             this.panelDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTramites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
+            this.panelPropiedades.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelPropiedades
-            // 
-            this.panelPropiedades.Controls.Add(this.cerrar);
-            this.panelPropiedades.Controls.Add(this.maximizar);
-            this.panelPropiedades.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPropiedades.Location = new System.Drawing.Point(0, 0);
-            this.panelPropiedades.Name = "panelPropiedades";
-            this.panelPropiedades.Size = new System.Drawing.Size(1050, 37);
-            this.panelPropiedades.TabIndex = 1;
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.AutoSize = true;
-            this.cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.cerrar.Location = new System.Drawing.Point(1011, 7);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(17, 16);
-            this.cerrar.TabIndex = 7;
-            this.cerrar.Text = "X";
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
-            // 
-            // maximizar
-            // 
-            this.maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
-            this.maximizar.Location = new System.Drawing.Point(990, 8);
-            this.maximizar.Name = "maximizar";
-            this.maximizar.Size = new System.Drawing.Size(15, 15);
-            this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.maximizar.TabIndex = 8;
-            this.maximizar.TabStop = false;
-            this.maximizar.Click += new System.EventHandler(this.maximizar_Click);
             // 
             // panelGeneral
             // 
@@ -117,21 +81,20 @@
             this.panelGeneral.Controls.Add(this.panelTituloFiltro);
             this.panelGeneral.Controls.Add(this.panelFiltros);
             this.panelGeneral.Controls.Add(this.panelDatos);
-            this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 37);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(1050, 743);
+            this.panelGeneral.Size = new System.Drawing.Size(998, 751);
             this.panelGeneral.TabIndex = 2;
+            this.panelGeneral.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelContenedor_Scroll);
             this.panelGeneral.Resize += new System.EventHandler(this.panelGeneral_Resize);
             // 
             // panelTitulo
             // 
             this.panelTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTitulo.Controls.Add(this.lblTitulo);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(3, 3);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1008, 81);
+            this.panelTitulo.Size = new System.Drawing.Size(972, 81);
             this.panelTitulo.TabIndex = 34;
             // 
             // lblTitulo
@@ -154,7 +117,7 @@
             this.panelTituloFiltro.Controls.Add(this.label36);
             this.panelTituloFiltro.Location = new System.Drawing.Point(3, 90);
             this.panelTituloFiltro.Name = "panelTituloFiltro";
-            this.panelTituloFiltro.Size = new System.Drawing.Size(1008, 104);
+            this.panelTituloFiltro.Size = new System.Drawing.Size(972, 104);
             this.panelTituloFiltro.TabIndex = 36;
             // 
             // label36
@@ -185,7 +148,7 @@
             this.panelFiltros.Controls.Add(this.shapeContainer2);
             this.panelFiltros.Location = new System.Drawing.Point(3, 200);
             this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(1008, 217);
+            this.panelFiltros.Size = new System.Drawing.Size(972, 217);
             this.panelFiltros.TabIndex = 37;
             // 
             // cmbTipoDocumento
@@ -313,7 +276,7 @@
             this.lineShape5,
             this.lineShape8,
             this.lineShape42});
-            this.shapeContainer2.Size = new System.Drawing.Size(1006, 215);
+            this.shapeContainer2.Size = new System.Drawing.Size(970, 215);
             this.shapeContainer2.TabIndex = 50;
             this.shapeContainer2.TabStop = false;
             // 
@@ -370,12 +333,97 @@
             // panelDatos
             // 
             this.panelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatos.Controls.Add(this.hScrollBar);
+            this.panelDatos.Controls.Add(this.datavScrollBar);
             this.panelDatos.Controls.Add(this.label4);
             this.panelDatos.Controls.Add(this.dataGridTramites);
             this.panelDatos.Location = new System.Drawing.Point(3, 423);
             this.panelDatos.Name = "panelDatos";
-            this.panelDatos.Size = new System.Drawing.Size(1008, 293);
+            this.panelDatos.Size = new System.Drawing.Size(972, 500);
             this.panelDatos.TabIndex = 38;
+            // 
+            // hScrollBar
+            // 
+            this.hScrollBar.AllowCursorChanges = true;
+            this.hScrollBar.AllowHomeEndKeysDetection = false;
+            this.hScrollBar.AllowIncrementalClickMoves = true;
+            this.hScrollBar.AllowMouseDownEffects = true;
+            this.hScrollBar.AllowMouseHoverEffects = true;
+            this.hScrollBar.AllowScrollingAnimations = true;
+            this.hScrollBar.AllowScrollKeysDetection = true;
+            this.hScrollBar.AllowScrollOptionsMenu = true;
+            this.hScrollBar.AllowShrinkingOnFocusLost = false;
+            this.hScrollBar.BackgoundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hScrollBar.BackgroundImage")));
+            this.hScrollBar.BindingContainer = null;
+            this.hScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.BorderRadius = 0;
+            this.hScrollBar.BorderThickness = 1;
+            this.hScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.hScrollBar.DurationBeforeShrink = 2000;
+            this.hScrollBar.LargeChange = 10;
+            this.hScrollBar.Location = new System.Drawing.Point(0, 481);
+            this.hScrollBar.Maximum = 100;
+            this.hScrollBar.Minimum = 0;
+            this.hScrollBar.MinimumThumbLength = 18;
+            this.hScrollBar.Name = "hScrollBar";
+            this.hScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
+            this.hScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.hScrollBar.OnDisable.ThumbColor = System.Drawing.Color.Silver;
+            this.hScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.hScrollBar.ShrinkSizeLimit = 3;
+            this.hScrollBar.Size = new System.Drawing.Size(953, 17);
+            this.hScrollBar.SmallChange = 1;
+            this.hScrollBar.TabIndex = 61;
+            this.hScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.hScrollBar.ThumbLength = 94;
+            this.hScrollBar.ThumbMargin = 1;
+            this.hScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuHScrollBar.ThumbStyles.Inset;
+            this.hScrollBar.Value = 0;
+            this.hScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs>(this.hScrollBar_Scroll);
+            // 
+            // datavScrollBar
+            // 
+            this.datavScrollBar.AllowCursorChanges = true;
+            this.datavScrollBar.AllowHomeEndKeysDetection = false;
+            this.datavScrollBar.AllowIncrementalClickMoves = true;
+            this.datavScrollBar.AllowMouseDownEffects = true;
+            this.datavScrollBar.AllowMouseHoverEffects = true;
+            this.datavScrollBar.AllowScrollingAnimations = true;
+            this.datavScrollBar.AllowScrollKeysDetection = true;
+            this.datavScrollBar.AllowScrollOptionsMenu = true;
+            this.datavScrollBar.AllowShrinkingOnFocusLost = false;
+            this.datavScrollBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.datavScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("datavScrollBar.BackgroundImage")));
+            this.datavScrollBar.BindingContainer = null;
+            this.datavScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.datavScrollBar.BorderRadius = 0;
+            this.datavScrollBar.BorderThickness = 1;
+            this.datavScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datavScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.datavScrollBar.DurationBeforeShrink = 2000;
+            this.datavScrollBar.LargeChange = 20;
+            this.datavScrollBar.Location = new System.Drawing.Point(953, 0);
+            this.datavScrollBar.Maximum = 100;
+            this.datavScrollBar.Minimum = 0;
+            this.datavScrollBar.MinimumThumbLength = 18;
+            this.datavScrollBar.Name = "datavScrollBar";
+            this.datavScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.DimGray;
+            this.datavScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.datavScrollBar.OnDisable.ThumbColor = System.Drawing.Color.DimGray;
+            this.datavScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.datavScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.datavScrollBar.ShrinkSizeLimit = 3;
+            this.datavScrollBar.Size = new System.Drawing.Size(17, 498);
+            this.datavScrollBar.SmallChange = 1;
+            this.datavScrollBar.TabIndex = 60;
+            this.datavScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.datavScrollBar.ThumbLength = 98;
+            this.datavScrollBar.ThumbMargin = 1;
+            this.datavScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.datavScrollBar.Value = 0;
+            this.datavScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.datavScrollBar_Scroll);
             // 
             // label4
             // 
@@ -384,7 +432,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label4.Location = new System.Drawing.Point(21, 18);
+            this.label4.Location = new System.Drawing.Point(21, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(373, 33);
             this.label4.TabIndex = 59;
@@ -437,7 +485,7 @@
             this.dataGridTramites.GridColor = System.Drawing.Color.DimGray;
             this.dataGridTramites.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
             this.dataGridTramites.HeaderForeColor = System.Drawing.Color.LightGray;
-            this.dataGridTramites.Location = new System.Drawing.Point(26, 71);
+            this.dataGridTramites.Location = new System.Drawing.Point(0, 36);
             this.dataGridTramites.Name = "dataGridTramites";
             this.dataGridTramites.ReadOnly = true;
             this.dataGridTramites.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -451,22 +499,106 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridTramites.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridTramites.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridTramites.Size = new System.Drawing.Size(951, 190);
+            this.dataGridTramites.Size = new System.Drawing.Size(971, 463);
             this.dataGridTramites.StandardTab = true;
             this.dataGridTramites.TabIndex = 3;
             this.dataGridTramites.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridTramites_CellMouseDoubleClick);
+            this.dataGridTramites.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridTramites_Scroll);
             // 
             // redondeoBtnCrear
             // 
             this.redondeoBtnCrear.ElipseRadius = 20;
             this.redondeoBtnCrear.TargetControl = this;
             // 
+            // vScrollBar
+            // 
+            this.vScrollBar.AllowCursorChanges = true;
+            this.vScrollBar.AllowHomeEndKeysDetection = false;
+            this.vScrollBar.AllowIncrementalClickMoves = true;
+            this.vScrollBar.AllowMouseDownEffects = true;
+            this.vScrollBar.AllowMouseHoverEffects = true;
+            this.vScrollBar.AllowScrollingAnimations = true;
+            this.vScrollBar.AllowScrollKeysDetection = true;
+            this.vScrollBar.AllowScrollOptionsMenu = true;
+            this.vScrollBar.AllowShrinkingOnFocusLost = false;
+            this.vScrollBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vScrollBar.BackgroundImage")));
+            this.vScrollBar.BindingContainer = this.panelGeneral;
+            this.vScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BorderRadius = 0;
+            this.vScrollBar.BorderThickness = 1;
+            this.vScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar.DurationBeforeShrink = 2000;
+            this.vScrollBar.LargeChange = 10;
+            this.vScrollBar.Location = new System.Drawing.Point(978, 0);
+            this.vScrollBar.Maximum = 50;
+            this.vScrollBar.Minimum = 0;
+            this.vScrollBar.MinimumThumbLength = 18;
+            this.vScrollBar.Name = "vScrollBar";
+            this.vScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.vScrollBar.OnDisable.ThumbColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ShrinkSizeLimit = 3;
+            this.vScrollBar.Size = new System.Drawing.Size(22, 788);
+            this.vScrollBar.SmallChange = 1;
+            this.vScrollBar.TabIndex = 48;
+            this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.vScrollBar.ThumbLength = 154;
+            this.vScrollBar.ThumbMargin = 1;
+            this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.vScrollBar.Value = 0;
+            this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
+            // 
+            // maximizar
+            // 
+            this.maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
+            this.maximizar.Location = new System.Drawing.Point(1035, 8);
+            this.maximizar.Name = "maximizar";
+            this.maximizar.Size = new System.Drawing.Size(15, 15);
+            this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.maximizar.TabIndex = 8;
+            this.maximizar.TabStop = false;
+            this.maximizar.Click += new System.EventHandler(this.maximizar_Click);
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.AutoSize = true;
+            this.cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.cerrar.Location = new System.Drawing.Point(1056, 7);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(17, 16);
+            this.cerrar.TabIndex = 7;
+            this.cerrar.Text = "X";
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
+            // panelPropiedades
+            // 
+            this.panelPropiedades.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPropiedades.Controls.Add(this.cerrar);
+            this.panelPropiedades.Controls.Add(this.maximizar);
+            this.panelPropiedades.Location = new System.Drawing.Point(0, 0);
+            this.panelPropiedades.Name = "panelPropiedades";
+            this.panelPropiedades.Size = new System.Drawing.Size(988, 37);
+            this.panelPropiedades.TabIndex = 1;
+            // 
             // FormPreCrearComision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1050, 780);
+            this.ClientSize = new System.Drawing.Size(1000, 788);
+            this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelPropiedades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -475,9 +607,6 @@
             this.Text = "FormPreCrearComision";
             this.Load += new System.EventHandler(this.FormPreCrearComision_Load);
             this.Shown += new System.EventHandler(this.FormPreCrearComision_Shown);
-            this.panelPropiedades.ResumeLayout(false);
-            this.panelPropiedades.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             this.panelGeneral.ResumeLayout(false);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
@@ -488,15 +617,14 @@
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTramites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
+            this.panelPropiedades.ResumeLayout(false);
+            this.panelPropiedades.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelPropiedades;
-        private System.Windows.Forms.Label cerrar;
-        private System.Windows.Forms.PictureBox maximizar;
         private System.Windows.Forms.FlowLayoutPanel panelGeneral;
         private System.Windows.Forms.Panel panelTitulo;
         public System.Windows.Forms.Label lblTitulo;
@@ -521,5 +649,11 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridTramites;
         public System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnCrear;
+        private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
+        private Bunifu.UI.WinForms.BunifuVScrollBar datavScrollBar;
+        private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
+        private System.Windows.Forms.Panel panelPropiedades;
+        private System.Windows.Forms.Label cerrar;
+        private System.Windows.Forms.PictureBox maximizar;
     }
 }

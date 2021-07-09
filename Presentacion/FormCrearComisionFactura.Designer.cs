@@ -133,6 +133,7 @@
             this.panelInferior = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.redodeoBtnGuardar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelGeneral.SuspendLayout();
@@ -1366,12 +1367,55 @@
             this.redodeoBtnGuardar.ElipseRadius = 20;
             this.redodeoBtnGuardar.TargetControl = this.btnGuardar;
             // 
+            // vScrollBar
+            // 
+            this.vScrollBar.AllowCursorChanges = true;
+            this.vScrollBar.AllowHomeEndKeysDetection = false;
+            this.vScrollBar.AllowIncrementalClickMoves = true;
+            this.vScrollBar.AllowMouseDownEffects = true;
+            this.vScrollBar.AllowMouseHoverEffects = true;
+            this.vScrollBar.AllowScrollingAnimations = true;
+            this.vScrollBar.AllowScrollKeysDetection = true;
+            this.vScrollBar.AllowScrollOptionsMenu = true;
+            this.vScrollBar.AllowShrinkingOnFocusLost = false;
+            this.vScrollBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vScrollBar.BackgroundImage")));
+            this.vScrollBar.BindingContainer = null;
+            this.vScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BorderRadius = 0;
+            this.vScrollBar.BorderThickness = 1;
+            this.vScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar.DurationBeforeShrink = 2000;
+            this.vScrollBar.LargeChange = 10;
+            this.vScrollBar.Location = new System.Drawing.Point(1028, 37);
+            this.vScrollBar.Maximum = 50;
+            this.vScrollBar.Minimum = 0;
+            this.vScrollBar.MinimumThumbLength = 18;
+            this.vScrollBar.Name = "vScrollBar";
+            this.vScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.vScrollBar.OnDisable.ThumbColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ShrinkSizeLimit = 3;
+            this.vScrollBar.Size = new System.Drawing.Size(22, 743);
+            this.vScrollBar.SmallChange = 1;
+            this.vScrollBar.TabIndex = 49;
+            this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.vScrollBar.ThumbLength = 145;
+            this.vScrollBar.ThumbMargin = 1;
+            this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.vScrollBar.Value = 0;
+            this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
+            // 
             // FormCrearComisionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(1050, 780);
+            this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelPropiedades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1521,5 +1565,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private Bunifu.Framework.UI.BunifuElipse redodeoBtnGuardar;
         private System.Windows.Forms.Label lblFacturaNoValida;
+        private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
     }
 }
