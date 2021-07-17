@@ -11,6 +11,8 @@ namespace Common.Cache
         public static int nTramite { get; set; }
         public static string CI {get; set;}
         public static string tipoTramite { get; set; }
+        public static string Secuencial { get; set; }
+        public static string DAI { get; set; }
 
     }
 }

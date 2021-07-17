@@ -30,29 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPreCrearComision));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGeneral = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelTituloFiltro = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
-            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbCiudadNacionalizacion = new System.Windows.Forms.ComboBox();
             this.dateFin = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dateInicio = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblEmpresa = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelDatos = new System.Windows.Forms.Panel();
             this.hScrollBar = new Bunifu.UI.WinForms.BunifuHScrollBar();
@@ -137,68 +131,15 @@
             // panelFiltros
             // 
             this.panelFiltros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFiltros.Controls.Add(this.cmbTipoDocumento);
-            this.panelFiltros.Controls.Add(this.label3);
-            this.panelFiltros.Controls.Add(this.cmbCiudadNacionalizacion);
             this.panelFiltros.Controls.Add(this.dateFin);
             this.panelFiltros.Controls.Add(this.label1);
             this.panelFiltros.Controls.Add(this.dateInicio);
             this.panelFiltros.Controls.Add(this.label2);
-            this.panelFiltros.Controls.Add(this.lblEmpresa);
             this.panelFiltros.Controls.Add(this.shapeContainer2);
             this.panelFiltros.Location = new System.Drawing.Point(3, 200);
             this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(972, 217);
+            this.panelFiltros.Size = new System.Drawing.Size(972, 117);
             this.panelFiltros.TabIndex = 37;
-            // 
-            // cmbTipoDocumento
-            // 
-            this.cmbTipoDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbTipoDocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoDocumento.ForeColor = System.Drawing.Color.Transparent;
-            this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Items.AddRange(new object[] {
-            "Factura",
-            "Nota de Venta"});
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(230, 175);
-            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
-            this.cmbTipoDocumento.Size = new System.Drawing.Size(149, 25);
-            this.cmbTipoDocumento.TabIndex = 58;
-            this.cmbTipoDocumento.TextChanged += new System.EventHandler(this.cmbTipoDocumento_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label3.Location = new System.Drawing.Point(31, 178);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 18);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Tipo de Documento a Crear:";
-            // 
-            // cmbCiudadNacionalizacion
-            // 
-            this.cmbCiudadNacionalizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmbCiudadNacionalizacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCiudadNacionalizacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbCiudadNacionalizacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCiudadNacionalizacion.ForeColor = System.Drawing.Color.Transparent;
-            this.cmbCiudadNacionalizacion.FormattingEnabled = true;
-            this.cmbCiudadNacionalizacion.Items.AddRange(new object[] {
-            "Todas",
-            "Quito",
-            "Guayaquil",
-            "Tulcán",
-            "Huaquillas"});
-            this.cmbCiudadNacionalizacion.Location = new System.Drawing.Point(215, 108);
-            this.cmbCiudadNacionalizacion.Name = "cmbCiudadNacionalizacion";
-            this.cmbCiudadNacionalizacion.Size = new System.Drawing.Size(234, 25);
-            this.cmbCiudadNacionalizacion.TabIndex = 56;
-            this.cmbCiudadNacionalizacion.TextChanged += new System.EventHandler(this.cmbCiudadNacionalizacion_TextChanged);
             // 
             // dateFin
             // 
@@ -254,41 +195,18 @@
             this.label2.TabIndex = 52;
             this.label2.Text = "Buscar desde:";
             // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblEmpresa.Location = new System.Drawing.Point(31, 111);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(184, 18);
-            this.lblEmpresa.TabIndex = 49;
-            this.lblEmpresa.Text = "Ciudad de nacionalización:";
-            // 
             // shapeContainer2
             // 
             this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
             this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1,
             this.lineShape2,
             this.lineShape5,
-            this.lineShape8,
             this.lineShape42});
-            this.shapeContainer2.Size = new System.Drawing.Size(970, 215);
+            this.shapeContainer2.Size = new System.Drawing.Size(970, 115);
             this.shapeContainer2.TabIndex = 50;
             this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape1.Enabled = false;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 26;
-            this.lineShape1.X2 = 26;
-            this.lineShape1.Y1 = 198;
-            this.lineShape1.Y2 = 175;
             // 
             // lineShape2
             // 
@@ -310,16 +228,6 @@
             this.lineShape5.Y1 = 74;
             this.lineShape5.Y2 = 74;
             // 
-            // lineShape8
-            // 
-            this.lineShape8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape8.Enabled = false;
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 27;
-            this.lineShape8.X2 = 27;
-            this.lineShape8.Y1 = 131;
-            this.lineShape8.Y2 = 108;
-            // 
             // lineShape42
             // 
             this.lineShape42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
@@ -337,7 +245,7 @@
             this.panelDatos.Controls.Add(this.datavScrollBar);
             this.panelDatos.Controls.Add(this.label4);
             this.panelDatos.Controls.Add(this.dataGridTramites);
-            this.panelDatos.Location = new System.Drawing.Point(3, 423);
+            this.panelDatos.Location = new System.Drawing.Point(3, 323);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(972, 500);
             this.panelDatos.TabIndex = 38;
@@ -443,14 +351,14 @@
             // 
             this.dataGridTramites.AllowUserToAddRows = false;
             this.dataGridTramites.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.dataGridTramites.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridTramites.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridTramites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -460,26 +368,26 @@
             this.dataGridTramites.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridTramites.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridTramites.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridTramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridTramites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = "--------------";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridTramites.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.NullValue = "--------------";
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTramites.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridTramites.DoubleBuffered = true;
             this.dataGridTramites.EnableHeadersVisualStyles = false;
             this.dataGridTramites.GridColor = System.Drawing.Color.DimGray;
@@ -489,15 +397,15 @@
             this.dataGridTramites.Name = "dataGridTramites";
             this.dataGridTramites.ReadOnly = true;
             this.dataGridTramites.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridTramites.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTramites.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridTramites.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridTramites.Size = new System.Drawing.Size(971, 463);
             this.dataGridTramites.StandardTab = true;
@@ -632,19 +540,13 @@
         public System.Windows.Forms.Label label36;
         private System.Windows.Forms.Panel panelFiltros;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblEmpresa;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape42;
         private Bunifu.Framework.UI.BunifuDatepicker dateFin;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDatepicker dateInicio;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        public System.Windows.Forms.ComboBox cmbTipoDocumento;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox cmbCiudadNacionalizacion;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Panel panelDatos;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridTramites;
         public System.Windows.Forms.Label label4;

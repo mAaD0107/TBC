@@ -221,6 +221,7 @@ namespace Presentacion
             this.pnlPago.Size = new System.Drawing.Size(192, 179);
             this.pnlPago.TabIndex = 2;
             this.pnlPago.TabStop = true;
+            this.pnlPago.Click += new System.EventHandler(this.pnlPago_Click);
             this.pnlPago.MouseEnter += new System.EventHandler(this.pnlPago_Enter);
             // 
             // btnPago

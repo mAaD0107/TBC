@@ -17,21 +17,23 @@ namespace Presentacion
         public FormCrearComisionNV()
         {
             InitializeComponent();
+            this.panelGeneral.MouseWheel += new MouseEventHandler(panelScroll);
         }
 
         private void FormCrearComisionNV_Load(object sender, EventArgs e)
         {
             cargarComision();
             cmbNombres.SelectedIndex = 0;
+            dateInicio.Value = DateTime.Today;
         }
 
         double subTotalFacturaTBC = 0, subTotalAereo = 0, subTotalMaritimo = 0;
 
         private void panelGeneral_Resize(object sender, EventArgs e)
         {
-            panelTitulo.Width = this.Width - 30;
-            panelFiltros.Width = this.Width - 30;
-            panelSubtotalLDM.Width = this.Width - 30;
+            panelTitulo.Width = this.Width - 45;
+            panelFiltros.Width = this.Width - 45;
+            panelSubtotalLDM.Width = this.Width - 45;            
 
         }
 
@@ -40,12 +42,18 @@ namespace Presentacion
             lblTitulo.Left = (lblTitulo.Parent.Width / 2) - (lblTitulo.Width / 2);
         }
 
-        double subTotalLDM = 0, comision = 0;
+        double subTotalLDM = 0;
+        string  comision = "";
+        string[] values1 = new string[127];
+        int iTabla=0;
+        string NNotadeVenta="";
         private void cargarComision()
         {
             DataTable comisiones = new DataTable();
-            
+            DataTable clientes = new DataTable();
             UserModel Read = new UserModel();
+            clientes = Read.readClients();
+
             comisiones = Read.searchComisionCliente(ComisionesCache.CI);
 
             subTotalFacturaTBC = double.Parse(comisiones.Rows[0]["Comisiones"].ToString());
@@ -53,28 +61,59 @@ namespace Presentacion
             subTotalMaritimo = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Maritimo"].ToString());
 
             subTotalLDM = Read.searchValorFacturaLDM(ComisionesCache.nTramite);
+            txtIDTramite.Text = ComisionesCache.nTramite.ToString();
+            txtSecuencialCliente.Text = ComisionesCache.Secuencial;
+            txtCliente.Text = ComisionesCache.CI;
+            txtDAI.Text = ComisionesCache.DAI;
+
+            //txtComisionTBC.Text = subTotalFacturaTBC.ToString("N2");
+            for (int i = 0; i < clientes.Rows.Count; i++)
+            {
+                if (clientes.Rows[i][0].ToString() == ComisionesCache.CI)
+                {
+                    iTabla = i;                    
+                    break;
+                }
+            }
             
-            txtComisionTBC.Text = subTotalFacturaTBC.ToString("N2");
+            if (clientes.Rows.Count > 0)
+            {
+                for (int i = 0; i < 127 - 1; i++)
+                {
+                    values1[i] = clientes.Rows[iTabla][i].ToString();
+                }
+            }
+            
+            
 
             if (subTotalFacturaTBC != subTotalLDM)
             {
                 switch (ComisionesCache.tipoTramite)
                 {
                     case "Marítimo":
-                        comision = subTotalMaritimo;
+                        subTotalLDM = subTotalMaritimo;
+                        
                         break;
 
                     case "Aéreo":
-                        comision = subTotalAereo;
+                        subTotalLDM = subTotalAereo;
+                        
                         break;
 
                     default:
-                        comision = 0;
+                        subTotalLDM = 0;
                         break;
                 }
             }
-
-            txtSubtotalLDM.Text = comision.ToString("N2");
+            
+            if (clientes.Rows.Count > 0)
+            {
+                if (ComisionesCache.tipoTramite == "Marítimo") { comision = values1[44]; }
+                if (ComisionesCache.tipoTramite == "Terrestre") { comision = values1[73]; }
+                if (ComisionesCache.tipoTramite == "Aéreo") { comision = values1[45]; }
+            }
+            txtComisionTBC.Text = comision;
+            txtSubtotalLDM.Text = subTotalLDM.ToString();
         }
 
         string[] values = new string[6];
@@ -113,6 +152,11 @@ namespace Presentacion
             InterfaceCache.idCliente = 7;
         }
 
+        private void panelFiltros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private bool hayFactura()
         {
             UserModel Read = new UserModel();
@@ -127,6 +171,21 @@ namespace Presentacion
 
         }
 
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelGeneral.Focus();
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
+        }
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelGeneral.VerticalScroll.Value = e.Value;
+        }
+        private void panelContenedor_Scroll(object sender, ScrollEventArgs e)
+        {
+            // MessageBox.Show("scroll");
+            //vScrollBar.Value = e.NewValue;
+        }
+
         private void txtNumeroNotaVenta_Leave(object sender, EventArgs e)
         {
             if (hayFactura())
@@ -137,6 +196,7 @@ namespace Presentacion
             else
             {
                 txtNumeroNotaVenta.ForeColor = Color.White;
+                NNotadeVenta = txtNumeroNotaVenta.Text;
                 lblNotaVentaNoValida.Visible = false;
             }
         }

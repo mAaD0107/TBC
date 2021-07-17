@@ -26,8 +26,7 @@ namespace Presentacion
             dateInicio.Value = DateTime.Today.AddDays(-60);
             dateFin.Value = DateTime.Today.AddDays(0);
 
-            cmbCiudadNacionalizacion.SelectedIndex = 0;
-            cmbTipoDocumento.SelectedIndex = 0;
+            
             FormPrincipal formPrincipal = Owner as FormPrincipal;
             formPrincipal.panelInferior.Visible = false;
             formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
@@ -127,16 +126,7 @@ namespace Presentacion
 
             values[0] = dateInicio.Value.ToString("yyyy-MM-dd");
             values[1] = dateFin.Value.ToString("yyyy-MM-dd");
-            values[2] = cmbCiudadNacionalizacion.Text;
-
-            if (cmbTipoDocumento.Text == "Factura")
-            {
-                dataGridTramites.DataSource = Read.readTramitesComisionFactura(values);
-            }
-            else if (cmbTipoDocumento.Text == "Nota de Venta")
-            {
-                dataGridTramites.DataSource = Read.readTramitesComisionNotaVenta(values);
-            }
+            
             acoplarScrolls();
         }
 
@@ -162,17 +152,7 @@ namespace Presentacion
                 dateFin.Value = DateTime.Today.AddDays(0);
             }
             
-        }
-
-        private void cmbCiudadNacionalizacion_TextChanged(object sender, EventArgs e)
-        {
-            buscarTramite();
-        }
-
-        private void cmbTipoDocumento_TextChanged(object sender, EventArgs e)
-        {
-            buscarTramite();
-        }
+        }     
 
         private void cerrar_Click(object sender, EventArgs e)
         {
@@ -198,7 +178,8 @@ namespace Presentacion
             ComisionesCache.nTramite = int.Parse(dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[0].Value.ToString());
             ComisionesCache.CI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[6].Value.ToString();
             ComisionesCache.tipoTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
-
+            ComisionesCache.Secuencial = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            ComisionesCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[4].Value.ToString();
             FormPrincipal formPrincipal = Owner as FormPrincipal;
 
             if(dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[2].Value.ToString()=="Guayaquil")

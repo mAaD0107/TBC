@@ -16,6 +16,7 @@ namespace Presentacion
         private void FormInformeCarta_Load(object sender, EventArgs e)
         {
             getCarta();
+         
         }
 
         private void getCarta()

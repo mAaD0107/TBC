@@ -95,6 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesComplementarias\MyColorTable.cs" />
+    <Compile Include="FormInformeNotaVentaRita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeNotaVentaRita.Designer.cs">
+      <DependentUpon>FormInformeNotaVentaRita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCalculadora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,9 @@
       <DependentUpon>FormTipoPago.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormInformeNotaVentaRita.resx">
+      <DependentUpon>FormInformeNotaVentaRita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCalculadora.resx">
       <DependentUpon>FormCalculadora.cs</DependentUpon>
     </EmbeddedResource>
@@ -559,6 +568,7 @@
     <EmbeddedResource Include="FormOpcionesReportes.resx">
       <DependentUpon>FormOpcionesReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\InformeNotaVentaRita.rdlc" />
     <EmbeddedResource Include="Informes\ReportePrueba.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

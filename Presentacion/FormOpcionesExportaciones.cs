@@ -152,5 +152,14 @@ namespace Presentacion
                 formPrincipal.AbrirFormInPanel(formOpcionesReportes);
             }
         }
+
+       
+
+        private void pnlPago_Click(object sender, EventArgs e)
+        {
+
+            FormInformeNotaVentaRita info = new FormInformeNotaVentaRita();
+            info.Show();
+        }
     }
 }
