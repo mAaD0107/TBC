@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>FEBRERO 02 DEL 2021</Value>
+                <Value>=First(Fields!fecha.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>5cm</Top>
-        <Left>5cm</Left>
+        <Top>5.09125cm</Top>
+        <Left>5.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>7.9cm</Width>
         <Style>
@@ -50,8 +50,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>5.74111cm</Top>
-        <Left>4cm</Left>
+        <Top>5.83236cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>10.65cm</Width>
         <ZIndex>1</ZIndex>
@@ -82,8 +82,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>6.48222cm</Top>
-        <Left>4cm</Left>
+        <Top>6.57347cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>10.65cm</Width>
         <ZIndex>2</ZIndex>
@@ -114,8 +114,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>7.22333cm</Top>
-        <Left>4cm</Left>
+        <Top>7.31458cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>10.65cm</Width>
         <ZIndex>3</ZIndex>
@@ -146,8 +146,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9cm</Top>
-        <Left>1.2cm</Left>
+        <Top>9.09125cm</Top>
+        <Left>1.22639cm</Left>
         <Height>0.6cm</Height>
         <Width>2cm</Width>
         <ZIndex>4</ZIndex>
@@ -178,8 +178,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9cm</Top>
-        <Left>4cm</Left>
+        <Top>9.09125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>10.05889cm</Width>
         <ZIndex>5</ZIndex>
@@ -200,7 +200,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>96,00</Value>
+                <Value>=First(Fields!valorComision.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -210,8 +210,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9cm</Top>
-        <Left>14.2cm</Left>
+        <Top>9.09125cm</Top>
+        <Left>14.22639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
@@ -232,7 +232,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>96,00</Value>
+                <Value>=First(Fields!valorComision.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -242,8 +242,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9cm</Top>
-        <Left>16.9cm</Left>
+        <Top>9.09125cm</Top>
+        <Left>16.92639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.3cm</Width>
         <ZIndex>7</ZIndex>
@@ -272,8 +272,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>17cm</Top>
-        <Left>4cm</Left>
+        <Top>17.09125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.75cm</Width>
         <ZIndex>8</ZIndex>
@@ -302,8 +302,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>17.6cm</Top>
-        <Left>4cm</Left>
+        <Top>17.69125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.75cm</Width>
         <ZIndex>9</ZIndex>
@@ -332,8 +332,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>18.2cm</Top>
-        <Left>4cm</Left>
+        <Top>18.29125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.75cm</Width>
         <ZIndex>10</ZIndex>
@@ -362,8 +362,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>18.8cm</Top>
-        <Left>4cm</Left>
+        <Top>18.89125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.75cm</Width>
         <ZIndex>11</ZIndex>
@@ -392,8 +392,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>19.4cm</Top>
-        <Left>4cm</Left>
+        <Top>19.49125cm</Top>
+        <Left>4.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.75cm</Width>
         <ZIndex>12</ZIndex>
@@ -414,7 +414,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>96</Value>
+                <Value>=First(Fields!DAI.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -424,8 +424,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>17.6cm</Top>
-        <Left>6.78528cm</Left>
+        <Top>17.69125cm</Top>
+        <Left>6.81167cm</Left>
         <Height>0.6cm</Height>
         <Width>7.86472cm</Width>
         <ZIndex>13</ZIndex>
@@ -446,7 +446,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>028 - 2021 - 10 - 00154684</Value>
+                <Value>=First(Fields!Secuencial.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -456,8 +456,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>18.2cm</Top>
-        <Left>6.78528cm</Left>
+        <Top>18.29125cm</Top>
+        <Left>6.81167cm</Left>
         <Height>0.6cm</Height>
         <Width>7.86472cm</Width>
         <ZIndex>14</ZIndex>
@@ -478,7 +478,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>37851</Value>
+                <Value>=First(Fields!Mes.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -488,8 +488,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>18.8cm</Top>
-        <Left>6.78528cm</Left>
+        <Top>18.89125cm</Top>
+        <Left>6.81167cm</Left>
         <Height>0.6cm</Height>
         <Width>7.86472cm</Width>
         <ZIndex>15</ZIndex>
@@ -510,7 +510,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TBC2021-00202</Value>
+                <Value>=First(Fields!Id_Tamite.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -520,8 +520,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>19.4cm</Top>
-        <Left>6.78528cm</Left>
+        <Top>19.49125cm</Top>
+        <Left>6.81167cm</Left>
         <Height>0.6cm</Height>
         <Width>7.86472cm</Width>
         <ZIndex>16</ZIndex>
@@ -542,7 +542,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>96,00</Value>
+                <Value>=First(Fields!valorComision.Value, "Dataalgo")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -552,8 +552,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>25.1175cm</Top>
-        <Left>17cm</Left>
+        <Top>25.20875cm</Top>
+        <Left>17.02639cm</Left>
         <Height>0.6cm</Height>
         <Width>2.2cm</Width>
         <ZIndex>17</ZIndex>
@@ -568,17 +568,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>28.8cm</Height>
-    <Style>
-      <Border>
-        <Style>Solid</Style>
-      </Border>
-    </Style>
+    <Height>297mm</Height>
+    <Style />
   </Body>
-  <Width>21cm</Width>
+  <Width>210mm</Width>
   <Page>
-    <PageHeight>27.5cm</PageHeight>
-    <PageWidth>21.4cm</PageWidth>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
     <RightMargin>2cm</RightMargin>
     <TopMargin>2cm</TopMargin>
@@ -587,6 +583,54 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DomainComisiones">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>9cf0e24c-bd6c-4132-8e06-8200e3cfc50b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Dataalgo">
+      <Query>
+        <DataSourceName>DomainComisiones</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DAI">
+          <DataField>DAI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id_Tamite">
+          <DataField>Id_Tamite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Mes">
+          <DataField>Mes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Secuencial">
+          <DataField>Secuencial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="valorComision">
+          <DataField>valorComision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Domain.Comisiones</rd:DataSetName>
+        <rd:TableName>InformeComisionesNV</rd:TableName>
+        <rd:ObjectDataSourceType>Domain.Comisiones.InformeComisionesNV, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>0a71e1af-a645-4a49-9699-f8476ddd860c</rd:ReportID>
+  <rd:ReportID>2c0fa6f8-212f-4eff-9879-96b272c3b15a</rd:ReportID>
 </Report>

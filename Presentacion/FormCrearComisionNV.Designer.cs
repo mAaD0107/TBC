@@ -48,7 +48,11 @@
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelInferior = new System.Windows.Forms.Panel();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.panelSubtotalLDM = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtServiciosPrestados = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSecuencialCliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,6 +77,8 @@
             this.txtSubtotalLDM = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelFiltros = new System.Windows.Forms.Panel();
             this.txtMesFacturacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,11 +97,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelGeneral = new System.Windows.Forms.FlowLayoutPanel();
             this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtServiciosPrestados = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.redondeobtngenerar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelPropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             this.panelInferior.SuspendLayout();
@@ -159,7 +161,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.btnGuardar.Location = new System.Drawing.Point(314, 9);
+            this.btnGuardar.Location = new System.Drawing.Point(112, 10);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(387, 44);
             this.btnGuardar.TabIndex = 20;
@@ -289,12 +291,31 @@
             // 
             // panelInferior
             // 
+            this.panelInferior.Controls.Add(this.btnGenerar);
             this.panelInferior.Controls.Add(this.btnGuardar);
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInferior.Location = new System.Drawing.Point(3, 759);
             this.panelInferior.Name = "panelInferior";
             this.panelInferior.Size = new System.Drawing.Size(1002, 61);
             this.panelInferior.TabIndex = 48;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerar.FlatAppearance.BorderSize = 0;
+            this.btnGenerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.btnGenerar.Location = new System.Drawing.Point(529, 10);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(387, 44);
+            this.btnGenerar.TabIndex = 21;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // panelSubtotalLDM
             // 
@@ -312,6 +333,40 @@
             this.panelSubtotalLDM.Name = "panelSubtotalLDM";
             this.panelSubtotalLDM.Size = new System.Drawing.Size(1002, 382);
             this.panelSubtotalLDM.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label11.Location = new System.Drawing.Point(292, 255);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 18);
+            this.label11.TabIndex = 77;
+            this.label11.Text = "$";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.label12.Location = new System.Drawing.Point(31, 256);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(145, 18);
+            this.label12.TabIndex = 75;
+            this.label12.Text = "Servicios Prestados:";
+            // 
+            // txtServiciosPrestados
+            // 
+            this.txtServiciosPrestados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtServiciosPrestados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtServiciosPrestados.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServiciosPrestados.ForeColor = System.Drawing.Color.White;
+            this.txtServiciosPrestados.Location = new System.Drawing.Point(186, 258);
+            this.txtServiciosPrestados.Name = "txtServiciosPrestados";
+            this.txtServiciosPrestados.Size = new System.Drawing.Size(107, 19);
+            this.txtServiciosPrestados.TabIndex = 76;
+            this.txtServiciosPrestados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -639,6 +694,26 @@
             this.shapeContainer3.TabIndex = 54;
             this.shapeContainer3.TabStop = false;
             // 
+            // lineShape12
+            // 
+            this.lineShape12.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape12.Enabled = false;
+            this.lineShape12.Name = "lineShape12";
+            this.lineShape12.X1 = 172;
+            this.lineShape12.X2 = 301;
+            this.lineShape12.Y1 = 282;
+            this.lineShape12.Y2 = 282;
+            // 
+            // lineShape11
+            // 
+            this.lineShape11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lineShape11.Enabled = false;
+            this.lineShape11.Name = "lineShape11";
+            this.lineShape11.X1 = 25;
+            this.lineShape11.X2 = 25;
+            this.lineShape11.Y1 = 272;
+            this.lineShape11.Y2 = 249;
+            // 
             // panelFiltros
             // 
             this.panelFiltros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -907,59 +982,10 @@
             this.vScrollBar.Value = 0;
             this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
             // 
-            // label11
+            // redondeobtngenerar
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label11.Location = new System.Drawing.Point(292, 255);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(16, 18);
-            this.label11.TabIndex = 77;
-            this.label11.Text = "$";
-            // 
-            // txtServiciosPrestados
-            // 
-            this.txtServiciosPrestados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtServiciosPrestados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtServiciosPrestados.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServiciosPrestados.ForeColor = System.Drawing.Color.White;
-            this.txtServiciosPrestados.Location = new System.Drawing.Point(186, 258);
-            this.txtServiciosPrestados.Name = "txtServiciosPrestados";
-            this.txtServiciosPrestados.Size = new System.Drawing.Size(107, 19);
-            this.txtServiciosPrestados.TabIndex = 76;
-            this.txtServiciosPrestados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label12.Location = new System.Drawing.Point(31, 256);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(145, 18);
-            this.label12.TabIndex = 75;
-            this.label12.Text = "Servicios Prestados:";
-            // 
-            // lineShape11
-            // 
-            this.lineShape11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lineShape11.Enabled = false;
-            this.lineShape11.Name = "lineShape11";
-            this.lineShape11.X1 = 25;
-            this.lineShape11.X2 = 25;
-            this.lineShape11.Y1 = 272;
-            this.lineShape11.Y2 = 249;
-            // 
-            // lineShape12
-            // 
-            this.lineShape12.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape12.Enabled = false;
-            this.lineShape12.Name = "lineShape12";
-            this.lineShape12.X1 = 172;
-            this.lineShape12.X2 = 301;
-            this.lineShape12.Y1 = 282;
-            this.lineShape12.Y2 = 282;
+            this.redondeobtngenerar.ElipseRadius = 20;
+            this.redondeobtngenerar.TargetControl = this.btnGenerar;
             // 
             // FormCrearComisionNV
             // 
@@ -1063,5 +1089,7 @@
         public System.Windows.Forms.TextBox txtServiciosPrestados;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape12;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape11;
+        private System.Windows.Forms.Button btnGenerar;
+        private Bunifu.Framework.UI.BunifuElipse redondeobtngenerar;
     }
 }

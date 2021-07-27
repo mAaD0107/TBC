@@ -79,9 +79,10 @@ namespace Presentacion
             
             if (formPrincipal != null)
             {
-                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
                 formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formCrearFactura.panelPrincipal.Visible = false;
+                formPrincipal.panelInferior.Visible = true;
                 formPrincipal.AddOwnedForm(formCrearFactura);
                 formPrincipal.AbrirFormInPanel(formCrearFactura);
             }

@@ -20,6 +20,7 @@ namespace Presentacion
         public FormCrearTramite()
         {
             InitializeComponent();
+            this.panelFormulario.MouseWheel += new MouseEventHandler(panelScroll);
         }
 
         String Year;
@@ -144,7 +145,24 @@ namespace Presentacion
             }
         }
 
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelFormulario.VerticalScroll.Value = e.Value;
+            panelFormulario.Focus();
+            vScrollBar.Maximum = panelFormulario.VerticalScroll.Maximum - 440;
+            vScrollBar.Value = panelFormulario.VerticalScroll.Value;
 
+        }
+
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelFormulario.Focus();
+            vScrollBar.Maximum = panelFormulario.VerticalScroll.Maximum - 440;
+          
+            vScrollBar.Value = panelFormulario.VerticalScroll.Value;
+           
+
+        }
 
 
         private void cargarFechas()

@@ -306,11 +306,15 @@ namespace Presentacion
         private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
         {
             panelContenedor.VerticalScroll.Value = e.Value;
+            panelContenedor.Focus();
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum - 570;
+            vScrollBar.Value = panelContenedor.VerticalScroll.Value;
         }
 
         private void panelScroll(object sender, MouseEventArgs e)
         {
             panelContenedor.Focus();
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum - 570;
             vScrollBar.Value = panelContenedor.VerticalScroll.Value;
         }
 

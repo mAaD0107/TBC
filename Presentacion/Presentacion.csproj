@@ -95,11 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesComplementarias\MyColorTable.cs" />
-    <Compile Include="FormInformeNotaVentaRita.cs">
+    <Compile Include="FormInformeNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInformeNotaVentaRita.Designer.cs">
-      <DependentUpon>FormInformeNotaVentaRita.cs</DependentUpon>
+    <Compile Include="FormInformeNV.Designer.cs">
+      <DependentUpon>FormInformeNV.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCalculadora.cs">
       <SubType>Form</SubType>
@@ -412,8 +412,8 @@
       <DependentUpon>FormTipoPago.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="FormInformeNotaVentaRita.resx">
-      <DependentUpon>FormInformeNotaVentaRita.cs</DependentUpon>
+    <EmbeddedResource Include="FormInformeNV.resx">
+      <DependentUpon>FormInformeNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCalculadora.resx">
       <DependentUpon>FormCalculadora.cs</DependentUpon>
@@ -568,7 +568,7 @@
     <EmbeddedResource Include="FormOpcionesReportes.resx">
       <DependentUpon>FormOpcionesReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Informes\InformeNotaVentaRita.rdlc" />
+    <EmbeddedResource Include="Informes\InformeNV.rdlc" />
     <EmbeddedResource Include="Informes\ReportePrueba.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -595,6 +595,7 @@
     <None Include="Properties\DataSources\Domain.Carta.ListadoFacturas.datasource" />
     <None Include="Properties\DataSources\Domain.Carta.TransferenciaDestino.datasource" />
     <None Include="Properties\DataSources\Domain.Carta.TransferenciaOrigen.datasource" />
+    <None Include="Properties\DataSources\Domain.Comisiones.InformeComisionesNV.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrar.InformeCXCGeneral.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrar.ListaCXC.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrarDetallado.InformeCXCDetallado.datasource" />

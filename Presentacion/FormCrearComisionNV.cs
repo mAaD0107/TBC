@@ -25,6 +25,7 @@ namespace Presentacion
             cargarComision();
             cmbNombres.SelectedIndex = 0;
             dateInicio.Value = DateTime.Today;
+            ComisionesNVCache.fecha = dateInicio.Value.ToString("dd-MMMM-yyyy");
         }
 
         double subTotalFacturaTBC = 0, subTotalAereo = 0, subTotalMaritimo = 0;
@@ -44,47 +45,43 @@ namespace Presentacion
 
         double subTotalLDM = 0;
         string  comision = "";
-        string[] values1 = new string[127];
-        int iTabla=0;
+        string[] values1 = new string[6];
+        
         string NNotadeVenta="";
         private void cargarComision()
         {
-            DataTable comisiones = new DataTable();
-            DataTable clientes = new DataTable();
+
+            string ID_Tramite = "";
             UserModel Read = new UserModel();
-            clientes = Read.readClients();
-
-            comisiones = Read.searchComisionCliente(ComisionesCache.CI);
-
+            DataTable clientes = Read.getDatosComision(ComisionesCache.CI);
+            DataTable comisiones = Read.searchComisionCliente(ComisionesCache.CI);
+            DataTable Id_Tramite = Read.getIDTramite(ComisionesCache.nTramite);
+            txtMesFacturacion.Text = Convert.ToDateTime(ComisionesCache.fechaInicio).ToString("MMM").ToUpper();
+            ComisionesNVCache.Mes = txtMesFacturacion.Text;
             subTotalFacturaTBC = double.Parse(comisiones.Rows[0]["Comisiones"].ToString());
             subTotalAereo = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Aerea"].ToString());
             subTotalMaritimo = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Maritimo"].ToString());
-
+            if (Id_Tramite.Rows.Count > 0) { ID_Tramite = Id_Tramite.Rows[0][0].ToString(); }
             subTotalLDM = Read.searchValorFacturaLDM(ComisionesCache.nTramite);
-            txtIDTramite.Text = ComisionesCache.nTramite.ToString();
+            txtIDTramite.Text = ID_Tramite;
+            ComisionesNVCache.Id_Tamite = ID_Tramite;
+            DataTable ComisionN = Read.verifyComision(ID_Tramite);          
+
             txtSecuencialCliente.Text = ComisionesCache.Secuencial;
+            ComisionesNVCache.Secuencial = txtSecuencialCliente.Text;
             txtCliente.Text = ComisionesCache.CI;
             txtDAI.Text = ComisionesCache.DAI;
+            ComisionesNVCache.DAI = txtDAI.Text;
 
             //txtComisionTBC.Text = subTotalFacturaTBC.ToString("N2");
-            for (int i = 0; i < clientes.Rows.Count; i++)
-            {
-                if (clientes.Rows[i][0].ToString() == ComisionesCache.CI)
-                {
-                    iTabla = i;                    
-                    break;
-                }
-            }
-            
             if (clientes.Rows.Count > 0)
             {
-                for (int i = 0; i < 127 - 1; i++)
+                for (int i = 0; i < 6; i++)
                 {
-                    values1[i] = clientes.Rows[iTabla][i].ToString();
+                    values1[i] = clientes.Rows[0][i].ToString();
                 }
             }
-            
-            
+
 
             if (subTotalFacturaTBC != subTotalLDM)
             {
@@ -108,12 +105,17 @@ namespace Presentacion
             
             if (clientes.Rows.Count > 0)
             {
-                if (ComisionesCache.tipoTramite == "Marítimo") { comision = values1[44]; }
-                if (ComisionesCache.tipoTramite == "Terrestre") { comision = values1[73]; }
-                if (ComisionesCache.tipoTramite == "Aéreo") { comision = values1[45]; }
+                if (ComisionesCache.tipoTramite == "Marítimo") { comision = values1[1]; }
+                if (ComisionesCache.tipoTramite == "Terrestre") { comision = values1[2]; }
+                if (ComisionesCache.tipoTramite == "Aéreo") { comision = values1[0]; }
             }
-            txtComisionTBC.Text = comision;
-            txtSubtotalLDM.Text = subTotalLDM.ToString();
+            if (ComisionN.Rows.Count > 0 && ComisionN.Rows[0][2].ToString() != "NULL") {
+                txtComisionTBC.Text = ComisionN.Rows[0][2].ToString();
+            }
+            else { txtComisionTBC.Text = subTotalLDM.ToString(); }
+            
+            txtSubtotalLDM.Text = comision;
+            ComisionesNVCache.valorComision = subTotalLDM.ToString();
         }
 
         string[] values = new string[6];
@@ -184,6 +186,14 @@ namespace Presentacion
         {
             // MessageBox.Show("scroll");
             //vScrollBar.Value = e.NewValue;
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+           // MessageBox.Show(ComisionesNVCache.DAI + ComisionesNVCache.fecha + ComisionesNVCache.Id_Tamite + ComisionesNVCache.Mes + ComisionesNVCache.Secuencial + ComisionesNVCache.valorComision);
+           
+            FormInformeNV prueba = new FormInformeNV();
+            prueba.Show();
         }
 
         private void txtNumeroNotaVenta_Leave(object sender, EventArgs e)

@@ -359,7 +359,6 @@ namespace Presentacion
                 this.txtpantalla.Text = this.txtpantalla.Text + ",";
             }
 
-
         }
         private void btnAtras(object sender, EventArgs e)
         {

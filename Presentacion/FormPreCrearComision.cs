@@ -80,7 +80,7 @@ namespace Presentacion
                 for (int i = 0; i < dataGridTramites.ColumnCount; i++)
                     if (dataGridTramites.Columns[i].Visible) colMax++;
 
-                hScrollBar.Maximum = colMax;
+                hScrollBar.Maximum = colMax-1;
             }
 
 
@@ -107,6 +107,7 @@ namespace Presentacion
         private void dataGridTramites_Scroll(object sender, ScrollEventArgs e)
         {
             datavScrollBar.Value = e.NewValue;
+           
         }
 
         private void hScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuHScrollBar.ScrollEventArgs e)
@@ -114,10 +115,12 @@ namespace Presentacion
 
             if (dataGridTramites.Columns[e.Value].Visible)
             {
-                dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;
+                dataGridTramites.FirstDisplayedScrollingColumnIndex = e.Value;                
+
             }
 
         }
+
 
         string[] values = new string[3];
         private void buscarTramite()
@@ -180,6 +183,7 @@ namespace Presentacion
             ComisionesCache.tipoTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
             ComisionesCache.Secuencial = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[3].Value.ToString();
             ComisionesCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            ComisionesCache.fechaInicio = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[5].Value.ToString();
             FormPrincipal formPrincipal = Owner as FormPrincipal;
 
             if(dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[2].Value.ToString()=="Guayaquil")

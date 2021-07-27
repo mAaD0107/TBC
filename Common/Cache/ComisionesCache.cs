@@ -9,6 +9,8 @@ namespace Common.Cache
     public static class ComisionesCache
     {
         public static int nTramite { get; set; }
+
+        public static string fechaInicio { get; set; }
         public static string CI {get; set;}
         public static string tipoTramite { get; set; }
         public static string Secuencial { get; set; }

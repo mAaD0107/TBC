@@ -360,7 +360,7 @@
             this.panelPropiedades.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPropiedades.Location = new System.Drawing.Point(0, 0);
             this.panelPropiedades.Name = "panelPropiedades";
-            this.panelPropiedades.Size = new System.Drawing.Size(1050, 37);
+            this.panelPropiedades.Size = new System.Drawing.Size(1040, 37);
             this.panelPropiedades.TabIndex = 0;
             // 
             // cerrar
@@ -371,7 +371,7 @@
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.cerrar.Location = new System.Drawing.Point(1011, 7);
+            this.cerrar.Location = new System.Drawing.Point(991, 7);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(17, 16);
             this.cerrar.TabIndex = 7;
@@ -384,7 +384,7 @@
             this.maximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
-            this.maximizar.Location = new System.Drawing.Point(990, 8);
+            this.maximizar.Location = new System.Drawing.Point(970, 8);
             this.maximizar.Name = "maximizar";
             this.maximizar.Size = new System.Drawing.Size(15, 15);
             this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -447,9 +447,10 @@
             this.panelPrincipal.Controls.Add(this.panel23);
             this.panelPrincipal.Controls.Add(this.panelComentarios);
             this.panelPrincipal.Controls.Add(this.panelInferior);
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 37);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1030, 743);
+            this.panelPrincipal.Size = new System.Drawing.Size(1040, 751);
             this.panelPrincipal.TabIndex = 2;
             // 
             // panelFactura
@@ -3679,8 +3680,8 @@
             this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar.DurationBeforeShrink = 2000;
             this.vScrollBar.LargeChange = 10;
-            this.vScrollBar.Location = new System.Drawing.Point(1028, 37);
-            this.vScrollBar.Maximum = 50;
+            this.vScrollBar.Location = new System.Drawing.Point(1018, 37);
+            this.vScrollBar.Maximum = 1700;
             this.vScrollBar.Minimum = 0;
             this.vScrollBar.MinimumThumbLength = 18;
             this.vScrollBar.Name = "vScrollBar";
@@ -3690,11 +3691,11 @@
             this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.vScrollBar.ShrinkSizeLimit = 3;
-            this.vScrollBar.Size = new System.Drawing.Size(22, 743);
+            this.vScrollBar.Size = new System.Drawing.Size(22, 751);
             this.vScrollBar.SmallChange = 1;
-            this.vScrollBar.TabIndex = 48;
+            this.vScrollBar.TabIndex = 49;
             this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
-            this.vScrollBar.ThumbLength = 145;
+            this.vScrollBar.ThumbLength = 18;
             this.vScrollBar.ThumbMargin = 1;
             this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.vScrollBar.Value = 0;
@@ -3705,7 +3706,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1050, 780);
+            this.ClientSize = new System.Drawing.Size(1040, 788);
             this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelPropiedades);
@@ -3914,7 +3915,6 @@
         public System.Windows.Forms.Button BtnEliminarIVA;
         public System.Windows.Forms.ComboBox cmbPorcentajeRetRenta;
         public System.Windows.Forms.ComboBox cmbPorcentajeRetIVA;
-        public System.Windows.Forms.Label label36;
         public System.Windows.Forms.Label label37;
         public System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
@@ -4068,6 +4068,7 @@
         public System.Windows.Forms.Panel panelInferior;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridClientes;
+        public System.Windows.Forms.Label label36;
         private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
     }
 }

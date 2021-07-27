@@ -19,6 +19,7 @@ namespace Presentacion
         public FormElaborarInforme()
         {
             InitializeComponent();
+            this.panelGeneral.MouseWheel += new MouseEventHandler(panelScroll);
         }
 
         private void FormElaborarInforme_Load(object sender, EventArgs e)
@@ -199,6 +200,23 @@ namespace Presentacion
             cargarDatos();
         }
 
+
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelGeneral.VerticalScroll.Value = e.Value;
+            panelGeneral.Focus();
+            vScrollBar.Maximum = panelGeneral.VerticalScroll.Maximum - 440;
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
+
+        }
+
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelGeneral.Focus();
+            vScrollBar.Maximum = panelGeneral.VerticalScroll.Maximum - 440;
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
+
+        }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
 

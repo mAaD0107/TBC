@@ -129,6 +129,7 @@ namespace DataAccess
             }
         }
 
+        
         public DataTable readClients()
         {
             DataTable table = new DataTable();
@@ -3226,7 +3227,47 @@ namespace DataAccess
             }
         }
 
+        public bool insertDataNuevaComision(string[] values)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
 
+                        command.Connection = connection;
+                        command.CommandText = "modifyNuevaComision";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@StatementType", values[0]);
+                        command.Parameters.AddWithValue("@ID_TRAMITE", values[1]);
+                        command.Parameters.AddWithValue("@N_FACTURA", values[2]);
+                        command.Parameters.AddWithValue("@COMISION", double.Parse(values[3]));
+                        command.Parameters.AddWithValue("@USER", values[4]);
+                        command.Parameters.AddWithValue("@DATE", values[5]);
+
+                        int retorno = command.ExecuteNonQuery();
+
+                        if (retorno != 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+
+                }
+            }
+        }
         public bool insertDataAnticipo(string[] values)
         {
             using (var connection = GetSqlConnection())
@@ -3934,6 +3975,75 @@ namespace DataAccess
             }
         }
 
+        public DataTable getIDTramite(int nTramite)
+        {
+            DataTable table = new DataTable();
+
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getIDTramite";
+                    command.Parameters.AddWithValue("@nTramite", nTramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    return table;
+
+                }
+            }
+        }
+        public DataTable getDatosComision(string RUC)
+        {
+            DataTable table = new DataTable();
+
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "getDatosComision";
+                    command.Parameters.AddWithValue("@RUC", RUC);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    return table;
+
+                }
+            }
+        }
+        public DataTable verifyComision(string ID_Tramite)
+        {
+            DataTable table = new DataTable();
+
+
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "verifyComision";
+                    command.Parameters.AddWithValue("@ID_TRAMITE", ID_Tramite);
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+
+                    return table;
+
+                }
+            }
+        }
 
         public DataTable searchComisionesCliente(string cliente)
         {

@@ -20,6 +20,9 @@ namespace Presentacion
         public FormCrearComisionFactura()
         {
             InitializeComponent();
+            cmbNombres.SelectedIndex = 0;
+            dateInicio.Value = DateTime.Today;
+            ComisionesNVCache.fecha = dateInicio.Value.ToString("dd-MMMM-yyyy");
         }
 
 
@@ -28,9 +31,10 @@ namespace Presentacion
             cmbTipoAgente.SelectedIndex = 0;
             readIVA();
             cargarComisiones();
-            compararValores();
+       
             calcularTotalFactura();
             this.panelGeneral.MouseWheel += new MouseEventHandler(panelScroll);
+            this.panelGeneral.Height = 570;
         }
 
         private void readIVA()
@@ -52,56 +56,84 @@ namespace Presentacion
 
         }
 
-        private void compararValores()
+       
+
+        double subTotalFacturaTBC = 0;
+        
+        double subtotalFacturaLDM = 0;
+        double subTotalLDM = 0;
+        string comision = "";
+        string[] values1 = new string[6];
+        
+        double subTotalAereo = 0, subTotalMaritimo = 0;
+        private void cargarComisiones()
         {
-            if (subTotalFacturaTBC == subtotalFacturaLDM)
+            string ID_Tramite = "";
+            UserModel Read = new UserModel();
+            DataTable comisiones = Read.searchComisionCliente(ComisionesCache.CI);           
+            DataTable clientes = Read.getDatosComision(ComisionesCache.CI);
+            DataTable Id_Tramite = Read.getIDTramite(ComisionesCache.nTramite);
+            if (Id_Tramite.Rows.Count > 0) { ID_Tramite = Id_Tramite.Rows[0][0].ToString(); }
+            DataTable ComisionN = Read.verifyComision(ID_Tramite);
+            subTotalFacturaTBC = double.Parse(comisiones.Rows[0]["Comisiones"].ToString());
+            subTotalAereo = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Aerea"].ToString());
+            subTotalMaritimo = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Maritimo"].ToString());
+
+            subTotalLDM = Read.searchValorFacturaLDM(ComisionesCache.nTramite);
+            txtIDTramite.Text = ID_Tramite;
+            txtSecuencialCliente.Text = ComisionesCache.Secuencial;
+            txtCliente.Text = ComisionesCache.CI;
+            txtDAI.Text = ComisionesCache.DAI;
+            ComisionesNVCache.Mes = txtMesFacturacion.Text;
+            ComisionesNVCache.Id_Tamite = ID_Tramite;
+            ComisionesNVCache.Secuencial = txtSecuencialCliente.Text;
+            ComisionesNVCache.DAI = txtDAI.Text;
+            //txtComisionTBC.Text = subTotalFacturaTBC.ToString("N2");
+            if (clientes.Rows.Count > 0)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    values1[i] = clientes.Rows[0][i].ToString();
+                }
+            }
+
+
+            if (subTotalFacturaTBC != subTotalLDM)
             {
                 switch (ComisionesCache.tipoTramite)
                 {
                     case "Marítimo":
-                        comision = comisionMaritima;
+                        subTotalLDM = subTotalMaritimo;
+
                         break;
 
                     case "Aéreo":
-                        comision = comisionAerea;
+                        subTotalLDM = subTotalAereo;
+
                         break;
 
                     default:
-                        comision = 0;
+                        subTotalLDM = 0;
                         break;
                 }
-
-                txtComision.Text = comision.ToString("N2");
             }
-            else
+
+            if (clientes.Rows.Count > 0)
             {
-
-                
-
-            
+                if (ComisionesCache.tipoTramite == "Marítimo") { comision = values1[1]; }
+                if (ComisionesCache.tipoTramite == "Terrestre") { comision = values1[2]; }
+                if (ComisionesCache.tipoTramite == "Aéreo") { comision = values1[0]; }
             }
+             
+            if (ComisionN.Rows.Count > 0 && ComisionN.Rows[0][2].ToString() != "NULL")
+            {
+                txtComision.Text = ComisionN.Rows[0][2].ToString();
+            }
+            else { txtComision.Text = subTotalLDM.ToString(); }
 
-        }
-
-        double subTotalFacturaTBC = 0;
-        double comisionMaritima = 0, comisionAerea = 0;
-        double subtotalFacturaLDM = 0;
-        double comision = 0;
-        private void cargarComisiones()
-        {
-            UserModel Read = new UserModel();
-            DataTable comisiones = Read.searchComisionCliente(ComisionesCache.CI);
-
-            subTotalFacturaTBC = double.Parse(comisiones.Rows[0]["Comisiones"].ToString());
-            comisionAerea = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Aerea"].ToString());
-            comisionMaritima = double.Parse(comisiones.Rows[0]["Comision_Factura_Agente_Maritimo"].ToString());
-
-            subtotalFacturaLDM = Read.searchValorFacturaLDM(ComisionesCache.nTramite);
-
-
-            lblValLDM.Text = "Subtotal Factura LDM:   " + subtotalFacturaLDM.ToString("N2") + " $";
+            lblValLDM.Text = "Subtotal Factura LDM:   " + comision + " $";
             lblSubtotalBD.Text = "Subtotal Base de Datos:   " + subTotalFacturaTBC.ToString("N2") + " $";
-
+            ComisionesNVCache.valorComision = txtComision.Text.ToString();
             DataTable datosBDCliente = Read.searchComisionCliente(ComisionesCache.CI);
 
             double porcentajeRetRenta = double.Parse(datosBDCliente.Rows[0]["Retencion_Renta_Factura_Agente"].ToString());
@@ -112,14 +144,26 @@ namespace Presentacion
 
         }
 
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show(ComisionesNVCache.DAI + ComisionesNVCache.fecha + ComisionesNVCache.Id_Tamite + ComisionesNVCache.Mes + ComisionesNVCache.Secuencial + ComisionesNVCache.valorComision);
+
+            FormInformeNV prueba = new FormInformeNV();
+            prueba.Show();
+        }
         private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
         {
             panelGeneral.VerticalScroll.Value = e.Value;
+            panelGeneral.Focus();
+            vScrollBar.Maximum = panelGeneral.VerticalScroll.Maximum - 570;
+            vScrollBar.Value = panelGeneral.VerticalScroll.Value;
         }
 
         private void panelScroll(object sender, MouseEventArgs e)
         {
             panelGeneral.Focus();
+            vScrollBar.Maximum = panelGeneral.VerticalScroll.Maximum - 570;
             vScrollBar.Value = panelGeneral.VerticalScroll.Value;
         }
         private void calcularTotalFactura()

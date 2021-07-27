@@ -30,12 +30,12 @@ namespace Presentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.InformeCartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AbonosFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,6 +54,7 @@ namespace Presentacion
             // InformeCartaBindingSource
             // 
             this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
+            this.InformeCartaBindingSource.CurrentChanged += new System.EventHandler(this.InformeCartaBindingSource_CurrentChanged);
             // 
             // ListadoFacturasBindingSource
             // 
@@ -78,24 +79,24 @@ namespace Presentacion
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource7.Name = "InformacionCarta";
-            reportDataSource7.Value = this.InformeCartaBindingSource;
-            reportDataSource8.Name = "ListadoFacturas";
-            reportDataSource8.Value = this.ListadoFacturasBindingSource;
-            reportDataSource9.Name = "ListadoAbonos";
-            reportDataSource9.Value = this.AbonosFacturasBindingSource;
-            reportDataSource10.Name = "ListadoDevoluciones";
-            reportDataSource10.Value = this.DevolucionSaldoBindingSource;
-            reportDataSource11.Name = "ListadoTransferenciaOrigen";
-            reportDataSource11.Value = this.TransferenciaOrigenBindingSource;
-            reportDataSource12.Name = "ListadoTransferenciaDestino";
-            reportDataSource12.Value = this.TransferenciaDestinoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource10);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource11);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource1.Name = "InformacionCarta";
+            reportDataSource1.Value = this.InformeCartaBindingSource;
+            reportDataSource2.Name = "ListadoFacturas";
+            reportDataSource2.Value = this.ListadoFacturasBindingSource;
+            reportDataSource3.Name = "ListadoAbonos";
+            reportDataSource3.Value = this.AbonosFacturasBindingSource;
+            reportDataSource4.Name = "ListadoDevoluciones";
+            reportDataSource4.Value = this.DevolucionSaldoBindingSource;
+            reportDataSource5.Name = "ListadoTransferenciaOrigen";
+            reportDataSource5.Value = this.TransferenciaOrigenBindingSource;
+            reportDataSource6.Name = "ListadoTransferenciaDestino";
+            reportDataSource6.Value = this.TransferenciaDestinoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Informes.InformeCarta1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";

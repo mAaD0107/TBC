@@ -46,5 +46,10 @@ namespace Presentacion
             this.reportViewer1.LocalReport.SetParameters(parameters);
             this.reportViewer1.RefreshReport();
         }
+
+        private void InformeCartaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

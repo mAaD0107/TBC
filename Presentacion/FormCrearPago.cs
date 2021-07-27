@@ -3404,7 +3404,7 @@ namespace Presentacion
 
             if (formPrincipal != null)
             {
-                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
 
                 formCrearFactura.txtBuscarTramite.Text = PagosCache.numeroTramite.ToString("D5");
 
