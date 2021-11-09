@@ -18,8 +18,6 @@ namespace DataAccess
     public class UserDao : ConnectionToSql                                   // Esta clase hereda atributos de ConnectionToSql
     {
 
-
-
         public bool Login(string user, string pass)                 // Crea un metodo donde se leen los datos de la BD
         {
 
@@ -3226,6 +3224,41 @@ namespace DataAccess
                 }
             }
         }
+
+        public bool CartaExist(string idTramite)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "cartaExist";
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idTramite", idTramite);
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error \n" + e);
+                    return false;
+                }
+            }
+        }
+
 
         public bool insertDataNuevaComision(string[] values)
         {

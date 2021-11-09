@@ -47,7 +47,7 @@ namespace Presentacion
 
             if (UserCache.Position == Positions.Clientes)
             {
-                btnGenerar.Visible = false; 
+
             }
 
             this.panelContenedor.MouseWheel += new MouseEventHandler(panelScroll);
@@ -373,26 +373,58 @@ namespace Presentacion
         }
 
 
-        bool btnG = false; 
+        bool btnG = false;
+        bool cartaExist = false;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             UserModel model = new UserModel();
             btnG = true; 
             if (agregarFacturas())
             {
-                if (model.InsertDataCarta(dataCarta()))
+                cartaExist = model.CartaExist(txtTramite.Text);
+
+                if (cartaExist)
                 {
-                    MessageBox.Show("La Carta se ha guardado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataCarta("Update", txtTramite.Text);
+                    /*
+                    if (model.InsertDataCarta(dataCarta("Update", txtTramite.Text)))
+                    {
+                        MessageBox.Show("La Carta se ha actualziado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha sido posible actualizar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }*/
                 }
                 else
                 {
-                    MessageBox.Show("No ha sido posible guardar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dataCarta("Insert", "0");
+                    /*
+                    if (model.InsertDataCarta(dataCarta("Insert", "0")))
+                    {
+                        MessageBox.Show("La Carta se ha guardado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha sido posible guardar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }*/
                 }
             }
+            
             btnG = false;
+            
+            CartaCache.Observaciones = txtComentarios.Text;
+            CartaCache.TipoCarta = cmbTipoCarta.Text;
+            if (agregarFacturas())
+            {
+                FormInformeCarta formInformeCarta = new FormInformeCarta();
+                formInformeCarta.Show();
+            }
         }
 
-        private string[] dataCarta()
+
+
+        private string[] dataCarta(string action, string idTramite)
         {
             string[] data = new string[40];
             List<string> facturas = new List<string>(); 
@@ -404,8 +436,8 @@ namespace Presentacion
                 facturas.Add(tipoFactura);
             }
 
-            data[0] = "Insert"; 
-            data[1] = "0"; 
+            data[0] = action; 
+            data[1] = idTramite; 
             data[2] = txtTramite.Text;
             data[3] = txtCliente.Text;
             data[4] = txtDAI.Text;

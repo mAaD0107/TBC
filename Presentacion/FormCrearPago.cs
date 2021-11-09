@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -3505,7 +3506,8 @@ namespace Presentacion
                                 data[5] = txtDetalleAbono.Text;
                                 data[6] = txtnFactura.Text;
 
-                                if (facturaSelecionada == "Agente")
+
+                                if (facturaSelecionada == "Agente" || facturaSelecionada == "AgenteLDM")
                                 {
                                     data[7] = cmbDestinoPago.Text;
                                 }

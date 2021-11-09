@@ -413,6 +413,11 @@ namespace Domain
             return userDao.insertDataCarta(values);
         }
 
+        public bool CartaExist(string idTramite)
+        {
+            return userDao.CartaExist(idTramite);
+        }
+
         public bool InsertDataPT(string[] values)
         {
             return userDao.InsertDataPT(values);

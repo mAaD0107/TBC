@@ -116,7 +116,6 @@ namespace Presentacion
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnGenerar = new System.Windows.Forms.Button();
             this.cmbTipoCarta = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -1189,7 +1188,6 @@ namespace Presentacion
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btnGuardar);
-            this.panel4.Controls.Add(this.btnGenerar);
             this.panel4.Controls.Add(this.cmbTipoCarta);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.shapeContainer5);
@@ -1213,28 +1211,9 @@ namespace Presentacion
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(255, 59);
             this.btnGuardar.TabIndex = 86;
-            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.Text = "GENERAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.btnGenerar.FlatAppearance.BorderSize = 0;
-            this.btnGenerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
-            this.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnGenerar.Location = new System.Drawing.Point(463, 21);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(255, 59);
-            this.btnGenerar.TabIndex = 85;
-            this.btnGenerar.Text = "GENERAR";
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // cmbTipoCarta
             // 
@@ -1291,7 +1270,6 @@ namespace Presentacion
             // redondeoBtnGenerar
             // 
             this.redondeoBtnGenerar.ElipseRadius = 20;
-            this.redondeoBtnGenerar.TargetControl = this.btnGenerar;
             // 
             // panelVScroll
             // 
@@ -1441,7 +1419,6 @@ namespace Presentacion
         public System.Windows.Forms.Label label5;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer5;
         public Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        public System.Windows.Forms.Button btnGenerar;
         public System.Windows.Forms.ComboBox cmbTipoCarta;
         private Bunifu.Framework.UI.BunifuElipse redondeoBtnGenerar;
         private System.Windows.Forms.Panel panelComentarios;
