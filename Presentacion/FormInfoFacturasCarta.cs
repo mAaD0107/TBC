@@ -22,7 +22,8 @@ namespace Presentacion
         double valorAPagar = 0;
         double totalGastos = 0;
         double valorMayorContable = 0;
-
+        string[] NombresColumnas = new string[50];
+        string[] Nombreschecklist = new string[50];
         public ReadOnlyCollection<string> tipoFactura { get; } = new ReadOnlyCollection<string>
         (
             new string[] 
@@ -46,7 +47,7 @@ namespace Presentacion
 
             if (UserCache.Position == Positions.Clientes)
             {
-                btnGenerar.Visible = false; 
+
             }
 
             this.panelContenedor.MouseWheel += new MouseEventHandler(panelScroll);
@@ -54,22 +55,59 @@ namespace Presentacion
             this.checkListFacturas.MouseWheel += new MouseEventHandler(deshabilitarCheckList);
 
         }
-
+        public bool ACalcu = false;
+       
         private void FormInfoFacturasCarta_Load(object sender, EventArgs e)
         {
             UserModel Read = new UserModel();
             DataTable Facturas = Read.readInfoFacturas(FacturaCache.ID_Tramite);
-            dataFacturas.DataSource = Facturas;
-            
-
+            DataTable Cartas = Read.readInfoCartas(FacturaCache.ID_Tramite);
             int n = obtenerNTramite(FacturaCache.ID_Tramite);
-
             DataTable TipoFactura = Read.readPagos(n);
+            dataFacturas.DataSource = Facturas;
+            DataCartas.DataSource = Cartas;
+            dataTipoFactura.DataSource = TipoFactura;
+            if (DataCartas.Rows.Count>0)
+            {
+                this.txtMayorContable.Text = DataCartas.Rows[0].Cells[7].Value.ToString();
+                this.txtDiferencia.Text = DataCartas.Rows[0].Cells[8].Value.ToString();
+                this.txtComentarios.Text = DataCartas.Rows[0].Cells[35].Value.ToString();
+            }
+            
+            if (DataCartas.Rows.Count > 0)
+            {
+                int x = 0;
+                foreach (DataGridViewColumn column in DataCartas.Columns)
+                {
+                    NombresColumnas[x] = column.HeaderText;
+                    x++;
+                }
+
+               
+                x = 0;
+            }
+
+            for (int i = 0; i < dataTipoFactura.Rows.Count; i++) { 
+                    Nombreschecklist[i]= dataTipoFactura.Rows[i].Cells[0].Value.ToString();
+                }
+            
+                
             checkListFacturas.DataSource = TipoFactura;
             checkListFacturas.DisplayMember = "Tipo_Factura";
             checkListFacturas.ValueMember = "Tipo_Factura";
 
-
+            checkItems();
+            if (DataCartas.Rows.Count > 0)
+            {
+                if (DataCartas.Rows[0].Cells[36].Value.ToString() == "True")
+                {
+                    cmbTipoCarta.SelectedIndex = 1;
+                }
+                if (DataCartas.Rows[0].Cells[36].Value.ToString() == "False")
+                {
+                    cmbTipoCarta.SelectedIndex = 2;
+                }
+            }
             foreach (DataRow row in Facturas.Rows)
             {
                 if (!existeFactura(Convert.ToString(row[0] is DBNull ? "" : row[0])))
@@ -91,7 +129,7 @@ namespace Presentacion
             ActiveControl = null;
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Focus();
-
+            
 
         }
 
@@ -103,6 +141,7 @@ namespace Presentacion
             string[] texto = ID_Tramite.Split(new string[] { "-" }, StringSplitOptions.None);
             return int.Parse(texto[1]);
         }
+       
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -141,13 +180,35 @@ namespace Presentacion
             }
         }
 
+        public void checkItems()
+        {
+           
+            if (checkListFacturas.Items.Count > 0 && DataCartas.Rows.Count > 0)
+            {
+                for (int i = 0; i < checkListFacturas.Items.Count; i++)
+                {
+                    
+                    for (int j = 10; j < 35; j++)
+                    {
+                        if (Nombreschecklist[i] == NombresColumnas[j])
+                        {
+                            if (DataCartas.Rows[0].Cells[j].Value.ToString() == "True") 
+                            {
+                                checkListFacturas.SetItemChecked(i, true);
+                            }
+                        }
+                        
+                    }
+                }
+               
 
-
+            }
+        }
         private bool agregarFacturas()
         {
             if (checkListFacturas.CheckedItems.Count > 0)
             {
-                
+
                 if (CartaCache.Facturas != null) CartaCache.Facturas.Clear();
                 CartaCache.Facturas = new List<string>();
 
@@ -158,6 +219,8 @@ namespace Presentacion
                     CartaCache.Facturas.Add(tipoFactura);
                 }
 
+               
+            
                 return true;
             }
             else
@@ -165,7 +228,7 @@ namespace Presentacion
                 if (btnG)
                 {
                       MessageBox.Show("No es posible guardar la Carta.\n" +
-                    "Por favor, selecione las facturas que desea agregar.",
+                    "Por favor, seleccione las facturas que desea agregar.",
                     "Alerta.",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -173,7 +236,7 @@ namespace Presentacion
                 else
                 {
                     MessageBox.Show("No es posible generar la Carta.\n" +
-                "Por favor, selecione las facturas que desea agregar.",
+                "Por favor, seleccione las facturas que desea agregar.",
                 "Alerta.",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
@@ -243,11 +306,15 @@ namespace Presentacion
         private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
         {
             panelContenedor.VerticalScroll.Value = e.Value;
+            panelContenedor.Focus();
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum - 570;
+            vScrollBar.Value = panelContenedor.VerticalScroll.Value;
         }
 
         private void panelScroll(object sender, MouseEventArgs e)
         {
             panelContenedor.Focus();
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum - 570;
             vScrollBar.Value = panelContenedor.VerticalScroll.Value;
         }
 
@@ -306,26 +373,58 @@ namespace Presentacion
         }
 
 
-        bool btnG = false; 
+        bool btnG = false;
+        bool cartaExist = false;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             UserModel model = new UserModel();
             btnG = true; 
             if (agregarFacturas())
             {
-                if (model.InsertDataCarta(dataCarta()))
+                cartaExist = model.CartaExist(txtTramite.Text);
+
+                if (cartaExist)
                 {
-                    MessageBox.Show("La Carta se ha guardado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataCarta("Update", txtTramite.Text);
+                    /*
+                    if (model.InsertDataCarta(dataCarta("Update", txtTramite.Text)))
+                    {
+                        MessageBox.Show("La Carta se ha actualziado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha sido posible actualizar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }*/
                 }
                 else
                 {
-                    MessageBox.Show("No ha sido posible guardar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dataCarta("Insert", "0");
+                    /*
+                    if (model.InsertDataCarta(dataCarta("Insert", "0")))
+                    {
+                        MessageBox.Show("La Carta se ha guardado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha sido posible guardar los datos de la Carta", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }*/
                 }
             }
+            
             btnG = false;
+            
+            CartaCache.Observaciones = txtComentarios.Text;
+            CartaCache.TipoCarta = cmbTipoCarta.Text;
+            if (agregarFacturas())
+            {
+                FormInformeCarta formInformeCarta = new FormInformeCarta();
+                formInformeCarta.Show();
+            }
         }
 
-        private string[] dataCarta()
+
+
+        private string[] dataCarta(string action, string idTramite)
         {
             string[] data = new string[40];
             List<string> facturas = new List<string>(); 
@@ -337,8 +436,8 @@ namespace Presentacion
                 facturas.Add(tipoFactura);
             }
 
-            data[0] = "Insert"; 
-            data[1] = "0"; 
+            data[0] = action; 
+            data[1] = idTramite; 
             data[2] = txtTramite.Text;
             data[3] = txtCliente.Text;
             data[4] = txtDAI.Text;
@@ -388,5 +487,37 @@ namespace Presentacion
         {
             return lista.ToList().Any(x => x == campo); 
         }
+
+       
+        private void Calculadora_Click(object sender, EventArgs e)
+        {   if (ACalcu == false)
+            {
+                ACalcu = true;
+                FormCalculadora Calcu = new FormCalculadora();
+                AddOwnedForm(Calcu);
+                Calcu.Show();
+            }
+        }
+
+        private void txtMayorContable_TextChanged_1(object sender, EventArgs e)
+        {
+            lblDolar.Visible = true;
+            
+        }
+
+        private void txtDiferencia_TextChanged(object sender, EventArgs e)
+        {
+            Dolar.Visible = true;
+           
+
+        }
+
+
+        private void txtComentarios_TextChanged(object sender, EventArgs e)
+        {
+            //checkItems();
+        }
+
+        
     }
 }

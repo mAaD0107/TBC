@@ -41,6 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNTramite = new System.Windows.Forms.TextBox();
             this.panelDatosGenerales = new System.Windows.Forms.Panel();
+            this.lblDAI = new System.Windows.Forms.Label();
+            this.lblErrorDAI = new System.Windows.Forms.Label();
+            this.txtDAI = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAlertaSecuencial = new System.Windows.Forms.Label();
@@ -67,6 +70,8 @@
             this.cmbTipoTramite = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineConcepto = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape40 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -170,11 +175,7 @@
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.redondeoFormulario = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lblDAI = new System.Windows.Forms.Label();
-            this.lblErrorDAI = new System.Windows.Forms.Label();
-            this.txtDAI = new System.Windows.Forms.TextBox();
-            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -361,6 +362,42 @@
             this.panelDatosGenerales.Name = "panelDatosGenerales";
             this.panelDatosGenerales.Size = new System.Drawing.Size(995, 873);
             this.panelDatosGenerales.TabIndex = 2;
+            // 
+            // lblDAI
+            // 
+            this.lblDAI.AutoSize = true;
+            this.lblDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lblDAI.Location = new System.Drawing.Point(58, 531);
+            this.lblDAI.Name = "lblDAI";
+            this.lblDAI.Size = new System.Drawing.Size(93, 18);
+            this.lblDAI.TabIndex = 65;
+            this.lblDAI.Text = "Número DAI:";
+            // 
+            // lblErrorDAI
+            // 
+            this.lblErrorDAI.AutoSize = true;
+            this.lblErrorDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.lblErrorDAI.Location = new System.Drawing.Point(489, 528);
+            this.lblErrorDAI.Name = "lblErrorDAI";
+            this.lblErrorDAI.Size = new System.Drawing.Size(39, 18);
+            this.lblErrorDAI.TabIndex = 66;
+            this.lblErrorDAI.Text = "DAI ";
+            this.lblErrorDAI.Visible = false;
+            // 
+            // txtDAI
+            // 
+            this.txtDAI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.txtDAI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDAI.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDAI.ForeColor = System.Drawing.Color.White;
+            this.txtDAI.Location = new System.Drawing.Point(162, 525);
+            this.txtDAI.MaxLength = 26;
+            this.txtDAI.Name = "txtDAI";
+            this.txtDAI.Size = new System.Drawing.Size(300, 30);
+            this.txtDAI.TabIndex = 64;
+            this.txtDAI.TextChanged += new System.EventHandler(this.txtDAI_TextChanged);
             // 
             // label26
             // 
@@ -731,6 +768,26 @@
             this.shapeContainer2.Size = new System.Drawing.Size(993, 871);
             this.shapeContainer2.TabIndex = 49;
             this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape8
+            // 
+            this.lineShape8.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape8.Enabled = false;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 158;
+            this.lineShape8.X2 = 460;
+            this.lineShape8.Y1 = 555;
+            this.lineShape8.Y2 = 555;
+            // 
+            // lineShape22
+            // 
+            this.lineShape22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.lineShape22.Enabled = false;
+            this.lineShape22.Name = "lineShape22";
+            this.lineShape22.X1 = 50;
+            this.lineShape22.X2 = 50;
+            this.lineShape22.Y1 = 552;
+            this.lineShape22.Y2 = 529;
             // 
             // lineConcepto
             // 
@@ -1897,61 +1954,47 @@
             this.redondeoFormulario.ElipseRadius = 20;
             this.redondeoFormulario.TargetControl = this;
             // 
-            // lblDAI
+            // vScrollBar
             // 
-            this.lblDAI.AutoSize = true;
-            this.lblDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.lblDAI.Location = new System.Drawing.Point(58, 531);
-            this.lblDAI.Name = "lblDAI";
-            this.lblDAI.Size = new System.Drawing.Size(93, 18);
-            this.lblDAI.TabIndex = 65;
-            this.lblDAI.Text = "Número DAI:";
-            // 
-            // lblErrorDAI
-            // 
-            this.lblErrorDAI.AutoSize = true;
-            this.lblErrorDAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorDAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
-            this.lblErrorDAI.Location = new System.Drawing.Point(489, 528);
-            this.lblErrorDAI.Name = "lblErrorDAI";
-            this.lblErrorDAI.Size = new System.Drawing.Size(39, 18);
-            this.lblErrorDAI.TabIndex = 66;
-            this.lblErrorDAI.Text = "DAI ";
-            this.lblErrorDAI.Visible = false;
-            // 
-            // txtDAI
-            // 
-            this.txtDAI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.txtDAI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDAI.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDAI.ForeColor = System.Drawing.Color.White;
-            this.txtDAI.Location = new System.Drawing.Point(162, 525);
-            this.txtDAI.MaxLength = 26;
-            this.txtDAI.Name = "txtDAI";
-            this.txtDAI.Size = new System.Drawing.Size(300, 30);
-            this.txtDAI.TabIndex = 64;
-            this.txtDAI.TextChanged += new System.EventHandler(this.txtDAI_TextChanged);
-            // 
-            // lineShape22
-            // 
-            this.lineShape22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
-            this.lineShape22.Enabled = false;
-            this.lineShape22.Name = "lineShape22";
-            this.lineShape22.X1 = 50;
-            this.lineShape22.X2 = 50;
-            this.lineShape22.Y1 = 552;
-            this.lineShape22.Y2 = 529;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape8.Enabled = false;
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 158;
-            this.lineShape8.X2 = 460;
-            this.lineShape8.Y1 = 555;
-            this.lineShape8.Y2 = 555;
+            this.vScrollBar.AllowCursorChanges = true;
+            this.vScrollBar.AllowHomeEndKeysDetection = false;
+            this.vScrollBar.AllowIncrementalClickMoves = true;
+            this.vScrollBar.AllowMouseDownEffects = true;
+            this.vScrollBar.AllowMouseHoverEffects = true;
+            this.vScrollBar.AllowScrollingAnimations = true;
+            this.vScrollBar.AllowScrollKeysDetection = true;
+            this.vScrollBar.AllowScrollOptionsMenu = true;
+            this.vScrollBar.AllowShrinkingOnFocusLost = false;
+            this.vScrollBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vScrollBar.BackgroundImage")));
+            this.vScrollBar.BindingContainer = null;
+            this.vScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.BorderRadius = 0;
+            this.vScrollBar.BorderThickness = 1;
+            this.vScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar.DurationBeforeShrink = 2000;
+            this.vScrollBar.LargeChange = 10;
+            this.vScrollBar.Location = new System.Drawing.Point(1000, 36);
+            this.vScrollBar.Maximum = 1700;
+            this.vScrollBar.Minimum = 0;
+            this.vScrollBar.MinimumThumbLength = 18;
+            this.vScrollBar.Name = "vScrollBar";
+            this.vScrollBar.OnDisable.ScrollBarBorderColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.vScrollBar.OnDisable.ThumbColor = System.Drawing.Color.DimGray;
+            this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.vScrollBar.ShrinkSizeLimit = 3;
+            this.vScrollBar.Size = new System.Drawing.Size(22, 713);
+            this.vScrollBar.SmallChange = 1;
+            this.vScrollBar.TabIndex = 50;
+            this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.vScrollBar.ThumbLength = 18;
+            this.vScrollBar.ThumbMargin = 1;
+            this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.vScrollBar.Value = 0;
+            this.vScrollBar.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.vScrollBar_Scroll);
             // 
             // FormCrearTramite
             // 
@@ -1959,6 +2002,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(1022, 749);
+            this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.panelFormulario);
             this.Controls.Add(this.panelOpciones);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2148,5 +2192,6 @@
         public System.Windows.Forms.TextBox txtDAI;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape22;
+        private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
     }
 }

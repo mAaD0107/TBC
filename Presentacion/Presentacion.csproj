@@ -33,11 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\TBC2\Sistema\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+      <HintPath>..\..\TBC2\Sistema\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\TBC2\Sistema\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>..\..\TBC2\Sistema\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\OneDrive\Documentos\Frameworks Visual Studio\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\TBC2\Sistema\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -58,7 +68,9 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\TBC2\Sistema\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -83,6 +95,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesComplementarias\MyColorTable.cs" />
+    <Compile Include="FormInformeNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeNV.Designer.cs">
+      <DependentUpon>FormInformeNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCalculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalculadora.Designer.cs">
+      <DependentUpon>FormCalculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOpcionesTramitesExportaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesTramitesExportaciones.Designer.cs">
+      <DependentUpon>FormOpcionesTramitesExportaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOpcionesExportaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpcionesExportaciones.Designer.cs">
+      <DependentUpon>FormOpcionesExportaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarCarta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +412,15 @@
       <DependentUpon>FormTipoPago.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormInformeNV.resx">
+      <DependentUpon>FormInformeNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalculadora.resx">
+      <DependentUpon>FormCalculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesTramitesExportaciones.resx">
+      <DependentUpon>FormOpcionesTramitesExportaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarCarta.resx">
       <DependentUpon>FormBuscarCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +523,9 @@
     <EmbeddedResource Include="FormOpcionesDetallado.resx">
       <DependentUpon>FormOpcionesDetallado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOpcionesExportaciones.resx">
+      <DependentUpon>FormOpcionesExportaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpcionesFactura.resx">
       <DependentUpon>FormOpcionesFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,6 +568,7 @@
     <EmbeddedResource Include="FormOpcionesReportes.resx">
       <DependentUpon>FormOpcionesReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\InformeNV.rdlc" />
     <EmbeddedResource Include="Informes\ReportePrueba.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -546,6 +595,7 @@
     <None Include="Properties\DataSources\Domain.Carta.ListadoFacturas.datasource" />
     <None Include="Properties\DataSources\Domain.Carta.TransferenciaDestino.datasource" />
     <None Include="Properties\DataSources\Domain.Carta.TransferenciaOrigen.datasource" />
+    <None Include="Properties\DataSources\Domain.Comisiones.InformeComisionesNV.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrar.InformeCXCGeneral.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrar.ListaCXC.datasource" />
     <None Include="Properties\DataSources\Domain.CuentasPorCobrarDetallado.InformeCXCDetallado.datasource" />

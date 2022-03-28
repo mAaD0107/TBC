@@ -59,7 +59,6 @@ namespace Presentacion
                 FormPrincipal formPrincipal = Owner as FormPrincipal;
                 formPrincipal.panelMenuVertical.Visible = true;
                 formPrincipal.panelGlobal.ColumnStyles[0].Width = 19;
-
                 this.Close();
             }
             else
@@ -166,7 +165,6 @@ namespace Presentacion
 
                 vScrollBar.Minimum = 0;
                 vScrollBar.Maximum = 1;
-
                 vScrollBar.Visible = false;
             }
 
@@ -290,7 +288,8 @@ namespace Presentacion
                             TramiteCache.DAI = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[12].Value.ToString();
                             TramiteCache.secuencialCliente = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[5].Value.ToString();
                             TramiteCache.idTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[1].Value.ToString();
-
+                            TramiteCache.tipoTramite = dataGridTramites.Rows[dataGridTramites.CurrentCell.RowIndex].Cells[3].Value.ToString();
+                            
                             formCrearFactura.txtBuscarTramite.Text = TramiteCache.idTramite;
                             formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
                             using (Font font = new Font("Century Gothic", 14.0f)) formCrearFactura.txtBuscarTramite.Font = font;

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -3404,7 +3405,7 @@ namespace Presentacion
 
             if (formPrincipal != null)
             {
-                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
 
                 formCrearFactura.txtBuscarTramite.Text = PagosCache.numeroTramite.ToString("D5");
 
@@ -3505,7 +3506,8 @@ namespace Presentacion
                                 data[5] = txtDetalleAbono.Text;
                                 data[6] = txtnFactura.Text;
 
-                                if (facturaSelecionada == "Agente")
+
+                                if (facturaSelecionada == "Agente" || facturaSelecionada == "AgenteLDM")
                                 {
                                     data[7] = cmbDestinoPago.Text;
                                 }

@@ -48,6 +48,7 @@
     <Compile Include="Carta\ListadoFacturas.cs" />
     <Compile Include="Carta\TransferenciaDestino.cs" />
     <Compile Include="Carta\TransferenciaOrigen.cs" />
+    <Compile Include="Comisiones\InformeComisionesNV.cs" />
     <Compile Include="CuentasPorCobrarDetallado\InformeCXCDetallado.cs" />
     <Compile Include="CuentasPorCobrarDetallado\ListaCXCD.cs" />
     <Compile Include="CuentasPorCobrar\InformeCXCGeneral.cs" />
@@ -67,6 +68,9 @@
       <Project>{a81b91eb-8064-4a10-8347-60c5f9ff1a12}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Domain.Comisiones.InformeComisionesNV.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

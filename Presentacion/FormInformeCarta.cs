@@ -16,6 +16,7 @@ namespace Presentacion
         private void FormInformeCarta_Load(object sender, EventArgs e)
         {
             getCarta();
+         
         }
 
         private void getCarta()
@@ -44,6 +45,11 @@ namespace Presentacion
 
             this.reportViewer1.LocalReport.SetParameters(parameters);
             this.reportViewer1.RefreshReport();
+        }
+
+        private void InformeCartaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,17 +17,37 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+        public int diferenciar = 1;
 
+        public void diferenciar_atras(int x)
+        {
+            diferenciar = x;
+        
+        }
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = Owner as FormPrincipal;
-
-            if (formPrincipal != null)
+            if (diferenciar == 1)
             {
-                FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
-                formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
-                formPrincipal.AddOwnedForm(formOpcionesImportaciones);
-                formPrincipal.AbrirFormInPanel(formOpcionesImportaciones);
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormOpcionesImportaciones formOpcionesImportaciones = new FormOpcionesImportaciones();
+                    formOpcionesImportaciones.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formOpcionesImportaciones);
+                    formPrincipal.AbrirFormInPanel(formOpcionesImportaciones);
+                }
+            }
+            else {
+                FormPrincipal formPrincipal = Owner as FormPrincipal;
+
+                if (formPrincipal != null)
+                {
+                    FormOpcionesExportaciones formOpcionesExportaciones = new FormOpcionesExportaciones();
+                    formOpcionesExportaciones.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                    formPrincipal.AddOwnedForm(formOpcionesExportaciones);
+                    formPrincipal.AbrirFormInPanel(formOpcionesExportaciones);
+                }
             }
         }
 
@@ -59,9 +79,10 @@ namespace Presentacion
             
             if (formPrincipal != null)
             {
-                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
                 formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                 formCrearFactura.panelPrincipal.Visible = false;
+                formPrincipal.panelInferior.Visible = true;
                 formPrincipal.AddOwnedForm(formCrearFactura);
                 formPrincipal.AbrirFormInPanel(formCrearFactura);
             }

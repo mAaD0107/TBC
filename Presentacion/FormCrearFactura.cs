@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Globalization;
+using System.Globalization;using System.Drawing;
+
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -13,14 +13,24 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Common.Cache;
 using Domain;
+using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 namespace Presentacion
 {
     public partial class FormCrearFactura : Form
     {
-        public FormCrearFactura()
+        int entrada = 0;
+        public FormCrearFactura(int entrada)
         {
             InitializeComponent();
+            this.entrada = entrada;
+            this.panelPrincipal.MouseWheel += new MouseEventHandler(panelScroll);
+            if (entrada == 1)
+            {
+                this.panelPrincipal.Height = 450;
+            }
+            else { this.panelPrincipal.Height = 740; }
         }
 
         private void FormCrearFactura_Resize(object sender, EventArgs e)
@@ -56,9 +66,9 @@ namespace Presentacion
                 default:
                     break;
             }
-
+            
             desactivarScrolls();
-
+           
         }
 
         private void desactivarScrolls()
@@ -71,7 +81,14 @@ namespace Presentacion
             cmbPorcentajeRetRenta.MouseWheel += new MouseEventHandler(scrollsOff);
             cmbPorcentajeRetIVA.MouseWheel += new MouseEventHandler(scrollsOff);
         }
+        DataTable clientes;
+        private void searchData(string data)
+        {
+            UserModel Read = new UserModel();
+            dataGridClientes.DataSource = Read.searchClients(data);
+            clientes = Read.getDatosComision(dataGridClientes.Rows[0].Cells[0].Value.ToString());
 
+        }
         private void scrollsOff(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
@@ -534,10 +551,59 @@ namespace Presentacion
         }
 
 
-
+        private decimal ValorComision = 0;
+        private bool hayNuevaComision = false;
         private void txtSubtotalFactura_Leave(object sender, EventArgs e)
-        {
+        {            
             formatearTexto();
+            string respuesta="";
+            if (TramiteCache.tipoTramite == "Marítimo") { respuesta = values1[2]; }
+            if (TramiteCache.tipoTramite == "Terrestre") { respuesta = values1[1]; }
+            if (TramiteCache.tipoTramite == "Aéreo") { respuesta = values1[0]; }
+            if (txtSubtotalFactura.Text != respuesta && Convert.ToString(cmbTipoFactura.SelectedValue) == "Agente_LDM")
+            {
+                var result = MessageBox.Show("¿Esta seguro que desea cambiar el valor de la base de datos?", "¡Alerta!", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    string valorcomision = Interaction.InputBox(
+                                         "Ingrese el valor de comisión requerido",
+                                        "Info.",
+                                        "");
+                    if (valorcomision != "")
+                    {
+                        if (valorcomision.Contains('.') == true)
+                        {
+                            valorcomision = valorcomision.Replace(".", ",");
+                        }
+                        do
+                        {
+
+                            if (Regex.Matches(valorcomision, ",").Count > 1)
+                            {
+                                valorcomision = Interaction.InputBox(
+                                                  "Ha ingresado mas de una coma. Ingrese nuevamente el valor de comisión requerido",
+                                                 "Info.",
+                                                 "");
+                            }
+                            if (valorcomision.Contains('.') == true)
+                            {
+                                valorcomision = valorcomision.Replace(".", ",");
+                            }
+                        } while (Regex.Matches(valorcomision, ",").Count > 1);
+
+                        ValorComision = Math.Round(Convert.ToDecimal(valorcomision), 2, MidpointRounding.AwayFromZero);
+                        MessageBox.Show("La nueva comisión es: " + ValorComision.ToString() + "$");
+                        hayNuevaComision = true;
+                    }
+                }
+
+                    if (result == DialogResult.No)
+                {
+                    txtSubtotalFactura.Text = respuesta;
+                    
+                }            
+            }
         }
 
 
@@ -585,14 +651,38 @@ namespace Presentacion
 
 
         }
+        
+        private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            panelPrincipal.VerticalScroll.Value = e.Value;
+            panelPrincipal.Focus();
+            if (entrada == 1)
+            {
+                vScrollBar.Maximum = panelPrincipal.VerticalScroll.Maximum - 440;
+            }
+            else { vScrollBar.Maximum = panelPrincipal.VerticalScroll.Maximum - 700; }
+            vScrollBar.Value = panelPrincipal.VerticalScroll.Value;
 
+        }
+
+        private void panelScroll(object sender, MouseEventArgs e)
+        {
+            panelPrincipal.Focus();
+            if (entrada == 1)
+            {
+                vScrollBar.Maximum = panelPrincipal.VerticalScroll.Maximum - 440;
+            }
+            else { vScrollBar.Maximum = panelPrincipal.VerticalScroll.Maximum - 700; }
+            vScrollBar.Value = panelPrincipal.VerticalScroll.Value;           
+
+        }
         private void txtSubtotalFactura_KeyPress(object sender, KeyPressEventArgs e)
         {
             comprobarNumero(sender, e);
 
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                txtNumeroRetencion.Focus();
+                cmbIVA.Focus();
             }
         }
 
@@ -734,7 +824,7 @@ namespace Presentacion
             calcularFactura();
             calcularTotalRetención();
             calcularValorACobrar();
-
+            
         }
 
 
@@ -1023,6 +1113,17 @@ namespace Presentacion
             }
         }
 
+        private string[] insertDataNuevaComision()
+        {
+            string[] values = new string[6];
+            values[0] = "Insert";
+            values[1] = txtBuscarTramite.Text;
+            values[2] = txtNFactura.Text;
+            values[3] = ValorComision.ToString();
+            values[4] = UserCache.FirstName + " " + UserCache.LastName;
+            values[5] = dateFactura.Value.ToString("yyyy-MM-dd");
+            return values;
+        }
         private void txtIVANotCredito_KeyPress(object sender, KeyPressEventArgs e)
         {
             comprobarNumero(sender, e);
@@ -1049,7 +1150,24 @@ namespace Presentacion
 
         private void cmbTipoFactura_SelectedValueChanged(object sender, EventArgs e)
         {
-           // readRetenciones();
+
+            if (Convert.ToString(cmbTipoFactura.SelectedValue) == "Agente_LDM")
+            {
+                searchData(txtCliente.Text);
+                //dataGridClientes.Visible = true;
+                
+                
+                if (clientes.Rows.Count > 0)
+                {
+                    for (int i = 0; i < 6; i++)
+                    {
+                        values1[i] = clientes.Rows[0][i].ToString();
+                    }
+                }
+
+
+            }
+            else { txtSubtotalFactura.Text = ""; }
         }
 
         private void cmbOtros_SelectedValueChanged(object sender, EventArgs e)
@@ -1082,8 +1200,10 @@ namespace Presentacion
         {
             if (comprobarConcepto())
             {
+
                 if (cmbTipoFactura.Text != "" && cmbOtros.Text != "")
                 {
+
                     if (valorACobrar >= 0)
                     {
                         UserModel model = new UserModel();
@@ -1116,6 +1236,12 @@ namespace Presentacion
                                 {
                                     desplegarFactura();
 
+
+                                    if (hayNuevaComision) {
+                                        model.InsertDataNuevaComision(insertDataNuevaComision());
+                                    
+                                    }
+
                                     if (!editar)
                                     {
                                         DialogResult resultS = MessageBox.Show("La factura: " + values[1] +
@@ -1133,7 +1259,7 @@ namespace Presentacion
 
                                             if (formPrincipal != null)
                                             {
-                                                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                                                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
                                                 formCrearFactura.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
                                                 formCrearFactura.panelPrincipal.Visible = false;
 
@@ -1203,8 +1329,9 @@ namespace Presentacion
                                             {
                                                 if (formPrincipal != null)
                                                 {
-                                                    FormCrearFactura formCrearFactura1 = new FormCrearFactura();
+                                                    FormCrearFactura formCrearFactura1 = new FormCrearFactura(2);
                                                     formCrearFactura1.FormClosed += new FormClosedEventHandler(formPrincipal.mostrarLogoAlCerrar);
+                                                    formCrearFactura1.panelPrincipal.Height = 740;
                                                     formPrincipal.AddOwnedForm(formCrearFactura1);
                                                     formPrincipal.AbrirFormInPanel(formCrearFactura1);
                                                 }
@@ -1288,7 +1415,7 @@ namespace Presentacion
 
         private void desplegarFactura()
         {
-            FormCrearFactura formCrearFactura = new FormCrearFactura();
+            FormCrearFactura formCrearFactura = new FormCrearFactura(2);
 
             formCrearFactura.txtBuscarTramite.Text = TramiteCache.idTramite;
             formCrearFactura.txtBuscarTramite.TextAlign = HorizontalAlignment.Center;
@@ -1490,6 +1617,7 @@ namespace Presentacion
 
 
         string[] values = new string[37];
+        string[] values1 = new string[6];
         public bool editar = false;
         // Nuevos valores
         public double iva2;
@@ -1776,6 +1904,11 @@ namespace Presentacion
             calcularTotalRetención();
             calcularValorACobrar();
         }
+        
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
 
         private void txtSubTotalNotCreditoII_Leave(object sender, EventArgs e)
         {
@@ -1941,7 +2074,7 @@ namespace Presentacion
             dateFactura.ForeColor = Color.White;
                 
         }
-
+       
         private void maximizar_Click(object sender, EventArgs e)
         {
             if (!mostrarFactura)
@@ -1956,7 +2089,8 @@ namespace Presentacion
                     formPrincipal.panelInferior.Visible = false;
                     formPrincipal.PanelSubContenedor.RowStyles[1].Height = 0;
                     formPrincipal.panelGlobal.ColumnStyles[0].Width = 0;
-
+                    this.panelPrincipal.VerticalScroll.Visible = false;
+                    this.panelPrincipal.Height = 600;
                     anchoTitulo = panelNFactura.Width;
                     anchoBoton = panelInferior.Width;
 
@@ -1978,7 +2112,7 @@ namespace Presentacion
                     formPrincipal.PanelSubContenedor.RowStyles[1].Height = valAntAltoMenuInf;
                     formPrincipal.panelMenuVertical.Visible = true;
                     formPrincipal.panelInferior.Visible = true;
-
+                    this.panelPrincipal.Height = 460;
 
                     panelInferior.Width = (int)anchoBoton;
 

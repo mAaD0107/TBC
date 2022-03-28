@@ -42,6 +42,7 @@ namespace Presentacion
             this.lblTitulo = new System.Windows.Forms.Label();
             this.redondeoGeneral = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoDetallado = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSubmenu.SuspendLayout();
             this.panelGeneral.SuspendLayout();
             this.panelDetallado.SuspendLayout();
@@ -179,6 +180,7 @@ namespace Presentacion
             // 
             // panelTitulo
             // 
+            this.panelTitulo.Controls.Add(this.button1);
             this.panelTitulo.Controls.Add(this.lblTitulo);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
@@ -208,6 +210,25 @@ namespace Presentacion
             // 
             this.redondeoDetallado.ElipseRadius = 20;
             this.redondeoDetallado.TargetControl = this.panelDetallado;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button1.Location = new System.Drawing.Point(40, 74);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 10;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // FormOpcionesCuentasCobrar
             // 
@@ -247,5 +268,6 @@ namespace Presentacion
         private System.Windows.Forms.Label lblTitulo;
         private Bunifu.Framework.UI.BunifuElipse redondeoGeneral;
         private Bunifu.Framework.UI.BunifuElipse redondeoDetallado;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -88,7 +88,7 @@ namespace Presentacion
                 values[i] = Facturas.Rows[0][i].ToString();
             }
 
-            FormCrearFactura formCrearFactura = new FormCrearFactura();
+            FormCrearFactura formCrearFactura = new FormCrearFactura(1);
 
             formCrearFactura.txtNFactura.Text = values[0];
             formCrearFactura.txtEmpresa.Text = values[1];
@@ -223,7 +223,7 @@ namespace Presentacion
 
             if (formPrincipal != null)
             {
-                FormCrearFactura formCrearFactura = new FormCrearFactura();
+                FormCrearFactura formCrearFactura = new FormCrearFactura(1);
 
 
                 int iTabla = dataGridDetalles.CurrentCell.RowIndex;

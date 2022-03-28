@@ -312,7 +312,10 @@ namespace Domain
         {
             return userDao.readInfoFacturas(ID_Tramite);
         }
-
+        public DataTable readInfoCartas(string ID_Tramite)
+        {
+            return userDao.readInfoCartas(ID_Tramite);
+        }
 
         public DataTable datosRetencionCredito(string nFactura)
         {
@@ -410,6 +413,11 @@ namespace Domain
             return userDao.insertDataCarta(values);
         }
 
+        public bool CartaExist(string idTramite)
+        {
+            return userDao.CartaExist(idTramite);
+        }
+
         public bool InsertDataPT(string[] values)
         {
             return userDao.InsertDataPT(values);
@@ -425,6 +433,10 @@ namespace Domain
             return userDao.insertDataSaldo(values);
         }
 
+        public bool InsertDataNuevaComision(string[] values)
+        {
+            return userDao.insertDataNuevaComision(values);
+        }
         public bool insertDataTransferencia(string[] values)
         {
             return userDao.insertDataTransferencia(values);
@@ -490,7 +502,18 @@ namespace Domain
         {
             return userDao.searchIVARetIVA(IVA);
         }
-
+        public DataTable getDatosComision(string RUC)
+        {
+            return userDao.getDatosComision(RUC);
+        }
+        public DataTable verifyComision(string ID_Tramite)
+        {
+            return userDao.verifyComision(ID_Tramite);
+        }
+        public DataTable getIDTramite(int nTramite)
+        {
+            return userDao.getIDTramite(nTramite);
+        }
         public DataTable searchComisionCliente(string cliente)
         {
             return userDao.searchComisionesCliente(cliente);

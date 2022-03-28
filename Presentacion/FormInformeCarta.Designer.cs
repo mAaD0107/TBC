@@ -36,13 +36,13 @@ namespace Presentacion
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.InformeCartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListadoFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AbonosFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DevolucionSaldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TransferenciaOrigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TransferenciaDestinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.InformeCartaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AbonosFacturasBindingSource)).BeginInit();
@@ -50,6 +50,31 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.TransferenciaOrigenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransferenciaDestinoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // InformeCartaBindingSource
+            // 
+            this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
+            this.InformeCartaBindingSource.CurrentChanged += new System.EventHandler(this.InformeCartaBindingSource_CurrentChanged);
+            // 
+            // ListadoFacturasBindingSource
+            // 
+            this.ListadoFacturasBindingSource.DataSource = typeof(Domain.Carta.ListadoFacturas);
+            // 
+            // AbonosFacturasBindingSource
+            // 
+            this.AbonosFacturasBindingSource.DataSource = typeof(Domain.Carta.AbonosFacturas);
+            // 
+            // DevolucionSaldoBindingSource
+            // 
+            this.DevolucionSaldoBindingSource.DataSource = typeof(Domain.Carta.DevolucionSaldo);
+            // 
+            // TransferenciaOrigenBindingSource
+            // 
+            this.TransferenciaOrigenBindingSource.DataSource = typeof(Domain.Carta.TransferenciaOrigen);
+            // 
+            // TransferenciaDestinoBindingSource
+            // 
+            this.TransferenciaDestinoBindingSource.DataSource = typeof(Domain.Carta.TransferenciaDestino);
             // 
             // reportViewer1
             // 
@@ -78,30 +103,6 @@ namespace Presentacion
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(814, 636);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // InformeCartaBindingSource
-            // 
-            this.InformeCartaBindingSource.DataSource = typeof(Domain.Carta.InformeCarta);
-            // 
-            // ListadoFacturasBindingSource
-            // 
-            this.ListadoFacturasBindingSource.DataSource = typeof(Domain.Carta.ListadoFacturas);
-            // 
-            // AbonosFacturasBindingSource
-            // 
-            this.AbonosFacturasBindingSource.DataSource = typeof(Domain.Carta.AbonosFacturas);
-            // 
-            // DevolucionSaldoBindingSource
-            // 
-            this.DevolucionSaldoBindingSource.DataSource = typeof(Domain.Carta.DevolucionSaldo);
-            // 
-            // TransferenciaOrigenBindingSource
-            // 
-            this.TransferenciaOrigenBindingSource.DataSource = typeof(Domain.Carta.TransferenciaOrigen);
-            // 
-            // TransferenciaDestinoBindingSource
-            // 
-            this.TransferenciaDestinoBindingSource.DataSource = typeof(Domain.Carta.TransferenciaDestino);
             // 
             // FormInformeCarta
             // 

@@ -265,35 +265,13 @@ namespace Domain.Carta
                 pagoTransferencia += Convert.ToDouble(row[0] is DBNull ? 0 : row[0]);
             }
 
-            //totalAbonado = valPagar - saldo + saldoTransferencia;
-            
-            totalAbonado = valPagar - saldo;
             TotalValorTramite = valPagar;
             TotalPagos = TotalValorTramite - totalSaldoFavor;
             TotalSaldoAFavor = TotalValorTramite - totalSaldoFavor + saldo - saldoTransferencia + devoluciones;
-            Saldo = -saldo + saldoTransferencia;
-            SaldoTramite = totalAbonado - TotalValorTramite + saldoTransferencia;
 
-            totalAbonado = valPagar - saldo - pagoTransferencia;
+            Observaciones = CartaCache.Observaciones;
 
-            if (SaldoTramite == SaldoTramiteST)
-            {
-                SaldoTramiteST = 0;
-                
-            }
-            else
-            {
-                if (SaldoTramiteST < SaldoTramite)
-                {
-                    SaldoTramiteST = 0;
-                }
-                else
-                {
-                    SaldoTramiteST = valPagar - saldo - TotalValorTramite;
-                    
-                }
-                
-            }
+            Usuario = UserCache.FirstName + " " + UserCache.LastName;
 
             Observaciones = CartaCache.Observaciones;
 
