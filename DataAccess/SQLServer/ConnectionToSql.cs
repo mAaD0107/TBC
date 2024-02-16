@@ -19,7 +19,7 @@ namespace DataAccess
             // Conexion Remota                                                                                                    //Coneccion Remota
             // connectionString = "Data Source = 201.218.26.35,1433; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2021";
             // connectionString = "Data Source = 201.218.26.28,1900; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2021";
-            connectionString = "Data Source = 25.97.214.123,1900; Initial Catalog = TBC; User Id = TBC_Server; Password = tbc2021";
+            connectionString = "Data Source = 25.6.203.112,1900; Initial Catalog = TBC; User Id = TBC_SYSTEM; Password = Admin$system2024";
         }
         protected SqlConnection GetSqlConnection()
         {
