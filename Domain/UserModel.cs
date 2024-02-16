@@ -525,6 +525,11 @@ namespace Domain
             return userDao.searchValorFacturaLDM(nTramite);
         }
 
+        public bool deletePago(string id_Pago)
+        {
+            return userDao.deletePago(id_Pago);
+        }
+
 
         public void metodo()
         {

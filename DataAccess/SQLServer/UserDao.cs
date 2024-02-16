@@ -4244,6 +4244,27 @@ namespace DataAccess
             }
         }
 
+        public bool deletePago(string id_pago)
+        {
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from Pagos where idPago = @id_pago";
+                    command.Parameters.AddWithValue("id_pago", id_pago);
+
+                    command.CommandType = CommandType.Text;
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    // Retorna true si al menos una fila fue eliminada
+                    return rowsAffected > 0;
+                }
+            }
+        }
+
 
         public void metodo()
         {

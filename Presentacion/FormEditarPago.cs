@@ -1,15 +1,8 @@
 ﻿using Common.Cache;
 using Domain;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -25,24 +18,7 @@ namespace Presentacion
 
         private void FormEditarPago_Load(object sender, EventArgs e)
         {
-            txtDAI.Text = PagosCache.DAI;
-            txtSecuencialCliente.Text = PagosCache.secuencialCliente;
-            txtCliente.Text = PagosCache.Empresa;
-            txtTramite.Text = PagosCache.idTramite;
-
-            UserModel read = new UserModel();
-            dataGridPagos.DataSource = read.readListaPagos(PagosCache.idTramite);
-
-            dataGridPagos.Columns[0].Visible = false;
-            dataGridPagos.Columns[1].ReadOnly = true;
-            dataGridPagos.Columns[2].ReadOnly = true;
-
-            dataGridPagos.Width = 920;
-
-            vScrollBar.Minimum = panelContenedor.VerticalScroll.Minimum;
-            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum;
-
-            panelContenedor.Dock = DockStyle.Fill;
+            loadScreen();
         }
 
         private void vScrollBar_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
@@ -60,7 +36,7 @@ namespace Presentacion
         private void dataGridPagos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             String celdaAnterior = dataGridPagos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            if (celda != celdaAnterior)
+            if (celda != celdaAnterior && celda != null && celda != "")
             {
                 UserModel Write = new UserModel();
                 string[] data = new string[8];
@@ -167,6 +143,59 @@ namespace Presentacion
         private void dataGridPagos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             celda = dataGridPagos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int index = dataGridPagos.CurrentCell.RowIndex;
+            string idPago = dataGridPagos.Rows[index].Cells[0].Value.ToString();
+            string nFactura = dataGridPagos.Rows[index].Cells[1].Value.ToString();
+            string value = string.Format("{0:C2}", dataGridPagos.Rows[index].Cells[3].Value);
+            string asiento = dataGridPagos.Rows[index].Cells[4].Value.ToString();
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el pago de la factura: " +
+                "\nNúmero: " + nFactura +
+                "\nAbono: " + value +
+                "\nAsiento: " + asiento
+                , "Advertencia", 
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Error);
+
+            if(result == DialogResult.OK)
+            {
+                UserModel write = new UserModel();
+
+                if (write.deletePago(idPago))
+                {
+                    MessageBox.Show("Se elimino el pago de la factura numero: " + nFactura, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                loadScreen();
+            }
+        }
+
+        private void loadScreen()
+        {
+            txtDAI.Text = PagosCache.DAI;
+            txtSecuencialCliente.Text = PagosCache.secuencialCliente;
+            txtCliente.Text = PagosCache.Empresa;
+            txtTramite.Text = PagosCache.idTramite;
+
+            UserModel read = new UserModel();
+            dataGridPagos.DataSource = read.readListaPagos(PagosCache.idTramite);
+
+            dataGridPagos.Columns[0].Visible = false;
+            dataGridPagos.Columns[1].ReadOnly = true;
+            dataGridPagos.Columns[2].ReadOnly = true;
+
+            dataGridPagos.Width = 920;
+
+            vScrollBar.Minimum = panelContenedor.VerticalScroll.Minimum;
+            vScrollBar.Maximum = panelContenedor.VerticalScroll.Maximum;
+
+            panelContenedor.Dock = DockStyle.Fill;
         }
     }
 }
