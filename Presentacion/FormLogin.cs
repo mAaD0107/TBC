@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Domain;
 using System.Threading;
+using System.Threading.Tasks;
+using Squirrel;
+using System.Diagnostics;
 
 namespace Presentacion
 {
@@ -11,8 +14,28 @@ namespace Presentacion
     {
         public FormLogin()
         {
-
             InitializeComponent();
+            AddVersionNumber();
+            CheckForUpdates();
+            
+        }
+
+        private void AddVersionNumber()
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            version.Text = $"V.{versionInfo.FileVersion}";
+        }
+
+        private async Task CheckForUpdates()
+        {
+            var repoUrl = "https://github.com/mAaD0107/TBC";
+            using (var manager = await UpdateManager.GitHubUpdateManager(repoUrl))
+            {
+                await manager.UpdateApp();
+            }
+
 
         }
 

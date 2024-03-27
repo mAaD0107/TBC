@@ -45,6 +45,8 @@
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.redondeoPanel = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.redondeoBoton = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.version = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -54,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel1.Controls.Add(this.version);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -220,6 +223,23 @@
             this.redondeoBoton.ElipseRadius = 20;
             this.redondeoBoton.TargetControl = this.btnlogin;
             // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.BackColor = System.Drawing.Color.Transparent;
+            this.version.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.ForeColor = System.Drawing.Color.DimGray;
+            this.version.Location = new System.Drawing.Point(182, 347);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(48, 15);
+            this.version.TabIndex = 1;
+            this.version.Text = "V x.x.x";
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 7;
+            this.bunifuElipse1.TargetControl = this.version;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,12 +257,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
@@ -268,6 +290,8 @@
         private Bunifu.Framework.UI.BunifuElipse redondeoPanel;
         private Bunifu.Framework.UI.BunifuElipse redondeoBoton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel version;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 
