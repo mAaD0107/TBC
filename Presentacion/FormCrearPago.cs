@@ -107,14 +107,14 @@ namespace Presentacion
         {
             UserModel Read = new UserModel();
 
-            saldCliente = Read.saldoTramite(PagosCache.numeroTramite);
+            saldCliente = (Decimal)Read.saldoTramite(PagosCache.numeroTramite);
             transferencia = Read.trasnferenciaTramite(PagosCache.idTramite);                 // TRansferencia Desde 
             devolucion = Read.devolucionTramite(PagosCache.numeroTramite);
             devolucionTransferencia = Read.devolucionTransferencia(PagosCache.numeroTramite);
             pagoTransferencia = Read.pagoTransferencia(PagosCache.idTramite);
             transferenciaHacia = Read.trasnferenciaTramiteHacia(PagosCache.idTramite);      // Transferencia Hacia
 
-            saldCliente = saldCliente - devolucion - transferencia;
+            saldCliente = saldCliente - (Decimal)devolucion - (Decimal)transferencia;
             transferenciaHacia = transferenciaHacia - pagoTransferencia - devolucionTransferencia; 
             // Hay dos tipos de transferencia 
             // Desde -> se resta de saldo cliente
@@ -3568,7 +3568,7 @@ namespace Presentacion
 
         List<string[]> listas = new List<string[]>();
 
-        double saldCliente = 0;
+        Decimal saldCliente = 0;
         bool falloPago = false; 
 
         private void btnAbonoGeneral_Click(object sender, EventArgs e)
@@ -3699,7 +3699,7 @@ namespace Presentacion
 
                                 Write.InsertDataSaldo(dataSaldo);
 
-                                saldCliente = Write.saldoTramite(PagosCache.numeroTramite);
+                                saldCliente = (Decimal)Write.saldoTramite(PagosCache.numeroTramite);
                                 readTramite();
                             }
 

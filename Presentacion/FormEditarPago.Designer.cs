@@ -34,6 +34,14 @@ namespace Presentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
@@ -61,13 +69,27 @@ namespace Presentacion
             this.liniaDAIS = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape42 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelPagos = new System.Windows.Forms.Panel();
             this.hScrollBar = new Bunifu.UI.WinForms.BunifuHScrollBar();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dataGridPagos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelSaldoCliente = new System.Windows.Forms.Panel();
+            this.bunifuHScrollBar1 = new Bunifu.UI.WinForms.BunifuHScrollBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridSaldoCliente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.label3 = new System.Windows.Forms.Label();
+            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelTransferencia = new System.Windows.Forms.Panel();
+            this.bunifuHScrollBar2 = new Bunifu.UI.WinForms.BunifuHScrollBar();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridTransferenciaSaldo = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.label4 = new System.Windows.Forms.Label();
+            this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.vScrollBar = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
@@ -75,8 +97,12 @@ namespace Presentacion
             this.panelContenedor.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelPagos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).BeginInit();
+            this.panelSaldoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSaldoCliente)).BeginInit();
+            this.panelTransferencia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransferenciaSaldo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelOpciones
@@ -137,11 +163,13 @@ namespace Presentacion
             this.panelContenedor.AutoScroll = true;
             this.panelContenedor.Controls.Add(this.panelTitulo);
             this.panelContenedor.Controls.Add(this.panel5);
-            this.panelContenedor.Controls.Add(this.panel1);
+            this.panelContenedor.Controls.Add(this.panelPagos);
+            this.panelContenedor.Controls.Add(this.panelSaldoCliente);
+            this.panelContenedor.Controls.Add(this.panelTransferencia);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelContenedor.Location = new System.Drawing.Point(0, 36);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(999, 556);
+            this.panelContenedor.Size = new System.Drawing.Size(999, 848);
             this.panelContenedor.TabIndex = 3;
             // 
             // panelTitulo
@@ -399,18 +427,18 @@ namespace Presentacion
             this.lineShape42.Y1 = 118;
             this.lineShape42.Y2 = 95;
             // 
-            // panel1
+            // panelPagos
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.hScrollBar);
-            this.panel1.Controls.Add(this.btnEliminar);
-            this.panel1.Controls.Add(this.dataGridPagos);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.shapeContainer1);
-            this.panel1.Location = new System.Drawing.Point(3, 314);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 358);
-            this.panel1.TabIndex = 4;
+            this.panelPagos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPagos.Controls.Add(this.hScrollBar);
+            this.panelPagos.Controls.Add(this.btnEliminar);
+            this.panelPagos.Controls.Add(this.dataGridPagos);
+            this.panelPagos.Controls.Add(this.label1);
+            this.panelPagos.Controls.Add(this.shapeContainer1);
+            this.panelPagos.Location = new System.Drawing.Point(3, 314);
+            this.panelPagos.Name = "panelPagos";
+            this.panelPagos.Size = new System.Drawing.Size(960, 358);
+            this.panelPagos.TabIndex = 4;
             // 
             // hScrollBar
             // 
@@ -432,6 +460,7 @@ namespace Presentacion
             this.hScrollBar.DurationBeforeShrink = 2000;
             this.hScrollBar.LargeChange = 10;
             this.hScrollBar.Location = new System.Drawing.Point(26, 331);
+            this.hScrollBar.Margin = new System.Windows.Forms.Padding(4);
             this.hScrollBar.Maximum = 100;
             this.hScrollBar.Minimum = 0;
             this.hScrollBar.MinimumThumbLength = 18;
@@ -529,6 +558,7 @@ namespace Presentacion
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridPagos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridPagos.RowHeadersWidth = 51;
             this.dataGridPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPagos.Size = new System.Drawing.Size(917, 274);
             this.dataGridPagos.StandardTab = true;
@@ -574,6 +604,356 @@ namespace Presentacion
             this.lineShape1.Y1 = 56;
             this.lineShape1.Y2 = 56;
             // 
+            // panelSaldoCliente
+            // 
+            this.panelSaldoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSaldoCliente.Controls.Add(this.bunifuHScrollBar1);
+            this.panelSaldoCliente.Controls.Add(this.button1);
+            this.panelSaldoCliente.Controls.Add(this.dataGridSaldoCliente);
+            this.panelSaldoCliente.Controls.Add(this.label3);
+            this.panelSaldoCliente.Controls.Add(this.shapeContainer3);
+            this.panelSaldoCliente.Location = new System.Drawing.Point(3, 678);
+            this.panelSaldoCliente.Name = "panelSaldoCliente";
+            this.panelSaldoCliente.Size = new System.Drawing.Size(960, 358);
+            this.panelSaldoCliente.TabIndex = 6;
+            // 
+            // bunifuHScrollBar1
+            // 
+            this.bunifuHScrollBar1.AllowCursorChanges = true;
+            this.bunifuHScrollBar1.AllowHomeEndKeysDetection = false;
+            this.bunifuHScrollBar1.AllowIncrementalClickMoves = true;
+            this.bunifuHScrollBar1.AllowMouseDownEffects = true;
+            this.bunifuHScrollBar1.AllowMouseHoverEffects = true;
+            this.bunifuHScrollBar1.AllowScrollingAnimations = true;
+            this.bunifuHScrollBar1.AllowScrollKeysDetection = true;
+            this.bunifuHScrollBar1.AllowScrollOptionsMenu = true;
+            this.bunifuHScrollBar1.AllowShrinkingOnFocusLost = false;
+            this.bunifuHScrollBar1.BackgoundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuHScrollBar1.BackgroundImage")));
+            this.bunifuHScrollBar1.BindingContainer = null;
+            this.bunifuHScrollBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar1.BorderRadius = 0;
+            this.bunifuHScrollBar1.BorderThickness = 1;
+            this.bunifuHScrollBar1.DurationBeforeShrink = 2000;
+            this.bunifuHScrollBar1.LargeChange = 10;
+            this.bunifuHScrollBar1.Location = new System.Drawing.Point(26, 331);
+            this.bunifuHScrollBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuHScrollBar1.Maximum = 100;
+            this.bunifuHScrollBar1.Minimum = 0;
+            this.bunifuHScrollBar1.MinimumThumbLength = 18;
+            this.bunifuHScrollBar1.Name = "bunifuHScrollBar1";
+            this.bunifuHScrollBar1.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
+            this.bunifuHScrollBar1.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.bunifuHScrollBar1.OnDisable.ThumbColor = System.Drawing.Color.Silver;
+            this.bunifuHScrollBar1.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar1.ShrinkSizeLimit = 3;
+            this.bunifuHScrollBar1.Size = new System.Drawing.Size(917, 17);
+            this.bunifuHScrollBar1.SmallChange = 1;
+            this.bunifuHScrollBar1.TabIndex = 70;
+            this.bunifuHScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.bunifuHScrollBar1.ThumbLength = 90;
+            this.bunifuHScrollBar1.ThumbMargin = 1;
+            this.bunifuHScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuHScrollBar.ThumbStyles.Inset;
+            this.bunifuHScrollBar1.Value = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button1.Location = new System.Drawing.Point(833, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 38);
+            this.button1.TabIndex = 69;
+            this.button1.Text = "ELIMINAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridSaldoCliente
+            // 
+            this.dataGridSaldoCliente.AllowUserToAddRows = false;
+            this.dataGridSaldoCliente.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridSaldoCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridSaldoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridSaldoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridSaldoCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridSaldoCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridSaldoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridSaldoCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridSaldoCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSaldoCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridSaldoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = "--------------";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridSaldoCliente.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridSaldoCliente.DoubleBuffered = true;
+            this.dataGridSaldoCliente.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridSaldoCliente.EnableHeadersVisualStyles = false;
+            this.dataGridSaldoCliente.GridColor = System.Drawing.Color.DimGray;
+            this.dataGridSaldoCliente.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.dataGridSaldoCliente.HeaderForeColor = System.Drawing.Color.LightGray;
+            this.dataGridSaldoCliente.Location = new System.Drawing.Point(26, 74);
+            this.dataGridSaldoCliente.MultiSelect = false;
+            this.dataGridSaldoCliente.Name = "dataGridSaldoCliente";
+            this.dataGridSaldoCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSaldoCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridSaldoCliente.RowHeadersWidth = 51;
+            this.dataGridSaldoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridSaldoCliente.Size = new System.Drawing.Size(917, 274);
+            this.dataGridSaldoCliente.StandardTab = true;
+            this.dataGridSaldoCliente.TabIndex = 59;
+            this.dataGridSaldoCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSaldoCliente_CellDoubleClick);
+            this.dataGridSaldoCliente.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSaldoCliente_CellEndEdit);
+            this.dataGridSaldoCliente.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSaldoCliente_CellEnter);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label3.Location = new System.Drawing.Point(21, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(351, 33);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "REGISTROS SALDO CLIENTE";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // shapeContainer3
+            // 
+            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer3.Name = "shapeContainer3";
+            this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer3.Size = new System.Drawing.Size(958, 356);
+            this.shapeContainer3.TabIndex = 50;
+            this.shapeContainer3.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Enabled = false;
+            this.lineShape2.Name = "lineShape53";
+            this.lineShape2.X1 = 26;
+            this.lineShape2.X2 = 370;
+            this.lineShape2.Y1 = 56;
+            this.lineShape2.Y2 = 56;
+            // 
+            // panelTransferencia
+            // 
+            this.panelTransferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTransferencia.Controls.Add(this.bunifuHScrollBar2);
+            this.panelTransferencia.Controls.Add(this.button2);
+            this.panelTransferencia.Controls.Add(this.dataGridTransferenciaSaldo);
+            this.panelTransferencia.Controls.Add(this.label4);
+            this.panelTransferencia.Controls.Add(this.shapeContainer4);
+            this.panelTransferencia.Location = new System.Drawing.Point(3, 1042);
+            this.panelTransferencia.Name = "panelTransferencia";
+            this.panelTransferencia.Size = new System.Drawing.Size(960, 522);
+            this.panelTransferencia.TabIndex = 7;
+            // 
+            // bunifuHScrollBar2
+            // 
+            this.bunifuHScrollBar2.AllowCursorChanges = true;
+            this.bunifuHScrollBar2.AllowHomeEndKeysDetection = false;
+            this.bunifuHScrollBar2.AllowIncrementalClickMoves = true;
+            this.bunifuHScrollBar2.AllowMouseDownEffects = true;
+            this.bunifuHScrollBar2.AllowMouseHoverEffects = true;
+            this.bunifuHScrollBar2.AllowScrollingAnimations = true;
+            this.bunifuHScrollBar2.AllowScrollKeysDetection = true;
+            this.bunifuHScrollBar2.AllowScrollOptionsMenu = true;
+            this.bunifuHScrollBar2.AllowShrinkingOnFocusLost = false;
+            this.bunifuHScrollBar2.BackgoundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuHScrollBar2.BackgroundImage")));
+            this.bunifuHScrollBar2.BindingContainer = null;
+            this.bunifuHScrollBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar2.BorderRadius = 0;
+            this.bunifuHScrollBar2.BorderThickness = 1;
+            this.bunifuHScrollBar2.DurationBeforeShrink = 2000;
+            this.bunifuHScrollBar2.LargeChange = 10;
+            this.bunifuHScrollBar2.Location = new System.Drawing.Point(26, 495);
+            this.bunifuHScrollBar2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuHScrollBar2.Maximum = 100;
+            this.bunifuHScrollBar2.Minimum = 0;
+            this.bunifuHScrollBar2.MinimumThumbLength = 18;
+            this.bunifuHScrollBar2.Name = "bunifuHScrollBar2";
+            this.bunifuHScrollBar2.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
+            this.bunifuHScrollBar2.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.bunifuHScrollBar2.OnDisable.ThumbColor = System.Drawing.Color.Silver;
+            this.bunifuHScrollBar2.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar2.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.bunifuHScrollBar2.ShrinkSizeLimit = 3;
+            this.bunifuHScrollBar2.Size = new System.Drawing.Size(917, 17);
+            this.bunifuHScrollBar2.SmallChange = 1;
+            this.bunifuHScrollBar2.TabIndex = 70;
+            this.bunifuHScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
+            this.bunifuHScrollBar2.ThumbLength = 90;
+            this.bunifuHScrollBar2.ThumbMargin = 1;
+            this.bunifuHScrollBar2.ThumbStyle = Bunifu.UI.WinForms.BunifuHScrollBar.ThumbStyles.Inset;
+            this.bunifuHScrollBar2.Value = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
+            this.button2.Location = new System.Drawing.Point(833, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 38);
+            this.button2.TabIndex = 69;
+            this.button2.Text = "ELIMINAR";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridTransferenciaSaldo
+            // 
+            this.dataGridTransferenciaSaldo.AllowUserToAddRows = false;
+            this.dataGridTransferenciaSaldo.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridTransferenciaSaldo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridTransferenciaSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridTransferenciaSaldo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridTransferenciaSaldo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridTransferenciaSaldo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.dataGridTransferenciaSaldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridTransferenciaSaldo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridTransferenciaSaldo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTransferenciaSaldo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridTransferenciaSaldo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.NullValue = "--------------";
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTransferenciaSaldo.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridTransferenciaSaldo.DoubleBuffered = true;
+            this.dataGridTransferenciaSaldo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridTransferenciaSaldo.EnableHeadersVisualStyles = false;
+            this.dataGridTransferenciaSaldo.GridColor = System.Drawing.Color.DimGray;
+            this.dataGridTransferenciaSaldo.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.dataGridTransferenciaSaldo.HeaderForeColor = System.Drawing.Color.LightGray;
+            this.dataGridTransferenciaSaldo.Location = new System.Drawing.Point(26, 74);
+            this.dataGridTransferenciaSaldo.MultiSelect = false;
+            this.dataGridTransferenciaSaldo.Name = "dataGridTransferenciaSaldo";
+            this.dataGridTransferenciaSaldo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTransferenciaSaldo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridTransferenciaSaldo.RowHeadersWidth = 51;
+            this.dataGridTransferenciaSaldo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridTransferenciaSaldo.Size = new System.Drawing.Size(917, 438);
+            this.dataGridTransferenciaSaldo.StandardTab = true;
+            this.dataGridTransferenciaSaldo.TabIndex = 59;
+            this.dataGridTransferenciaSaldo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTransferenciaSaldo_CellDoubleClick);
+            this.dataGridTransferenciaSaldo.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTransferenciaSaldo_CellEndEdit);
+            this.dataGridTransferenciaSaldo.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTransferenciaSaldo_CellEnter);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(123)))), ((int)(((byte)(139)))), ((int)(((byte)(156)))));
+            this.label4.Location = new System.Drawing.Point(21, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(312, 33);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "TRANSFERENCIA SALDO";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // shapeContainer4
+            // 
+            this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer4.Name = "shapeContainer4";
+            this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape3});
+            this.shapeContainer4.Size = new System.Drawing.Size(958, 520);
+            this.shapeContainer4.TabIndex = 50;
+            this.shapeContainer4.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
+            this.lineShape3.Name = "lineShape53";
+            this.lineShape3.X1 = 26;
+            this.lineShape3.X2 = 350;
+            this.lineShape3.Y1 = 56;
+            this.lineShape3.Y2 = 56;
+            // 
             // vScrollBar
             // 
             this.vScrollBar.AllowCursorChanges = true;
@@ -594,8 +974,9 @@ namespace Presentacion
             this.vScrollBar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar.DurationBeforeShrink = 2000;
-            this.vScrollBar.LargeChange = 10;
+            this.vScrollBar.LargeChange = 20;
             this.vScrollBar.Location = new System.Drawing.Point(1005, 36);
+            this.vScrollBar.Margin = new System.Windows.Forms.Padding(4);
             this.vScrollBar.Maximum = 50;
             this.vScrollBar.Minimum = 0;
             this.vScrollBar.MinimumThumbLength = 18;
@@ -606,11 +987,11 @@ namespace Presentacion
             this.vScrollBar.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.vScrollBar.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.vScrollBar.ShrinkSizeLimit = 3;
-            this.vScrollBar.Size = new System.Drawing.Size(17, 556);
+            this.vScrollBar.Size = new System.Drawing.Size(17, 848);
             this.vScrollBar.SmallChange = 1;
             this.vScrollBar.TabIndex = 48;
             this.vScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(82)))));
-            this.vScrollBar.ThumbLength = 108;
+            this.vScrollBar.ThumbLength = 331;
             this.vScrollBar.ThumbMargin = 1;
             this.vScrollBar.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.vScrollBar.Value = 0;
@@ -621,7 +1002,7 @@ namespace Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1022, 592);
+            this.ClientSize = new System.Drawing.Size(1022, 884);
             this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelOpciones);
@@ -641,9 +1022,15 @@ namespace Presentacion
             this.panelTitulo.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelPagos.ResumeLayout(false);
+            this.panelPagos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).EndInit();
+            this.panelSaldoCliente.ResumeLayout(false);
+            this.panelSaldoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSaldoCliente)).EndInit();
+            this.panelTransferencia.ResumeLayout(false);
+            this.panelTransferencia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransferenciaSaldo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -657,7 +1044,7 @@ namespace Presentacion
         private System.Windows.Forms.FlowLayoutPanel panelContenedor;
         private System.Windows.Forms.Panel panelTitulo;
         public System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelPagos;
         public System.Windows.Forms.Button btnEliminar;
         public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridPagos;
         public System.Windows.Forms.Label label1;
@@ -685,5 +1072,19 @@ namespace Presentacion
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape42;
         private Bunifu.UI.WinForms.BunifuVScrollBar vScrollBar;
         private Bunifu.UI.WinForms.BunifuHScrollBar hScrollBar;
+        private System.Windows.Forms.Panel panelSaldoCliente;
+        private Bunifu.UI.WinForms.BunifuHScrollBar bunifuHScrollBar1;
+        public System.Windows.Forms.Button button1;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridSaldoCliente;
+        public System.Windows.Forms.Label label3;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
+        public Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.Panel panelTransferencia;
+        private Bunifu.UI.WinForms.BunifuHScrollBar bunifuHScrollBar2;
+        public System.Windows.Forms.Button button2;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridTransferenciaSaldo;
+        public System.Windows.Forms.Label label4;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
+        public Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
     }
 }

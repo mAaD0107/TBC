@@ -66,7 +66,7 @@ namespace Presentacion
 
         }
 
-        public double ValorSaldo;
+        public Decimal ValorSaldo = 0;
 
         private void cmbOpcionesSaldo_TextChanged(object sender, EventArgs e)
         {
@@ -279,7 +279,7 @@ namespace Presentacion
         {
             if (txtValorSaldo.Text != "")
             {
-                double nuevoSaldo = double.Parse(txtValorSaldo.Text);
+                Decimal nuevoSaldo = Decimal.Parse(txtValorSaldo.Text);
 
                 if (nuevoSaldo > ValorSaldo)
                 {
@@ -375,7 +375,7 @@ namespace Presentacion
                 MessageBox.Show("No se puede procesar la transferencia.\r\nEl valor total de la(s) transferencia(s) superan al valor transferible." , "Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (!errorTransferencia)
+            if (!errorTransferencia && permitirTransferencia)
             {
                 MessageBox.Show("Las transferencias se han realizado exitosamente", "Info.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -462,24 +462,37 @@ namespace Presentacion
                 {
                     string entrada = DataGridDestino.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     string texto = clearNumber(entrada);
-                    texto = texto.Replace('.', ',');
-                    texto = clearDot(texto);
+                    texto = texto.Replace(',', '.');
+                    //texto = clearDot(texto);
                     texto = Convert.ToDouble(texto).ToString("N2");
                     DataGridDestino.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = texto;
 
-                    double total = 0; 
+                    double total = 0;
                     for (int i = 0; i < DataGridDestino.Rows.Count; i++)
                     {
                         if (DataGridDestino.Rows[i].Cells[1].Value != null)
                         {
-                            total += Convert.ToDouble(DataGridDestino.Rows[i].Cells[1].Value.ToString());
+                            string valorString = DataGridDestino.Rows[i].Cells[1].Value.ToString();
+                            // Intentar convertir usando la configuración regional invariante.
+                            if (double.TryParse(valorString, NumberStyles.Any, CultureInfo.InvariantCulture, out double valor))
+                            {
+                                total += valor;
+                            }
+                            else
+                            {
+                                // Intenta manejar el caso en que la entrada no es un número válido.
+                                Console.WriteLine($"Entrada no válida: {valorString}");
+                            }
                         }
-                         
                     }
+
+                    // Para mostrar el total correctamente, asumimos que quieres usar el formato invariante (punto como separador decimal).
+                    string totalFormateado = total.ToString(CultureInfo.InvariantCulture);
+                    total = double.Parse(totalFormateado);
 
                     lblTotal.Text = "$   " + total.ToString("N2");
 
-                    if (ValorSaldo >= total)
+                    if (ValorSaldo >= (Decimal)total)
                     {
                         permitirTransferencia = true;
                     }

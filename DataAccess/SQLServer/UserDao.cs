@@ -1175,6 +1175,77 @@ namespace DataAccess
             }
         }
 
+
+        public DataTable readListaSaldoCliente(string idTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select * from SaldoCliente where idNTramite = @idTramite";
+                    command.Parameters.AddWithValue("@idTramite", idTramite);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable updateTransferenciaSaldo(string[] data)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE TransferenciaSaldo SET Saldo=@saldo, FechaTransferencia=@fechaT, idTramiteDesde=@idTD, idTramiteHacia=@idTH, DetalleTransferencia=@detalle, idSaldoCliente=NULL WHERE idTransferencia=@nTramite";
+                    command.Parameters.AddWithValue("@nTramite", data[0]);
+                    command.Parameters.AddWithValue("@saldo", data[1]);
+                    command.Parameters.AddWithValue("@fechaT", data[2]);
+                    command.Parameters.AddWithValue("@idTD", data[3]);
+                    command.Parameters.AddWithValue("@idTH", data[4]);
+                    command.Parameters.AddWithValue("@detalle", data[5]);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
+
+        public DataTable readTransferencias(string idTramite)
+        {
+            DataTable table = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM TransferenciaSaldo WHERE idTramiteDesde = @idTramite OR idTramiteHacia = @idTramite ORDER BY idTramiteDesde";
+                    command.Parameters.AddWithValue("@idTramite", idTramite);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
         public DataTable readTransferencia(string nTramite)
         {
             DataTable table = new DataTable();

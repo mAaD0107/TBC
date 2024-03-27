@@ -78,6 +78,16 @@ namespace Domain
             return userDao.readListaPagos(idTramite);
         }
 
+        public DataTable readListaSaldoCliente(string idTramite)
+        {
+            return userDao.readListaSaldoCliente(idTramite);
+        }
+
+        public DataTable readTransferencias(string idTramite)
+        {
+            return userDao.readTransferencias(idTramite);
+        }
+
 
         public DataTable readTransferencia(string nTramite)
         {
